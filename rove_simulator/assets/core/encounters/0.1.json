@@ -1,0 +1,231 @@
+{
+    "quest_id": "0",
+    "number": "1",
+    "title": "Prologue 1",
+    "victory": "Hold out against the galelings.",
+    "starting_map": {
+        "id": "0.1",
+        "row_count": 11,
+        "column_count": 13,
+        "background_rect": "(134, 26, 1516, 1449)",
+        "terrain": {
+            "(0, 8)": "start",
+            "(1, 9)": "start",
+            "(2, 3)": "object",
+            "(2, 6)": "difficult",
+            "(2, 9)": "start",
+            "(3, 10)": "start",
+            "(4, 1)": "difficult",
+            "(5, 8)": "difficult",
+            "(6, 3)": "object",
+            "(8, 6)": "object",
+            "(10, 1)": "object",
+            "(10, 4)": "difficult",
+            "(10, 8)": "object"
+        }
+    },
+    "round_limit": 4,
+    "rewards": {
+        "lyst": 10
+    },
+    "adversaries": [
+        {
+            "name": "Galeling",
+            "health": 5,
+            "affinities": {
+                "fire": -1,
+                "earth": -1,
+                "wind": 1
+            },
+            "abilities": [
+                {
+                    "name": "Scything Strike",
+                    "actions": [
+                        {
+                            "type": "jump",
+                            "amount": 2,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "range": "(1, 1)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Rending Talons",
+                    "actions": [
+                        {
+                            "type": "jump",
+                            "amount": 3,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "target_count": 2,
+                            "range": "(1, 1)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Rending Swoop",
+                    "actions": [
+                        {
+                            "type": "jump",
+                            "amount": 2,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "range": "(1, 1)",
+                            "pierce": true
+                        }
+                    ]
+                },
+                {
+                    "name": "Fleeing Shot",
+                    "actions": [
+                        {
+                            "type": "jump",
+                            "amount": 1,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "range": "(2, 2)",
+                            "pierce": true
+                        },
+                        {
+                            "type": "jump",
+                            "amount": 2,
+                            "requires_previous": true,
+                            "retreat": true
+                        }
+                    ]
+                }
+            ],
+            "on_slayed": [
+                {
+                    "type": "codex",
+                    "name": "The Joy of Young Ideas",
+                    "value": "X",
+                    "conditions": [
+                        "all_adversaries_slayed"
+                    ]
+                },
+                {
+                    "type": "victory",
+                    "name": "The Joy of Young Ideas",
+                    "conditions": [
+                        "all_adversaries_slayed"
+                    ]
+                }
+            ]
+        }
+    ],
+    "placements": {
+        "(6, 2)": {
+            "name": "Galeling"
+        },
+        "(9, 4)": {
+            "name": "Galeling"
+        },
+        "(3, 5)": {
+            "name": "Galeling"
+        },
+        "(6, 6)": {
+            "name": "Galeling"
+        },
+        "(0, 3)": {
+            "name": "Galeling",
+            "min_players": 3
+        },
+        "(11, 8)": {
+            "name": "Galeling",
+            "min_players": 3
+        },
+        "(2, 0)": {
+            "name": "Galeling",
+            "min_players": 4
+        },
+        "(8, 9)": {
+            "name": "Galeling",
+            "min_players": 4
+        }
+    },
+    "on_will_end_phase": [
+        {
+            "type": "codex",
+            "name": "Its Sullen Sound",
+            "value": "X",
+            "conditions": [
+                "round=1",
+                "phase=rover"
+            ]
+        },
+        {
+            "type": "codex",
+            "name": "Some Little Cheering",
+            "value": "X",
+            "conditions": [
+                "round=2",
+                "phase=rover"
+            ]
+        },
+        {
+            "type": "codex",
+            "name": "The Last, Last Purple Streaks of the Day",
+            "value": "X",
+            "conditions": [
+                "round=3",
+                "phase=rover"
+            ]
+        },
+        {
+            "type": "codex",
+            "name": "The Joy of Young Ideas",
+            "value": "X",
+            "conditions": [
+                "round=4",
+                "phase=rover"
+            ]
+        },
+        {
+            "type": "victory",
+            "conditions": [
+                "round=4",
+                "phase=rover"
+            ]
+        }
+    ],
+    "on_will_end_round": [
+        {
+            "type": "codex",
+            "name": "Now With Rising Knell",
+            "value": "X",
+            "conditions": [
+                "round=1"
+            ]
+        },
+        {
+            "type": "codex",
+            "name": "Though Restless Still Themselves",
+            "value": "X",
+            "conditions": [
+                "round=2"
+            ]
+        },
+        {
+            "type": "codex",
+            "name": "In Echo Sweet Replies",
+            "value": "X",
+            "conditions": [
+                "round=3"
+            ]
+        }
+    ]
+}

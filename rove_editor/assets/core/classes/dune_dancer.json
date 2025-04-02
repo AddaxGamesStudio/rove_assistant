@@ -1,0 +1,942 @@
+{
+    "name": "Dune Dancer",
+    "evolution": "base",
+    "health": 9,
+    "color_rgb": "d5714d",
+    "color_dark_rgb": "933f20",
+    "ether_limit": 3,
+    "starting_equipment": [
+        "Stripped Axe",
+        "Powdered Drakaen"
+    ],
+    "summons": [
+        {
+            "name": "Pouncing Borejaw",
+            "health": 3,
+            "ability": {
+                "name": "Lunge",
+                "actions": [
+                    {
+                        "type": "move",
+                        "amount": 4,
+                        "target_kind": "self"
+                    },
+                    {
+                        "type": "attack",
+                        "amount": 1,
+                        "range": "(1, 1)",
+                        "pierce": true,
+                        "augments": [
+                            {
+                                "condition": {
+                                    "type": "target_on_field",
+                                    "field": "snapfrost"
+                                },
+                                "action": {
+                                    "type": "buff",
+                                    "amount": 1,
+                                    "buff_type": "amount",
+                                    "buff_scope": "action"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Curious Ardorok",
+            "health": 4,
+            "ignores_difficult_terrain": true,
+            "ability": {
+                "name": "Sharp Beak",
+                "actions": [
+                    {
+                        "type": "move",
+                        "amount": 3,
+                        "target_kind": "self"
+                    },
+                    {
+                        "type": "attack",
+                        "amount": 1,
+                        "range": "(1, 1)",
+                        "pierce": true
+                    }
+                ]
+            }
+        }
+    ],
+    "affinities": {
+        "wind": -1,
+        "crux": 0,
+        "earth": 1,
+        "fire": -1,
+        "morph": 0,
+        "water": 1,
+        "dim": 0
+    },
+    "aura_effect": {
+        "buff": {
+            "type": "attack",
+            "scope": "action",
+            "amount": 1
+        },
+        "action": {
+            "type": "place_field",
+            "range": "(0, 1)",
+            "field": "everbloom"
+        }
+    },
+    "miasma_effect": {
+        "buff": {
+            "type": "attack",
+            "scope": "action",
+            "amount": -1
+        },
+        "action": {
+            "type": "place_field",
+            "range": "(0, 1)",
+            "field": "snapfrost"
+        }
+    },
+    "abilities": [
+        {
+            "name": "Stride",
+            "actions": [
+                {
+                    "type": "move",
+                    "amount": 3,
+                    "target_kind": "self",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "personal_pool_ether",
+                                "ethers": [
+                                    "earth"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "target_kind": "self",
+                                "buff_type": "ignore_terrain_effects",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Barter",
+            "actions": [
+                {
+                    "type": "trade",
+                    "target_kind": "ally",
+                    "range": "(0, 99)"
+                }
+            ]
+        },
+        {
+            "name": "Carve",
+            "requirement": {
+                "type": "did_not_play_card",
+                "card": "Erosion"
+            },
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 2,
+                    "range": "(1, 1)",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "personal_pool_ether",
+                                "ethers": [
+                                    "earth"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 1,
+                                "target_kind": "self",
+                                "buff_type": "amount",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ],
+                    "static_description": {
+                        "prefix": "Can only be activated if Erosion was not activated:"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Erosion",
+            "requirement": {
+                "type": "did_not_play_card",
+                "card": "Carve"
+            },
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 2,
+                    "range": "(2, 2)",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "personal_pool_ether",
+                                "ethers": [
+                                    "water"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 2,
+                                "target_kind": "self",
+                                "buff_type": "end_range",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ],
+                    "static_description": {
+                        "prefix": "Can only be activated if Carve was not activated:"
+                    }
+                }
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "name": "Granite Phalanx",
+            "type": "rally",
+            "subtype": "Circle",
+            "back": "Dual Assault",
+            "actions": [
+                {
+                    "type": "buff",
+                    "amount": 1,
+                    "target_kind": "self",
+                    "buff_type": "defense",
+                    "buff_scope": "until_start_of_turn"
+                },
+                {
+                    "type": "buff",
+                    "amount": 1,
+                    "target_kind": "ally",
+                    "range": "(1, 1)",
+                    "buff_type": "defense",
+                    "buff_scope": "until_start_of_turn"
+                },
+                {
+                    "type": "generate_ether",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Dual Assault",
+            "type": "rave",
+            "subtype": "Circle",
+            "back": "Granite Phalanx",
+            "ether_cost": 3,
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 3,
+                    "range": "(1, 1)",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "skill_ether_check",
+                                "ethers": [
+                                    "earth"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 1,
+                                "target_kind": "self",
+                                "buff_type": "amount",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "actor": "ally",
+                    "actor_range": "(1, 2)",
+                    "type": "attack",
+                    "amount": 3,
+                    "range": "(1, 1)",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "skill_ether_check",
+                                "ethers": [
+                                    "earth"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 1,
+                                "target_kind": "self",
+                                "buff_type": "amount",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Ice Blast",
+            "type": "rave",
+            "subtype": "Drop",
+            "back": "Crag Smash",
+            "ether_cost": 2,
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 2,
+                    "target_count": 3,
+                    "range": "(2, 3)",
+                    "aoe": {
+                        "name": "x3Triangle"
+                    },
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "skill_ether_check",
+                                "ethers": [
+                                    "water"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "target_kind": "self",
+                                "field": "snapfrost",
+                                "buff_type": "field",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "flip_card",
+                    "object": "circle",
+                    "amount": 1,
+                    "target_kind": "self"
+                }
+            ]
+        },
+        {
+            "name": "Crag Smash",
+            "type": "rave",
+            "subtype": "Circle",
+            "back": "Ice Blast",
+            "ether_cost": 2,
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 4,
+                    "range": "(1, 1)",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "skill_ether_check",
+                                "ethers": [
+                                    "earth"
+                                ]
+                            },
+                            "action": {
+                                "type": "suffer",
+                                "amount": 1,
+                                "target_count": 2,
+                                "range_origin": "previous_target",
+                                "range": "(1, 1)",
+                                "static_description": {
+                                    "body": "Two other enemies within [RNG] 1 of the target suffer 1 [DMG]"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Suffocating Spray",
+            "type": "rave",
+            "subtype": "Drop",
+            "back": "Calm Rivers",
+            "ether_cost": 3,
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 2,
+                    "target_count": 3,
+                    "range": "(1, 1)",
+                    "aoe": {
+                        "name": "x5FrontSpray"
+                    },
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "skill_ether_check",
+                                "ethers": [
+                                    "water"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 1,
+                                "target_kind": "self",
+                                "buff_type": "push",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Calm Rivers",
+            "type": "rally",
+            "subtype": "Drop",
+            "back": "Suffocating Spray",
+            "actions": [
+                {
+                    "type": "heal",
+                    "amount": 1,
+                    "target_count": 3,
+                    "target_kind": "ally",
+                    "range": "(1, 1)",
+                    "aoe": {
+                        "name": "x3Line"
+                    }
+                },
+                {
+                    "type": "generate_ether",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Dearest Friend",
+            "type": "rave",
+            "subtype": "Circle",
+            "back": "Gift of the Oasis",
+            "ether_cost": 2,
+            "actions": [
+                {
+                    "type": "summon",
+                    "object": "Curious Ardorok",
+                    "range": "(1, 1)",
+                    "exclusive_group": 1
+                },
+                {
+                    "actor": "named",
+                    "type": "attack",
+                    "object": "Curious Ardorok",
+                    "amount": 4,
+                    "range": "(1, 1)",
+                    "push": 1,
+                    "exclusive_group": 2
+                }
+            ]
+        },
+        {
+            "name": "Gift of the Oasis",
+            "type": "rally",
+            "subtype": "Drop",
+            "back": "Dearest Friend",
+            "actions": [
+                {
+                    "type": "heal",
+                    "amount": 1,
+                    "target_kind": "self_or_ally",
+                    "range": "(0, 2)",
+                    "field": "everbloom"
+                },
+                {
+                    "type": "generate_ether",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Dessiccating Blast",
+            "type": "rally",
+            "subtype": "Drop",
+            "back": "Clay Grasp",
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 1,
+                    "range": "(2, 3)",
+                    "field": "miasma"
+                },
+                {
+                    "type": "generate_ether",
+                    "object": "water",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Clay Grasp",
+            "type": "rally",
+            "subtype": "Circle",
+            "back": "Dessiccating Blast",
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 1,
+                    "range": "(1, 1)",
+                    "field": "snapfrost"
+                },
+                {
+                    "type": "generate_ether",
+                    "object": "earth",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "id": "S-015",
+            "name": "Desert's Gift",
+            "type": "rally",
+            "subtype": "Circle",
+            "is_upgrade": true,
+            "back": "Deep Freeze",
+            "actions": [
+                {
+                    "type": "place_field",
+                    "range": "(0, 2)",
+                    "field": "aura"
+                },
+                {
+                    "type": "generate_ether",
+                    "target_kind": "self",
+                    "requires_previous": true
+                },
+                {
+                    "type": "trade",
+                    "target_kind": "ally",
+                    "range": "(0, 99)"
+                }
+            ]
+        },
+        {
+            "id": "S-016",
+            "name": "Deep Freeze",
+            "type": "rave",
+            "subtype": "Drop",
+            "is_upgrade": true,
+            "back": "Desert's Gift",
+            "ether_cost": 2,
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 4,
+                    "range": "(2, 4)",
+                    "field": "snapfrost",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "skill_ether_check",
+                                "ethers": [
+                                    "water"
+                                ]
+                            },
+                            "action": {
+                                "type": "place_field",
+                                "range_origin": "previous_target",
+                                "range": "(1, 1)",
+                                "field": "snapfrost"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "S-017",
+            "name": "Oasis Reprieve",
+            "type": "rally",
+            "subtype": "Drop",
+            "is_upgrade": true,
+            "back": "Sand Wedge",
+            "actions": [
+                {
+                    "type": "heal",
+                    "amount": 2,
+                    "target_kind": "self_or_ally",
+                    "range": "(0, 4)"
+                },
+                {
+                    "type": "generate_ether",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "id": "S-018",
+            "name": "Sand Wedge",
+            "type": "rave",
+            "subtype": "Drop",
+            "is_upgrade": true,
+            "back": "Oasis Reprieve",
+            "ether_cost": 3,
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 3,
+                    "target_count": 3,
+                    "range": "(1, 1)",
+                    "aoe": {
+                        "name": "x5Line"
+                    },
+                    "push": 1,
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "skill_ether_check",
+                                "ethers": [
+                                    "earth"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 1,
+                                "target_kind": "self",
+                                "buff_type": "push",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "S-019",
+            "name": "Flow of Foes",
+            "type": "rave",
+            "subtype": "Drop",
+            "is_upgrade": true,
+            "back": "Chill Touch",
+            "ether_cost": 3,
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 2,
+                    "target_count": 3,
+                    "range": "(2, 3)",
+                    "aoe": {
+                        "name": "x7Honeycomb"
+                    },
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "skill_ether_check",
+                                "ethers": [
+                                    "water"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 1,
+                                "target_kind": "self",
+                                "buff_type": "amount",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "flip_card",
+                    "object": "Drop",
+                    "amount": 1,
+                    "target_kind": "self"
+                }
+            ]
+        },
+        {
+            "id": "S-20",
+            "name": "Chill Touch",
+            "type": "rally",
+            "subtype": "Drop",
+            "is_upgrade": true,
+            "back": "Flow of Foes",
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 2,
+                    "range": "(1, 1)",
+                    "field": "miasma"
+                },
+                {
+                    "type": "generate_ether",
+                    "object": "water",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "id": "S-021",
+            "name": "War Beast",
+            "type": "rave",
+            "subtype": "Circle",
+            "is_upgrade": true,
+            "back": "Revitalizing Clay",
+            "ether_cost": 2,
+            "actions": [
+                {
+                    "type": "summon",
+                    "object": "Pouncing Borejaw",
+                    "range": "(1, 1)",
+                    "exclusive_group": 1
+                },
+                {
+                    "actor": "named",
+                    "type": "jump",
+                    "object": "Pouncing Borejaw",
+                    "amount": 3,
+                    "exclusive_group": 2
+                },
+                {
+                    "actor": "named",
+                    "type": "attack",
+                    "object": "Pouncing Borejaw",
+                    "amount": 3,
+                    "range": "(1, 1)",
+                    "field": "snapfrost",
+                    "exclusive_group": 2
+                },
+                {
+                    "type": "flip_card",
+                    "object": "circle",
+                    "amount": 1,
+                    "target_kind": "self"
+                }
+            ]
+        },
+        {
+            "id": "S-022",
+            "name": "Revitalizing Clay",
+            "type": "rally",
+            "subtype": "Circle",
+            "is_upgrade": true,
+            "back": "War Beast",
+            "actions": [
+                {
+                    "type": "place_field",
+                    "target_count": 2,
+                    "range": "(0, 2)",
+                    "field": "everbloom"
+                },
+                {
+                    "type": "trigger_fields",
+                    "range": "(0, 2)",
+                    "field": "everbloom",
+                    "requires_previous": true
+                },
+                {
+                    "type": "generate_ether",
+                    "object": "earth",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        }
+    ],
+    "reactions": [
+        {
+            "name": "Rallying Cry",
+            "subtype": "Circle",
+            "back": "Quickening Sand",
+            "trigger": {
+                "type": "after_attack",
+                "actor_kind": "ally",
+                "range": "(1, 2)"
+            },
+            "actions": [
+                {
+                    "type": "place_field",
+                    "target_mode": "event_actor",
+                    "target_kind": "self_or_ally",
+                    "field": "aura"
+                },
+                {
+                    "type": "generate_ether",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Quickening Sand",
+            "subtype": "Drop",
+            "back": "Rallying Cry",
+            "trigger": {
+                "type": "after_attack",
+                "actor_kind": "ally",
+                "range": "(1, 2)"
+            },
+            "actions": [
+                {
+                    "actor": "event_actor",
+                    "type": "move",
+                    "amount": 2,
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "personal_pool_ether",
+                                "ethers": [
+                                    "earth"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 2,
+                                "target_kind": "self",
+                                "buff_type": "amount",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Earthen Shield",
+            "subtype": "Circle",
+            "back": "Healing Surge",
+            "trigger": {
+                "type": "before_attack",
+                "target_kind": "self_or_ally",
+                "range": "(0, 2)"
+            },
+            "actions": [
+                {
+                    "type": "buff",
+                    "amount": 1,
+                    "target_mode": "event_target",
+                    "target_kind": "self_or_ally",
+                    "buff_type": "defense"
+                },
+                {
+                    "type": "generate_ether",
+                    "object": "earth",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Healing Surge",
+            "subtype": "Drop",
+            "back": "Earthen Shield",
+            "trigger": {
+                "type": "before_attack",
+                "target_kind": "self_or_ally",
+                "range": "(0, 2)"
+            },
+            "actions": [
+                {
+                    "type": "heal",
+                    "amount": 1,
+                    "target_mode": "event_target",
+                    "target_kind": "self_or_ally",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "personal_pool_ether",
+                                "ethers": [
+                                    "water"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 2,
+                                "target_kind": "self",
+                                "buff_type": "amount",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "S-023",
+            "name": "Camaraderie",
+            "subtype": "Circle",
+            "is_upgrade": true,
+            "back": "Enchant Body",
+            "trigger": {
+                "type": "start_turn",
+                "actor_kind": "ally",
+                "range": "(1, 1)"
+            },
+            "actions": [
+                {
+                    "type": "buff",
+                    "amount": 1,
+                    "target_kind": "self_or_event_actor",
+                    "range": "(0, 99)",
+                    "buff_type": "defense",
+                    "buff_scope": "until_start_of_turn",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "personal_pool_ether",
+                                "ethers": [
+                                    "earth"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 1,
+                                "target_mode": "all",
+                                "target_kind": "self_or_event_actor",
+                                "buff_type": "defense",
+                                "buff_scope": "until_start_of_turn",
+                                "static_description": {
+                                    "body": "[target] self and that ally instead."
+                                }
+                            },
+                            "isReplacement": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "S-024",
+            "name": "Enchant Body",
+            "subtype": "Drop",
+            "is_upgrade": true,
+            "back": "Camaraderie",
+            "trigger": {
+                "type": "start_turn",
+                "actor_kind": "ally",
+                "range": "(1, 1)"
+            },
+            "actions": [
+                {
+                    "type": "heal",
+                    "amount": 1,
+                    "target_mode": "all",
+                    "target_kind": "self_or_event_actor"
+                }
+            ]
+        }
+    ]
+}

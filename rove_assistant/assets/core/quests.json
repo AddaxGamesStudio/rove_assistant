@@ -1,0 +1,432 @@
+{
+    "title": "Rove",
+    "quests": [
+        {
+            "id": "0",
+            "title": "Prologue",
+            "encounters": [
+                {
+                    "id": "0.1",
+                    "title": "Fling to the Hollow Gale",
+                    "relative_x": 0.310929648241206,
+                    "relative_y": 0.75177304964539
+                },
+                {
+                    "id": "0.2",
+                    "title": "When Each Thing Joy Supplied",
+                    "relative_x": 0.33479899497487436,
+                    "relative_y": 0.7327127659574468
+                },
+                {
+                    "id": "0.3",
+                    "title": "The Storms Hath Bound",
+                    "relative_x": 0.36180904522613067,
+                    "relative_y": 0.7269503546099291
+                }
+            ]
+        },
+        {
+            "id": "1",
+            "title": "Quest 1 • The Tihfur That Was Used Up",
+            "short_title": "Quest 1",
+            "requires": {
+                "quest_completed_any": [
+                    "0"
+                ],
+                "quest_started_none": [
+                    "2"
+                ]
+            },
+            "encounters": [
+                {
+                    "id": "1.1",
+                    "title": "In Search of the Yanshif",
+                    "relative_x": 0.6815326633165829,
+                    "relative_y": 0.8173758865248227
+                },
+                {
+                    "id": "1.2",
+                    "title": "Then Came too Late the Warning"
+                },
+                {
+                    "id": "1.3",
+                    "title": "Swallowed by the Night"
+                },
+                {
+                    "id": "1.4",
+                    "title": "The River of the Black Bile Flows"
+                },
+                {
+                    "id": "1.5",
+                    "title": "There is Always a Bigger Beast"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "title": "Quest 2 • A Message From the Empress",
+            "short_title": "Quest 2",
+            "requires": {
+                "quest_completed_any": [
+                    "0"
+                ],
+                "quest_started_none": [
+                    "1"
+                ]
+            },
+            "encounters": [
+                {
+                    "id": "2.1",
+                    "title": "Rolling to the Top",
+                    "relative_x": 0.8266331658291457,
+                    "relative_y": 0.4924645390070922
+                },
+                {
+                    "id": "2.2",
+                    "title": "A Visit to a Mine"
+                },
+                {
+                    "id": "2.3",
+                    "title": "Description of a Struggle"
+                },
+                {
+                    "id": "2.4",
+                    "title": "The Burrow"
+                },
+                {
+                    "id": "2.5",
+                    "title": "Kenyn and Keb"
+                }
+            ]
+        },
+        {
+            "id": "I",
+            "title": "Before Quest 3/4 • Intermission",
+            "requires": {
+                "quest_completed_any": [
+                    "1",
+                    "2"
+                ]
+            },
+            "encounters": [
+                {
+                    "id": "I.1",
+                    "title": "The Island of Doctor Mo"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "title": "Quest 3 • The Tomb",
+            "short_title": "Quest 3",
+            "requires": {
+                "quest_completed_any": [
+                    "1",
+                    "2"
+                ],
+                "quest_started_none": [
+                    "4"
+                ]
+            },
+            "encounters": [
+                {
+                    "id": "3.1",
+                    "title": "Peering Over the Rim"
+                },
+                {
+                    "id": "3.2",
+                    "title": "Midst of Black Seas"
+                },
+                {
+                    "id": "3.3",
+                    "title": "Paralyzed Memories"
+                },
+                {
+                    "id": "3.4",
+                    "title": "A Malign and Particular Suspension"
+                },
+                {
+                    "id": "3.5",
+                    "title": "Fathomless Chaos"
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "title": "Quest 4 • Burden of Uzem",
+            "short_title": "Quest 4",
+            "requires": {
+                "quest_completed_any": [
+                    "1",
+                    "2"
+                ],
+                "quest_started_none": [
+                    "3"
+                ]
+            },
+            "encounters": [
+                {
+                    "id": "4.1",
+                    "title": "The Clouds Roll On"
+                },
+                {
+                    "id": "4.2",
+                    "title": "Earth, Food, Raiment"
+                },
+                {
+                    "id": "4.3",
+                    "title": "Power of Disseminating"
+                },
+                {
+                    "id": "4.4",
+                    "title": "That Uneasy, Dissatisfied Feeling"
+                },
+                {
+                    "id": "4.5",
+                    "title": "Manifold is Their Kindred"
+                }
+            ]
+        },
+        {
+            "id": "I",
+            "title": "Before Quest 5/6 • Intermission",
+            "requires": {
+                "quest_completed_any": [
+                    "3",
+                    "4"
+                ]
+            },
+            "encounters": [
+                {
+                    "id": "I.2",
+                    "title": "Mind of My Mind"
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "title": "Quest 5 • Problem of Our Laws",
+            "short_title": "Quest 5",
+            "requires": {
+                "quest_completed_any": [
+                    "3",
+                    "4"
+                ],
+                "quest_started_none": [
+                    "2"
+                ]
+            },
+            "encounters": [
+                {
+                    "id": "5.1",
+                    "title": "A Poor Translation"
+                },
+                {
+                    "id": "5.2",
+                    "title": "A Cage in Search"
+                },
+                {
+                    "id": "5.3",
+                    "title": "Apathetic, Witless, Fearful"
+                },
+                {
+                    "id": "5.4",
+                    "title": "Fearless, Powerful, Surprising"
+                },
+                {
+                    "id": "5.5",
+                    "title": "More Worthless Than Freedom"
+                }
+            ]
+        },
+        {
+            "id": "6",
+            "title": "Quest 6 • The Tell-Tale Heart",
+            "short_title": "Quest 6",
+            "requires": {
+                "quest_completed_any": [
+                    "3",
+                    "4"
+                ],
+                "quest_started_none": [
+                    "1"
+                ]
+            },
+            "encounters": [
+                {
+                    "id": "6.1",
+                    "title": "Into that Darkness Peering"
+                },
+                {
+                    "id": "6.2",
+                    "title": "Atmosphere of Sorrow"
+                },
+                {
+                    "id": "6.3",
+                    "title": "Like a Shattered Mirror"
+                },
+                {
+                    "id": "6.4",
+                    "title": "The Pitiless Wave"
+                },
+                {
+                    "id": "6.5",
+                    "title": "Illimitable Dominion Over All"
+                }
+            ]
+        },
+        {
+            "id": "I",
+            "title": "Before Quest 7/8 • Intermission",
+            "requires": {
+                "quest_completed_any": [
+                    "5",
+                    "6"
+                ]
+            },
+            "encounters": [
+                {
+                    "id": "I.3",
+                    "title": "Hunting of the Kaleido"
+                }
+            ]
+        },
+        {
+            "id": "7",
+            "title": "Quest 7 • The Last Test",
+            "short_title": "Quest 7",
+            "requires": {
+                "quest_completed_any": [
+                    "5",
+                    "6"
+                ],
+                "quest_started_none": [
+                    "3"
+                ]
+            },
+            "encounters": [
+                {
+                    "id": "7.1",
+                    "title": "The Oldest and Strongest Emotion"
+                },
+                {
+                    "id": "7.2",
+                    "title": "Flee from the Light"
+                },
+                {
+                    "id": "7.3",
+                    "title": "Practical Consequences"
+                },
+                {
+                    "id": "7.4",
+                    "title": "Sleeping Abnormalities"
+                },
+                {
+                    "id": "7.5",
+                    "title": "Behind Every Masterpiece"
+                }
+            ]
+        },
+        {
+            "id": "8",
+            "title": "Quest 8 • House of Judgement",
+            "short_title": "Quest 8",
+            "requires": {
+                "quest_completed_any": [
+                    "5",
+                    "6"
+                ],
+                "quest_started_none": [
+                    "4"
+                ]
+            },
+            "encounters": [
+                {
+                    "id": "8.1",
+                    "title": "Wind-Bitten Ancient Elms"
+                },
+                {
+                    "id": "8.2",
+                    "title": "The Desolated Home"
+                },
+                {
+                    "id": "8.3",
+                    "title": "Excess of Their Thirst"
+                },
+                {
+                    "id": "8.4",
+                    "title": "The Ancient Glimmer Burn"
+                },
+                {
+                    "id": "8.5",
+                    "title": "Nurse in Wavering Memories"
+                }
+            ]
+        },
+        {
+            "id": "I",
+            "title": "Before Quest 9 • Intermission",
+            "requires": {
+                "quest_completed_any": [
+                    "7",
+                    "8"
+                ]
+            },
+            "encounters": [
+                {
+                    "id": "I.4",
+                    "title": "Wanderlust"
+                }
+            ]
+        },
+        {
+            "id": "9",
+            "title": "Quest 9 • While Mortals Sleep",
+            "short_title": "Quest 9",
+            "requires": {
+                "quest_completed_any": [
+                    "7",
+                    "8"
+                ]
+            },
+            "encounters": [
+                {
+                    "id": "9.1a",
+                    "title": "How Wide Was It",
+                    "requires_quest": "7",
+                    "encounter_completed_any": []
+                },
+                {
+                    "id": "9.1b",
+                    "title": "How Deep Was It",
+                    "requires_quest": "8",
+                    "encounter_completed_any": []
+                },
+                {
+                    "id": "9.2",
+                    "title": "The Amber of This Moment",
+                    "encounter_completed_any": [
+                        "9.1a",
+                        "9.1b"
+                    ]
+                },
+                {
+                    "id": "9.3",
+                    "title": "What do the Birds Say?"
+                },
+                {
+                    "id": "9.4",
+                    "title": "Feet of Lead, Wings of Tin"
+                },
+                {
+                    "id": "9.5",
+                    "title": "Requirements of Chaos"
+                },
+                {
+                    "id": "9.6",
+                    "title": "Something Worth Wishing For"
+                }
+            ]
+        }
+    ]
+}

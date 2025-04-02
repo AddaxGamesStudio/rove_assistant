@@ -1,0 +1,155 @@
+{
+    "items": [
+        {
+            "name": "Cartilage Reaver",
+            "card_id": "I-284",
+            "stash": "Xulc",
+            "slot_type": "hand",
+            "slots": 2,
+            "price": 80,
+            "ether_cost": [
+                "dim",
+                "dim",
+                "dim"
+            ]
+        },
+        {
+            "name": "Bone Spike",
+            "card_id": "I-285",
+            "stash": "Xulc",
+            "slot_type": "hand",
+            "price": 70,
+            "ether_cost": [
+                "dim"
+            ]
+        },
+        {
+            "name": "Expulsion Gland",
+            "card_id": "I-286",
+            "stash": "Xulc",
+            "slot_type": "hand",
+            "price": 60,
+            "ether_cost": [
+                "dim"
+            ]
+        },
+        {
+            "name": "Nervous Membrane",
+            "card_id": "I-287",
+            "stash": "Xulc",
+            "slot_type": "hand",
+            "slots": 2,
+            "price": 70,
+            "ether_cost": [
+                "dim",
+                "dim"
+            ]
+        },
+        {
+            "name": "Exoskeletal Sheath",
+            "card_id": "I-288",
+            "stash": "Xulc",
+            "slot_type": "hand",
+            "price": 40,
+            "ether_cost": [
+                "dim"
+            ]
+        },
+        {
+            "name": "Neural Mesh",
+            "card_id": "I-270",
+            "stash": "Xulc",
+            "slot_type": "head",
+            "price": 70,
+            "ether_cost": [
+                "dim"
+            ]
+        },
+        {
+            "name": "Flagellator Crest",
+            "card_id": "I-271",
+            "stash": "Xulc",
+            "slot_type": "head",
+            "price": 60,
+            "ether_cost": [
+                "dim"
+            ]
+        },
+        {
+            "name": "Gas Bladder",
+            "card_id": "I-272",
+            "stash": "Xulc",
+            "slot_type": "body",
+            "price": 80
+        },
+        {
+            "name": "Fortified Exoskeleton",
+            "card_id": "I-273",
+            "stash": "Xulc",
+            "slot_type": "body",
+            "price": 80,
+            "ether_cost": [
+                "dim",
+                "dim"
+            ]
+        },
+        {
+            "name": "Hydrofuge Tentacles",
+            "card_id": "I-274",
+            "stash": "Xulc",
+            "slot_type": "foot",
+            "price": 40
+        },
+        {
+            "name": "Corded Synapse",
+            "card_id": "I-275",
+            "stash": "Xulc",
+            "slot_type": "foot",
+            "price": 60,
+            "ether_cost": [
+                "dim",
+                "dim"
+            ]
+        },
+        {
+            "name": "Parasitic Strand",
+            "card_id": "I-276",
+            "stash": "Xulc",
+            "slot_type": "pocket",
+            "price": 20,
+            "stock": 2
+        },
+        {
+            "name": "Dimming Stone",
+            "card_id": "I-278",
+            "stash": "Xulc",
+            "slot_type": "pocket",
+            "price": 12,
+            "stock": 2
+        },
+        {
+            "name": "Stifling Serum",
+            "card_id": "I-280",
+            "stash": "Xulc",
+            "slot_type": "pocket",
+            "price": 20,
+            "stock": 2
+        },
+        {
+            "name": "Larva Cultivar",
+            "card_id": "I-282",
+            "stash": "Xulc",
+            "slot_type": "pocket",
+            "price": 10,
+            "stock": 2
+        },
+        {
+            "name": "Gestalt Snare",
+            "card_id": "I-289",
+            "slot_type": "hand",
+            "price": 60,
+            "stock": 2,
+            "reward": true
+        }
+    ]
+}

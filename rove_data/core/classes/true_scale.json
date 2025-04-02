@@ -1,0 +1,514 @@
+{
+    "name": "True Scale",
+    "evolution": "base",
+    "health": 10,
+    "color_rgb": "aecd7d",
+    "color_dark_rgb": "56822a",
+    "ether_limit": 3,
+    "starting_equipment": [
+        "Stripped Blade",
+        "Powdered Drakaen"
+    ],
+    "affinities": {
+        "wind": 0,
+        "crux": -1,
+        "earth": 0,
+        "fire": 1,
+        "morph": 1,
+        "water": -1,
+        "dim": 0
+    },
+    "miasma_effect": {
+        "buff": {
+            "type": "attack",
+            "scope": "action",
+            "amount": -1
+        },
+        "action": {
+            "type": "suffer",
+            "amount": 1,
+            "target_kind": "self"
+        }
+    },
+    "abilities": [
+        {
+            "name": "Skitter",
+            "actions": [
+                {
+                    "type": "move",
+                    "amount": 4,
+                    "target_kind": "self"
+                }
+            ]
+        },
+        {
+            "name": "Take Stock",
+            "actions": [
+                {
+                    "type": "heal",
+                    "amount": 1,
+                    "target_kind": "self",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "personal_pool_ether",
+                                "ethers": [
+                                    "morph"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 1,
+                                "target_kind": "self",
+                                "buff_type": "amount",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Strike",
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 2,
+                    "range": "(1, 1)"
+                }
+            ]
+        },
+        {
+            "name": "Seize",
+            "actions": [
+                {
+                    "type": "force_move",
+                    "amount": 1,
+                    "range": "(1, 3)"
+                }
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "name": "Blast Step",
+            "type": "rally",
+            "subtype": "Rasska",
+            "back": "Traitorous Thoughts",
+            "actions": [
+                {
+                    "type": "jump",
+                    "amount": 3,
+                    "target_kind": "self",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "personal_pool_ether",
+                                "ethers": [
+                                    "fire"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 2,
+                                "target_kind": "self",
+                                "buff_type": "amount",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "generate_ether",
+                    "object": "fire",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Traitorous Thoughts",
+            "type": "rave",
+            "subtype": "Keb",
+            "back": "Blast Step",
+            "ether_cost": 3,
+            "actions": [
+                {
+                    "type": "force_attack",
+                    "amount": 5,
+                    "range": "(1, 3)",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "skill_ether_check",
+                                "ethers": [
+                                    "morph"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "target_kind": "self",
+                                "field": "miasma",
+                                "buff_type": "field",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "generate_ether",
+                    "object": "fire",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Intrusive Thoughts",
+            "type": "rally",
+            "subtype": "Keb",
+            "back": "Ruthless Assault",
+            "actions": [
+                {
+                    "type": "force_move",
+                    "amount": 2,
+                    "range": "(1, 3)"
+                },
+                {
+                    "type": "generate_ether",
+                    "object": "morph",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Ruthless Assault",
+            "type": "rave",
+            "subtype": "Rasska",
+            "back": "Intrusive Thoughts",
+            "ether_cost": 2,
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 2,
+                    "range": "(1, 1)",
+                    "field": "wildfire",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "skill_ether_check",
+                                "ethers": [
+                                    "fire"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 1,
+                                "target_kind": "self",
+                                "buff_type": "amount",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "attack",
+                    "amount": 2,
+                    "range": "(1, 1)",
+                    "field": "wildfire"
+                }
+            ]
+        },
+        {
+            "name": "Settling Groundwork",
+            "type": "rally",
+            "subtype": "Keb/Rasska",
+            "back": "Coordinated Assault",
+            "actions": [
+                {
+                    "type": "heal",
+                    "amount": 2,
+                    "target_kind": "self"
+                },
+                {
+                    "type": "generate_ether",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Coordinated Assault",
+            "type": "rave",
+            "subtype": "Keb/Rasska",
+            "back": "Settling Groundwork",
+            "ether_cost": 3,
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 2,
+                    "target_count": 0,
+                    "range": "(1, 1)",
+                    "aoe": {
+                        "name": "x2Front"
+                    },
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "skill_ether_check",
+                                "ethers": [
+                                    "fire"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 1,
+                                "target_kind": "self",
+                                "buff_type": "push",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "attack",
+                    "amount": 2,
+                    "range": "(2, 3)",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "skill_ether_check",
+                                "ethers": [
+                                    "morph"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "target_kind": "self",
+                                "buff_type": "pierce",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Strange Chatter",
+            "type": "rally",
+            "subtype": "Keb",
+            "back": "Sweeping Cleave",
+            "ether_cost": 2,
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 3,
+                    "range": "(2, 3)",
+                    "field": "miasma",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "skill_ether_check",
+                                "ethers": [
+                                    "morph"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 1,
+                                "target_kind": "self",
+                                "buff_type": "amount",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "flip_card",
+                    "object": "keb",
+                    "amount": 1,
+                    "target_kind": "self"
+                }
+            ]
+        },
+        {
+            "name": "Sweeping Cleave",
+            "type": "rally",
+            "subtype": "Keb",
+            "back": "Strange Chatter",
+            "ether_cost": 1,
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 2,
+                    "target_count": 0,
+                    "range": "(1, 1)",
+                    "aoe": {
+                        "name": "x3Front"
+                    }
+                },
+                {
+                    "type": "flip_card",
+                    "object": "rasska",
+                    "amount": 1,
+                    "target_kind": "self"
+                }
+            ]
+        },
+        {
+            "name": "Shell Games",
+            "type": "rally",
+            "subtype": "Keb",
+            "back": "Knock Senseless",
+            "actions": [
+                {
+                    "type": "buff",
+                    "amount": 1,
+                    "target_kind": "self_or_ally",
+                    "range": "(0, 2)",
+                    "buff_type": "defense",
+                    "buff_scope": "until_start_of_turn"
+                },
+                {
+                    "type": "generate_ether",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Knock Senseless",
+            "type": "rally",
+            "subtype": "Rasska",
+            "back": "Shell Games",
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 1,
+                    "range": "(1, 1)",
+                    "field": "wildfire"
+                },
+                {
+                    "type": "generate_ether",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        }
+    ],
+    "reactions": [
+        {
+            "name": "Amidst the Fray",
+            "subtype": "Rasska",
+            "back": "Watch the Back",
+            "trigger": {
+                "type": "after_attack",
+                "actor_kind": "self",
+                "static_description": "After you attack:"
+            },
+            "actions": [
+                {
+                    "type": "heal",
+                    "amount": 1,
+                    "target_kind": "self",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "personal_pool_ether",
+                                "ethers": [
+                                    "morph"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 1,
+                                "target_kind": "self",
+                                "buff_type": "amount",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Watch the Back",
+            "subtype": "Keb",
+            "back": "Amidst the Fray",
+            "trigger": {
+                "type": "after_attack",
+                "actor_kind": "self",
+                "static_description": "After you attack:"
+            },
+            "actions": [
+                {
+                    "type": "push",
+                    "amount": 1,
+                    "range": "(1, 2)"
+                },
+                {
+                    "type": "generate_ether",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Press the Advantage",
+            "subtype": "Rasska",
+            "back": "Against the Odds",
+            "trigger": {
+                "type": "before_attack",
+                "target_kind": "self",
+                "static_description": "Before you are attacked:"
+            },
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 1,
+                    "range": "(1, 1)",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "personal_pool_ether",
+                                "ethers": [
+                                    "fire"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 1,
+                                "target_kind": "self",
+                                "buff_type": "amount",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Against the Odds",
+            "subtype": "Keb",
+            "back": "Press the Advantage",
+            "trigger": {
+                "type": "before_attack",
+                "target_kind": "self",
+                "static_description": "Before you are attacked:"
+            },
+            "actions": [
+                {
+                    "type": "buff",
+                    "amount": 1,
+                    "target_kind": "self",
+                    "buff_type": "defense",
+                    "buff_scope": "action"
+                },
+                {
+                    "type": "generate_ether",
+                    "requires_previous": true
+                }
+            ]
+        }
+    ]
+}

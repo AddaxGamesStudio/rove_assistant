@@ -1,0 +1,535 @@
+{
+    "quest_id": "1",
+    "number": "2",
+    "title": "Then Came too Late the Warning",
+    "victory": "Survive for 7 rounds.",
+    "loss": "Lose if Zeepurah is slain.",
+    "starting_map": {
+        "id": "1.2",
+        "row_count": 11,
+        "column_count": 13,
+        "background_rect": "(110, 44, 1481, 1411)",
+        "terrain": {
+            "(0, 6)": "barrier",
+            "(0, 7)": "barrier",
+            "(1, 6)": "object",
+            "(1, 7)": "barrier",
+            "(2, 1)": "barrier",
+            "(2, 2)": "barrier",
+            "(3, 2)": "barrier",
+            "(3, 3)": "dangerous",
+            "(3, 9)": "barrier",
+            "(3, 10)": "barrier",
+            "(4, 8)": "dangerous",
+            "(4, 9)": "barrier",
+            "(5, 9)": "start",
+            "(5, 10)": "start",
+            "(6, 8)": "start",
+            "(6, 9)": "start",
+            "(7, 0)": "barrier",
+            "(7, 1)": "barrier",
+            "(7, 9)": "start",
+            "(7, 10)": "start",
+            "(8, 0)": "barrier",
+            "(8, 1)": "dangerous",
+            "(8, 7)": "dangerous",
+            "(9, 7)": "barrier",
+            "(9, 8)": "barrier",
+            "(10, 7)": "barrier",
+            "(11, 3)": "barrier",
+            "(11, 4)": "object",
+            "(11, 9)": "barrier",
+            "(11, 10)": "barrier",
+            "(12, 2)": "barrier",
+            "(12, 3)": "barrier",
+            "(12, 9)": "barrier"
+        },
+        "spawn_points": {
+            "(0, 5)": "crux",
+            "(0, 9)": "earth",
+            "(5, 0)": "fire",
+            "(9, 0)": "water",
+            "(12, 5)": "morph",
+            "(12, 8)": "wind"
+        }
+    },
+    "round_limit": 7,
+    "challenges": [
+        "Zeepurah is injured and can not move during this encounter.",
+        "Nahoots will always attack Zeepurah if she is within range of their attacks.",
+        "Terranapes always gain the benefit of their [HP] threshold augments."
+    ],
+    "rewards": {
+        "lyst": 25
+    },
+    "allies": [
+        {
+            "name": "Zeepurah",
+            "health": 8,
+            "on_slayed": [
+                {
+                    "type": "loss"
+                }
+            ]
+        }
+    ],
+    "adversaries": [
+        {
+            "name": "Briarwog",
+            "health": 6,
+            "respawns": true,
+            "affinities": {
+                "earth": -1,
+                "fire": -1,
+                "morph": 1,
+                "water": 1
+            },
+            "abilities": [
+                {
+                    "name": "Tongue Pluck",
+                    "actions": [
+                        {
+                            "type": "jump",
+                            "amount": 2,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "range": "(1, 2)",
+                            "pull": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "Leaping Tackle",
+                    "actions": [
+                        {
+                            "type": "jump",
+                            "amount": 3,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "range": "(1, 1)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Water Baloon",
+                    "actions": [
+                        {
+                            "type": "move",
+                            "amount": 2,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 1,
+                            "target_count": 99,
+                            "range": "(1, 2)",
+                            "push": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "Venomous Splatter",
+                    "actions": [
+                        {
+                            "type": "jump",
+                            "amount": 2,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "range": "(2, 3)"
+                        },
+                        {
+                            "type": "suffer",
+                            "amount": 1,
+                            "range_origin": "previous_target",
+                            "range": "(1, 1)",
+                            "requires_previous": true,
+                            "static_description": {
+                                "body": "One enemy adjacent to the attacked target suffers [DMG]1."
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Nahoot",
+            "health": 12,
+            "traits": [
+                "If a Rover slays this unit, that Rover [plus_wind_morph]."
+            ],
+            "respawns": true,
+            "affinities": {
+                "wind": 1,
+                "crux": -1,
+                "fire": -1,
+                "morph": 2
+            },
+            "abilities": [
+                {
+                    "name": "Miasmic Arrow",
+                    "actions": [
+                        {
+                            "type": "move",
+                            "amount": 2,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "range": "(2, 3)",
+                            "field": "miasma"
+                        }
+                    ]
+                },
+                {
+                    "name": "Morphic Agitation",
+                    "actions": [
+                        {
+                            "type": "jump",
+                            "amount": 4,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 3,
+                            "range": "(1, 1)",
+                            "augments": [
+                                {
+                                    "condition": {
+                                        "type": "target_has_ether",
+                                        "ethers": [
+                                            "morph"
+                                        ],
+                                        "ether": "morph"
+                                    },
+                                    "action": {
+                                        "type": "heal",
+                                        "amount": 2,
+                                        "target_kind": "self",
+                                        "static_description": {
+                                            "body": "If the target has a [Morph] dice in their personal or infusion pools, recover [RCV] 2."
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Split Strike",
+                    "actions": [
+                        {
+                            "type": "move",
+                            "amount": 3,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "target_count": 2,
+                            "range": "(2, 2)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Visceral Frenzy",
+                    "actions": [
+                        {
+                            "type": "attack",
+                            "amount": 3,
+                            "range": "(1, 1)"
+                        },
+                        {
+                            "type": "jump",
+                            "amount": 4,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "range": "(1, 1)"
+                        }
+                    ]
+                }
+            ],
+            "on_slayed": [
+                {
+                    "type": "reward_ether",
+                    "value": "air;morph"
+                },
+                {
+                    "type": "codex",
+                    "name": "Creeping Darkness"
+                },
+                {
+                    "type": "reward_lyst",
+                    "name": "Thinning the Ranks",
+                    "value": "10"
+                }
+            ]
+        },
+        {
+            "name": "Terranape",
+            "health": 15,
+            "traits": [
+                "At the start of this unit's turn, it recovers [RCV] R-1."
+            ],
+            "respawns": true,
+            "affinities": {
+                "wind": -1,
+                "earth": 2,
+                "fire": -2,
+                "morph": 1,
+                "water": 1
+            },
+            "abilities": [
+                {
+                    "name": "Hammer Slam",
+                    "actions": [
+                        {
+                            "type": "move",
+                            "amount": 3,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 3,
+                            "range": "(1, 1)",
+                            "augments": [
+                                {
+                                    "condition": {
+                                        "type": "actor_has_health",
+                                        "formula": "9-H"
+                                    },
+                                    "action": {
+                                        "type": "buff",
+                                        "amount": 1,
+                                        "target_kind": "self",
+                                        "buff_type": "amount",
+                                        "buff_scope": "action",
+                                        "static_description": {
+                                            "body": "If this unit has 9 or fewer [HP], gain +1 [DMG]."
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Seismic Leap",
+                    "actions": [
+                        {
+                            "type": "jump",
+                            "amount": 4,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "target_count": 99,
+                            "range": "(1, 1)",
+                            "augments": [
+                                {
+                                    "condition": {
+                                        "type": "actor_has_health",
+                                        "formula": "9-H"
+                                    },
+                                    "action": {
+                                        "type": "buff",
+                                        "amount": 1,
+                                        "target_kind": "self",
+                                        "buff_type": "end_range",
+                                        "buff_scope": "action",
+                                        "static_description": {
+                                            "body": "If this unit has 9 or fewer [HP], +1 [Range]."
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Boulder Fling",
+                    "actions": [
+                        {
+                            "type": "attack",
+                            "amount": 4,
+                            "range": "(2, 4)",
+                            "augments": [
+                                {
+                                    "condition": {
+                                        "type": "actor_has_health",
+                                        "formula": "9-H"
+                                    },
+                                    "action": {
+                                        "type": "buff",
+                                        "target_kind": "self",
+                                        "buff_type": "pierce",
+                                        "buff_scope": "action",
+                                        "static_description": {
+                                            "body": "If this unit has 9 or fewer [HP], gain [pierce]."
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Quake Stomp",
+                    "actions": [
+                        {
+                            "type": "move",
+                            "amount": 2,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 3,
+                            "target_count": 99,
+                            "range": "(1, 1)",
+                            "aoe": {
+                                "name": "x9Cone"
+                            },
+                            "augments": [
+                                {
+                                    "condition": {
+                                        "type": "actor_has_health",
+                                        "formula": "9-H"
+                                    },
+                                    "action": {
+                                        "type": "buff",
+                                        "amount": 2,
+                                        "target_kind": "self",
+                                        "buff_type": "push",
+                                        "buff_scope": "action",
+                                        "static_description": {
+                                            "body": "If this unit has 9 or fewer [HP], gain [Push] 2."
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "trigger": {
+                        "type": "start_turn",
+                        "target_kind": "self"
+                    },
+                    "actions": [
+                        {
+                            "type": "heal",
+                            "amount": 2,
+                            "target_kind": "self"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "placements": {
+        "(1, 8)": {
+            "name": "Briarwog",
+            "min_players": 4
+        },
+        "(2, 3)": {
+            "name": "Briarwog",
+            "min_players": 3
+        },
+        "(6, 1)": {
+            "name": "Briarwog",
+            "min_players": 3
+        },
+        "(9, 3)": {
+            "name": "Briarwog"
+        },
+        "(12, 6)": {
+            "name": "Briarwog",
+            "min_players": 4
+        },
+        "(1, 5)": {
+            "name": "Nahoot"
+        },
+        "(8, 2)": {
+            "name": "Nahoot",
+            "min_players": 3
+        },
+        "(10, 2)": {
+            "name": "Nahoot",
+            "min_players": 4
+        },
+        "(12, 4)": {
+            "name": "Nahoot"
+        },
+        "(4, 2)": {
+            "name": "Terranape"
+        },
+        "(1, 4)": {
+            "name": "Bursting Bell",
+            "type": "trap",
+            "trap_damage": 2
+        },
+        "(2, 6)": {
+            "name": "Bursting Bell",
+            "type": "trap",
+            "trap_damage": 2
+        },
+        "(6, 5)": {
+            "name": "Bursting Bell",
+            "type": "trap",
+            "trap_damage": 2
+        },
+        "(10, 6)": {
+            "name": "Bursting Bell",
+            "type": "trap",
+            "trap_damage": 2
+        },
+        "(10, 3)": {
+            "name": "Bursting Bell",
+            "type": "trap",
+            "trap_damage": 2
+        },
+        "(5, 2)": {
+            "name": "Bursting Bell",
+            "type": "trap",
+            "trap_damage": 2
+        },
+        "(1, 6)": {
+            "name": "wind",
+            "type": "ether"
+        },
+        "(11, 4)": {
+            "name": "wind",
+            "type": "ether"
+        }
+    },
+    "on_will_end_round": [
+        {
+            "type": "codex",
+            "name": "Unnatural Stillness",
+            "conditions": [
+                "round=7"
+            ]
+        },
+        {
+            "type": "victory",
+            "conditions": [
+                "round=7"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,513 @@
+{
+    "classes": [
+        {
+            "name": "Dune Dancer",
+            "evolution": "base",
+            "health": 9,
+            "color_rgb": "D5714D",
+            "color_dark_rgb": "933f20",
+            "ether_limit": 3,
+            "affinities": {
+                "fire": -1,
+                "water": 1,
+                "earth": 1,
+                "wind": -1,
+                "crux": 0,
+                "morph": 0
+            },
+            "starting_equipment": [
+                "Stripped Axe",
+                "Powdered Drakaen"
+            ],
+            "summons": [
+                {
+                    "name": "Pouncing Borejaw",
+                    "health": 3
+                },
+                {
+                    "name": "Curious Ardorok",
+                    "ignores_difficult_terrain": true,
+                    "health": 4
+                }
+            ]
+        },
+        {
+            "name": "Flash",
+            "evolution": "base",
+            "health": 8,
+            "color_rgb": "9ABCD4",
+            "color_dark_rgb": "2065a2",
+            "ether_limit": 4,
+            "trap_image": "trap_flash.png",
+            "affinities": {
+                "fire": 1,
+                "water": -1,
+                "earth": -1,
+                "wind": 1,
+                "crux": 1,
+                "morph": -1
+            },
+            "starting_equipment": [
+                "Stripped Staff",
+                "Powdered Drakaen"
+            ]
+        },
+        {
+            "name": "Shadow Piercer",
+            "evolution": "base",
+            "health": 9,
+            "color_rgb": "B4A9C4",
+            "color_dark_rgb": "020055",
+            "ether_limit": 3,
+            "affinities": {
+                "fire": -1,
+                "water": 1,
+                "earth": 0,
+                "wind": 0,
+                "crux": -1,
+                "morph": 1
+            },
+            "starting_equipment": [
+                "Stripped Bow",
+                "Powdered Drakaen"
+            ]
+        },
+        {
+            "name": "Sophist",
+            "evolution": "base",
+            "health": 8,
+            "color_rgb": "CAB35E",
+            "color_dark_rgb": "8e7950",
+            "uses_glyphs": true,
+            "ether_limit": 3,
+            "affinities": {
+                "fire": 0,
+                "water": 0,
+                "earth": -1,
+                "wind": 1,
+                "crux": 1,
+                "morph": -1
+            },
+            "starting_equipment": [
+                "Stripped Spear",
+                "Powdered Drakaen"
+            ]
+        },
+        {
+            "name": "True Scale",
+            "evolution": "base",
+            "health": 10,
+            "color_rgb": "AECD7D",
+            "color_dark_rgb": "56822a",
+            "ether_limit": 3,
+            "affinities": {
+                "fire": 1,
+                "water": -1,
+                "earth": 0,
+                "wind": 0,
+                "crux": -1,
+                "morph": 1
+            },
+            "starting_equipment": [
+                "Stripped Blade",
+                "Powdered Drakaen"
+            ]
+        },
+        {
+            "name": "Ridge Striker",
+            "evolution": "prime",
+            "base": "Dune Dancer",
+            "health": 11,
+            "color_rgb": "D5714D",
+            "color_dark_rgb": "933f20",
+            "ether_limit": 3,
+            "affinities": {
+                "fire": -2,
+                "water": 1,
+                "earth": 2,
+                "wind": -1,
+                "crux": 1,
+                "morph": 0
+            },
+            "summons": [
+                {
+                    "name": "Adamant Ardorok",
+                    "health": 5,
+                    "auto_summoned": true
+                },
+                {
+                    "name": "Pouncing Borejaw",
+                    "health": 3
+                }
+            ],
+            "traits": [
+                {
+                    "name": "Sum of Our Parts",
+                    "description": "You gain +1 [Bag] item slot. Once each encounter, when you use a [Bag] item, you may use that item again immediately.",
+                    "additional_slots": [
+                        "pocket"
+                    ]
+                },
+                {
+                    "name": "Ridge Barding",
+                    "description": "Once each encounter, when your ardorok would suffer [DMG] from any source, they suffer 0 [DMG] instead.",
+                    "single_use": true
+                },
+                {
+                    "name": "Act of Solidarity",
+                    "description": "Once each encounter, during your turn, you may have your ardorok perform: [m_attack] | [Range] 1 [DMG]3|[pierce]",
+                    "single_use": true
+                }
+            ]
+        },
+        {
+            "name": "Helion",
+            "evolution": "prime",
+            "base": "Flash",
+            "health": 10,
+            "color_rgb": "9ABCD4",
+            "color_dark_rgb": "2065a2",
+            "ether_limit": 4,
+            "affinities": {
+                "fire": 2,
+                "water": -2,
+                "earth": -1,
+                "wind": 2,
+                "crux": 1,
+                "morph": -1
+            },
+            "traits": [
+                {
+                    "name": "Pyretic",
+                    "description": "Once per encounter, during your turn, you may have all units within [Range] 1 of a [Raging Inferno] suffer [DMG]1.",
+                    "single_use": true
+                },
+                {
+                    "name": "Thermostatic",
+                    "description": "When you end your turn occupying a space with a [Raging Inferno], you may flip any one of your ether dice in your personal pool to its [Fire] side."
+                },
+                {
+                    "name": "Tropistic",
+                    "description": "You gain +1 [Head] item slot.  Each time you spend one or more infused ether to use the effect on a [Head] item, recover [RCV] 1.",
+                    "additional_slots": [
+                        "head"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Umbral Howl",
+            "evolution": "prime",
+            "base": "Shadow Piercer",
+            "health": 11,
+            "color_rgb": "B4A9C4",
+            "color_dark_rgb": "020055",
+            "board_tokens": [
+                "Blood Lust"
+            ],
+            "ether_limit": 3,
+            "affinities": {
+                "fire": -1,
+                "water": 1,
+                "earth": 0,
+                "wind": 1,
+                "crux": -2,
+                "morph": 2
+            },
+            "traits": [
+                {
+                    "name": "Scent of Blood",
+                    "description": "Once per encounter, when you would flip your Blood Lust token to its [Subdued] side, keep the token on its [Feral] side instead.",
+                    "single_use": true
+                },
+                {
+                    "name": "Frenzied Feeding",
+                    "description": "Once per encounter, during your turn, if you slay an enemy, recover one ability activation.",
+                    "single_use": true
+                },
+                {
+                    "name": "Draw from Death",
+                    "description": "Once per encounter, when you slay an enemy with a [m_attack], recover [RCV] 4.",
+                    "single_use": true
+                }
+            ]
+        },
+        {
+            "name": "Conceptualist",
+            "evolution": "prime",
+            "base": "Sophist",
+            "health": 10,
+            "color_rgb": "CAB35E",
+            "color_dark_rgb": "8e7950",
+            "uses_glyphs": true,
+            "board_tokens": [
+                "Quartic",
+                "Spinaerios"
+            ],
+            "ether_limit": 3,
+            "affinities": {
+                "fire": 0,
+                "water": 1,
+                "earth": -1,
+                "wind": 1,
+                "crux": 2,
+                "morph": -2
+            },
+            "traits": [
+                {
+                    "name": "Pathos Rhetoric",
+                    "description": "When you suffer [DMG] from any source, you may remove one of your glyphs from the map or your personal supply to reduce that [DMG] by 2."
+                },
+                {
+                    "name": "Kanon Inventio",
+                    "description": "After you or one of your glyphs benefit from the effects of [aura], you may recover [RCV] 1."
+                },
+                {
+                    "name": "Ethos Rhetoric",
+                    "description": "Each time you enter a space with a [miasma] or a [miasma] is placed into the space you occupy, you may [D|Wild] to turn that [Miasma] into one of your [aura]."
+                }
+            ]
+        },
+        {
+            "name": "Toll Bearer",
+            "evolution": "prime",
+            "base": "True Scale",
+            "health": 13,
+            "color_rgb": "AECD7D",
+            "color_dark_rgb": "56822a",
+            "board_tokens": [
+                "Fortify",
+                "Fortify",
+                "Fortify",
+                "Fortify",
+                "Fortify"
+            ],
+            "ether_limit": 3,
+            "affinities": {
+                "fire": 1,
+                "water": -1,
+                "earth": 1,
+                "wind": 0,
+                "crux": -2,
+                "morph": 2
+            },
+            "traits": [
+                {
+                    "name": "Strategic Resources",
+                    "description": "You gain +1 [Hand] item slot.  Each time you spend infused ether to use the effect of a [Hand] item that grants [DEF], gain one [Fortify] token.",
+                    "additional_slots": [
+                        "hand"
+                    ]
+                },
+                {
+                    "name": "Nest Egg",
+                    "description": "You start each encounter with three [Fortify] tokens.",
+                    "starting_tokens": [
+                        "Fortify",
+                        "Fortify",
+                        "Fortify"
+                    ]
+                },
+                {
+                    "name": "Seize the Means",
+                    "description": "After an enemy suffers the effects of a [Lingering Miasma], you may spend one [Fortify] token to prevent that tile from being removed."
+                }
+            ]
+        },
+        {
+            "name": "Canyon Temper",
+            "evolution": "apex",
+            "base": "Dune Dancer",
+            "prime": "Ridge Striker",
+            "health": 15,
+            "defense": 1,
+            "color_rgb": "D5714D",
+            "color_dark_rgb": "933f20",
+            "ether_limit": 3,
+            "affinities": {
+                "fire": -2,
+                "water": 1,
+                "earth": 2,
+                "wind": 0,
+                "crux": 1,
+                "morph": -1
+            },
+            "summons": [
+                {
+                    "name": "Pouncing Borejaw",
+                    "health": 3
+                },
+                {
+                    "name": "Wyrmling",
+                    "health": 3
+                }
+            ],
+            "traits": [
+                {
+                    "name": "Earthen Whisper",
+                    "description": "You and your allies trigger the effects of [everbloom] when within [Range] 0-1 of the ether field.  A unit can only benefit from one [everbloom] when it triggers."
+                },
+                {
+                    "name": "Blazing Charge",
+                    "description": "You may start an encounter in any space within [Range] 1-4 of a starting location."
+                },
+                {
+                    "name": "Streak Barding",
+                    "description": "Gain the [Flying] trait."
+                }
+            ]
+        },
+        {
+            "name": "Aster",
+            "evolution": "apex",
+            "base": "Flash",
+            "prime": "Helion",
+            "health": 12,
+            "color_rgb": "9ABCD4",
+            "color_dark_rgb": "2065a2",
+            "ether_limit": 4,
+            "affinities": {
+                "fire": 3,
+                "water": -3,
+                "earth": -2,
+                "wind": 2,
+                "crux": 1,
+                "morph": -1
+            },
+            "traits": [
+                {
+                    "name": "Stellar Forging",
+                    "description": "Once during each of your turns, infuse one non-[Dim] dice from your personal pool to recover [RCV] 2."
+                },
+                {
+                    "name": "Plasma Approximation",
+                    "description": "Once during each of your turns, suffer [DMG]3 to gain one [Fire] dice from the general pool."
+                },
+                {
+                    "name": "Particle Beam",
+                    "description": "Once during each encounter, [Teleport] to any unoccupied space with a [wildfire] or [Raging Inferno].",
+                    "single_use": true
+                }
+            ]
+        },
+        {
+            "name": "Nocturne Hoarfrost",
+            "evolution": "apex",
+            "base": "Shadow Piercer",
+            "prime": "Umbral Howl",
+            "health": 13,
+            "color_rgb": "B4A9C4",
+            "color_dark_rgb": "020055",
+            "board_tokens": [
+                "Blood Lust",
+                "Blood",
+                "Blood",
+                "Blood"
+            ],
+            "ether_limit": 3,
+            "affinities": {
+                "fire": -2,
+                "water": 1,
+                "earth": 0,
+                "wind": 1,
+                "crux": -2,
+                "morph": 3
+            },
+            "traits": [
+                {
+                    "name": "Blood Vial",
+                    "description": "You carry any unspent [Blood] tokens from one encounter to the next."
+                },
+                {
+                    "name": "Threat Response",
+                    "description": "Whenever you suffer 3 or more damage from any one source, gain one [Blood] token."
+                },
+                {
+                    "name": "Rime Cauterization",
+                    "description": "Whenever you spend a [Blood] token, you recover [RCV] 1."
+                }
+            ]
+        },
+        {
+            "name": "Maximist",
+            "evolution": "apex",
+            "base": "Sophist",
+            "prime": "Conceptualist",
+            "health": 12,
+            "color_rgb": "CAB35E",
+            "color_dark_rgb": "8e7950",
+            "uses_glyphs": true,
+            "board_tokens": [
+                "Quartic",
+                "Thureoll",
+                "Spinaerios"
+            ],
+            "ether_limit": 3,
+            "affinities": {
+                "fire": 1,
+                "water": 1,
+                "earth": 0,
+                "wind": 1,
+                "crux": 2,
+                "morph": -2
+            },
+            "traits": [
+                {
+                    "name": "Chronos Rhetoric",
+                    "description": "When you or an ally trigger [windscreen], increase the amount of damage that is reduced by +1."
+                },
+                {
+                    "name": "Kanon Dispositio",
+                    "description": "When you remove one of your glyphs from the map you may perform: ||| [POS] | [Range] 0-3 [Aura] |"
+                },
+                {
+                    "name": "Kanon Memoria",
+                    "description": "You may start each encounter with one Luminescent Quartic in the personal supply of any one Rover."
+                }
+            ]
+        },
+        {
+            "name": "Invisible Hand",
+            "evolution": "apex",
+            "base": "True Scale",
+            "prime": "Toll Bearer",
+            "health": 16,
+            "color_rgb": "AECD7D",
+            "color_dark_rgb": "56822a",
+            "board_tokens": [
+                "Fortify",
+                "Fortify",
+                "Fortify",
+                "Fortify",
+                "Fortify"
+            ],
+            "ether_limit": 3,
+            "affinities": {
+                "fire": 2,
+                "water": 1,
+                "earth": 1,
+                "wind": 0,
+                "crux": -3,
+                "morph": 2
+            },
+            "traits": [
+                {
+                    "name": "Directed Taxation",
+                    "description": "When you force an enemy to enter into a space with a [miasma], a trap, or dangerous terrain, you recover [RCV] 1."
+                },
+                {
+                    "name": "Exoskeletal Development",
+                    "description": "You gain +1 [Hand] item slot and +1 [Body] slot.",
+                    "additional_slots": [
+                        "hand",
+                        "body"
+                    ]
+                },
+                {
+                    "name": "Skimming Sleight",
+                    "description": "Once each turn after you force an enemy to perform an action, you and one ally may reroll one of your ether dice from your personal pools, then [Trade]."
+                }
+            ]
+        }
+    ]
+}

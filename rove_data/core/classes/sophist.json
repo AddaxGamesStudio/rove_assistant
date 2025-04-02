@@ -1,0 +1,517 @@
+{
+    "name": "Sophist",
+    "evolution": "base",
+    "health": 8,
+    "color_rgb": "cab35e",
+    "color_dark_rgb": "8e7950",
+    "uses_glyphs": true,
+    "ether_limit": 3,
+    "starting_equipment": [
+        "Stripped Spear",
+        "Powdered Drakaen"
+    ],
+    "affinities": {
+        "wind": 1,
+        "crux": 1,
+        "earth": -1,
+        "fire": 0,
+        "morph": -1,
+        "water": 0,
+        "dim": 0
+    },
+    "aura_effect": {
+        "buff": {
+            "type": "attack",
+            "scope": "action",
+            "amount": 2
+        }
+    },
+    "abilities": [
+        {
+            "name": "Vault",
+            "actions": [
+                {
+                    "type": "jump",
+                    "amount": 3,
+                    "target_kind": "self"
+                }
+            ]
+        },
+        {
+            "name": "Beset",
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 1,
+                    "range": "(1, 2)"
+                }
+            ]
+        },
+        {
+            "name": "Inspire",
+            "actions": [
+                {
+                    "actor": "ally_or_glyph",
+                    "type": "move",
+                    "amount": 3
+                }
+            ]
+        },
+        {
+            "name": "Manifest",
+            "actions": [
+                {
+                    "type": "create_glyph",
+                    "object": "hyperbola",
+                    "target_kind": "self",
+                    "range": "(0, 1)"
+                }
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "name": "Unnatural Defenses",
+            "type": "rave",
+            "subtype": "Flower",
+            "back": "Lustrous Flare",
+            "ether_cost": 1,
+            "actions": [
+                {
+                    "type": "create_glyph",
+                    "object": "armoroll",
+                    "range": "(0, 1)",
+                    "exclusive_group": 1
+                },
+                {
+                    "type": "buff",
+                    "object": "armoroll",
+                    "amount": 1,
+                    "target_kind": "self_or_ally",
+                    "range_origin": "armoroll",
+                    "buff_type": "defense",
+                    "buff_scope": "until_start_of_turn",
+                    "exclusive_group": 2
+                },
+                {
+                    "type": "flip_card",
+                    "object": "any",
+                    "amount": 1,
+                    "target_kind": "self"
+                }
+            ]
+        },
+        {
+            "name": "Lustrous Flare",
+            "type": "rave",
+            "subtype": "Butterfly",
+            "back": "Unnatural Defenses",
+            "ether_cost": 3,
+            "actions": [
+                {
+                    "actor": "self_or_glyph",
+                    "type": "attack",
+                    "amount": 4,
+                    "range": "(2, 3)",
+                    "pierce": true
+                },
+                {
+                    "type": "suffer",
+                    "amount": 1,
+                    "target_count": 2,
+                    "range_origin": "previous_target",
+                    "range": "(1, 2)",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "skill_ether_check",
+                                "ethers": [
+                                    "crux"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 1,
+                                "target_kind": "self",
+                                "buff_type": "amount",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ],
+                    "requires_previous": true
+                },
+                {
+                    "type": "flip_card",
+                    "object": "any",
+                    "amount": 1,
+                    "target_kind": "self"
+                }
+            ]
+        },
+        {
+            "name": "Bask in the Light",
+            "type": "rally",
+            "subtype": "Butterfly",
+            "back": "Dance of Fronds",
+            "actions": [
+                {
+                    "actor": "self_or_glyph",
+                    "type": "heal",
+                    "amount": 2,
+                    "target_kind": "self_or_ally",
+                    "range": "(0, 2)"
+                },
+                {
+                    "type": "generate_ether",
+                    "object": "crux",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Dance of Fronds",
+            "type": "rally",
+            "subtype": "Flower",
+            "back": "Bask in the Light",
+            "actions": [
+                {
+                    "type": "move",
+                    "amount": 3,
+                    "target_kind": "self"
+                },
+                {
+                    "actor": "glyph",
+                    "type": "move",
+                    "amount": 3
+                },
+                {
+                    "type": "generate_ether",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Shifts in the Wind",
+            "type": "rally",
+            "subtype": "Flower",
+            "back": "Trick of the Light",
+            "actions": [
+                {
+                    "type": "place_field",
+                    "range": "(0, 3)",
+                    "field": "windscreen"
+                },
+                {
+                    "type": "generate_ether",
+                    "object": "wind",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Trick of the Light",
+            "type": "rave",
+            "subtype": "Butterfly",
+            "back": "Shifts in the Wind",
+            "ether_cost": 2,
+            "actions": [
+                {
+                    "type": "swap_space",
+                    "target_kind": "glyph",
+                    "range": "(0, 99)"
+                },
+                {
+                    "actor": "previous_target",
+                    "type": "attack",
+                    "amount": 3,
+                    "range": "(1, 2)",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "skill_ether_check",
+                                "ethers": [
+                                    "crux"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 2,
+                                "buff_type": "push"
+                            }
+                        }
+                    ],
+                    "requires_previous": true,
+                    "static_description": {
+                        "prefix": "That glyph performs:"
+                    }
+                },
+                {
+                    "type": "flip_card",
+                    "object": "any",
+                    "amount": 1,
+                    "target_kind": "self"
+                }
+            ]
+        },
+        {
+            "name": "Moment's Respite",
+            "type": "rally",
+            "subtype": "Butterfly",
+            "back": "Dazzling Strike",
+            "actions": [
+                {
+                    "actor": "self_or_glyph",
+                    "type": "place_field",
+                    "range": "(0, 1)",
+                    "field": "aura",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "personal_pool_ether",
+                                "ethers": [
+                                    "crux"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 2,
+                                "buff_type": "end_range"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "generate_ether",
+                    "object": "crux",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Dazzling Strike",
+            "type": "rave",
+            "subtype": "Flower",
+            "back": "Moment's Respite",
+            "ether_cost": 2,
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 3,
+                    "range": "(1, 3)",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "skill_ether_check",
+                                "ethers": [
+                                    "crux"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "target_kind": "self",
+                                "field": "snapfrost",
+                                "buff_type": "field",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Blustery Rebuke",
+            "type": "rally",
+            "subtype": "Flower",
+            "back": "Echo Chamber",
+            "actions": [
+                {
+                    "type": "push",
+                    "amount": 2,
+                    "range": "(1, 2)"
+                },
+                {
+                    "type": "generate_ether",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Echo Chamber",
+            "type": "rave",
+            "subtype": "Flower",
+            "back": "Blustery Rebuke",
+            "ether_cost": 3,
+            "actions": [
+                {
+                    "type": "attack",
+                    "amount": 3,
+                    "target_count": 2,
+                    "range_origin": "actor_or_glyph",
+                    "range": "(1, 2)",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "skill_ether_check",
+                                "ethers": [
+                                    "wind"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 2,
+                                "target_kind": "self",
+                                "buff_type": "end_range",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ],
+                    "static_description": {
+                        "prefix": "Both you and one of your glyphs perform"
+                    }
+                }
+            ]
+        }
+    ],
+    "reactions": [
+        {
+            "name": "Watch Your Step",
+            "subtype": "Butterfly",
+            "back": "Sound Barrier",
+            "trigger": {
+                "type": "before_attack",
+                "target_kind": "self_or_ally",
+                "range": "(0, 3)",
+                "static_description": "Before you or an ally within (1, 3) are attacked:"
+            },
+            "actions": [
+                {
+                    "actor": "event_target",
+                    "type": "jump",
+                    "amount": 1,
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "personal_pool_ether",
+                                "ethers": [
+                                    "wind"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 2,
+                                "target_kind": "self",
+                                "buff_type": "amount",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ],
+                    "static_description": {
+                        "prefix": "That unit performs:"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Sound Barrier",
+            "subtype": "Flower",
+            "back": "Watch Your Step",
+            "trigger": {
+                "type": "before_attack",
+                "target_kind": "self_or_ally",
+                "range": "(0, 3)",
+                "static_description": "Before you or an ally within (1, 3) are attacked:"
+            },
+            "actions": [
+                {
+                    "type": "buff",
+                    "amount": 1,
+                    "target_mode": "event_target",
+                    "buff_type": "defense",
+                    "static_description": {
+                        "body": "That unit gains +1 [DEF] for that attack."
+                    }
+                },
+                {
+                    "type": "generate_ether",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Confound",
+            "subtype": "Butterfly",
+            "back": "Dance of Rays",
+            "trigger": {
+                "type": "start_turn",
+                "actor_kind": "enemy",
+                "target_kind": "glyph",
+                "range_origin": "event_actor",
+                "range": "(0, 1)",
+                "static_description": "Before an enemy starts their turn within (0, 1) of one of your glyphs:"
+            },
+            "actions": [
+                {
+                    "actor": "event_target",
+                    "type": "push",
+                    "amount": 1,
+                    "range": "(0, 1)",
+                    "static_description": {
+                        "prefix": "That glyph performs:"
+                    }
+                },
+                {
+                    "type": "generate_ether",
+                    "object": "wind",
+                    "target_kind": "self",
+                    "requires_previous": true
+                }
+            ]
+        },
+        {
+            "name": "Dance of Rays",
+            "subtype": "Butterfly",
+            "back": "Confound",
+            "trigger": {
+                "type": "start_turn",
+                "actor_kind": "enemy",
+                "target_kind": "glyph",
+                "range_origin": "event_actor",
+                "range": "(0, 1)",
+                "static_description": "Before an enemy starts their turn within (0, 1) of one of your glyphs:"
+            },
+            "actions": [
+                {
+                    "actor": "event_target",
+                    "type": "attack",
+                    "amount": 1,
+                    "range": "(0, 1)",
+                    "augments": [
+                        {
+                            "condition": {
+                                "type": "personal_pool_ether",
+                                "ethers": [
+                                    "crux"
+                                ]
+                            },
+                            "action": {
+                                "type": "buff",
+                                "amount": 1,
+                                "target_kind": "self",
+                                "buff_type": "amount",
+                                "buff_scope": "action"
+                            }
+                        }
+                    ],
+                    "static_description": {
+                        "prefix": "That glyph performs:"
+                    }
+                }
+            ]
+        }
+    ]
+}

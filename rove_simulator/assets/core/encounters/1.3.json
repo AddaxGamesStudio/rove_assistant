@@ -1,0 +1,327 @@
+{
+    "quest_id": "1",
+    "number": "3",
+    "title": "Swallowed by the Night",
+    "victory": "Slay the Zaghan Nahadir.",
+    "loss": "Lose if Zeepurah is slain.",
+    "starting_map": {
+        "id": "1.3",
+        "row_count": 11,
+        "column_count": 13,
+        "background_rect": "(110, 44, 1481, 1411)",
+        "terrain": {
+            "(0, 0)": "start",
+            "(0, 1)": "start",
+            "(0, 2)": "difficult",
+            "(0, 7)": "barrier",
+            "(0, 8)": "barrier",
+            "(1, 0)": "start",
+            "(1, 1)": "start",
+            "(1, 7)": "object",
+            "(1, 8)": "barrier",
+            "(2, 0)": "start",
+            "(2, 3)": "object",
+            "(2, 4)": "object",
+            "(3, 0)": "start",
+            "(3, 4)": "object",
+            "(4, 6)": "difficult",
+            "(5, 0)": "object",
+            "(5, 1)": "object",
+            "(5, 3)": "difficult",
+            "(5, 9)": "barrier",
+            "(5, 10)": "barrier",
+            "(6, 0)": "object",
+            "(6, 9)": "barrier",
+            "(7, 5)": "object",
+            "(7, 6)": "object",
+            "(7, 8)": "difficult",
+            "(8, 0)": "barrier",
+            "(8, 1)": "object",
+            "(8, 5)": "object",
+            "(8, 9)": "object",
+            "(9, 0)": "barrier",
+            "(9, 1)": "barrier",
+            "(9, 3)": "difficult",
+            "(9, 7)": "difficult",
+            "(11, 2)": "object",
+            "(11, 3)": "object",
+            "(11, 5)": "barrier",
+            "(11, 6)": "barrier",
+            "(12, 2)": "object",
+            "(12, 5)": "barrier",
+            "(12, 7)": "object"
+        },
+        "spawn_points": {
+            "(11, 9)": "morph"
+        }
+    },
+    "round_limit": 8,
+    "challenges": [
+        "All skills that generate [+|ether] generate [+|morph] instead.",
+        "Dark Conversion spawns nahoot at the start of rounds 2, 4, and 6 instead.",
+        "All spawned nahoot must be slain before reading “Taken a Toll”."
+    ],
+    "rewards": {
+        "lyst": 15,
+        "rover_level": 3
+    },
+    "allies": [
+        {
+            "name": "Zeepurah",
+            "health": 8,
+            "on_slayed": [
+                {
+                    "type": "loss"
+                }
+            ]
+        }
+    ],
+    "adversaries": [
+        {
+            "name": "Galeaper",
+            "health": 5,
+            "flies": true,
+            "affinities": {
+                "fire": -1,
+                "earth": -1,
+                "wind": 1,
+                "morph": 1
+            }
+        },
+        {
+            "name": "Nahoot",
+            "health": 12,
+            "traits": [
+                "If a Rover slays this unit, that Rover [plus_wind_morph]."
+            ],
+            "affinities": {
+                "crux": -1,
+                "fire": -1,
+                "morph": 2,
+                "wind": 1
+            },
+            "abilities": [
+                {
+                    "name": "Miasmic Arrow",
+                    "actions": [
+                        {
+                            "type": "move",
+                            "amount": 2,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "range": "(2, 3)",
+                            "field": "miasma"
+                        }
+                    ]
+                },
+                {
+                    "name": "Morphic Agitation",
+                    "actions": [
+                        {
+                            "type": "jump",
+                            "amount": 4,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 3,
+                            "range": "(1, 1)",
+                            "augments": [
+                                {
+                                    "condition": {
+                                        "type": "target_has_ether",
+                                        "ethers": [
+                                            "morph"
+                                        ],
+                                        "ether": "morph"
+                                    },
+                                    "action": {
+                                        "type": "heal",
+                                        "amount": 2,
+                                        "target_kind": "self",
+                                        "static_description": {
+                                            "body": "If the target has a [Morph] dice in their personal or infusion pools, recover [RCV] 2."
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Split Strike",
+                    "actions": [
+                        {
+                            "type": "move",
+                            "amount": 3,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "target_count": 2,
+                            "range": "(2, 2)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Visceral Frenzy",
+                    "actions": [
+                        {
+                            "type": "attack",
+                            "amount": 3,
+                            "range": "(1, 1)"
+                        },
+                        {
+                            "type": "jump",
+                            "amount": 4,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "range": "(1, 1)"
+                        }
+                    ]
+                }
+            ],
+            "on_slayed": [
+                {
+                    "type": "reward_ether",
+                    "value": "air;morph"
+                }
+            ]
+        },
+        {
+            "name": "Nahadir",
+            "health": 8,
+            "health_formula": "8*R",
+            "flies": true,
+            "affinities": {
+                "morph": 2,
+                "wind": 1,
+                "fire": -1,
+                "crux": -1
+            }
+        }
+    ],
+    "placements": {
+        "(2, 7)": {
+            "name": "Galeaper"
+        },
+        "(6, 6)": {
+            "name": "Galeaper",
+            "min_players": 4
+        },
+        "(9, 2)": {
+            "name": "Galeaper"
+        },
+        "(11, 10)": {
+            "name": "Galeaper"
+        },
+        "(12, 9)": {
+            "name": "Galeaper"
+        },
+        "(4, 4)": {
+            "name": "Nahoot"
+        },
+        "(7, 2)": {
+            "name": "Nahoot"
+        },
+        "(12, 4)": {
+            "name": "Nahoot",
+            "min_players": 4
+        },
+        "(7, 9)": {
+            "name": "Nahoot",
+            "min_players": 3
+        },
+        "(10, 8)": {
+            "name": "Nahadir",
+            "on_slayed": [
+                {
+                    "type": "codex",
+                    "name": "Taken a Toll"
+                },
+                {
+                    "type": "victory"
+                }
+            ]
+        },
+        "(8, 4)": {
+            "name": "Galeaper",
+            "min_players": 3
+        },
+        "(12, 1)": {
+            "name": "Hoard",
+            "type": "object",
+            "on_loot": [
+                {
+                    "type": "codex",
+                    "name": "Knock on Wood"
+                },
+                {
+                    "type": "reward_lyst",
+                    "name": "Knock on Wood",
+                    "value": "5*R"
+                },
+                {
+                    "type": "reward_item",
+                    "value": "Imbuing Potion"
+                },
+                {
+                    "type": "reward_item",
+                    "value": "Tihfur Claw"
+                }
+            ]
+        },
+        "(1, 7)": {
+            "name": "wind",
+            "type": "ether"
+        },
+        "(8, 1)": {
+            "name": "wind",
+            "type": "ether"
+        }
+    },
+    "triggers": [
+        {
+            "name": "Dark Conversion",
+            "placements": [
+                {
+                    "name": "Nahoot",
+                    "column": 11,
+                    "row": 9
+                }
+            ]
+        }
+    ],
+    "on_did_start_round": [
+        {
+            "type": "spawn_placements",
+            "value": "Dark Conversion",
+            "conditions": [
+                "round=3"
+            ]
+        },
+        {
+            "type": "spawn_placements",
+            "value": "Dark Conversion",
+            "conditions": [
+                "round=6"
+            ]
+        }
+    ],
+    "on_will_end_round": [
+        {
+            "type": "codex",
+            "value": "Into the Tainted Air",
+            "conditions": [
+                "round=2"
+            ]
+        }
+    ]
+}

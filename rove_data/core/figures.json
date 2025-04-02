@@ -1,0 +1,741 @@
+{
+    "figures": [
+        {
+            "role": "adversary",
+            "name": "Galeling",
+            "image": "galeaper.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Dekaha",
+            "image": "dekaha.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Nektari",
+            "image": "nektari.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Galeaper",
+            "image": "galeaper.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Galeaper Queen",
+            "type": "boss",
+            "large": true,
+            "image": "galeaper_queen.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Briarwog",
+            "image": "briarwog.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Grovetender",
+            "codices": [
+                16
+            ],
+            "image": "grovetender.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Zipahudi the Briarbull",
+            "type": "miniboss",
+            "image": "briarbull.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Nahoot",
+            "codices": [
+                18
+            ],
+            "image": "nahoot.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Terranape",
+            "codices": [
+                23
+            ],
+            "image": "terranape.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Zaghan Nahadir",
+            "type": "miniboss",
+            "image": "nahadir.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Hokmala",
+            "type": "miniboss",
+            "image": "grovetender.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Nahadir",
+            "image": "nahadir.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Ahma",
+            "type": "boss",
+            "large": true,
+            "image": "ahma.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Ahma Wretched",
+            "type": "boss",
+            "large": true,
+            "exclude_from_bestiary": true,
+            "codices": [
+                123,
+                124,
+                125,
+                126
+            ],
+            "image": "ahma.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Corrupted Nektari Swarm",
+            "codices": [
+                100,
+                117
+            ],
+            "image": "nektari.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Kifa",
+            "image": "kifa.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Zinix",
+            "image": "zinix.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Gruv (miniboss)",
+            "type": "miniboss",
+            "image": "gruv.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Onisski",
+            "image": "onisski.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Wrathbone",
+            "codices": [
+                35
+            ],
+            "image": "wrathbone.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Sek",
+            "image": "sek.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Zisafi Principal",
+            "type": "miniboss",
+            "image": "zisafi.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Ashemak",
+            "codices": [
+                39
+            ],
+            "image": "ashemak.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Zisafi",
+            "image": "zisafi.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Gruv",
+            "image": "gruv.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Sek Principal",
+            "type": "miniboss",
+            "image": "sek.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Urn",
+            "codices": [
+                40,
+                88
+            ],
+            "image": "urn.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Marii",
+            "type": "boss",
+            "image": "marii.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Femii",
+            "type": "boss",
+            "image": "femii.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Marii Advocate",
+            "type": "boss",
+            "exclude_from_bestiary": true,
+            "image": "marii.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Femii Sovereign",
+            "exclude_from_bestiary": true,
+            "image": "femii.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Bulwauros",
+            "codices": [
+                87
+            ],
+            "image": "bulwauros.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Dyad",
+            "image": "dyad.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Hydra",
+            "type": "miniboss",
+            "image": "hydra.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Stomaw",
+            "codices": [
+                48
+            ],
+            "image": "stomaw.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Broken Vessel",
+            "codices": [
+                51
+            ],
+            "image": "broken_vessel.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Fell Cradle",
+            "image": "fell_cradle.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Haunt",
+            "codices": [
+                106
+            ],
+            "image": "haunt.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Scour",
+            "type": "miniboss",
+            "large": true,
+            "image": "scour.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Dyad Hatchling",
+            "codices": [
+                55
+            ],
+            "image": "dyad.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Azoth",
+            "type": "miniboss",
+            "large": true,
+            "codices": [
+                54
+            ],
+            "image": "azoth.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Crown (miniboss)",
+            "type": "miniboss",
+            "image": "crown.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Hyperborea",
+            "type": "miniboss",
+            "large": true,
+            "image": "azoth.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Rakifa",
+            "type": "miniboss",
+            "image": "rakifa.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Zaghan Nahoot",
+            "type": "miniboss",
+            "image": "nahoot.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Querist",
+            "image": "querist.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Bazhar",
+            "type": "boss",
+            "large": true,
+            "image": "bazhar.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Bazhar Absolute",
+            "type": "boss",
+            "large": true,
+            "exclude_from_bestiary": true,
+            "image": "bazhar.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Bazhar Charger",
+            "type": "boss",
+            "large": true,
+            "exclude_from_bestiary": true,
+            "image": "bazhar.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Bazhar Creator",
+            "type": "boss",
+            "large": true,
+            "exclude_from_bestiary": true,
+            "image": "bazhar.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Streak",
+            "codices": [
+                75
+            ],
+            "image": "streak.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Uzem's Anxiety",
+            "type": "miniboss",
+            "image": "crown.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Uzem's Endurance",
+            "type": "miniboss",
+            "image": "crown.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Uzem's Woe",
+            "type": "miniboss",
+            "image": "crown.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Uzem's Fervor",
+            "type": "miniboss",
+            "image": "crown.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "The King of Storms [icon_fire]",
+            "type": "boss",
+            "large": true,
+            "codices": [
+                85
+            ],
+            "image": "uzem.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "The King of Storms [icon_water]",
+            "type": "boss",
+            "large": true,
+            "codices": [
+                85
+            ],
+            "image": "uzem.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "The King of Storms [icon_earth]",
+            "type": "boss",
+            "large": true,
+            "codices": [
+                85
+            ],
+            "image": "uzem.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "The King of Storms [icon_wind]",
+            "type": "boss",
+            "large": true,
+            "codices": [
+                85
+            ],
+            "image": "uzem.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Skara",
+            "codices": [
+                90
+            ],
+            "image": "skara.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Zisafi Taskmaster",
+            "image": "zisafi.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Saras",
+            "type": "miniboss",
+            "image": "keloandsaras.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Kelo",
+            "type": "miniboss",
+            "image": "keloandsaras.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Marii (miniboss)",
+            "type": "miniboss",
+            "image": "marii.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Femii (miniboss)",
+            "type": "miniboss",
+            "image": "femii.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Svaraka",
+            "type": "boss",
+            "large": true,
+            "image": "svaraka.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Zeepurah",
+            "type": "miniboss",
+            "image": "zeepurah.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Kaleido",
+            "type": "boss",
+            "large": true,
+            "image": "kaleido.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Tentacle",
+            "image": "kaleido_tentacle.webp"
+        },
+        {
+            "role": "object",
+            "name": "Kaleido Shell 1",
+            "image": "kaleido_shell.webp"
+        },
+        {
+            "role": "object",
+            "name": "Kaleido Shell 2",
+            "image": "kaleido_shell.webp"
+        },
+        {
+            "role": "object",
+            "name": "Kaleido Shell 3",
+            "image": "kaleido_shell.webp"
+        },
+        {
+            "role": "object",
+            "name": "Kaleido Shell 4",
+            "image": "kaleido_shell.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Urnlette",
+            "image": "urn.webp"
+        },
+        {
+            "role": "object",
+            "name": "Wind Cluster",
+            "image": "die_air.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Andiron",
+            "image": "figure-73-Bad Boi.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Battering Winds",
+            "image": "figure-68-Bettering Winds.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Breath of Uzem",
+            "image": "figure-67-Breath of Uzem.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Broken Reflection",
+            "image": "figure-64-Broken Reflection.png"
+        },
+        {
+            "role": "object",
+            "name": "Cage",
+            "image": "figure-61-Cage.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Corrupted Shard",
+            "image": "figure-60-Corrupted Shard.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Courslayer",
+            "image": "figure-59-Courslayer.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Crown",
+            "image": "figure-58-Crown.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Darkened Sky",
+            "image": "figure-57-Darkened Sky.png"
+        },
+        {
+            "role": "object",
+            "name": "Dim",
+            "image": "die_dim.png"
+        },
+        {
+            "role": "object",
+            "name": "Earth Cluster",
+            "image": "die_earth.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Eclipse",
+            "image": "figure-54-Eclipse.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Eclipse Ether Ascended",
+            "image": "figure-53-Eclipse Enraged-Mounted.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Eclipse Mounted",
+            "image": "figure-52-Eclipse-Mounted.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Endless Hunger",
+            "image": "figure-51-Endless Hunger.png"
+        },
+        {
+            "role": "object",
+            "name": "Fire Cluster",
+            "image": "die_fire.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Final Cut",
+            "image": "figure-48-Final Cut.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Firecaller",
+            "image": "figure-47-Firecaller.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Harrow",
+            "image": "figure-40-Harrow.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Heavy Hand",
+            "image": "figure-38-Heavy Hand.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Hra",
+            "image": "hra.webp"
+        },
+        {
+            "role": "ally",
+            "name": "Kelo & Saras",
+            "image": "keloandsaras.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "The King of Storms",
+            "image": "figure-34-King of Storms.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Monstrous Growth",
+            "image": "monstrous_growth.webp"
+        },
+        {
+            "role": "ally",
+            "name": "Ozendyn",
+            "image": "ozendyn.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Piercing Gaze",
+            "image": "figure-59-Courslayer.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Rage of Uzem",
+            "image": "figure-26-Rage of Uzem.png"
+        },
+        {
+            "role": "ally",
+            "name": "Skara Grub",
+            "image": "figure-22-Skara Grub.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Squall",
+            "image": "figure-15-Squall.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Stolen Breath",
+            "image": "figure-14-Stolen Breath.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Stormcaller",
+            "image": "figure-12-Stormcaller.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Stormcaller Elite",
+            "image": "figure-12-Stormcaller.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Striker",
+            "image": "figure-11-Striker.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Tears of Uzem",
+            "image": "figure-10-Tears of Uzem.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Tremormage",
+            "image": "figure-7-Tremormage.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Warden",
+            "image": "figure-4-Warden.png"
+        },
+        {
+            "role": "adversary",
+            "name": "Wavecaller",
+            "image": "figure-3-Wavecaster.png"
+        },
+        {
+            "role": "object",
+            "name": "Water Cluster",
+            "image": "die_water.png"
+        },
+        {
+            "role": "ally",
+            "name": "Zeepurah",
+            "image": "zeepurah.webp"
+        },
+        {
+            "role": "object",
+            "name": "Nektari Hive",
+            "image": "nektari_hive.webp"
+        },
+        {
+            "role": "object",
+            "name": "Hoard",
+            "lootable": true,
+            "image": "hoard.webp"
+        },
+        {
+            "role": "object",
+            "name": "Crystalline Spear",
+            "lootable": true,
+            "image": "hoard.webp"
+        },
+        {
+            "role": "object",
+            "name": "Treasure",
+            "image": "treasure.webp"
+        },
+        {
+            "role": "object",
+            "name": "Ashemak Seed Pod Pile",
+            "image": "ashemak_seed_pod_pile.webp"
+        },
+        {
+            "role": "object",
+            "name": "Crystal Nerve",
+            "image": "crystal.webp"
+        },
+        {
+            "role": "object",
+            "name": "Drained Morph Ether",
+            "image": "drained_morph_ether.webp"
+        }
+    ]
+}

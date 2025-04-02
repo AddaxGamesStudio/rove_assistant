@@ -1,0 +1,428 @@
+{
+    "quest_id": "2",
+    "number": "1",
+    "title": "Rolling the Top",
+    "victory": "Slay the Gruv.",
+    "starting_map": {
+        "id": "2.1",
+        "row_count": 11,
+        "column_count": 13,
+        "background_rect": "(71, 26, 1522, 1449)",
+        "terrain": {
+            "(0, 2)": "open_air",
+            "(0, 3)": "open_air",
+            "(0, 4)": "open_air",
+            "(0, 5)": "open_air",
+            "(0, 6)": "open_air",
+            "(0, 7)": "open_air",
+            "(0, 8)": "open_air",
+            "(0, 9)": "open_air",
+            "(1, 3)": "open_air",
+            "(1, 4)": "open_air",
+            "(1, 5)": "open_air",
+            "(1, 6)": "open_air",
+            "(1, 7)": "open_air",
+            "(1, 8)": "open_air",
+            "(1, 9)": "open_air",
+            "(1, 10)": "open_air",
+            "(2, 3)": "open_air",
+            "(2, 4)": "open_air",
+            "(2, 5)": "open_air",
+            "(2, 6)": "open_air",
+            "(2, 7)": "open_air",
+            "(2, 8)": "open_air",
+            "(2, 9)": "open_air",
+            "(3, 4)": "open_air",
+            "(3, 5)": "open_air",
+            "(3, 6)": "open_air",
+            "(3, 7)": "open_air",
+            "(3, 8)": "open_air",
+            "(3, 9)": "open_air",
+            "(3, 10)": "open_air",
+            "(9, 4)": "open_air",
+            "(9, 5)": "open_air",
+            "(9, 6)": "open_air",
+            "(9, 7)": "open_air",
+            "(9, 8)": "open_air",
+            "(9, 9)": "open_air",
+            "(9, 10)": "open_air",
+            "(10, 3)": "open_air",
+            "(10, 4)": "open_air",
+            "(10, 5)": "open_air",
+            "(10, 6)": "open_air",
+            "(10, 7)": "open_air",
+            "(10, 8)": "open_air",
+            "(10, 9)": "open_air",
+            "(11, 3)": "open_air",
+            "(11, 4)": "open_air",
+            "(11, 5)": "open_air",
+            "(11, 6)": "open_air",
+            "(11, 7)": "open_air",
+            "(11, 8)": "open_air",
+            "(11, 9)": "open_air",
+            "(11, 10)": "open_air",
+            "(12, 2)": "open_air",
+            "(12, 3)": "open_air",
+            "(12, 4)": "open_air",
+            "(12, 5)": "open_air",
+            "(12, 6)": "open_air",
+            "(12, 7)": "open_air",
+            "(12, 8)": "open_air",
+            "(12, 9)": "open_air",
+            "(1, 1)": "object",
+            "(4, 5)": "object",
+            "(8, 4)": "object",
+            "(9, 0)": "object",
+            "(3, 2)": "difficult",
+            "(7, 7)": "difficult",
+            "(9, 2)": "difficult",
+            "(4, 9)": "start",
+            "(5, 10)": "start",
+            "(6, 9)": "start",
+            "(7, 10)": "start",
+            "(8, 9)": "start"
+        }
+    },
+    "round_limit": 8,
+    "challenges": [
+        "The gruv’s ability token starts on their Power Dive ability.",
+        "Before a zinix is slain, all of their allies within [Range] 1 of them recover [RCV] 1.",
+        "Kifa gain +1 movement point to all of their movement actions."
+    ],
+    "rewards": {
+        "lyst": 15,
+        "items": [
+            "Gruv Scale-Mail"
+        ]
+    },
+    "adversaries": [
+        {
+            "name": "Kifa",
+            "health": 5,
+            "flies": true,
+            "affinities": {
+                "fire": -1,
+                "water": -1,
+                "earth": 1,
+                "wind": 1
+            },
+            "abilities": [
+                {
+                    "name": "Wingbeat Onslaught",
+                    "actions": [
+                        {
+                            "type": "move",
+                            "amount": 3,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "range": "(1, 1)",
+                            "push": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "Stone Fling",
+                    "actions": [
+                        {
+                            "type": "move",
+                            "amount": 2,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 3,
+                            "range": "(2, 2)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Hook and Drag",
+                    "actions": [
+                        {
+                            "type": "move",
+                            "amount": 2,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "range": "(2, 2)",
+                            "pull": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "Sonic Screech",
+                    "actions": [
+                        {
+                            "type": "move",
+                            "amount": 2,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "range": "(1, 1)",
+                            "aoe": {
+                                "name": "x6Screech"
+                            },
+                            "pierce": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Zinix",
+            "health": 5,
+            "defense": 1,
+            "enters_object_spaces": true,
+            "affinities": {
+                "wind": -1,
+                "fire": -1,
+                "earth": 1,
+                "water": 1
+            },
+            "abilities": [
+                {
+                    "name": "Iron Jaw",
+                    "actions": [
+                        {
+                            "type": "move",
+                            "amount": 2,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 3,
+                            "range": "(1, 1)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Dust Bloom",
+                    "actions": [
+                        {
+                            "type": "move",
+                            "amount": 1,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "target_count": 99,
+                            "range": "(2, 3)",
+                            "aoe": {
+                                "name": "x3Triangle"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Chew Cladrind",
+                    "actions": [
+                        {
+                            "type": "move",
+                            "amount": 2,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "range": "(1, 1)"
+                        },
+                        {
+                            "type": "heal",
+                            "amount": 1,
+                            "target_kind": "self_or_ally",
+                            "field": "everbloom"
+                        }
+                    ]
+                },
+                {
+                    "name": "Hail of Stones",
+                    "actions": [
+                        {
+                            "type": "attack",
+                            "amount": 1,
+                            "target_count": 99,
+                            "range": "(1, 3)",
+                            "pierce": true
+                        }
+                    ]
+                }
+            ],
+            "on_slayed": [
+                {
+                    "type": "codex",
+                    "name": "The Bush is the Obstacle"
+                }
+            ]
+        },
+        {
+            "name": "Gruv",
+            "health_formula": "8*R",
+            "defense_formula": "3*(1-T%2)",
+            "traits": [
+                "During even rounds, this unit gains [DEF] 3."
+            ],
+            "affinities": {
+                "water": -1,
+                "fire": 1,
+                "earth": 2
+            },
+            "abilities": [
+                {
+                    "name": "Grasping Tongues",
+                    "actions": [
+                        {
+                            "type": "move",
+                            "amount": 2,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 3,
+                            "range": "(1, 3)",
+                            "pull": 2
+                        },
+                        {
+                            "type": "heal",
+                            "amount": 1,
+                            "target_kind": "self",
+                            "field": "everbloom",
+                            "requires_previous": true
+                        }
+                    ]
+                },
+                {
+                    "name": "Piercing Claws",
+                    "actions": [
+                        {
+                            "type": "move",
+                            "amount": 3,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "target_count": 99,
+                            "range": "(1, 1)",
+                            "aoe": {
+                                "name": "x2Sides"
+                            },
+                            "pierce": true
+                        }
+                    ]
+                },
+                {
+                    "name": "Power Dive",
+                    "actions": [
+                        {
+                            "type": "jump",
+                            "amount": 4,
+                            "target_kind": "self"
+                        },
+                        {
+                            "type": "attack",
+                            "amount": 2,
+                            "target_count": 99,
+                            "range": "(1, 2)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Power Ball",
+                    "actions": [
+                        {
+                            "type": "move",
+                            "amount": 3,
+                            "target_kind": "self",
+                            "modifiers": [
+                                "target_farthest"
+                            ],
+                            "static_description": {
+                                "prefix": "Logic: Moves to the enemy furthest away, within range of the following attack."
+                            }
+                        },
+                        {
+                            "type": "attack",
+                            "amount_formula": "2+X",
+                            "range": "(1, 1)",
+                            "push_formula": "X",
+                            "x_definition": "previous_movement_effort",
+                            "static_description": {
+                                "suffix": "Where X equals the number of spaces moved with the [Dash] action."
+                            }
+                        }
+                    ]
+                }
+            ],
+            "on_slayed": [
+                {
+                    "type": "codex",
+                    "name": "Dust Endures no Restraint",
+                    "value": "X"
+                },
+                {
+                    "type": "victory",
+                    "name": "Dust Endures no Restraint"
+                }
+            ]
+        }
+    ],
+    "placements": {
+        "(0, 3)": {
+            "name": "Kifa"
+        },
+        "(1, 1)": {
+            "name": "Zinix",
+            "min_players": 4
+        },
+        "(1, 7)": {
+            "name": "Kifa",
+            "min_players": 3
+        },
+        "(3, 5)": {
+            "name": "Kifa"
+        },
+        "(4, 5)": {
+            "name": "Zinix"
+        },
+        "(6, 0)": {
+            "name": "Gruv"
+        },
+        "(6, 2)": {
+            "name": "Earth",
+            "type": "ether"
+        },
+        "(6, 3)": {
+            "name": "Zinix",
+            "min_players": 4
+        },
+        "(7, 2)": {
+            "name": "Zinix",
+            "min_players": 3
+        },
+        "(8, 4)": {
+            "name": "Zinix"
+        },
+        "(9, 0)": {
+            "name": "Zinix",
+            "min_players": 4
+        },
+        "(10, 4)": {
+            "name": "Kifa",
+            "min_players": 3
+        },
+        "(11, 3)": {
+            "name": "Kifa"
+        },
+        "(12, 7)": {
+            "name": "Kifa"
+        }
+    }
+}

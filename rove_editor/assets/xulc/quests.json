@@ -1,0 +1,188 @@
+{
+    "quests": [
+        {
+            "expansion": "xulc",
+            "id": "10_act1",
+            "title": "Xulc • Act One",
+            "short_title": "Act One",
+            "requires": {
+                "quest_completed_any": [
+                    "9"
+                ]
+            },
+            "encounters": [
+                {
+                    "id": "10_act1.1",
+                    "title": "The Nameless Black of a Name"
+                },
+                {
+                    "id": "10_act1.2.early",
+                    "title": "Nidifugous by Nature",
+                    "encounter_completed_any": [
+                        "10_act1.1"
+                    ],
+                    "encounter_completed_not_all": [
+                        "10_act1.3.early",
+                        "10_act1.4.early"
+                    ]
+                },
+                {
+                    "id": "10_act1.2.late",
+                    "title": "Nidifugous by Nature",
+                    "encounter_completed_any": [],
+                    "encounter_completed_all": [
+                        "10_act1.3.early",
+                        "10_act1.4.early"
+                    ],
+                    "encounter_completed_none": [
+                        "10_act1.2.early"
+                    ]
+                },
+                {
+                    "id": "10_act1.3.early",
+                    "title": "Keen Debtors",
+                    "encounter_completed_any": [
+                        "10_act1.1"
+                    ],
+                    "encounter_completed_not_all": [
+                        "10_act1.2.early",
+                        "10_act1.4.early"
+                    ]
+                },
+                {
+                    "id": "10_act1.3.late",
+                    "title": "Keen Debtors",
+                    "encounter_completed_any": [],
+                    "encounter_completed_all": [
+                        "10_act1.2.early",
+                        "10_act1.4.early"
+                    ],
+                    "encounter_completed_none": [
+                        "10_act1.3.early"
+                    ]
+                },
+                {
+                    "id": "10_act1.4.early",
+                    "title": "Ought Never to Sprout",
+                    "encounter_completed_any": [
+                        "10_act1.1"
+                    ],
+                    "encounter_completed_not_all": [
+                        "10_act1.2.early",
+                        "10_act1.3.early"
+                    ]
+                },
+                {
+                    "id": "10_act1.4.late",
+                    "title": "Ought Never to Sprout",
+                    "encounter_completed_any": [],
+                    "encounter_completed_all": [
+                        "10_act1.2.early",
+                        "10_act1.3.early"
+                    ],
+                    "encounter_completed_none": [
+                        "10_act1.4.early"
+                    ]
+                },
+                {
+                    "id": "10_act1.5",
+                    "title": "Knowable Only by Analogy",
+                    "encounter_completed_any": [
+                        "10_act1.2.late",
+                        "10_act1.3.late",
+                        "10_act1.4.late"
+                    ]
+                }
+            ]
+        },
+        {
+            "expansion": "xulc",
+            "id": "10_act2",
+            "title": "Xulc • Act Two",
+            "short_title": "Act Two",
+            "requires": {
+                "quest_completed_any": [
+                    "10_act1"
+                ]
+            },
+            "encounters": [
+                {
+                    "id": "10_act2.6.early",
+                    "title": "Mapping Oblivion",
+                    "encounter_completed_any": [],
+                    "encounter_completed_not_all": [
+                        "10_act2.7.early",
+                        "10_act2.8.early"
+                    ]
+                },
+                {
+                    "id": "10_act2.7.early",
+                    "title": "Half in Another World",
+                    "encounter_completed_any": [],
+                    "encounter_completed_not_all": [
+                        "10_act2.6.early",
+                        "10_act2.8.early"
+                    ]
+                },
+                {
+                    "id": "10_act2.8.early",
+                    "title": "Thief of Light, Giver of Light",
+                    "encounter_completed_any": [],
+                    "encounter_completed_not_all": [
+                        "10_act2.6.early",
+                        "10_act2.7.early"
+                    ]
+                },
+                {
+                    "id": "10_act2.6.late",
+                    "title": "Mapping Oblivion",
+                    "encounter_completed_any": [],
+                    "encounter_completed_all": [
+                        "10_act2.7.early",
+                        "10_act2.8.early"
+                    ],
+                    "encounter_completed_none": [
+                        "10_act2.6.early"
+                    ]
+                },
+                {
+                    "id": "10_act2.7.late",
+                    "title": "Half in Another World",
+                    "encounter_completed_any": [],
+                    "encounter_completed_all": [
+                        "10_act2.6.early",
+                        "10_act2.8.early"
+                    ],
+                    "encounter_completed_none": [
+                        "10_act2.7.early"
+                    ]
+                },
+                {
+                    "id": "10_act2.8.late",
+                    "title": "Thief of Light, Giver of Light",
+                    "encounter_completed_any": [],
+                    "encounter_completed_all": [
+                        "10_act2.6.early",
+                        "10_act2.7.early"
+                    ],
+                    "encounter_completed_none": [
+                        "10_act2.8.early"
+                    ]
+                },
+                {
+                    "id": "10_act2.9",
+                    "title": "Promethean Purpose",
+                    "encounter_completed_any": [
+                        "10_act2.6.late",
+                        "10_act2.7.late",
+                        "10_act2.8.late"
+                    ]
+                },
+                {
+                    "id": "10_act2.10",
+                    "title": "Collapse, Greying & Disintegration"
+                }
+            ]
+        }
+    ]
+}
