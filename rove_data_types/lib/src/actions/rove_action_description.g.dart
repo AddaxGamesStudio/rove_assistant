@@ -11,6 +11,7 @@ RoveActionDescription _$RoveActionDescriptionFromJson(
     RoveActionDescription(
       prefix: json['prefix'] as String?,
       body: json['body'] as String?,
+      target: json['target'] as String?,
       suffix: json['suffix'] as String?,
     );
 
@@ -19,5 +20,6 @@ Map<String, dynamic> _$RoveActionDescriptionToJson(
     <String, dynamic>{
       if (instance.prefix case final value?) 'prefix': value,
       if (instance.body case final value?) 'body': value,
+      if (instance.target case final value?) 'target': value,
       if (instance.suffix case final value?) 'suffix': value,
     };

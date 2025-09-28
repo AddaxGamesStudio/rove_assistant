@@ -4,6 +4,31 @@
         {
             "id": "0",
             "title": "Prologue",
+            "introduction": {
+                "sections": [
+                    {
+                        "type": "text",
+                        "value": "prologue_0"
+                    },
+                    {
+                        "type": "artwork",
+                        "value": "Silky"
+                    },
+                    {
+                        "type": "text",
+                        "value": "prologue_1"
+                    },
+                    {
+                        "type": "text",
+                        "value": "quest_0_intro"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "body": "Go to “**Fling to the Hollow Gale**” [campaign] **6**.",
+                        "value": "0.1"
+                    }
+                ]
+            },
             "encounters": [
                 {
                     "id": "0.1",
@@ -26,6 +51,43 @@
             ]
         },
         {
+            "id": "chapter_1",
+            "title": "Chapter 1",
+            "requires": {
+                "quest_started_none": [
+                    "1",
+                    "2"
+                ]
+            },
+            "introduction": {
+                "id": "chapter_1_intro",
+                "title": "A Choice",
+                "sections": [
+                    {
+                        "type": "text",
+                        "value": "chapter_1_intro"
+                    },
+                    {
+                        "type": "rules",
+                        "title": "Adversary Ether Field",
+                        "body": "In the bottom right hand corner of the Campaign Sheet you will track the effects of adversary [aura] and [miasma] ether fields. For Quest 0-2, there is only one possible effect. Fill in both pips as a reminder of what the effect is."
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Choice A",
+                        "body": "**Help the Yanshif.**\n\nOpen up quest box [tuckbox] 1/6 and unpack the standees. Place the Alad Ahma sticker, A-1, onto the map. Proceed to page 14 of the campaign book [campaign].",
+                        "value": "quest:1"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Choice B",
+                        "body": "**Help the Keb Rasska tribe.**\n\nOpen up quest box [tuckbox] 2/5 and unpack the standees. Place the Crystal Caves sticker, C-2, onto the map. Proceed to page 26 of the campaign book [campaign].",
+                        "value": "quest:2"
+                    }
+                ]
+            }
+        },
+        {
             "id": "1",
             "title": "Quest 1 • The Tihfur That Was Used Up",
             "short_title": "Quest 1",
@@ -35,6 +97,18 @@
                 ],
                 "quest_started_none": [
                     "2"
+                ]
+            },
+            "introduction": {
+                "sections": [
+                    {
+                        "type": "text",
+                        "value": "quest_1_intro"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "body": "Go to “**In Search of the Yanshif**” [campaign] **16**."
+                    }
                 ]
             },
             "encounters": [
@@ -74,6 +148,18 @@
                     "1"
                 ]
             },
+            "introduction": {
+                "sections": [
+                    {
+                        "type": "text",
+                        "value": "quest_2_intro"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "body": "Go to “**Rolling to the Top**” [campaign] **28**."
+                    }
+                ]
+            },
             "encounters": [
                 {
                     "id": "2.1",
@@ -100,17 +186,72 @@
             ]
         },
         {
-            "id": "I",
-            "title": "Before Quest 3/4 • Intermission",
+            "id": "chapter_2",
+            "title": "Chapter 2",
             "requires": {
                 "quest_completed_any": [
                     "1",
                     "2"
+                ],
+                "quest_started_none": [
+                    "3",
+                    "4"
+                ]
+            },
+            "introduction": {
+                "id": "chapter_2_intro",
+                "title": "A Choice",
+                "sections": [
+                    {
+                        "type": "text",
+                        "value": "chapter_2_intro"
+                    },
+                    {
+                        "type": "rules",
+                        "title": "Mo and Makaal",
+                        "body": "Open the Merchant level 2 deck and add it to the shop."
+                    },
+                    {
+                        "type": "rules",
+                        "title": "Adversary Ether Field",
+                        "body": "You have the milestone “Subdued the Ahma” marked on your campaign sheet. For Quest 3-4 mark [a] for [miasma] and [b] for [aura].",
+                        "if_milestone": "Subdued the Ahma"
+                    },
+                    {
+                        "type": "rules",
+                        "title": "Adversary Ether Field",
+                        "body": "You have the milestone “Dispatched the Sovereign” marked on your campaign sheet. For Quest 3-4 mark [a] for [aura] and [b] for [miasma].",
+                        "if_milestone": "Dispatched the Sovereign"
+                    },
+                    {
+                        "type": "rules",
+                        "title": "Adversary Ether Field",
+                        "body": "You have the milestone “Dispatched the Advocate” marked on your campaign sheet. For Quest 3-4 mark [a] for [aura] and [b] for [miasma].",
+                        "if_milestone": "Dispatched the Advocaten"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Adventure",
+                        "body": "Before you embark on your next quest, you can travel to the Zydero Reef and battle the Hydra that is terrorizing the beach. Proceed to page 40 of the campaign book.",
+                        "value": "chapter_2.I"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Choice A",
+                        "body": "**Investigate the Unsouled Barrens.**\n\nOpen up quest box [tuckbox] 3/7 and unpack the standees.\n\nPlace the Bonespire sticker, B-3, onto the map.\n\nProceed to page 42 of the campaign book [campaign].",
+                        "value": "quest:3"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Choice B",
+                        "body": "**Help the King of Storms.**\n\nOpen up quest box [tuckbox] 4/8 and unpack the standees.\n\nPlace the Uzem’s Shrine sticker, D-4, onto the map.\n\nProceed to page 54 of the campaign book [campaign].",
+                        "value": "quest:4"
+                    }
                 ]
             },
             "encounters": [
                 {
-                    "id": "I.1",
+                    "id": "chapter_2.I",
                     "title": "The Island of Doctor Mo"
                 }
             ]
@@ -126,6 +267,23 @@
                 ],
                 "quest_started_none": [
                     "4"
+                ]
+            },
+            "introduction": {
+                "sections": [
+                    {
+                        "type": "text",
+                        "value": "quest_3_intro"
+                    },
+                    {
+                        "type": "artwork",
+                        "value": "Ozendyn"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "body": "Go to “**Peering Over the Rim**” [campaign] **44**.",
+                        "value": "3.1"
+                    }
                 ]
             },
             "encounters": [
@@ -164,6 +322,19 @@
                     "3"
                 ]
             },
+            "introduction": {
+                "sections": [
+                    {
+                        "type": "text",
+                        "value": "quest_4_intro"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "body": "Go to “**The Clouds Roll On**” [campaign] **56**.",
+                        "value": "4.1"
+                    }
+                ]
+            },
             "encounters": [
                 {
                     "id": "4.1",
@@ -188,17 +359,71 @@
             ]
         },
         {
-            "id": "I",
-            "title": "Before Quest 5/6 • Intermission",
+            "id": "chapter_3",
+            "title": "Chapter 3",
             "requires": {
                 "quest_completed_any": [
                     "3",
                     "4"
+                ],
+                "quest_started_none": [
+                    "5",
+                    "6"
+                ]
+            },
+            "introduction": {
+                "id": "chapter_3_intro",
+                "title": "A Consequence",
+                "sections": [
+                    {
+                        "type": "rules",
+                        "title": "Mo and Makaal",
+                        "body": "Open the Merchant level 3 deck and add it to the shop."
+                    },
+                    {
+                        "type": "rules",
+                        "title": "Adversary Ether Field",
+                        "body": "You have the milestone “Vanquished the Absolute” marked on your campaign sheet. For Quest 5-6 mark [b] for [miasma] and [b] for [aura].",
+                        "if_milestone": "Vanquished the Absolute"
+                    },
+                    {
+                        "type": "rules",
+                        "title": "Adversary Ether Field",
+                        "body": "You have the milestone “Rejoined the King of Storms” marked on your campaign sheet. For Quest 5-6 mark [a] for [aura] and [a] for [miasma].",
+                        "if_milestone": "Rejoined the King of Storms"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Adventure",
+                        "body": "Before you embark on your next quest, you can travel to the Test of Mettle Arena. Proceed to page 68 of the campaign book [campaign].",
+                        "value": "chapter_3.I"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Consequence",
+                        "body": "*You have the milestone “Dispatched the Sovereign” marked on your campaign sheet.*\n\n**It’s time to help the Yanshif.**\n\nOpen up quest box [tuckbox] 1/6 and unpack the standees.\n\nPlace the Alad Ahma sticker, A-6, onto the map.\n\nProceed to page 84 of the campaign book [campaign].",
+                        "value": "quest:6",
+                        "if_milestone": "Dispatched the Sovereign"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Consequence",
+                        "body": "*You have the milestone “Dispatched the Advocate” marked on your campaign sheet.*\n\n**It’s time to help the Yanshif.**\n\nOpen up quest box [tuckbox] 1/6 and unpack the standees.\n\nPlace the Alad Ahma sticker, A-6, onto the map.\n\nProceed to page 84 of the campaign book [campaign].",
+                        "value": "quest:6",
+                        "if_milestone": "Dispatched the Advocate"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Consequence",
+                        "body": "*You have the milestone “Subdued the Ahma” marked on your campaign sheet.*\n\n**It’s time to venture to the Crystal Caves.**\n\nOpen up quest box [tuckbox] 2/5 and unpack the standees.\n\nPlace the Crystal Caves sticker, C-5, onto the map.\n\nProceed to page 72 of the campaign book [campaign].",
+                        "value": "quest:5",
+                        "if_milestone": "Subdued the Ahma"
+                    }
                 ]
             },
             "encounters": [
                 {
-                    "id": "I.2",
+                    "id": "chapter_3.I",
                     "title": "Mind of My Mind"
                 }
             ]
@@ -214,6 +439,19 @@
                 ],
                 "quest_started_none": [
                     "2"
+                ]
+            },
+            "introduction": {
+                "sections": [
+                    {
+                        "type": "text",
+                        "value": "quest_5_intro"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "body": "Go to “**A Poor Translation**” [campaign] **74**.",
+                        "value": "5.1"
+                    }
                 ]
             },
             "encounters": [
@@ -252,6 +490,19 @@
                     "1"
                 ]
             },
+            "introduction": {
+                "sections": [
+                    {
+                        "type": "text",
+                        "value": "quest_6_intro"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "body": "Go to “**Into that Darkness Peering**” [campaign] **86**.",
+                        "value": "6.1"
+                    }
+                ]
+            },
             "encounters": [
                 {
                     "id": "6.1",
@@ -276,17 +527,76 @@
             ]
         },
         {
-            "id": "I",
-            "title": "Before Quest 7/8 • Intermission",
+            "id": "chapter_4",
+            "title": "Chapter 4",
             "requires": {
                 "quest_completed_any": [
                     "5",
                     "6"
+                ],
+                "quest_started_none": [
+                    "7",
+                    "8"
+                ]
+            },
+            "introduction": {
+                "id": "chapter_3_intro",
+                "title": "A Consequence",
+                "sections": [
+                    {
+                        "type": "rules",
+                        "title": "Mo and Makaal",
+                        "body": "Open the Merchant level 4 deck and add it to the shop."
+                    },
+                    {
+                        "type": "rules",
+                        "title": "Adversary Ether Field",
+                        "body": "*You have the milestone “Conquered the Svaraka” marked on your campaign sheet.*\n\nFor Quest 7-9 mark [b] for [aura] and [b] for [miasma].",
+                        "if_milestone": "Conquered the Svaraka"
+                    },
+                    {
+                        "type": "rules",
+                        "title": "Adversary Ether Field",
+                        "body": "*You have the milestone “Zeepurah was slain” marked on your campaign sheet.*\n\nFor Quest 7-9 mark [a] for [aura] and [a] for [miasma].",
+                        "if_milestone": "Zeepurah was slain"
+                    },
+                    {
+                        "type": "rules",
+                        "title": "Adversary Ether Field",
+                        "body": "*You have the milestone “Zeepurah was contained” marked on your campaign sheet.*\n\nFor Quest 7-9 mark [a] for [aura] and [a] for [miasma].",
+                        "if_milestone": "Zeepurah was contained"
+                    },
+                    {
+                        "type": "rules",
+                        "title": "Adversary Ether Field",
+                        "body": "*You have the milestone “Zeepurah was lost” marked on your campaign sheet.*\n\nFor Quest 7-9 mark [a] for [aura] and [a] for [miasma].",
+                        "if_milestone": "Zeepurah was lost"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Adventure",
+                        "body": "Before you embark on your next quest, you can travel to the Kaleido Caldera. Proceed to page 102 of the campaign book [campaign].",
+                        "value": "chapter_4.I"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Consequence",
+                        "body": "*You have the milestone “Rejoined the King of Storms” marked on your campaign sheet.*\n\n**It’s time to venture into the Bone Wastes.**\n\nOpen up quest box [tuckbox] 3/7 and unpack the standees.\n\nPlace the Bonespire sticker, B-3, onto the map.\n\nProceed to page 104 of the campaign book [campaign].",
+                        "value": "quest:7",
+                        "if_milestone": "Rejoined the King of Storms"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Consequence",
+                        "body": "*You have the milestone “Vanquished the Absolute” marked on your campaign sheet.*\n\n**It’s time to travel to Uzem’s Shrine.**\n\nOpen up quest box [tuckbox] 4/8 and unpack the standees.\n\nPlace the Uzem’s Shrine sticker, D-7, onto the map.\n\nProceed to page 116 of the campaign book [campaign].",
+                        "value": "quest:8",
+                        "if_milestone": "Vanquished the Absolute"
+                    }
                 ]
             },
             "encounters": [
                 {
-                    "id": "I.3",
+                    "id": "chapter_4.I",
                     "title": "Hunting of the Kaleido"
                 }
             ]
@@ -302,6 +612,19 @@
                 ],
                 "quest_started_none": [
                     "3"
+                ]
+            },
+            "introduction": {
+                "sections": [
+                    {
+                        "type": "text",
+                        "value": "quest_7_intro"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "body": "Go to “**The Oldest And Strongest Emotion**” [campaign] **106**.",
+                        "value": "7.1"
+                    }
                 ]
             },
             "encounters": [
@@ -340,6 +663,23 @@
                     "4"
                 ]
             },
+            "introduction": {
+                "sections": [
+                    {
+                        "type": "text",
+                        "value": "quest_8_intro"
+                    },
+                    {
+                        "type": "artwork",
+                        "value": "Stormcaller"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "body": "Go to “**Wind-Bitten Ancient Elms**” [campaign] **118**.",
+                        "value": "8.1"
+                    }
+                ]
+            },
             "encounters": [
                 {
                     "id": "8.1",
@@ -364,17 +704,38 @@
             ]
         },
         {
-            "id": "I",
-            "title": "Before Quest 9 • Intermission",
+            "id": "chapter_5",
+            "title": "Chapter 5",
             "requires": {
                 "quest_completed_any": [
                     "7",
                     "8"
+                ],
+                "quest_started_none": [
+                    "9"
+                ]
+            },
+            "introduction": {
+                "id": "chapter_5_intro",
+                "title": "Era Shattered",
+                "sections": [
+                    {
+                        "type": "campaign_link",
+                        "title": "Adventure",
+                        "body": "Before you embark on your next quest, you can travel to the Skyward Plateau. Proceed to page 132 of the campaign book [campaign].",
+                        "value": "chapter_5.I"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Consequence",
+                        "body": "**You have done what you can for the tribes of Lalos. The Star Hunters have attacked Era, the great floating city.**\n\nOpen up quest box [tuckbox] 9 and unpack the standees.\n\nPlace the the Era Shattered sticker, E-8, onto the map.\n\nProceed to page 134 of the campaign book [campaign].",
+                        "value": "quest:9"
+                    }
                 ]
             },
             "encounters": [
                 {
-                    "id": "I.4",
+                    "id": "chapter_5.I",
                     "title": "Wanderlust"
                 }
             ]
@@ -387,6 +748,26 @@
                 "quest_completed_any": [
                     "7",
                     "8"
+                ]
+            },
+            "introduction": {
+                "sections": [
+                    {
+                        "type": "text",
+                        "value": "quest_9_intro"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "body": "*You completed Quest 7 and slayed Bahzar*.\n\nProceed to “How Wide Was It”, [campaign] 136.",
+                        "value": "9.1a",
+                        "if_milestone": "quest_7_complete"
+                    },
+                    {
+                        "type": "campaign_link",
+                        "body": "*You completed Quest 8 and harmonized The King of Storms*.\n\nProceed to “How Deep Was It”, [campaign] 138.",
+                        "value": "9.1b",
+                        "if_milestone": "quest_8_complete"
+                    }
                 ]
             },
             "encounters": [

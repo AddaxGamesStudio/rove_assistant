@@ -48,12 +48,71 @@ enum RoundPhase {
 
 typedef Faction = RoundPhase;
 
+class EncounterSetup {
+  final String box;
+  final String map;
+  final String adversary;
+  final String? tiles;
+
+  EncounterSetup(
+      {required this.box,
+      required this.map,
+      required this.adversary,
+      this.tiles});
+
+  factory EncounterSetup.fromJson(Map<String, dynamic> json) {
+    return EncounterSetup(
+      box: json['box'] as String,
+      map: json['map'] as String,
+      adversary: json['adversary'] as String,
+      tiles: json['tiles'] as String?,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'box': box,
+      'map': map,
+      'adversary': adversary,
+      if (tiles case final value?) 'tiles': value,
+    };
+  }
+}
+
+class EncounterTerrain {
+  final String name;
+  final String title;
+  final String? body;
+  final int? damage;
+  final String? expansion;
+
+  EncounterTerrain(this.name,
+      {required this.title, this.body, this.damage, this.expansion});
+
+  EncounterTerrain.fromJson(Map<String, dynamic> json)
+      : name = json['name'] as String,
+        title = json['title'] as String,
+        body = json['body'] as String?,
+        damage = json['damage'] as int?,
+        expansion = json['expansion'] as String?;
+
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'title': title,
+      if (body case final value?) 'body': value,
+      if (damage case final value?) 'damage': value,
+      if (expansion case final value?) 'expansion': value,
+    };
+  }
+}
+
 @immutable
 class EncounterDef {
   // Use these to identify unique encounter logic.
   static const String encounter2dot4 = '2.4';
   static const String encounter3dot4 = '3.4';
-  static const String encounterIdot2 = 'I.2';
+  static const String encounterChapter3dotI = 'chapter_3.I';
   static const String encounter4dot5 = '4.5';
   static const String encounter5dot4 = '5.4';
   static const String encounter6dot3 = '6.3';
@@ -72,8 +131,10 @@ class EncounterDef {
   final String questId;
   final String number;
   final String title;
+  final EncounterSetup? setup;
   final String victoryDescription;
   final String? lossDescription;
+  final List<EncounterTerrain> terrain;
   final MapDef startingMap;
   final int roundLimit;
   final List<String> challenges;
@@ -114,8 +175,10 @@ class EncounterDef {
     required this.questId,
     required this.number,
     required this.title,
+    this.setup,
     required this.victoryDescription,
     this.lossDescription,
+    this.terrain = const [],
     required this.startingMap,
     required this.roundLimit,
     this.challenges = const [],
@@ -205,8 +268,13 @@ class EncounterDef {
       questId: questId ?? json['quest_id'] as String,
       number: json['number'] as String,
       title: json['title'] as String,
+      setup: json.containsKey('setup')
+          ? EncounterSetup.fromJson(json['setup'] as Map<String, dynamic>)
+          : null,
       victoryDescription: json['objective'] ?? json['victory'] ?? '',
       lossDescription: json['loss'] as String?,
+      terrain: decodeJsonListNamed(
+          'terrain', json, (e) => EncounterTerrain.fromJson(e)),
       roundLimit: json['round_limit'] ?? noRoundLimit,
       challenges: challenges,
       baseLystReward: lystReward,
@@ -220,8 +288,8 @@ class EncounterDef {
       campaignLink: campaignLink,
       extraPhase: json['extra_phase'] as String?,
       extraPhaseIndex: json['extra_phase_index'] as int?,
-      playerPossibleTokens:
-          json['player_possible_tokens'] as List<String>? ?? [],
+      playerPossibleTokens: List<String>.from(
+          json['player_possible_tokens'] as List<dynamic>? ?? []),
       trackerEvents: codices,
       allies: decodeJsonListNamed('allies', json, (e) => AllyDef.fromJson(e)),
       adversaries: decodeJsonListNamed(
@@ -265,8 +333,11 @@ class EncounterDef {
       'quest_id': questId,
       'number': number,
       'title': title,
+      if (setup case final value?) 'setup': value.toJson(),
       'victory': victoryDescription,
       if (lossDescription case final value?) 'loss': value,
+      if (terrain.isNotEmpty)
+        'terrain': terrain.map((t) => t.toJson()).toList(),
       'starting_map': startingMap.toJson(),
       'round_limit': roundLimit,
       if (challenges.isNotEmpty) 'challenges': challenges,

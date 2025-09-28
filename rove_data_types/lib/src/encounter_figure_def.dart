@@ -52,6 +52,7 @@ class EncounterFigureDef {
   final bool respawns;
   final RoveCondition? respawnCondition;
   final String? faction;
+  final bool immuneToDamage;
   final bool immuneToForcedMovement;
   final bool immuneToTeleport;
   final bool ignoresDifficultTerrain;
@@ -100,6 +101,7 @@ class EncounterFigureDef {
     this.faction,
     List<String> possibleTokens = const [],
     this.startingTokens = const [],
+    this.immuneToDamage = false,
     this.immuneToForcedMovement = false,
     this.immuneToTeleport = false,
     this.reducePushPullBy = _defaultReducePushPullBy,
@@ -159,6 +161,7 @@ class EncounterFigureDef {
           : [],
       startingTokens:
           decodeJsonListNamed('starting_tokens', json, (e) => e as String),
+      immuneToDamage: json['immune_to_damage'] as bool? ?? false,
       immuneToForcedMovement:
           json['immune_to_forced_movement'] as bool? ?? false,
       immuneToTeleport: json['immune_to_teleport'] as bool? ?? false,
@@ -225,6 +228,7 @@ class EncounterFigureDef {
       if (faction case final value?) 'faction': value,
       if (_selectableTokens.isNotEmpty) 'selectable_tokens': _selectableTokens,
       if (startingTokens.isNotEmpty) 'starting_tokens': startingTokens,
+      if (immuneToDamage) 'immune_to_damage': immuneToDamage,
       if (immuneToForcedMovement)
         'immune_to_forced_movement': immuneToForcedMovement,
       if (immuneToTeleport) 'immune_to_teleport': immuneToTeleport,

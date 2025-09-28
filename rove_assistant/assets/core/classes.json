@@ -4,7 +4,7 @@
             "name": "Dune Dancer",
             "evolution": "base",
             "health": 9,
-            "color_rgb": "D5714D",
+            "color_rgb": "f37241",
             "color_dark_rgb": "933f20",
             "ether_limit": 3,
             "affinities": {
@@ -29,13 +29,21 @@
                     "ignores_difficult_terrain": true,
                     "health": 4
                 }
-            ]
+            ],
+            "rulebook_description": {
+                "complexity": 5,
+                "melee": 3,
+                "range": 3,
+                "defense": 3,
+                "support": 3,
+                "body": "The human Dune Dancer are powerful spell mages that are accompanied into battle with their faithful animal companions. Dune Dancers are consummate warriors and leaders, able to handle any situation with their daft use of blade, spell, and command.\n\nThe Dune Dancer is an easy class to play, but challenging to master. They enjoy equal parts ranged and melee combat, while they care about the positioning of their allies, and can summon war beasts onto the battlefield. If you enjoy high skill combat and leading your allies to victory, the Dune Dancer may be the class for you."
+            }
         },
         {
             "name": "Flash",
             "evolution": "base",
             "health": 8,
-            "color_rgb": "9ABCD4",
+            "color_rgb": "94c4e4",
             "color_dark_rgb": "2065a2",
             "ether_limit": 4,
             "trap_image": "trap_flash.png",
@@ -50,14 +58,22 @@
             "starting_equipment": [
                 "Stripped Staff",
                 "Powdered Drakaen"
-            ]
+            ],
+            "rulebook_description": {
+                "complexity": 2,
+                "melee": 3,
+                "range": 6,
+                "defense": 0,
+                "support": 3,
+                "body": "Starling Flashes are a roiling firestorm. The Flash is the rare starling that has aligned with two elements, fire and air. The mixed elemental nature of the Flash makes them chaotic and a poor fit for a more grounded lifestyle, so they often take to Roving where such power is a welcomed addition to any troop.\n\nThe opposing forces of fire and air make the Flash a powerful ally in combat. They can control the battlefield and support their allies with the might of a storm, or burn their enemies away with powerful flames. You should play the Flash if you wish to master ether, enjoy long range combat, and if you enjoy attacking a large number of enemies at once."
+            }
         },
         {
             "name": "Shadow Piercer",
             "evolution": "base",
             "health": 9,
             "color_rgb": "B4A9C4",
-            "color_dark_rgb": "020055",
+            "color_dark_rgb": "4a2a77",
             "ether_limit": 3,
             "affinities": {
                 "fire": -1,
@@ -70,13 +86,21 @@
             "starting_equipment": [
                 "Stripped Bow",
                 "Powdered Drakaen"
-            ]
+            ],
+            "rulebook_description": {
+                "complexity": 3,
+                "melee": 2,
+                "range": 5,
+                "defense": 1,
+                "support": 4,
+                "body": "Tihfur Shadow Piercers are keen rangers of the forests and swamps who fight to keep their more feral nature in check. They have mastered their third eye, granting insight into the wilds of Chorus like none other. When pushed to their limits, or when instincts take over, the Shadow Piercer lets out their more bestial side.\n\nShadow Piercers have keen aim and assault their enemies from afar with their bow, however, when its time to go for the kill, the Shadow Piercer lets out their bestial side and dives into the melee with their powerful claws. If you enjoy powerful single target strikers, who can secure a kill when needed, you'll enjoy playing the Shadow Piercer."
+            }
         },
         {
             "name": "Sophist",
             "evolution": "base",
             "health": 8,
-            "color_rgb": "CAB35E",
+            "color_rgb": "d8b84b",
             "color_dark_rgb": "8e7950",
             "uses_glyphs": true,
             "ether_limit": 3,
@@ -91,13 +115,21 @@
             "starting_equipment": [
                 "Stripped Spear",
                 "Powdered Drakaen"
-            ]
+            ],
+            "rulebook_description": {
+                "complexity": 4,
+                "melee": 2,
+                "range": 2,
+                "defense": 4,
+                "support": 4,
+                "body": "The Zusag Sophist are a wily inquisitive bunch. With great alacrity, they have mastered the forces of Crux to manifest their thoughts into delightful fractals called glyphs. With their penchant to challenge every creature they meet to a game of wits, the Sophist makes for a powerful if not a peculiar ally.\n\nThe Sophist can create glyphs, which are tokens placed onto the map that affect units that stand within them. If you enjoy combat where positioning means everything, reacting to a constantly changing battlefield, and reposition the enemy to your advantage, you'll want to give the Sophist a try."
+            }
         },
         {
             "name": "True Scale",
             "evolution": "base",
             "health": 10,
-            "color_rgb": "AECD7D",
+            "color_rgb": "aed477",
             "color_dark_rgb": "56822a",
             "ether_limit": 3,
             "affinities": {
@@ -111,15 +143,23 @@
             "starting_equipment": [
                 "Stripped Blade",
                 "Powdered Drakaen"
-            ]
+            ],
+            "rulebook_description": {
+                "complexity": 1,
+                "melee": 5,
+                "range": 1,
+                "defense": 5,
+                "support": 1,
+                "body": "Kebrasska True Scales are powerful frontline warriors. The rasska with their four arms are a fearsome fighter capable of striking multiple foes at once, while the keb keeps their rasska bond mate safe from harm with their resilient shell and powerful mind.\n\nYou'll want to play this class if you enjoy front line combat, running interference for your team, and hitting back for as good or greater as you get."
+            }
         },
         {
             "name": "Ridge Striker",
             "evolution": "prime",
             "base": "Dune Dancer",
             "health": 11,
-            "color_rgb": "D5714D",
-            "color_dark_rgb": "933f20",
+            "color_rgb": "dbb591",
+            "color_dark_rgb": "8e7950",
             "ether_limit": 3,
             "affinities": {
                 "fire": -2,
@@ -165,8 +205,8 @@
             "evolution": "prime",
             "base": "Flash",
             "health": 10,
-            "color_rgb": "9ABCD4",
-            "color_dark_rgb": "2065a2",
+            "color_rgb": "f26341",
+            "color_dark_rgb": "933f20",
             "ether_limit": 4,
             "affinities": {
                 "fire": 2,
@@ -188,7 +228,7 @@
                 },
                 {
                     "name": "Tropistic",
-                    "description": "You gain +1 [Head] item slot.  Each time you spend one or more infused ether to use the effect on a [Head] item, recover [RCV] 1.",
+                    "description": "You gain +1 [Head] item slot. Each time you spend one or more infused ether to use the effect on a [Head] item, recover [RCV] 1.",
                     "additional_slots": [
                         "head"
                     ]
@@ -200,8 +240,8 @@
             "evolution": "prime",
             "base": "Shadow Piercer",
             "health": 11,
-            "color_rgb": "B4A9C4",
-            "color_dark_rgb": "020055",
+            "color_rgb": "a8a2d0",
+            "color_dark_rgb": "4a2a77",
             "board_tokens": [
                 "Blood Lust"
             ],
@@ -237,8 +277,8 @@
             "evolution": "prime",
             "base": "Sophist",
             "health": 10,
-            "color_rgb": "CAB35E",
-            "color_dark_rgb": "8e7950",
+            "color_rgb": "d66d67",
+            "color_dark_rgb": "7d314a",
             "uses_glyphs": true,
             "board_tokens": [
                 "Quartic",
@@ -273,8 +313,8 @@
             "evolution": "prime",
             "base": "True Scale",
             "health": 13,
-            "color_rgb": "AECD7D",
-            "color_dark_rgb": "56822a",
+            "color_rgb": "92cfa0",
+            "color_dark_rgb": "495b59",
             "board_tokens": [
                 "Fortify",
                 "Fortify",
@@ -294,7 +334,7 @@
             "traits": [
                 {
                     "name": "Strategic Resources",
-                    "description": "You gain +1 [Hand] item slot.  Each time you spend infused ether to use the effect of a [Hand] item that grants [DEF], gain one [Fortify] token.",
+                    "description": "You gain +1 [Hand] item slot. Each time you spend infused ether to use the effect of a [Hand] item that grants [DEF], gain one [Fortify] token.",
                     "additional_slots": [
                         "hand"
                     ]
@@ -321,8 +361,8 @@
             "prime": "Ridge Striker",
             "health": 15,
             "defense": 1,
-            "color_rgb": "D5714D",
-            "color_dark_rgb": "933f20",
+            "color_rgb": "f15b5c",
+            "color_dark_rgb": "59112c",
             "ether_limit": 3,
             "affinities": {
                 "fire": -2,
@@ -334,18 +374,18 @@
             },
             "summons": [
                 {
-                    "name": "Pouncing Borejaw",
+                    "name": "Ravenous Drako",
                     "health": 3
                 },
                 {
-                    "name": "Wyrmling",
+                    "name": "Pouncing Borejaw",
                     "health": 3
                 }
             ],
             "traits": [
                 {
                     "name": "Earthen Whisper",
-                    "description": "You and your allies trigger the effects of [everbloom] when within [Range] 0-1 of the ether field.  A unit can only benefit from one [everbloom] when it triggers."
+                    "description": "You and your allies trigger the effects of [everbloom] when within [Range] 0-1 of the ether field. A unit can only benefit from one [everbloom] when it triggers."
                 },
                 {
                     "name": "Blazing Charge",
@@ -363,8 +403,8 @@
             "base": "Flash",
             "prime": "Helion",
             "health": 12,
-            "color_rgb": "9ABCD4",
-            "color_dark_rgb": "2065a2",
+            "color_rgb": "f1c984",
+            "color_dark_rgb": "8e7950",
             "ether_limit": 4,
             "affinities": {
                 "fire": 3,
@@ -396,7 +436,7 @@
             "base": "Shadow Piercer",
             "prime": "Umbral Howl",
             "health": 13,
-            "color_rgb": "B4A9C4",
+            "color_rgb": "aed1e2",
             "color_dark_rgb": "020055",
             "board_tokens": [
                 "Blood Lust",
@@ -434,8 +474,8 @@
             "base": "Sophist",
             "prime": "Conceptualist",
             "health": 12,
-            "color_rgb": "CAB35E",
-            "color_dark_rgb": "8e7950",
+            "color_rgb": "ef9221",
+            "color_dark_rgb": "933f20",
             "uses_glyphs": true,
             "board_tokens": [
                 "Quartic",
@@ -472,8 +512,8 @@
             "base": "True Scale",
             "prime": "Toll Bearer",
             "health": 16,
-            "color_rgb": "AECD7D",
-            "color_dark_rgb": "56822a",
+            "color_rgb": "9bd4bc",
+            "color_dark_rgb": "495b59",
             "board_tokens": [
                 "Fortify",
                 "Fortify",

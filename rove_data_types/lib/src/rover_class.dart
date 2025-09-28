@@ -61,6 +61,46 @@ String _colorChannelToString(double channel) =>
 String _colorToString(Color rgb) =>
     '${_colorChannelToString(rgb.r)}${_colorChannelToString(rgb.g)}${_colorChannelToString(rgb.b)}';
 
+class RulebookDescription {
+  final int complexity;
+  final int melee;
+  final int range;
+  final int defense;
+  final int support;
+  final String body;
+
+  const RulebookDescription({
+    required this.complexity,
+    required this.melee,
+    required this.range,
+    required this.defense,
+    required this.support,
+    required this.body,
+  });
+
+  factory RulebookDescription.fromJson(Map<String, dynamic> json) {
+    return RulebookDescription(
+      complexity: json['complexity'] as int,
+      melee: json['melee'] as int,
+      range: json['range'] as int,
+      defense: json['defense'] as int,
+      support: json['support'] as int,
+      body: json['body'] as String,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'complexity': complexity,
+      'melee': melee,
+      'range': range,
+      'defense': defense,
+      'support': support,
+      'body': body,
+    };
+  }
+}
+
 @immutable
 class RoverClass {
   // Used for classes that are not available to players, like "Infected" in the Xulc expansion.
@@ -87,6 +127,7 @@ class RoverClass {
   final List<SkillDef> skills;
   final List<ReactionDef> reactions;
   final List<TraitDef> traits;
+  final RulebookDescription? rulebookDescription;
 
   static const _defaultDefense = 0;
   const RoverClass({
@@ -113,6 +154,7 @@ class RoverClass {
     required this.skills,
     required this.reactions,
     this.traits = const [],
+    this.rulebookDescription,
   });
 
   static fromJson(Map<String, dynamic> json) {
@@ -171,6 +213,10 @@ class RoverClass {
       reactions: decodeJsonListNamed(
           'reactions', json, (e) => ReactionDef.fromJson(e)),
       traits: decodeJsonListNamed('traits', json, (e) => TraitDef.fromJson(e)),
+      rulebookDescription: json.containsKey('rulebook_description')
+          ? RulebookDescription.fromJson(
+              json['rulebook_description'] as Map<String, dynamic>)
+          : null,
     );
   }
 
@@ -201,6 +247,8 @@ class RoverClass {
       'skills': skills.map((e) => e.toJson()).toList(),
       'reactions': reactions.map((e) => e.toJson()).toList(),
       if (traits.isNotEmpty) 'traits': traits.map((e) => e.toJson()).toList(),
+      if (rulebookDescription case final value?)
+        'rulebook_description': value.toJson(),
     };
   }
 

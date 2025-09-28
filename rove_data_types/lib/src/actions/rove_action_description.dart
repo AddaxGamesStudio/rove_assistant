@@ -9,9 +9,12 @@ class RoveActionDescription {
   @JsonKey(includeIfNull: false)
   final String? body;
   @JsonKey(includeIfNull: false)
+  final String? target;
+
+  @JsonKey(includeIfNull: false)
   final String? suffix;
 
-  RoveActionDescription({this.prefix, this.body, this.suffix});
+  RoveActionDescription({this.prefix, this.body, this.target, this.suffix});
 
   factory RoveActionDescription.fromJson(Map<String, dynamic> json) =>
       _$RoveActionDescriptionFromJson(json);

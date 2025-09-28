@@ -2,8 +2,8 @@
     "name": "Shadow Piercer",
     "evolution": "base",
     "health": 9,
-    "color_rgb": "b4a9c4",
-    "color_dark_rgb": "020055",
+    "color_rgb": "B4A9C4",
+    "color_dark_rgb": "4a2a77",
     "ether_limit": 3,
     "starting_equipment": [
         "Stripped Bow",

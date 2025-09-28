@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "827683228986",
+    "project_id": "rove-assistant",
+    "storage_bucket": "rove-assistant.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827683228986:android:196552d6398e333d82d403",
+        "android_client_info": {
+          "package_name": "com.example.rove_assistant"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx9BcYdXGj9fXk6YnWJRWFrVStHqUfCWY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

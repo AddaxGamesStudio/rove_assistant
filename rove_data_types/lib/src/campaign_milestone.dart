@@ -86,11 +86,13 @@ class CampaignMilestone {
   ];
 
   static const List<String> xulcCampaignSheetMilestones = [
+    milestone10dot1,
     milestone10dot2,
     milestone10dot3,
     milestone10dot4,
     milestone10dot6,
     milestone10dot7,
+    milestone10dot8,
   ];
 
   final String milestone;
@@ -117,7 +119,7 @@ class CampaignMilestone {
       case milestone1dot5:
         return CampaignMilestone(
           milestone: milestone,
-          figureNames: ['Ahma Corrupter'],
+          figureNames: ['Ahma'],
         );
       case milestone2dot5Advocate:
         return CampaignMilestone(
@@ -206,7 +208,7 @@ class CampaignMilestone {
       case milestone7dot5:
         return CampaignMilestone(
           milestone: milestone,
-          figureNames: ['Bazhar Creator'],
+          figureNames: ['Bazhar'],
         );
       case milestone8dot1BreathOfUzemSlain:
         return CampaignMilestone(
@@ -280,6 +282,12 @@ class CampaignMilestone {
         return CampaignMilestone(
           milestone: milestone,
           expansion: xulcExpansionKey,
+        );
+      case milestone10dot8:
+        return CampaignMilestone(
+          milestone: milestone,
+          expansion: xulcExpansionKey,
+          figureNames: ['Hra'],
         );
       default:
         return CampaignMilestone(

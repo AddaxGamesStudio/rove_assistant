@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/widgets.dart';
-import 'package:rove_assistant/model/encounter_model.dart';
 
 class CampaignConfig {
   static final CampaignConfig _instance = CampaignConfig._privateConstructor();
@@ -12,20 +11,13 @@ class CampaignConfig {
 
   late Map<String, dynamic> config;
 
-  bool hasTickVictoryPrompt({required EncounterModel encounter}) {
-    final id = encounter.encounterDef.id;
-    final tickVictoryPrompt =
-        config['encounters']?[id]?['tick_victory_prompt'] ?? false;
-    return tickVictoryPrompt;
+  String? headerPathForPage(String pageId) {
+    return config['pages']?[pageId]?['header'] ?? config['default_header'];
   }
 
-  String? replaceVictoryWithMilestone({required String encounterId}) {
-    return config['encounters']?[encounterId]
-        ?['replace_victory_with_milestone'];
-  }
-
-  String? headerPath({required String encounterId}) {
-    return config['encounters']?[encounterId]?['header'];
+  String? headerPathForEncounter(String encounterId) {
+    return config['encounters']?[encounterId]?['header'] ??
+        config['default_header'];
   }
 
   Future<void> load(BuildContext context) async {

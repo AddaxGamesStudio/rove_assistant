@@ -75,21 +75,21 @@ class ReactionTriggerDef {
         actorKind?.description ?? targetKind?.description ?? 'any';
     switch (type) {
       case RoveEventType.afterSuffer:
-        return 'After $subjectDescription suffered $amount or more damage within $range';
+        return 'After $subjectDescription within [range] ${range.$1}-${range.$2} suffers $amount or more [dmg] from a single source:';
       case RoveEventType.afterMove:
-        return 'After $subjectDescription ends a movement action $range to you';
+        return 'After $subjectDescription ends a movement action ${range.$1 == 1 && range.$2 == 1 ? 'adjacent to' : 'within [range] ${range.$1}-${range.$2} of'} you:';
       case RoveEventType.afterSlain:
         return 'After $subjectDescription is slain';
       case RoveEventType.afterAttack:
-        return 'After $subjectDescription ${actorKind != null ? 'attacks' : 'is attacked'}';
+        return 'After $subjectDescription ${actorKind != null ? 'attacks' : 'is attacked'} within [range] ${range.$1}-${range.$2}:';
       case RoveEventType.beforeAttack:
-        return 'Before $subjectDescription ${actorKind != null ? 'attacks' : 'is attacked'}';
+        return 'Before $subjectDescription ${actorKind != null ? 'attacks' : 'is attacked'} within [range] ${range.$1}-${range.$2}:';
       case RoveEventType.enteredSpace:
         return 'After $subjectDescription enters a space';
       case RoveEventType.generatedEther:
         return 'After a rover generated ether within $range';
       case RoveEventType.startTurn:
-        return 'Before $subjectDescription starts their turn adjacent to you';
+        return 'Before $subjectDescription starts their turn adjacent to you:';
       case RoveEventType.endRoverPhase:
         return 'At the end of the Rover phase';
       case RoveEventType.endTurn:

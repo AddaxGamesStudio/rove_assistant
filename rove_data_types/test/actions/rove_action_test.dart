@@ -96,14 +96,14 @@ void main() {
     test('toJson of move', () {
       final action = RoveAction.move(3);
       final json = action.toJson();
-      expect(json['type'], RoveActionType.move.toJson());
+      expect(json['type'], RoveActionType.dash.toJson());
       expect(json['amount'], 3);
     });
 
     test('fromJson of move', () {
-      final json = {'type': RoveActionType.move.toJson(), 'amount': 3};
+      final json = {'type': RoveActionType.dash.toJson(), 'amount': 3};
       final action = RoveAction.fromJson(json);
-      expect(action.type, RoveActionType.move);
+      expect(action.type, RoveActionType.dash);
       expect(action.amount, 3);
     });
 

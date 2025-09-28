@@ -2,38 +2,38 @@
     "figures": [
         {
             "role": "adversary",
-            "name": "Cleaving Xulc",
-            "image": "cleaving_xulc.webp"
-        },
-        {
-            "role": "adversary",
-            "name": "Armored Xulc",
-            "image": "armored_xulc.webp"
-        },
-        {
-            "role": "adversary",
-            "name": "Flying Xulc",
-            "image": "flying_xulc.webp"
-        },
-        {
-            "role": "adversary",
-            "name": "Nidus",
-            "image": "nidus.webp"
-        },
-        {
-            "role": "adversary",
             "name": "Writhing Stomaw",
-            "image": "figure-13-Stomaw.png"
+            "use_image_from_core": true,
+            "image": "stomaw.webp"
         },
         {
             "role": "adversary",
             "name": "Stolen Urn",
+            "codex_entries": [
+                2
+            ],
             "image": "stolen_urn.webp"
         },
         {
-            "role": "ally",
-            "name": "Mo and Makaal",
-            "image": "mo_and_makaal.webp"
+            "role": "adversary",
+            "name": "Cleaving Xulc",
+            "image": "xulc_cleaving.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Armored Xulc",
+            "image": "xulc_armored.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Flying Xulc",
+            "image": "xulc_flying.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Nidus",
+            "type": "miniboss",
+            "image": "nidus.webp"
         },
         {
             "role": "adversary",
@@ -43,36 +43,67 @@
         {
             "role": "adversary",
             "name": "Bulwauros Husk",
-            "image": "figure-62-Bulwauros.png"
+            "use_image_from_core": true,
+            "image": "bulwauros.webp"
         },
         {
             "role": "adversary",
             "name": "Listless Dyad",
-            "image": "figure-55-Dyad.png"
+            "use_image_from_core": true,
+            "image": "dyad.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Faltering Ashemak",
+            "use_image_from_core": true,
+            "image": "ashemak.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Withering Dekaha",
+            "use_image_from_core": true,
+            "image": "dekaha.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Hastadilling",
+            "type": "boss",
+            "large": true,
+            "codex_entries": [
+                14,
+                25
+            ],
+            "image": "hastadilling.webp"
         },
         {
             "role": "adversary",
             "name": "Undercarriage",
+            "type": "boss",
+            "large": true,
+            "codex_entries": [
+                17
+            ],
             "image": "undercarriage.webp"
         },
         {
             "role": "adversary",
             "name": "Head",
+            "type": "boss",
+            "codex_entries": [
+                16
+            ],
             "image": "head.webp"
         },
         {
             "role": "adversary",
-            "name": "Hastadilling",
-            "image": "hastadilling.webp"
-        },
-        {
-            "role": "adversary",
             "name": "Hastadilling Headless",
+            "exclude_from_bestiary": true,
             "image": "hastadilling.webp"
         },
         {
             "role": "adversary",
             "name": "Hastadilling Core",
+            "exclude_from_bestiary": true,
             "image": "hastadilling.webp"
         },
         {
@@ -82,14 +113,43 @@
         },
         {
             "role": "adversary",
+            "name": "Fracturing Gruv",
+            "use_image_from_core": true,
+            "image": "gruv.webp"
+        },
+        {
+            "role": "adversary",
             "name": "Hunter",
             "image": "hunter.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Bursting Terranape",
+            "type": "miniboss",
+            "use_image_from_core": true,
+            "image": "terranape.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Fracturing Gruv (miniboss)",
+            "type": "miniboss",
+            "use_image_from_core": true,
+            "image": "gruv.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Fading Crown",
+            "type": "miniboss",
+            "image": "crown.webp"
         },
         {
             "role": "adversary",
             "name": "Prime Xulc Brood Matron",
             "type": "boss",
             "large": true,
+            "codex_entries": [
+                27
+            ],
             "image": "prime_xulc.webp"
         },
         {

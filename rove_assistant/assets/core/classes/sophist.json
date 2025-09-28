@@ -2,7 +2,7 @@
     "name": "Sophist",
     "evolution": "base",
     "health": 8,
-    "color_rgb": "cab35e",
+    "color_rgb": "d8b84b",
     "color_dark_rgb": "8e7950",
     "uses_glyphs": true,
     "ether_limit": 3,

@@ -1,14 +1,14 @@
 import 'package:rove_data_types/rove_data_types.dart';
 
 class ItemTimingCondition {
-  final RoveActionType? type;
+  final RoveActionType? actionType;
   final int? minRange;
   final bool? isAbility;
 
-  ItemTimingCondition({this.type, this.minRange, this.isAbility = false});
+  ItemTimingCondition({this.actionType, this.minRange, this.isAbility = false});
 
   bool matchesAction(RoveAction action, bool isAbility) {
-    if (type != null && action.type != type) {
+    if (actionType != null && action.type != actionType) {
       return false;
     }
     if (minRange != null && action.range.$1 < minRange!) {
@@ -22,7 +22,7 @@ class ItemTimingCondition {
 
   Map<String, dynamic> toJson() {
     return {
-      if (type case final value?) 'type': value.toJson(),
+      if (actionType case final value?) 'action': value.toJson(),
       if (minRange case final value?) 'min_range': value,
       if (isAbility case final value?) 'is_ability': value,
     };
@@ -30,8 +30,8 @@ class ItemTimingCondition {
 
   factory ItemTimingCondition.fromJson(Map<String, dynamic> json) {
     return ItemTimingCondition(
-      type: json.containsKey('type')
-          ? RoveActionType.fromJson(json['type'] as String)
+      actionType: json.containsKey('action')
+          ? RoveActionType.fromJson(json['action'] as String)
           : null,
       minRange: json.containsKey('min_range') ? json['min_range'] as int : null,
       isAbility:

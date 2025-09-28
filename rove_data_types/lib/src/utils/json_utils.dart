@@ -22,16 +22,20 @@ Set<T> decodeJsonSetNamed<T>(
 
 Map<String, List<EncounterAction>> actionMapFromJson(
     String name, dynamic json) {
-  return mapFromJson(name, json,
-      (value) => value.map((a) => EncounterAction.fromJson(a)).toList());
+  return mapFromJson(
+      name,
+      json,
+      (value) => (value as List<dynamic>)
+          .map((a) => EncounterAction.fromJson(a))
+          .toList());
 }
 
-Map<String, T> mapFromJson<T>(
+Map<String, T> mapFromJson<K, T>(
     String name, dynamic json, T Function(dynamic) decoder) {
   return json.containsKey(name)
-      ? Map<String, T>.fromEntries((json[name] as Map<String, dynamic>)
+      ? Map<String, T>.fromEntries((json[name] as Map<K, dynamic>)
           .entries
-          .map((e) => MapEntry(e.key, decoder(e.value))))
+          .map((e) => MapEntry(e.key.toString(), decoder(e.value))))
       : {};
 }
 

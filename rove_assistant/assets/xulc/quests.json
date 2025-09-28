@@ -2,6 +2,50 @@
     "quests": [
         {
             "expansion": "xulc",
+            "id": "10_prologue",
+            "title": "Xulc • Prologue",
+            "short_title": "Prologue",
+            "requires": {
+                "quest_completed_any": [
+                    "9"
+                ],
+                "quest_started_none": [
+                    "10_act1"
+                ]
+            },
+            "introduction": {
+                "id": "quest_10_intro",
+                "title": "Infection",
+                "sections": [
+                    {
+                        "type": "text",
+                        "value": "quest_10_intro"
+                    },
+                    {
+                        "type": "rules",
+                        "title": "Starting the Xulc Campaign",
+                        "body": "The Xulc campaign is a level 9 adventure. **You should only play this campaign if you have completed the core box Rove campaign.**  You play your level 9 Rovers from the core box campaign or create new level 9 Rovers, following the quick level guide in the core rulebook on page 63.\n\nYou’ll come across several new rules while playing this campaign. These new rules will be introduced within the encounters of the campaign.\n\nKeep your core box campaign sheet nearby while playing the Xulc campaign. Several of the encounters will reference the core box campaign sheet and its milestones."
+                    },
+                    {
+                        "type": "rules",
+                        "title": "Adversary Ether Fields",
+                        "body": "On your Xulc campaign sheet, under Adversary Ether Fields, mark [aura] and [miasma]. For this campaign, you will use these values for adversary aura and miasma tiles."
+                    },
+                    {
+                        "type": "rules",
+                        "title": "Mo and Makaal",
+                        "body": "Mo and Makaal are living their best lives in Carmizon Reach, making a killing selling all the lyst and material they gained while adventuring with you during the Star Hunter raids. Since they are no longer around, their shop is closed and you can’t buy items.\n\nIf you choose to create new Rovers for this campaign, each new Rovers gains 300 [lyst]. Spend this lyst on equipment and small items. Once you have equipped your new Rovers, the shop is once again closed."
+                    },
+                    {
+                        "type": "campaign_link",
+                        "body": "Open up quest box [tuckbox] XU-1 and unpack the standees. These standees will be used for Encounters 10.1 through 10.5.\n\nProceed to Encounter 1 - “**The Nameless Black of a Name**”, [campaign] **4**.",
+                        "value": "quest:10_act1"
+                    }
+                ]
+            }
+        },
+        {
+            "expansion": "xulc",
             "id": "10_act1",
             "title": "Xulc • Act One",
             "short_title": "Act One",
@@ -14,6 +58,97 @@
                 {
                     "id": "10_act1.1",
                     "title": "The Nameless Black of a Name"
+                },
+                {
+                    "id": "10_act1.intermission",
+                    "title": "Intermission • Strange Days",
+                    "encounter_completed_any": [
+                        "10_act1.1"
+                    ],
+                    "encounter_completed_none": [
+                        "10_act1.2.late",
+                        "10_act1.3.late",
+                        "10_act1.4.late"
+                    ],
+                    "sections": [
+                        {
+                            "type": "text",
+                            "value": "quest_10_intermission_1_intro"
+                        },
+                        {
+                            "type": "artwork",
+                            "value": "Flying Xulc"
+                        },
+                        {
+                            "type": "campaign_link",
+                            "title": "Choice A",
+                            "body": "This infestation is taking hold quickly. There is a stomaw nest to the west that needs your attention:\n\nProceed to Encounter 2 - “**Nidifugous by Nature**”, [campaign] **8**.",
+                            "value": "10_act1.2.early",
+                            "encounter_completed_not_all": [
+                                "10_act1.3.early",
+                                "10_act1.4.early"
+                            ]
+                        },
+                        {
+                            "type": "campaign_link",
+                            "title": "Choice A",
+                            "body": "This infestation is taking hold quickly. There is a stomaw nest to the west that needs your attention:\n\nProceed to Encounter 2 - “**Nidifugous by Nature**”, [campaign] **12**.",
+                            "value": "10_act1.2.late",
+                            "encounter_completed_all": [
+                                "10_act1.3.early",
+                                "10_act1.4.early"
+                            ],
+                            "encounter_completed_none": [
+                                "10_act1.2.early"
+                            ]
+                        },
+                        {
+                            "type": "campaign_link",
+                            "title": "Choice B",
+                            "body": "You could use Mo and Makaal’s assistance. Head to Carmizon Reach and see how they are doing:\n\nProceed to Encounter 3 - “**Keen Debtors**”, [campaign] **16**.",
+                            "value": "10_act1.3.early",
+                            "encounter_completed_not_all": [
+                                "10_act1.2.early",
+                                "10_act1.4.early"
+                            ]
+                        },
+                        {
+                            "type": "campaign_link",
+                            "title": "Choice B",
+                            "body": "You could use Mo and Makaal’s assistance. Head to Carmizon Reach and see how they are doing:\n\nProceed to Encounter 3 - “**Keen Debtors**”, [campaign] **16**.",
+                            "value": "10_act1.3.late",
+                            "encounter_completed_all": [
+                                "10_act1.2.early",
+                                "10_act1.4.early"
+                            ],
+                            "encounter_completed_none": [
+                                "10_act1.3.early"
+                            ]
+                        },
+                        {
+                            "type": "campaign_link",
+                            "title": "Choice C",
+                            "body": "Xulc appear to lack an affinity with ether, making starlings uniquely suited to fight them. There’s someone you think can help you fight the infestation:\n\nProceed to Encounter 4 - “**Ought Never to Sprout**”, [campaign] **20**.",
+                            "value": "10_act1.4.early",
+                            "encounter_completed_not_all": [
+                                "10_act1.2.early",
+                                "10_act1.3.early"
+                            ]
+                        },
+                        {
+                            "type": "campaign_link",
+                            "title": "Choice C",
+                            "body": "Xulc appear to lack an affinity with ether, making starlings uniquely suited to fight them. There’s someone you think can help you fight the infestation:\n\nProceed to Encounter 4 - “**Ought Never to Sprout**”, [campaign] **20**.",
+                            "value": "10_act1.4.late",
+                            "encounter_completed_all": [
+                                "10_act1.2.early",
+                                "10_act1.3.early"
+                            ],
+                            "encounter_completed_none": [
+                                "10_act1.4.early"
+                            ]
+                        }
+                    ]
                 },
                 {
                     "id": "10_act1.2.early",
@@ -105,6 +240,94 @@
                     "10_act1"
                 ]
             },
+            "introduction": {
+                "id": "10_act2.intermission",
+                "title": "Intermission • Loathsome Changes None Could Explain",
+                "sections": [
+                    {
+                        "type": "text",
+                        "value": "quest_10_intermission_2_intro"
+                    },
+                    {
+                        "type": "artwork",
+                        "value": "Armored Xulc"
+                    },
+                    {
+                        "type": "rules",
+                        "title": "Xulc Infestation",
+                        "body": "The xulc infestation is getting worse as they continue to gain new hosts and spread their territorial control. From now on, when setting up an encounter, use the B side of the xulc card.\n\nOpen up quest box [tuckbox] XU-2 and unpack the standees. These standees will be used for the remainder of the campaign."
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Choice A",
+                        "body": "Save the Keb Rasska Tribe. Mo and Makaal believe they can make use of what you gather from there::\n\nProceed to Encounter 6 - “**Mapping Oblivion**”, [campaign] **32**.",
+                        "value": "10_act2.6.early",
+                        "encounter_completed_not_all": [
+                            "10_act2.7.early",
+                            "10_act2.8.early"
+                        ]
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Choice A",
+                        "body": "Save the Keb Rasska Tribe. Mo and Makaal believe they can make use of what you gather from there::\n\nProceed to Encounter 6 - “**Mapping Oblivion**”, [campaign] **36**.",
+                        "value": "10_act2.6.late",
+                        "encounter_completed_all": [
+                            "10_act2.7.early",
+                            "10_act2.8.early"
+                        ],
+                        "encounter_completed_none": [
+                            "10_act2.6.early"
+                        ]
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Choice B",
+                        "body": "The tifhur are proving resilient to the infection, mostly. Learn from them:\n\nProceed to Encounter 7 - “**Half in Another World**”, [campaign] **38**.",
+                        "value": "10_act2.7.early",
+                        "encounter_completed_not_all": [
+                            "10_act2.6.early",
+                            "10_act2.8.early"
+                        ]
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Choice B",
+                        "body": "The tifhur are proving resilient to the infection, mostly. Learn from them:\n\nProceed to Encounter 7 - “**Half in Another World**”, [campaign] **42**.",
+                        "value": "10_act2.7.late",
+                        "encounter_completed_all": [
+                            "10_act2.6.early",
+                            "10_act2.8.early"
+                        ],
+                        "encounter_completed_none": [
+                            "10_act2.7.early"
+                        ]
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Choice C",
+                        "body": "Hra appears to want to head to the Fulgurite Fields. Lead on big fella::\n\nProceed to Encounter 8 - “**Thief of Light, Giver of Lightt**”, [campaign] **46**.",
+                        "value": "10_act2.8.early",
+                        "encounter_completed_not_all": [
+                            "10_act2.6.early",
+                            "10_act2.7.early"
+                        ]
+                    },
+                    {
+                        "type": "campaign_link",
+                        "title": "Choice C",
+                        "body": "Hra appears to want to head to the Fulgurite Fields. Lead on big fella::\n\nProceed to Encounter 8 - “**Thief of Light, Giver of Lightt**”, [campaign] **48**.",
+                        "value": "10_act2.8.late",
+                        "encounter_completed_all": [
+                            "10_act2.6.early",
+                            "10_act2.7.early"
+                        ],
+                        "encounter_completed_none": [
+                            "10_act2.8.early"
+                        ]
+                    }
+                ]
+            },
             "encounters": [
                 {
                     "id": "10_act2.6.early",
@@ -113,24 +336,6 @@
                     "encounter_completed_not_all": [
                         "10_act2.7.early",
                         "10_act2.8.early"
-                    ]
-                },
-                {
-                    "id": "10_act2.7.early",
-                    "title": "Half in Another World",
-                    "encounter_completed_any": [],
-                    "encounter_completed_not_all": [
-                        "10_act2.6.early",
-                        "10_act2.8.early"
-                    ]
-                },
-                {
-                    "id": "10_act2.8.early",
-                    "title": "Thief of Light, Giver of Light",
-                    "encounter_completed_any": [],
-                    "encounter_completed_not_all": [
-                        "10_act2.6.early",
-                        "10_act2.7.early"
                     ]
                 },
                 {
@@ -146,6 +351,15 @@
                     ]
                 },
                 {
+                    "id": "10_act2.7.early",
+                    "title": "Half in Another World",
+                    "encounter_completed_any": [],
+                    "encounter_completed_not_all": [
+                        "10_act2.6.early",
+                        "10_act2.8.early"
+                    ]
+                },
+                {
                     "id": "10_act2.7.late",
                     "title": "Half in Another World",
                     "encounter_completed_any": [],
@@ -154,6 +368,15 @@
                         "10_act2.8.early"
                     ],
                     "encounter_completed_none": [
+                        "10_act2.7.early"
+                    ]
+                },
+                {
+                    "id": "10_act2.8.early",
+                    "title": "Thief of Light, Giver of Light",
+                    "encounter_completed_any": [],
+                    "encounter_completed_not_all": [
+                        "10_act2.6.early",
                         "10_act2.7.early"
                     ]
                 },

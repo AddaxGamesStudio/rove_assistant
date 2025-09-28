@@ -9,22 +9,8 @@
 			"path": "rove_data_types"
 		},
 		{
-			"name": "rove_simulator",
-			"path": "rove_simulator"
-		},
-		{
 			"name": "rove_assistant",
 			"path": "rove_assistant"
-		},
-		{
-			"name": "hex_grid",
-			"path": "hex_grid"
-		},
-		{
-			"path": "rove_app_common"
-		},
-		{
-			"path": "rove_editor"
 		}
 	],
 	"settings": {}

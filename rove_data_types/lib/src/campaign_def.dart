@@ -74,6 +74,13 @@ class CampaignDef {
     );
   }
 
+  String pathForFigure(FigureDef figure) {
+    return pathForImage(
+        type: CampaignAssetType.figure,
+        src: figure.image,
+        expansion: figure.useImageFromCore ? null : figure.expansion);
+  }
+
   String pathForImage(
       {required CampaignAssetType type,
       required String src,

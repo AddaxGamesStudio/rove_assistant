@@ -3,6 +3,8 @@ import 'package:meta/meta.dart';
 @immutable
 class EncounterDialogDef {
   static const drawType = 'draw';
+  static const rulesType = 'rules';
+  static const textType = 'text';
 
   final String title;
   final String? type;
@@ -36,6 +38,8 @@ class EncounterDialogDef {
   }
 
   bool get isDraw => type == drawType;
+
+  bool get isIntroduction => title == 'Introduction';
 }
 
 @immutable

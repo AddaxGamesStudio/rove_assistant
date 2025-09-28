@@ -2,7 +2,7 @@
     "name": "Dune Dancer",
     "evolution": "base",
     "health": 9,
-    "color_rgb": "d5714d",
+    "color_rgb": "f37241",
     "color_dark_rgb": "933f20",
     "ether_limit": 3,
     "starting_equipment": [

@@ -29,6 +29,7 @@ export 'src/campaign_milestone.dart';
 export 'src/campaign_presets.dart';
 export 'src/campaign_sheet/campaign.dart';
 export 'src/campaign_sheet/encounter_record.dart';
+export 'src/chapter_page.dart';
 export 'src/codex.dart';
 export 'src/encounter_tracker_event_def.dart';
 export 'src/encounter_def.dart';

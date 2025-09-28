@@ -103,72 +103,78 @@ class RoveBuff {
 
   String descriptionForAction(RoveAction action, {bool short = false}) {
     final amountDescription = amount < 0 ? amount.toString() : '+$amount';
+    String descriptionForAmountBuff() {
+      switch (action.type) {
+        case RoveActionType.buff:
+          return amountDescription;
+        case RoveActionType.attack:
+        case RoveActionType.forceAttack:
+        case RoveActionType.createTrap:
+        case RoveActionType.suffer:
+          return '$amountDescription [DMG]';
+        case RoveActionType.jump:
+          return '$amountDescription [Jump]';
+        case RoveActionType.heal:
+          return '$amountDescription [hp]';
+        case RoveActionType.dash:
+          return '$amountDescription [Dash]';
+        case RoveActionType.revive:
+          return '$amountDescription [RCV]';
+        case RoveActionType.command:
+        case RoveActionType.generateEther:
+        case RoveActionType.group:
+        case RoveActionType.infuseEther:
+        case RoveActionType.leave:
+        case RoveActionType.loot:
+        case RoveActionType.placeField:
+        case RoveActionType.push:
+        case RoveActionType.pull:
+        case RoveActionType.removeEther:
+        case RoveActionType.rerollEther:
+        case RoveActionType.teleport:
+        case RoveActionType.trade:
+        case RoveActionType.createGlyph:
+        case RoveActionType.flipCard:
+        case RoveActionType.forceMove:
+        case RoveActionType.select:
+        case RoveActionType.addDefense:
+        case RoveActionType.spawn:
+        case RoveActionType.special:
+        case RoveActionType.summon:
+        case RoveActionType.swapSpace:
+        case RoveActionType.triggerFields:
+        case RoveActionType.transformEther:
+          return throw UnimplementedError();
+      }
+    }
+
     switch (type) {
       case BuffType.amount:
-        switch (action.type) {
-          case RoveActionType.buff:
-            return amountDescription;
-          case RoveActionType.attack:
-          case RoveActionType.forceAttack:
-          case RoveActionType.createTrap:
-          case RoveActionType.suffer:
-            return '$amountDescription [DMG]';
-          case RoveActionType.jump:
-            return '$amountDescription Jump';
-          case RoveActionType.heal:
-            return '$amountDescription [Heart]';
-          case RoveActionType.move:
-            return '$amountDescription Move';
-          case RoveActionType.revive:
-            return '$amountDescription [RCV]';
-          case RoveActionType.command:
-          case RoveActionType.generateEther:
-          case RoveActionType.infuseEther:
-          case RoveActionType.leave:
-          case RoveActionType.loot:
-          case RoveActionType.placeField:
-          case RoveActionType.push:
-          case RoveActionType.pull:
-          case RoveActionType.removeEther:
-          case RoveActionType.rerollEther:
-          case RoveActionType.teleport:
-          case RoveActionType.trade:
-          case RoveActionType.createGlyph:
-          case RoveActionType.flipCard:
-          case RoveActionType.forceMove:
-          case RoveActionType.select:
-          case RoveActionType.addDefense:
-          case RoveActionType.spawn:
-          case RoveActionType.special:
-          case RoveActionType.summon:
-          case RoveActionType.swapSpace:
-          case RoveActionType.triggerFields:
-          case RoveActionType.transformEther:
-            return throw UnimplementedError();
-        }
+        return descriptionForAmountBuff() +
+            (field != null ? ', [${field!.name}]' : '');
       case BuffType.attack:
         return '$amountDescription [DMG]';
       case BuffType.defense:
         return '$amountDescription [DEF]';
       case BuffType.field:
-        return field!.label;
+        return '[${field!.name}]';
       case BuffType.ignoreTerrainEffects:
-        assert(action.type == RoveActionType.move ||
+        assert(action.type == RoveActionType.dash ||
             action.type == RoveActionType.jump);
         return short
             ? 'Ignore terrain effects'
-            : 'During this movement ignore the effects of difficult or dangerous terrain';
+            : 'During this movement, ignore the effects of difficult or dangerous terrain.';
       case BuffType.maxHealth:
         return '$amountDescription Max Health';
       case BuffType.pierce:
-        return 'Pierce';
+        return '[Pierce]';
       case BuffType.push:
-        return '$amountDescription Push';
+        return action.push > 0 ? '$amountDescription [Push]' : '[Push] $amount';
       case BuffType.endRange:
-        return '$amountDescription Range';
+        return '$amountDescription [Range]';
       case BuffType.rangeAttackEndRange:
         if (action.isRangeAttack) {
-          return '$amountDescription Range';
+          return '$amountDescription [Range]';
         } else {
           return '$amountDescription Range on next Range Attack';
         }
@@ -180,6 +186,10 @@ class RoveBuff {
   }
 
   bool canBuffAction(RoveAction action) {
+    if (action.type == RoveActionType.group) {
+      return action.children.any((a) => canBuffAction(a));
+    }
+
     switch (type) {
       case BuffType.amount:
         switch (action.type) {
@@ -221,13 +231,14 @@ class RoveBuff {
           case RoveActionType.triggerFields:
             return true;
           case RoveActionType.command:
+          case RoveActionType.group:
           case RoveActionType.flipCard:
           case RoveActionType.generateEther:
           case RoveActionType.infuseEther:
           case RoveActionType.jump:
           case RoveActionType.leave:
           case RoveActionType.loot:
-          case RoveActionType.move:
+          case RoveActionType.dash:
           case RoveActionType.removeEther:
           case RoveActionType.rerollEther:
           case RoveActionType.summon:
@@ -250,7 +261,7 @@ class RoveBuff {
       case BuffType.ignoreTerrainEffects:
         switch (action.type) {
           case RoveActionType.jump:
-          case RoveActionType.move:
+          case RoveActionType.dash:
             return true;
           default:
             return false;

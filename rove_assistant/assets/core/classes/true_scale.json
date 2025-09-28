@@ -2,7 +2,7 @@
     "name": "True Scale",
     "evolution": "base",
     "health": 10,
-    "color_rgb": "aecd7d",
+    "color_rgb": "aed477",
     "color_dark_rgb": "56822a",
     "ether_limit": 3,
     "starting_equipment": [

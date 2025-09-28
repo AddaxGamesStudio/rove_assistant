@@ -13,6 +13,7 @@ class EncounterRecord {
   final List<(String, String, bool)> itemRewards;
   final Map<String, List<String>> consumedItems;
   final Map<String, int> adversaries;
+  final Map<int, String> codexEntries;
 
   EncounterRecord({
     required this.encounterId,
@@ -22,6 +23,7 @@ class EncounterRecord {
     this.itemRewards = const [],
     this.consumedItems = const {},
     this.adversaries = const {},
+    this.codexEntries = const {},
   });
 
   factory EncounterRecord.fromJson(Map<String, dynamic> json) {
@@ -43,6 +45,11 @@ class EncounterRecord {
       consumedItems: mapFromJson('consumed_items', json,
           (value) => (value as List<dynamic>).map((e) => e as String).toList()),
       adversaries: mapFromJson('adversaries', json, (value) => value as int),
+      codexEntries: json.containsKey('codex_entries')
+          ? Map.fromEntries((json['codex_entries'] as Map<String, dynamic>)
+              .entries
+              .map((e) => MapEntry(int.parse(e.key), e.value as String)))
+          : {},
     );
   }
 
@@ -63,6 +70,9 @@ class EncounterRecord {
             .toList(),
       if (consumedItems.isNotEmpty) 'consumed_items': consumedItems,
       if (adversaries.isNotEmpty) 'adversaries': adversaries,
+      if (codexEntries.isNotEmpty)
+        'codex_entries':
+            codexEntries.map((key, value) => MapEntry(key.toString(), value)),
     };
   }
 

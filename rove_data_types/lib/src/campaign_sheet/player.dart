@@ -8,6 +8,7 @@ class Player {
   String? apexClassName;
   List<String> _traits;
   bool resignXulcHealthIncrease;
+  String? xulcTrait;
   List<String> _items;
   List<String> _equippedItems;
   bool inactive = false;
@@ -18,6 +19,7 @@ class Player {
       this.primeClassName,
       this.apexClassName,
       List<String> traits = const [],
+      this.xulcTrait,
       this.resignXulcHealthIncrease = false,
       this.inactive = false,
       List<String> items = const [],
@@ -39,6 +41,7 @@ class Player {
       if (primeClassName case final value?) 'prime_class': value,
       if (apexClassName case final value?) 'apex_class': value,
       if (_traits.isNotEmpty) 'traits': _traits.toList(),
+      if (xulcTrait case final value?) 'xulc_trait': value,
       if (resignXulcHealthIncrease)
         'resign_xulc_health_increase': resignXulcHealthIncrease,
       if (inactive) 'inactive': inactive,
@@ -56,6 +59,7 @@ class Player {
       traits: json.containsKey('traits')
           ? (json['traits'] as List).map((e) => e as String).toList()
           : [],
+      xulcTrait: json['xulc_trait'] as String?,
       resignXulcHealthIncrease:
           json['resign_xulc_health_increase'] as bool? ?? false,
       inactive: json.containsKey('inactive') ? json['inactive'] as bool : false,

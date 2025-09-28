@@ -42,6 +42,7 @@ class Campaign {
   bool skipCore = false;
   bool debugMode = false;
   Map<String, AdversaryRecord> _adversaryRecords = {};
+  Map<String, Map<int, String>> _codexEntries = {};
 
   factory Campaign.empty(
       {required String name,
@@ -78,6 +79,7 @@ class Campaign {
       this.merchantLevel = 0,
       List<EncounterRecord> encounterRecords = const [],
       Map<String, AdversaryRecord> adversaryRecords = const {},
+      Map<String, Map<int, String>> codexEntries = const {},
       List<String> etherNamesForNextEncounter = const [],
       DateTime? saveDate,
       this.deleted = false,
@@ -92,6 +94,7 @@ class Campaign {
         _inactivePlayers = inactivePlayers.toList(),
         _encounterRecords = encounterRecords.toList(),
         _adversaryRecords = Map.from(adversaryRecords),
+        _codexEntries = Map.from(codexEntries),
         _questItemsInShop = questItemsInShop.toSet(),
         _unlockedRewardItems = unlockedRewardItems.toSet(),
         _etherNamesForNextEncounter = etherNamesForNextEncounter.toList(),
@@ -151,6 +154,15 @@ class Campaign {
                   ),
             )
           : {},
+      codexEntries: json.containsKey('unlocked_codex_entries')
+          ? Map.fromEntries((json['unlocked_codex_entries']
+                  as Map<String, dynamic>)
+              .entries
+              .map((e) => MapEntry(
+                  e.key,
+                  Map.fromEntries((e.value as Map<String, dynamic>).entries.map(
+                      (e) => MapEntry(int.parse(e.key), e.value as String))))))
+          : {},
       etherNamesForNextEncounter: json.containsKey('ether_for_next_encounter')
           ? (json['ether_for_next_encounter'] as List)
               .map((e) => e as String)
@@ -188,6 +200,9 @@ class Campaign {
       if (_adversaryRecords.isNotEmpty)
         'adversary_records': _adversaryRecords
             .map((key, value) => MapEntry(key, value.toJson())),
+      if (_codexEntries.isNotEmpty)
+        'unlocked_codex_entries': _codexEntries.map((key, value) => MapEntry(
+            key, value.map((key, value) => MapEntry(key.toString(), value)))),
       if (_etherNamesForNextEncounter.isNotEmpty)
         'ether_for_next_encounter': _etherNamesForNextEncounter,
       'save_date': dateTimeToJson(saveDate),
@@ -226,7 +241,7 @@ class Campaign {
   }
 
   removeItem({required String baseClassName, required String itemName}) {
-    final player = _players
+    final player = (_players + _inactivePlayers)
         .firstWhere((element) => element.baseClassName == baseClassName);
     _ownedStock[itemName] = (_ownedStock[itemName] ?? 1) - 1;
     if (_ownedStock[itemName] == 0) {
@@ -299,7 +314,10 @@ class Campaign {
   }
 
   get startedQuestIds {
-    return _encounterRecords.map((e) => e.questId).toSet();
+    return _encounterRecords
+        .where((e) => e.complete)
+        .map((e) => e.questId)
+        .toSet();
   }
 
   int countQuestItemInShop(String name) {
@@ -345,6 +363,38 @@ class Campaign {
 
   AdversaryRecord? recordOfAdversaryNamed(String name) {
     return _adversaryRecords[name];
+  }
+
+  /* Codex */
+
+  List<(int, String)> codexEntries({String? expansion}) {
+    final key = expansion ?? coreCampaignKey;
+    final codexEntries = _codexEntries[key];
+    if (codexEntries == null) {
+      return [];
+    }
+    return codexEntries.entries
+        .sortedByCompare((e) => e.key, (a, b) => a.compareTo(b))
+        .map((e) => (e.key, e.value))
+        .toList();
+  }
+
+  void addCodexEntry(
+      {String? expansion, required int number, required String title}) {
+    final key = expansion ?? coreCampaignKey;
+    if (_codexEntries[key] == null) {
+      _codexEntries[key] = {};
+    }
+    _codexEntries[key]?[number] = title;
+  }
+
+  bool hasCodexEntry({String? expansion, required int number}) {
+    final key = expansion ?? coreCampaignKey;
+    final codexEntries = _codexEntries[key];
+    if (codexEntries == null) {
+      return false;
+    }
+    return codexEntries.containsKey(number);
   }
 }
 

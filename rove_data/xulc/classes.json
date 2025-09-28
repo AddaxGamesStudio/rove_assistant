@@ -6,7 +6,7 @@
             "evolution": "prime",
             "base": "Dune Dancer",
             "health": 10,
-            "color_rgb": "c9dd97",
+            "color_rgb": "cde09d",
             "color_dark_rgb": "5a6131",
             "ether_limit": 3,
             "affinities": {
@@ -52,8 +52,8 @@
             "evolution": "apex",
             "prime": "Fountain Caller",
             "base": "Dune Dancer",
-            "health": 14,
-            "color_rgb": "8cb7d7",
+            "health": 11,
+            "color_rgb": "8ebfe7",
             "color_dark_rgb": "164666",
             "ether_limit": 3,
             "affinities": {
@@ -96,7 +96,7 @@
             "evolution": "prime",
             "base": "Flash",
             "health": 10,
-            "color_rgb": "b6d1d9",
+            "color_rgb": "b8d6e3",
             "color_dark_rgb": "44575f",
             "ether_limit": 4,
             "affinities": {
@@ -132,7 +132,7 @@
             "base": "Flash",
             "prime": "Mistral",
             "health": 11,
-            "color_rgb": "a4b7d4",
+            "color_rgb": "a8bee3",
             "color_dark_rgb": "445375",
             "ether_limit": 4,
             "affinities": {
@@ -164,7 +164,7 @@
             "evolution": "prime",
             "base": "Shadow Piercer",
             "health": 10,
-            "color_rgb": "9eded6",
+            "color_rgb": "9ad6d8",
             "color_dark_rgb": "3a686a",
             "ether_limit": 3,
             "affinities": {
@@ -197,7 +197,7 @@
             "base": "Shadow Piercer",
             "prime": "Keening Bolt",
             "health": 12,
-            "color_rgb": "a4e0cd",
+            "color_rgb": "a2d9d2",
             "color_dark_rgb": "2a685b",
             "ether_limit": 3,
             "affinities": {
@@ -229,7 +229,7 @@
             "evolution": "prime",
             "base": "Sophist",
             "health": 9,
-            "color_rgb": "db93d0",
+            "color_rgb": "d7a3ca",
             "color_dark_rgb": "5c315c",
             "uses_glyphs": true,
             "board_tokens": [
@@ -267,7 +267,7 @@
             "base": "Sophist",
             "prime": "Essentialist",
             "health": 10,
-            "color_rgb": "d0e43f",
+            "color_rgb": "d8de5a",
             "color_dark_rgb": "626529",
             "uses_glyphs": true,
             "board_tokens": [
@@ -305,7 +305,7 @@
             "evolution": "prime",
             "base": "True Scale",
             "health": 12,
-            "color_rgb": "c7a675",
+            "color_rgb": "caab84",
             "color_dark_rgb": "594937",
             "ether_limit": 3,
             "affinities": {
@@ -319,7 +319,7 @@
             "traits": [
                 {
                     "name": "Full Complement",
-                    "description": "Once each encounter, perform all of the actions on one ability.  (You must perform those actions in the order as described in your special rules.)"
+                    "description": "Once each encounter, perform all of the actions on one ability. (You must perform those actions in the order as described in your special rules.)"
                 },
                 {
                     "name": "Nothing Wasted",
@@ -341,8 +341,8 @@
             "base": "True Scale",
             "prime": "Fierce Ransomer",
             "health": 14,
-            "color_rgb": "d9cebe",
-            "color_dark_rgb": "3f5346",
+            "color_rgb": "d9cfc3",
+            "color_dark_rgb": "8e7950",
             "ether_limit": 3,
             "affinities": {
                 "fire": 3,
@@ -359,7 +359,7 @@
                 },
                 {
                     "name": "Bear Arms",
-                    "description": "You gain +3 [Hand] item slot.  At the end of each of your turns, you may infuse one [+|ether] from the general pool.",
+                    "description": "You gain +3 [Hand] item slot. At the end of each of your turns, you may infuse one [+|ether] from the general pool.",
                     "additional_slots": [
                         "hand",
                         "hand",
@@ -368,7 +368,7 @@
                 },
                 {
                     "name": "Fine Print",
-                    "description": "Once per encounter, perform all of the actions on one skill card.  (You must perform those actions in the order as described in your special rules.)"
+                    "description": "Once per encounter, perform all of the actions on one skill card. (You must perform those actions in the order as described in your special rules.)"
                 }
             ]
         },
@@ -411,7 +411,7 @@
                 },
                 {
                     "name": "Catabolic Boosting",
-                    "description": "You gain a second reaction token.  Use this trait as that reaction token.  When you use this trait, suffer [DMG]2."
+                    "description": "You gain a second reaction token. Use this trait as that reaction token. When you use this trait, suffer [DMG]2."
                 }
             ]
         }

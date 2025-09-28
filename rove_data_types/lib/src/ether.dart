@@ -19,7 +19,7 @@ stringFromEtherDie(EtherDieSide etherDie) {
 }
 
 enum EtherDieSide {
-  air,
+  wind,
   crux,
   earth,
   fire,
@@ -33,7 +33,7 @@ enum EtherDieSide {
 
   String get name {
     switch (this) {
-      case EtherDieSide.air:
+      case EtherDieSide.wind:
         return 'Wind';
       case EtherDieSide.crux:
         return 'Crux';

@@ -48,7 +48,7 @@ class RoveAction {
   final RoveActionXDefinition? xDefinition;
   final int exclusiveGroup;
   final RoveActionDescription? staticDescription;
-  final List<RoveAction> commands;
+  final List<RoveAction> children;
 
   static const (int, int) anyRange = (0, 99);
   static const int allTargets = 99;
@@ -95,7 +95,7 @@ class RoveAction {
     this.xDefinition,
     this.exclusiveGroup = _defaultExclusiveGroup,
     this.staticDescription,
-    this.commands = const [],
+    this.children = const [],
   });
 
   factory RoveAction.fromJson(Map<String, dynamic> json) {
@@ -170,7 +170,7 @@ class RoveAction {
           ? RoveActionDescription.fromJson(
               json['static_description'] as Map<String, dynamic>)
           : null,
-      commands: json.containsKey('commands')
+      children: json.containsKey('commands')
           ? (json['commands'] as List)
               .map((e) => RoveAction.fromJson(e as Map<String, dynamic>))
               .toList()
@@ -214,8 +214,8 @@ class RoveAction {
         'exclusive_group': exclusiveGroup,
       if (staticDescription case final value?)
         'static_description': value.toJson(),
-      if (commands.isNotEmpty)
-        'commands': commands.map((c) => c.toJson()).toList(),
+      if (children.isNotEmpty)
+        'commands': children.map((c) => c.toJson()).toList(),
     };
   }
 
@@ -272,6 +272,10 @@ class RoveAction {
         requiresPrevious: requiresPrevious);
   }
 
+  factory RoveAction.group(List<RoveAction> actions) {
+    return RoveAction(type: RoveActionType.group, children: actions);
+  }
+
   factory RoveAction.infuseEther() {
     return RoveAction(
         type: RoveActionType.infuseEther, targetKind: TargetKind.self);
@@ -312,6 +316,7 @@ class RoveAction {
 
   factory RoveAction.meleeAttack(int amount,
       {String? amountFormula,
+      RoveActionActorKind actor = RoveActionActorKind.self,
       int endRange = 1,
       AOEDef? aoe,
       int targetCount = 1,
@@ -322,6 +327,7 @@ class RoveAction {
       EtherField? field,
       int exclusiveGroup = _defaultExclusiveGroup}) {
     return RoveAction(
+        actor: actor,
         type: RoveActionType.attack,
         amount: amount,
         amountFormula: amountFormula,
@@ -342,7 +348,7 @@ class RoveAction {
       int exclusiveGroup = _defaultExclusiveGroup,
       bool requiresPrevious = _defaultRequiresPrevious}) {
     return RoveAction(
-        type: RoveActionType.move,
+        type: RoveActionType.dash,
         amount: amount,
         targetKind: TargetKind.self,
         retreat: retreat,
@@ -419,8 +425,9 @@ class RoveAction {
   bool get hasPush => push > 0 || pushFormula != null;
 
   String get augmentDescription {
-    if (staticDescription?.body != null) {
-      return staticDescription!.body!;
+    final body = staticDescription?.body;
+    if (body != null) {
+      return body;
     }
     return shortDescription;
   }
@@ -431,6 +438,8 @@ class RoveAction {
         return range.$1 > 1 ? 'Range Attack' : 'Melee Attack';
       case RoveActionType.generateEther:
         return description;
+      case RoveActionType.teleport:
+        return '[Teleport]';
       default:
         final retreatPrefix = retreat ? 'Retreat: ' : '';
         return '$retreatPrefix${type.label}';
@@ -463,6 +472,12 @@ class RoveAction {
   }
 
   String get description {
+    final resolvedPrefix = prefix;
+    final suffix = staticDescription?.suffix;
+    return '${resolvedPrefix == null || resolvedPrefix.isEmpty ? '' : '$resolvedPrefix\n\n'}$actionDescription${suffix != null ? '\n\n$suffix' : ''}';
+  }
+
+  String get actionDescription {
     String modifiers() {
       final modifiers = [
         field?.label,
@@ -490,13 +505,10 @@ class RoveAction {
     }();
 
     final amountString = amountFormula ?? amount.toString();
-    final rangeString =
-        range.$1 == 0 && range.$2 == 0 ? '' : ' (${range.$1},${range.$2})';
+    final rangeString = rangeDescription;
     final aoeString = aoe != null ? '\n${aoe!.name}' : '';
     final targetKindStringWithSpace =
         targetKindDescription.isEmpty ? '' : ' $targetKindDescription';
-    final retreatPrefix = retreat ? 'Retreat: ' : '';
-
     String body() {
       if (staticDescription?.body != null) {
         return staticDescription!.body!;
@@ -520,23 +532,27 @@ class RoveAction {
         case RoveActionType.placeField:
           return 'Place ${field!.label}$rangeString';
         case RoveActionType.flipCard:
-          return '${type.label} ${FlipCondition.fromKey(object!).description}';
+          return '[flip] ${flipCondition?.description}';
         case RoveActionType.forceAttack:
           return 'Force ${targetKind.description} within $range to perform:\nAttack $amountString to ${TargetKind.ally.description}';
         case RoveActionType.forceMove:
           return '${type.label} $amountString$rangeString$targetKindStringWithSpace';
+        case RoveActionType.group:
+          return type.label;
         case RoveActionType.generateEther:
-          return 'Generate ${generateEtherOptions.isEmpty ? 'Ether' : generateEtherOptions.map((e) => e.label).join(' or ')}';
+          return generateEtherOptions.isEmpty
+              ? '[generate]'
+              : 'Generate ${generateEtherOptions.map((e) => e.label).join(' or ')}';
         case RoveActionType.infuseEther:
           return type.label;
         case RoveActionType.jump:
-          return '$retreatPrefix${type.label} $amountString$rangeString';
+          return '[jump] $amountString';
         case RoveActionType.leave:
           return type.label;
         case RoveActionType.loot:
           return type.label;
-        case RoveActionType.move:
-          return '$retreatPrefix${type.label} $amountString$rangeString';
+        case RoveActionType.dash:
+          return '[dash] $amountString';
         case RoveActionType.rerollEther:
           return type.label;
         case RoveActionType.select:
@@ -554,11 +570,11 @@ class RoveAction {
         case RoveActionType.swapSpace:
           return 'You and ${targetKind.description} swap spaces';
         case RoveActionType.teleport:
-          return '$retreatPrefix${type.label} $amountString$rangeString';
+          return '[teleport] $amountString';
         case RoveActionType.removeEther:
           return type.label;
         case RoveActionType.trade:
-          return type.label;
+          return '[trade]';
         case RoveActionType.transformEther:
           assert(object != null);
           if (object case final value?) {
@@ -571,12 +587,46 @@ class RoveAction {
       }
     }
 
-    final prefix = staticDescription?.prefix ??
-        (actor != RoveActionActorKind.self
-            ? actor.descriptionForAction(this)
-            : '');
-    final suffix = staticDescription?.suffix;
-    return '${prefix.isEmpty ? '' : '$prefix\n\n'}${body()}${suffix != null ? '\n\n$suffix' : ''}';
+    return body();
+  }
+
+  String get rangeDescription {
+    if (range.$1 == range.$2) {
+      return '[range] ${range.$1}';
+    }
+    return '[range] ${range.$1}-${range.$2}';
+  }
+
+  String get targetDescription {
+    final targetKindDes = targetKindDescription;
+    return staticDescription?.target ??
+        (targetKindDes.isEmpty
+            ? '${targetCount == allTargets ? 'all' : targetCount}'
+            : targetKindDes);
+  }
+
+  String get aoeTargetDescription {
+    if (aoe == null) {
+      return '';
+    }
+    return '[target] ${targetCount == RoveAction.allTargets ? 'all' : targetCount} ${targetKind.descriptionForTargetCount(targetCount)} within [target_pattern]';
+  }
+
+  String? get prefix {
+    final prefix = staticDescription?.prefix;
+    if (prefix != null) {
+      return prefix.isEmpty ? null : prefix;
+    }
+    if (retreat) {
+      return '**Logic**: Retreat.';
+    }
+    if (actor != RoveActionActorKind.self) {
+      final actorPrefix = actor.descriptionForAction(this);
+      if (staticDescription?.body?.startsWith(actorPrefix) != true) {
+        return actorPrefix;
+      }
+    }
+    return null;
   }
 
   String descriptionForAugmentingAction(RoveAction action,
@@ -622,12 +672,13 @@ class RoveAction {
           case RoveActionType.jump:
           case RoveActionType.leave:
           case RoveActionType.loot:
-          case RoveActionType.move:
+          case RoveActionType.dash:
           case RoveActionType.placeField:
           case RoveActionType.removeEther:
           case RoveActionType.rerollEther:
           case RoveActionType.addDefense:
             return targetKind != TargetKind.self;
+          case RoveActionType.group:
           case RoveActionType.special:
           case RoveActionType.spawn:
           case RoveActionType.summon:
@@ -663,13 +714,14 @@ class RoveAction {
         return RoveActionPolarity.positive;
       case RoveActionType.createGlyph:
       case RoveActionType.generateEther:
+      case RoveActionType.group:
       case RoveActionType.infuseEther:
       case RoveActionType.flipCard:
       case RoveActionType.forceMove:
       case RoveActionType.jump:
       case RoveActionType.leave:
       case RoveActionType.loot:
-      case RoveActionType.move:
+      case RoveActionType.dash:
       case RoveActionType.removeEther:
       case RoveActionType.rerollEther:
       case RoveActionType.addDefense:
@@ -696,6 +748,12 @@ class RoveAction {
     return Ether.etherOptionsFromString(object!);
   }
 
+  FlipCondition? get flipCondition {
+    final key = object;
+    if (type != RoveActionType.flipCard || key == null) return null;
+    return FlipCondition.fromKey(key);
+  }
+
   bool get isRangeAttack => type == RoveActionType.attack && range.$1 > 1;
 
   bool get isTargetActor =>
@@ -707,6 +765,11 @@ class RoveAction {
 
   RoveAction withBuff(RoveBuff buff) {
     assert(buff.canBuffAction(this));
+
+    if (type == RoveActionType.group) {
+      return RoveAction.group(children.map((e) => e.withBuff(buff)).toList());
+    }
+
     var range = this.range;
     var amount = this.amount;
     var push = this.push;
@@ -774,7 +837,7 @@ class RoveAction {
         xDefinition: xDefinition,
         exclusiveGroup: exclusiveGroup,
         staticDescription: staticDescription,
-        commands: commands);
+        children: children);
   }
 
   RoveAction withAmount(int amount) {
@@ -806,7 +869,7 @@ class RoveAction {
         xDefinition: xDefinition,
         exclusiveGroup: exclusiveGroup,
         staticDescription: staticDescription,
-        commands: commands);
+        children: children);
   }
 
   RoveAction withEtherCheckAugment(
@@ -868,7 +931,7 @@ class RoveAction {
         xDefinition: xDefinition,
         exclusiveGroup: exclusiveGroup,
         staticDescription: staticDescription,
-        commands: commands);
+        children: children);
   }
 
   RoveAction withSingleTarget({bool requiresPrevious = true}) {
@@ -900,11 +963,21 @@ class RoveAction {
         xDefinition: xDefinition,
         exclusiveGroup: exclusiveGroup,
         staticDescription: staticDescription,
-        commands: commands);
+        children: children);
   }
 
   RoveAction withDescription(String description) {
     return _withDescription(RoveActionDescription(body: description));
+  }
+
+  RoveAction withHidden() {
+    return _withDescription(RoveActionDescription(body: ''));
+  }
+
+  bool get hidden => staticDescription?.body?.isEmpty ?? false;
+
+  RoveAction withoutPrefix() {
+    return _withDescription(RoveActionDescription(prefix: ''));
   }
 
   RoveAction withPrefix(String prefix) {
@@ -913,6 +986,10 @@ class RoveAction {
 
   RoveAction withSuffix(String suffix) {
     return _withDescription(RoveActionDescription(suffix: suffix));
+  }
+
+  RoveAction withTargetDescription(String target) {
+    return _withDescription(RoveActionDescription(target: target));
   }
 
   RoveAction _withDescription(RoveActionDescription description) {
@@ -943,8 +1020,13 @@ class RoveAction {
         retreat: retreat,
         xDefinition: xDefinition,
         exclusiveGroup: exclusiveGroup,
-        staticDescription: description,
-        commands: commands);
+        staticDescription: RoveActionDescription(
+          prefix: description.prefix ?? staticDescription?.prefix,
+          body: description.body ?? staticDescription?.body,
+          target: description.target ?? staticDescription?.target,
+          suffix: description.suffix ?? staticDescription?.suffix,
+        ),
+        children: children);
   }
 
   RoveAction withPull() {

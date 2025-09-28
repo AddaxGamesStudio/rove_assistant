@@ -8,11 +8,12 @@ enum RoveActionType {
   forceAttack,
   forceMove,
   generateEther,
+  group,
   infuseEther,
   jump,
   leave,
   loot,
-  move,
+  dash,
   heal,
   placeField,
   push,
@@ -63,6 +64,8 @@ enum RoveActionType {
         return 'Flip';
       case RoveActionType.forceAttack:
         return 'Force Attack';
+      case RoveActionType.group:
+        return 'Group';
       case RoveActionType.forceMove:
         return 'Force Move';
       case RoveActionType.heal:
@@ -73,8 +76,8 @@ enum RoveActionType {
         return 'Leave';
       case RoveActionType.loot:
         return 'Loot';
-      case RoveActionType.move:
-        return 'Move';
+      case RoveActionType.dash:
+        return 'Dash';
       case RoveActionType.pull:
         return 'Pull';
       case RoveActionType.push:
@@ -132,6 +135,8 @@ enum RoveActionType {
         return 'force_move';
       case RoveActionType.generateEther:
         return 'generate_ether';
+      case RoveActionType.group:
+        return 'group';
       case RoveActionType.infuseEther:
         return 'infuse_ether';
       case RoveActionType.jump:
@@ -140,7 +145,7 @@ enum RoveActionType {
         return 'leave';
       case RoveActionType.loot:
         return 'loot';
-      case RoveActionType.move:
+      case RoveActionType.dash:
         return 'move';
       case RoveActionType.heal:
         return 'heal';

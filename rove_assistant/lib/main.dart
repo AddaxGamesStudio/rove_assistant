@@ -1,28 +1,39 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:rove_app_common/data/campaign_loader.dart';
-import 'package:rove_app_common/rove_routes.dart';
+import 'package:rove_assistant/rove_app_info.dart';
+import 'package:rove_assistant/theme/rove_palette.dart';
 import 'package:rove_assistant/app.dart';
 import 'package:rove_assistant/data/campaign_config.dart';
-import 'package:rove_app_common/model/campaign_model.dart';
-import 'package:rove_assistant/model/encounter_event.dart';
-import 'package:rove_app_common/model/items_model.dart';
-import 'package:rove_app_common/model/players_model.dart';
-import 'package:rove_app_common/persistence/campaign_persistence.dart';
-import 'package:rove_app_common/persistence/preferences.dart';
-import 'package:rove_assistant/persistence/preferences_extension.dart';
-import 'package:rove_app_common/widgets/main_menu/main_menu_page.dart';
-import 'package:rove_app_common/widgets/rovers/rovers_page.dart';
-import 'package:rove_app_common/widgets/shop/shop_page.dart';
-import 'package:rove_assistant/ui/widgets/campaign/campaign_page.dart';
+import 'package:rove_assistant/data/campaign_loader.dart';
+import 'package:rove_assistant/model/campaign_model.dart';
+import 'package:rove_assistant/model/encounter/encounter_event.dart';
+import 'package:rove_assistant/model/items_model.dart';
+import 'package:rove_assistant/model/players_model.dart';
+import 'package:rove_assistant/persistence/campaign_persistence.dart';
+import 'package:rove_assistant/persistence/preferences.dart';
+import 'package:rove_assistant/persistence/assistant_preferences.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:rove_assistant/services/analytics.dart';
+import 'package:rove_assistant/widgets/campaign/campaign_page.dart';
+import 'package:rove_assistant/widgets/common/background_box.dart';
+import 'package:rove_assistant/widgets/main_menu/main_menu_page.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   await Preferences.init();
   Preferences.instance.addExtensionDefaults();
 
   runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(
+        create: (context) => RoveAppInfo(name: 'Assistant', version: '1.0.6')),
     ChangeNotifierProvider(create: (context) => CampaignModel.instance),
     ChangeNotifierProvider(create: (context) => ItemsModel.instance),
     ChangeNotifierProvider(create: (context) => PlayersModel.instance),
@@ -47,7 +58,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     load(context).then((_) => loading.value = false);
 
-    final appName = 'Assistant v0.1';
     return MaterialApp(
         key: App.key,
         title: 'Rove Assistant',
@@ -56,20 +66,25 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           fontFamily: GoogleFonts.merriweather().fontFamily,
         ),
-        routes: {
-          RoveRoutes.roverSelectionName: (context) => const RoversPage(),
-          RoveRoutes.campaignName: (context) => CampaignPage(),
-          ShopPage.path: (context) =>
-              const Scaffold(body: ShopPage(includeBackButton: true)),
-          MainMenuPage.path: (context) => MainMenuPage(appName: appName),
-        },
         home: ValueListenableBuilder(
             valueListenable: loading,
             builder: (context, loading, child) {
               if (loading) {
-                return const Center(child: CircularProgressIndicator());
+                return BackgroundBox.named('background_codex',
+                    child: const Center(
+                        child: CircularProgressIndicator(
+                      color: RovePalette.title,
+                    )));
               } else {
-                return Scaffold(body: MainMenuPage(appName: appName));
+                Analytics.logAppOpen();
+                Analytics.logScreen('/main_menu');
+                return Scaffold(
+                    body: MainMenuPage(
+                  offerXulcExpansion: true,
+                  showRulebookDescriptions: kIsWeb,
+                  campaignRouteBuilder: (context) =>
+                      MaterialPageRoute(builder: (context) => CampaignPage()),
+                ));
               }
             }));
   }

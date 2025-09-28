@@ -34,13 +34,15 @@ class DidNotPlayCardAbilityRequirement extends AbilityRequirement {
 }
 
 class AbilityDef {
+  final String? id;
   final String name;
   final String? _description;
   final AbilityRequirement? requirement;
   final List<RoveAction> actions;
 
   AbilityDef(
-      {required this.name,
+      {this.id,
+      required this.name,
       String? description,
       this.requirement,
       required this.actions})
@@ -48,6 +50,7 @@ class AbilityDef {
 
   Map<String, dynamic> toJson() {
     return {
+      if (id case final value?) 'id': value,
       'name': name,
       if (_description case final value?) 'description': value,
       if (requirement case final value?) 'requirement': value.toJson(),
@@ -57,6 +60,7 @@ class AbilityDef {
 
   factory AbilityDef.fromJson(Map<String, dynamic> json) {
     return AbilityDef(
+      id: json['id'] as String?,
       name: json['name'] as String,
       description: json['description'] as String?,
       requirement: json.containsKey('requirement')

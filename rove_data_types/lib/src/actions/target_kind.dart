@@ -17,6 +17,7 @@ enum TargetKind {
             return 'self and that ally';
           case TargetKind.self:
           case TargetKind.selfOrAlly:
+            return 'that unit';
           case TargetKind.enemy:
           case TargetKind.ally:
           case TargetKind.allyOrGlyph:
@@ -47,6 +48,25 @@ enum TargetKind {
         return 'Ally or Glyph';
       case TargetKind.glyph:
         return 'one of your glyphs';
+    }
+  }
+
+  String descriptionForTargetCount(int count) {
+    if (count == 1) {
+      return description;
+    }
+    switch (this) {
+      case TargetKind.self:
+      case TargetKind.selfOrAlly:
+      case TargetKind.selfOrEventActor:
+      case TargetKind.allyOrGlyph:
+        return description;
+      case TargetKind.enemy:
+        return 'enemies';
+      case TargetKind.ally:
+        return 'allies';
+      case TargetKind.glyph:
+        return 'glyphs';
     }
   }
 

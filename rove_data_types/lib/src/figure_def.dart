@@ -21,35 +21,43 @@ final Map<String, FigureRole> _jsonMap = Map<String, FigureRole>.fromEntries(
 
 @immutable
 class FigureDef {
+  /// Maximum number of standees for minions. Limits spawns.
+  static const int standeeLimit = 8;
+
   /// Monstrous Growth is a special figure that takes up three hexes.
   static const monstrousGrowthName = 'Monstrous Growth';
 
   final String? expansion;
   final String name;
   final String image;
+
+  /// When true will use the core campaign asset if the expansion is not null.
+  final bool useImageFromCore;
   final FigureRole role;
   final AdversaryType adversaryType;
   final bool lootable;
   final bool large;
   final bool excludeFromBestiary;
-  final List<int> codices;
+  final List<int> codexEntries;
 
   const FigureDef(
       {this.expansion,
       required this.name,
       required this.image,
+      this.useImageFromCore = false,
       required this.role,
       this.adversaryType = AdversaryType.minion,
       this.lootable = false,
       this.large = false,
       this.excludeFromBestiary = false,
-      this.codices = const []});
+      this.codexEntries = const []});
 
   factory FigureDef.fromJson(Map<String, dynamic> json, {String? expansion}) {
     return FigureDef(
       expansion: json['expansion'] as String? ?? expansion,
       name: json['name'] as String,
       image: json['image'] as String,
+      useImageFromCore: json['use_image_from_core'] as bool? ?? false,
       role: FigureRole.fromJson(json['role'] as String),
       adversaryType: json.containsKey('type')
           ? AdversaryType.fromJson(json['type'] as String)
@@ -57,7 +65,8 @@ class FigureDef {
       lootable: json['lootable'] as bool? ?? false,
       large: json['large'] as bool? ?? false,
       excludeFromBestiary: json['exclude_from_bestiary'] as bool? ?? false,
-      codices: decodeJsonListNamed('codices', json, (value) => value as int),
+      codexEntries:
+          decodeJsonListNamed('codex_entries', json, (value) => value as int),
     );
   }
 

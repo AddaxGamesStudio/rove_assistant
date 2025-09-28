@@ -1,23 +1,45 @@
 {
     "figures": [
         {
+            "role": "ally",
+            "name": "Silky",
+            "image": "silky.webp"
+        },
+        {
             "role": "adversary",
             "name": "Galeling",
+            "codex_entries": [
+                3
+            ],
             "image": "galeaper.webp"
+        },
+        {
+            "role": "ally",
+            "name": "Mo and Makaal",
+            "image": "merchants.webp"
         },
         {
             "role": "adversary",
             "name": "Dekaha",
+            "codex_entries": [
+                9
+            ],
             "image": "dekaha.webp"
         },
         {
             "role": "adversary",
-            "name": "Nektari",
+            "name": "Nektari Swarm",
+            "codex_entries": [
+                10
+            ],
             "image": "nektari.webp"
         },
         {
             "role": "adversary",
             "name": "Galeaper",
+            "codex_entries": [
+                3
+            ],
             "image": "galeaper.webp"
         },
         {
@@ -35,7 +57,7 @@
         {
             "role": "adversary",
             "name": "Grovetender",
-            "codices": [
+            "codex_entries": [
                 16
             ],
             "image": "grovetender.webp"
@@ -49,7 +71,7 @@
         {
             "role": "adversary",
             "name": "Nahoot",
-            "codices": [
+            "codex_entries": [
                 18
             ],
             "image": "nahoot.webp"
@@ -57,7 +79,7 @@
         {
             "role": "adversary",
             "name": "Terranape",
-            "codices": [
+            "codex_entries": [
                 23
             ],
             "image": "terranape.webp"
@@ -92,7 +114,7 @@
             "type": "boss",
             "large": true,
             "exclude_from_bestiary": true,
-            "codices": [
+            "codex_entries": [
                 123,
                 124,
                 125,
@@ -103,7 +125,8 @@
         {
             "role": "adversary",
             "name": "Corrupted Nektari Swarm",
-            "codices": [
+            "codex_entries": [
+                26,
                 100,
                 117
             ],
@@ -117,6 +140,9 @@
         {
             "role": "adversary",
             "name": "Zinix",
+            "codex_entries": [
+                30
+            ],
             "image": "zinix.webp"
         },
         {
@@ -128,12 +154,15 @@
         {
             "role": "adversary",
             "name": "Onisski",
+            "codex_entries": [
+                33
+            ],
             "image": "onisski.webp"
         },
         {
             "role": "adversary",
             "name": "Wrathbone",
-            "codices": [
+            "codex_entries": [
                 35
             ],
             "image": "wrathbone.webp"
@@ -147,12 +176,15 @@
             "role": "adversary",
             "name": "Zisafi Principal",
             "type": "miniboss",
+            "codex_entries": [
+                36
+            ],
             "image": "zisafi.webp"
         },
         {
             "role": "adversary",
             "name": "Ashemak",
-            "codices": [
+            "codex_entries": [
                 39
             ],
             "image": "ashemak.webp"
@@ -160,6 +192,9 @@
         {
             "role": "adversary",
             "name": "Zisafi",
+            "codex_entries": [
+                36
+            ],
             "image": "zisafi.webp"
         },
         {
@@ -176,9 +211,13 @@
         {
             "role": "adversary",
             "name": "Urn",
-            "codices": [
+            "codex_entries": [
                 40,
-                88
+                52,
+                76,
+                88,
+                148,
+                176
             ],
             "image": "urn.webp"
         },
@@ -186,12 +225,20 @@
             "role": "adversary",
             "name": "Marii",
             "type": "boss",
+            "codex_entries": [
+                45,
+                48
+            ],
             "image": "marii.webp"
         },
         {
             "role": "adversary",
             "name": "Femii",
             "type": "boss",
+            "codex_entries": [
+                43,
+                44
+            ],
             "image": "femii.webp"
         },
         {
@@ -210,7 +257,7 @@
         {
             "role": "adversary",
             "name": "Bulwauros",
-            "codices": [
+            "codex_entries": [
                 87
             ],
             "image": "bulwauros.webp"
@@ -218,40 +265,55 @@
         {
             "role": "adversary",
             "name": "Dyad",
+            "codex_entries": [
+                55
+            ],
             "image": "dyad.webp"
         },
         {
             "role": "adversary",
             "name": "Hydra",
             "type": "miniboss",
+            "codex_entries": [
+                175
+            ],
             "image": "hydra.webp"
         },
         {
             "role": "adversary",
             "name": "Stomaw",
-            "codices": [
-                48
+            "codex_entries": [
+                48,
+                133
             ],
             "image": "stomaw.webp"
         },
         {
             "role": "adversary",
             "name": "Broken Vessel",
-            "codices": [
-                51
+            "codex_entries": [
+                51,
+                134
             ],
             "image": "broken_vessel.webp"
         },
         {
             "role": "adversary",
             "name": "Fell Cradle",
+            "codex_entries": [
+                57,
+                135
+            ],
             "image": "fell_cradle.webp"
         },
         {
             "role": "adversary",
             "name": "Haunt",
-            "codices": [
-                106
+            "codex_entries": [
+                49,
+                79,
+                106,
+                130
             ],
             "image": "haunt.webp"
         },
@@ -260,12 +322,16 @@
             "name": "Scour",
             "type": "miniboss",
             "large": true,
+            "codex_entries": [
+                136,
+                137
+            ],
             "image": "scour.webp"
         },
         {
             "role": "adversary",
             "name": "Dyad Hatchling",
-            "codices": [
+            "codex_entries": [
                 55
             ],
             "image": "dyad.webp"
@@ -275,14 +341,15 @@
             "name": "Azoth",
             "type": "miniboss",
             "large": true,
-            "codices": [
-                54
+            "codex_entries": [
+                54,
+                131
             ],
             "image": "azoth.webp"
         },
         {
             "role": "adversary",
-            "name": "Crown (miniboss)",
+            "name": "Crown",
             "type": "miniboss",
             "image": "crown.webp"
         },
@@ -308,6 +375,9 @@
         {
             "role": "adversary",
             "name": "Querist",
+            "codex_entries": [
+                65
+            ],
             "image": "querist.webp"
         },
         {
@@ -315,6 +385,11 @@
             "name": "Bazhar",
             "type": "boss",
             "large": true,
+            "codex_entries": [
+                71,
+                72,
+                73
+            ],
             "image": "bazhar.webp"
         },
         {
@@ -335,17 +410,10 @@
         },
         {
             "role": "adversary",
-            "name": "Bazhar Creator",
-            "type": "boss",
-            "large": true,
-            "exclude_from_bestiary": true,
-            "image": "bazhar.webp"
-        },
-        {
-            "role": "adversary",
             "name": "Streak",
-            "codices": [
-                75
+            "codex_entries": [
+                75,
+                144
             ],
             "image": "streak.webp"
         },
@@ -353,34 +421,54 @@
             "role": "adversary",
             "name": "Uzem's Anxiety",
             "type": "miniboss",
+            "codex_entries": [
+                77
+            ],
             "image": "crown.webp"
         },
         {
             "role": "adversary",
             "name": "Uzem's Endurance",
             "type": "miniboss",
+            "codex_entries": [
+                80
+            ],
             "image": "crown.webp"
         },
         {
             "role": "adversary",
             "name": "Uzem's Woe",
             "type": "miniboss",
+            "codex_entries": [
+                82
+            ],
             "image": "crown.webp"
         },
         {
             "role": "adversary",
             "name": "Uzem's Fervor",
             "type": "miniboss",
+            "codex_entries": [
+                84
+            ],
             "image": "crown.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "The King of Storms",
+            "type": "boss",
+            "large": true,
+            "codex_entries": [
+                85
+            ],
+            "image": "uzem.webp"
         },
         {
             "role": "adversary",
             "name": "The King of Storms [icon_fire]",
             "type": "boss",
             "large": true,
-            "codices": [
-                85
-            ],
+            "exclude_from_bestiary": true,
             "image": "uzem.webp"
         },
         {
@@ -388,9 +476,7 @@
             "name": "The King of Storms [icon_water]",
             "type": "boss",
             "large": true,
-            "codices": [
-                85
-            ],
+            "exclude_from_bestiary": true,
             "image": "uzem.webp"
         },
         {
@@ -398,9 +484,7 @@
             "name": "The King of Storms [icon_earth]",
             "type": "boss",
             "large": true,
-            "codices": [
-                85
-            ],
+            "exclude_from_bestiary": true,
             "image": "uzem.webp"
         },
         {
@@ -408,15 +492,13 @@
             "name": "The King of Storms [icon_wind]",
             "type": "boss",
             "large": true,
-            "codices": [
-                85
-            ],
+            "exclude_from_bestiary": true,
             "image": "uzem.webp"
         },
         {
             "role": "adversary",
             "name": "Skara",
-            "codices": [
+            "codex_entries": [
                 90
             ],
             "image": "skara.webp"
@@ -461,6 +543,11 @@
             "role": "adversary",
             "name": "Zeepurah",
             "type": "miniboss",
+            "codex_entries": [
+                102,
+                113,
+                118
+            ],
             "image": "zeepurah.webp"
         },
         {
@@ -501,113 +588,178 @@
             "image": "urn.webp"
         },
         {
-            "role": "object",
-            "name": "Wind Cluster",
-            "image": "die_air.png"
+            "role": "adversary",
+            "name": "Harrow",
+            "codex_entries": [
+                139,
+                147
+            ],
+            "image": "harrow.webp"
         },
         {
             "role": "adversary",
-            "name": "Andiron",
-            "image": "figure-73-Bad Boi.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Battering Winds",
-            "image": "figure-68-Bettering Winds.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Breath of Uzem",
-            "image": "figure-67-Breath of Uzem.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Broken Reflection",
-            "image": "figure-64-Broken Reflection.png"
-        },
-        {
-            "role": "object",
-            "name": "Cage",
-            "image": "figure-61-Cage.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Corrupted Shard",
-            "image": "figure-60-Corrupted Shard.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Courslayer",
-            "image": "figure-59-Courslayer.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Crown",
-            "image": "figure-58-Crown.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Darkened Sky",
-            "image": "figure-57-Darkened Sky.png"
-        },
-        {
-            "role": "object",
-            "name": "Dim",
-            "image": "die_dim.png"
-        },
-        {
-            "role": "object",
-            "name": "Earth Cluster",
-            "image": "die_earth.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Eclipse",
-            "image": "figure-54-Eclipse.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Eclipse Ether Ascended",
-            "image": "figure-53-Eclipse Enraged-Mounted.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Eclipse Mounted",
-            "image": "figure-52-Eclipse-Mounted.png"
+            "name": "Borrowed Vessel",
+            "type": "miniboss",
+            "image": "ranger.webp"
         },
         {
             "role": "adversary",
             "name": "Endless Hunger",
-            "image": "figure-51-Endless Hunger.png"
+            "image": "stomaw.webp"
         },
         {
-            "role": "object",
-            "name": "Fire Cluster",
-            "image": "die_fire.png"
+            "role": "adversary",
+            "name": "Corrupted Form",
+            "image": "broken_vessel.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Broken Reflection",
+            "image": "fell_cradle.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Stormcaller",
+            "image": "stormcaller.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Squall",
+            "type": "miniboss",
+            "image": "squall.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Breath of Uzem",
+            "image": "uzem.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Tremorcaller",
+            "type": "miniboss",
+            "image": "stormcaller.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Wavecaller",
+            "type": "miniboss",
+            "image": "stormcaller.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Tears of Uzem",
+            "image": "uzem.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Embercaller",
+            "type": "miniboss",
+            "image": "stormcaller.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Rage of Uzem",
+            "image": "uzem.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Courslayer",
+            "codex_entries": [
+                163
+            ],
+            "image": "ranger.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Battering Winds",
+            "type": "miniboss",
+            "image": "stormcaller.webp"
         },
         {
             "role": "adversary",
             "name": "Final Cut",
-            "image": "figure-48-Final Cut.png"
+            "type": "miniboss",
+            "image": "harrow.webp"
         },
         {
             "role": "adversary",
-            "name": "Firecaller",
-            "image": "figure-47-Firecaller.png"
+            "name": "Eclipse Mounted",
+            "type": "boss",
+            "large": true,
+            "image": "eclipse_mounted.webp"
         },
         {
             "role": "adversary",
-            "name": "Harrow",
-            "image": "figure-40-Harrow.png"
+            "name": "Warden",
+            "type": "miniboss",
+            "image": "ranger.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Stolen Breath",
+            "type": "miniboss",
+            "image": "stormcaller.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Piercing Gaze",
+            "type": "miniboss",
+            "image": "ranger.webp"
         },
         {
             "role": "adversary",
             "name": "Heavy Hand",
-            "image": "figure-38-Heavy Hand.png"
+            "type": "miniboss",
+            "image": "harrow.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Eclipse",
+            "type": "boss",
+            "image": "eclipse.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Andiron",
+            "type": "boss",
+            "large": true,
+            "image": "andiron.webp"
+        },
+        {
+            "role": "object",
+            "name": "Wind Cluster",
+            "image": "ether_wind.webp"
+        },
+        {
+            "role": "object",
+            "name": "Cage",
+            "image": "cage.webp"
+        },
+        {
+            "role": "object",
+            "name": "Earth Cluster",
+            "image": "ether_earth.webp"
+        },
+        {
+            "role": "adversary",
+            "name": "Eclipse Ether Ascended",
+            "exclude_from_bestiary": true,
+            "image": "eclipse_mounted.webp"
+        },
+        {
+            "role": "object",
+            "name": "Ether Lodestone",
+            "image": "ether_lodestone.webp"
+        },
+        {
+            "role": "object",
+            "name": "Fire Cluster",
+            "image": "ether_fire.webp"
         },
         {
             "role": "adversary",
             "name": "Hra",
+            "exclude_from_bestiary": true,
             "image": "hra.webp"
         },
         {
@@ -617,12 +769,8 @@
         },
         {
             "role": "adversary",
-            "name": "The King of Storms",
-            "image": "figure-34-King of Storms.png"
-        },
-        {
-            "role": "adversary",
             "name": "Monstrous Growth",
+            "exclude_from_bestiary": true,
             "image": "monstrous_growth.webp"
         },
         {
@@ -631,69 +779,14 @@
             "image": "ozendyn.webp"
         },
         {
-            "role": "adversary",
-            "name": "Piercing Gaze",
-            "image": "figure-59-Courslayer.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Rage of Uzem",
-            "image": "figure-26-Rage of Uzem.png"
-        },
-        {
             "role": "ally",
             "name": "Skara Grub",
-            "image": "figure-22-Skara Grub.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Squall",
-            "image": "figure-15-Squall.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Stolen Breath",
-            "image": "figure-14-Stolen Breath.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Stormcaller",
-            "image": "figure-12-Stormcaller.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Stormcaller Elite",
-            "image": "figure-12-Stormcaller.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Striker",
-            "image": "figure-11-Striker.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Tears of Uzem",
-            "image": "figure-10-Tears of Uzem.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Tremormage",
-            "image": "figure-7-Tremormage.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Warden",
-            "image": "figure-4-Warden.png"
-        },
-        {
-            "role": "adversary",
-            "name": "Wavecaller",
-            "image": "figure-3-Wavecaster.png"
+            "image": "skara.webp"
         },
         {
             "role": "object",
             "name": "Water Cluster",
-            "image": "die_water.png"
+            "image": "ether_water.webp"
         },
         {
             "role": "ally",
@@ -736,6 +829,11 @@
             "role": "object",
             "name": "Drained Morph Ether",
             "image": "drained_morph_ether.webp"
+        },
+        {
+            "role": "object",
+            "name": "Drained Fire Ether",
+            "image": "drained_fire_ether.webp"
         }
     ]
 }

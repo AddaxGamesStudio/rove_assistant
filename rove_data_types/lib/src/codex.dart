@@ -3,37 +3,43 @@ class Codex {
   final int? page;
   final String title;
   final String body;
-  final bool isConclusion;
-
+  final String? subtitle;
+  final String? artwork;
   Codex(
       {required this.number,
       this.page,
       required this.title,
       required this.body,
-      required this.isConclusion});
+      this.subtitle,
+      this.artwork});
 
   factory Codex.fromString(String data, int number) {
     Iterable<String> lines = data.split('\n');
-    bool isConclusion = false;
+    String? subtitle;
     int? page;
+    String? artwork;
     while (lines.isNotEmpty && lines.first.startsWith('[')) {
-      final line = lines.first.toLowerCase();
+      final line = lines.first;
       final metadata = line.substring(1, line.length - 1);
-      if (metadata.startsWith('conclusion')) {
-        isConclusion = true;
-      } else if (metadata.startsWith('page')) {
+      if (metadata.toLowerCase().startsWith('subtitle')) {
+        subtitle = metadata.split('=')[1];
+      } else if (metadata.toLowerCase().startsWith('page')) {
         final pageString = metadata.split('=')[1];
         page = int.tryParse(pageString);
+      } else if (metadata.toLowerCase().startsWith('artwork')) {
+        artwork = metadata.split('=')[1];
       }
       lines = lines.skip(1);
     }
     final String title = lines.first;
-    final String body = lines.skip(1).join('\n\n');
+    final String body =
+        lines.skip(1).join('\n\n').replaceAll('\n\n\n\n', '\n\n\n');
     return Codex(
         number: number,
         page: page,
         title: title,
         body: body,
-        isConclusion: isConclusion);
+        subtitle: subtitle,
+        artwork: artwork);
   }
 }

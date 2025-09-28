@@ -24,6 +24,7 @@ enum EncounterActionType {
   remove,
   removeAll,
   removeRule,
+  removeCodexLink,
   replace,
   respawn,
   rollEtherDie,
@@ -64,6 +65,8 @@ enum EncounterActionType {
         return 'remove_all';
       case EncounterActionType.removeRule:
         return 'remove_rule';
+      case EncounterActionType.removeCodexLink:
+        return 'remove_codex_link';
       case EncounterActionType.replace:
         return 'replace';
       case EncounterActionType.resetRound:
