@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Define base directory
-base_dir="."
+base_dir="./"
 data_dirs=("$base_dir/rove_data/core" "$base_dir/rove_data/xulc")
 
 # List of specific target directories
-target_projects=("rove_simulator" "rove_assistant" "rove_editor")
+target_projects=("rove_assistant")
 
 # Check if the data directories exist
 for data_dir in "${data_dirs[@]}"; do
