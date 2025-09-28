@@ -24,3 +24,8 @@ For user feedback, please join the [Rove Discord server](https://discord.com/inv
 For development matters, feel free to file a new issue for bugs, features, and improvements, or start a new new discussion for help or feedback.
 
 Pull requests are also welcome!
+
+# Copyright / License
+Rove and all related properties, images and text are © Addax Games. All Rights Reserved. You can use these assets to use or contribute to the Rove Assistant application. No other individual, entity, or corporation is permitted to use and/or re-use the assets within this repository for any other purpose.
+
+Source code is licensed under GNU General Public License v3.
