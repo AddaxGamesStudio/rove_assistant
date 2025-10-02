@@ -1255,11 +1255,11 @@ That enemy suffers [DMG]2.''',
         questId: '6',
         number: '5',
         title: 'Illimitable Dominion Over All',
-        // Corrupter setup (default)
+        // Zeepurah Lost/Corrupter setup (default)
         setup: EncounterSetup(
             box: '1/6',
-            map: '76',
-            adversary: '46',
+            map: '45',
+            adversary: '76',
             tiles: 'Tiles: 4x Hatchery'),
         victoryDescription: 'Slay the Ahma.',
         roundLimit: 10,
@@ -1529,11 +1529,12 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
             PlacementDef(name: 'Broken Vessel', minPlayers: 3),
             PlacementDef(name: 'Broken Vessel', minPlayers: 4),
           ]),
+          // Zeepurah Slain
           PlacementGroupDef(
             name: 'Enraged',
             setup: EncounterSetup(
                 box: '1/6',
-                map: '44',
+                map: '46',
                 adversary: '74',
                 tiles: 'Tiles: 4x Hatchery'),
             adversaries: [
@@ -1694,11 +1695,12 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
                   name: 'morph', type: PlacementType.ether, c: 4, r: 4),
             ],
           ),
+          // Zeepurah Contained
           PlacementGroupDef(
             name: 'Desperate',
             setup: EncounterSetup(
                 box: '1/6',
-                map: '45',
+                map: '44',
                 adversary: '75',
                 tiles: 'Tiles: 4x Hatchery'),
             adversaries: [
