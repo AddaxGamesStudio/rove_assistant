@@ -228,7 +228,7 @@ Spawn one Broken Vessel in the space this unit occupied.'''
           ),
           EncounterFigureDef(
             name: 'Ashemak',
-            letter: 'E',
+            letter: 'D',
             health: 6,
             immuneToForcedMovement: true,
             traits: [
@@ -243,7 +243,7 @@ All units within [Range] 1 suffer [DMG]2.'''
           ),
           EncounterFigureDef(
             name: 'Haunt',
-            letter: 'F',
+            letter: 'E',
             healthFormula: '3*R',
             affinities: {
               Ether.morph: -2,
