@@ -79,14 +79,14 @@ extension Quest3 on EncounterDef {
 
 When a stomaw is slain, place it off to the side of the map on its side. During the start phase, for each stomaw that is both off to the side and flipped vertically, roll an ether dice from the general pool, then spawn that stomaw at the space with the ether icon corresponding to the result that was just rolled. Then, for each stomaw that is both off to the side and placed on its side, flip them vertically. *[The app does this automatically.]*'''),
           rules('Adversaries',
-              '''There are spaces marked dekaha / ashemak. The enemy that is spawned changes depending on the special rule block you are referencing.'''),
+              '''There are spaces marked Dekaha / Ashemak. The enemy that is spawned changes depending on the special rule block you are referencing.'''),
           rules(
               'Changed World (A)',
               '''Quest 1 completed. Use special rule block A.
 
 Terrain: [Wild] Node = [Fire] Node:  Units that end their turn within [Range] 1 of this object suffer [DMG]1.
 
-Enemies: Ashemak''',
+D Enemies: Ashemak''',
               condition: MilestoneCondition('quest_1_complete')),
           rules(
               'Changed World (B)',
@@ -94,7 +94,7 @@ Enemies: Ashemak''',
 
 Terrain: [Wild] Node = [Water] Node:  It costs units 1 additional movement point to enter a space within [Range] 1 of this object.
 
-Enemies: Dekaha''',
+D Enemies: Dekaha''',
               condition: MilestoneCondition('quest_1_complete', value: false)),
           placementGroup('Quest 1 Complete',
               condition: MilestoneCondition('quest_1_complete'), silent: true),
