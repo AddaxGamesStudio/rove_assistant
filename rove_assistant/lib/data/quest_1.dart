@@ -680,7 +680,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
           '''Encounter 1.4 - “**The River of Black Bile Flows**” [campaign] 22.''',
       challenges: [
         'All skills that [generate], [generate_morph] instead.',
-        'Dark Conversion spawns nahoot at the start of rounds 2, 4, and 6 instead.',
+        'Dark Conversion spawns Nahoot at the start of rounds 2, 4, and 6 instead.',
         'All spawned nahoot must be slain before reading “**Taken a Toll**”.',
       ],
       dialogs: [
@@ -710,11 +710,11 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
       onDidStartRound: [
         placementGroup('Dark Conversion',
             body:
-                'Spawn one nahoot in the space at the bottom right corner marked with a [Morph] icon.',
+                'Spawn one Nahoot in the space at the bottom right corner marked with a [Morph] icon.',
             condition: RoundCondition(3)),
         placementGroup('Dark Conversion',
             body:
-                'Spawn one nahoot in the space at the bottom right corner marked with a [Morph] icon.',
+                'Spawn one Nahoot in the space at the bottom right corner marked with a [Morph] icon.',
             condition: RoundCondition(6)),
       ],
       startingMap: MapDef(
@@ -896,6 +896,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
             Ether.morph: 2,
             Ether.wind: 1,
           },
+          spawnable: true,
           traits: ['If a Rover slays this unit, that Rover [plus_wind_morph].'],
 /*          abilities: [
             AbilityDef(name: 'Miasmic Arrow', actions: [
