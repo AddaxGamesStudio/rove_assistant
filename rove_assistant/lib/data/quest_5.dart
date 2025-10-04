@@ -123,6 +123,7 @@ extension Quest5 on EncounterDef {
           EncounterFigureDef(
             name: 'Bulwauros',
             letter: 'A',
+            standeeCount: 6,
             health: 6,
             defenseFormula: '3+X',
             xDefinition: 'count_adversary(Zisafi Principal)',
@@ -156,6 +157,7 @@ extension Quest5 on EncounterDef {
           EncounterFigureDef(
             name: 'Wrathbone',
             letter: 'B',
+            standeeCount: 4,
             health: 16,
             defenseFormula: 'X',
             xDefinition: 'count_adversary(Zisafi Principal)',
@@ -175,6 +177,7 @@ extension Quest5 on EncounterDef {
           EncounterFigureDef(
             name: 'Sek',
             letter: 'C',
+            standeeCount: 8,
             health: 12,
             affinities: {
               Ether.crux: -1,
@@ -190,6 +193,7 @@ extension Quest5 on EncounterDef {
             name: 'Zisafi Principal',
             letter: 'D',
             type: AdversaryType.miniboss,
+            standeeCount: 8,
             healthFormula: '9*R',
             affinities: {
               Ether.crux: -1,
@@ -204,6 +208,7 @@ extension Quest5 on EncounterDef {
           EncounterFigureDef(
             name: 'Urn',
             letter: 'E',
+            standeeCount: 2,
             healthFormula: '3*R',
             defense: 3,
             affinities: {
@@ -364,6 +369,7 @@ Keep track of the number of seks you are able to free from enslavement during th
           EncounterFigureDef(
             name: 'Skara',
             letter: 'A',
+            standeeCount: 8,
             health: 7,
             defense: 1,
             affinities: {
@@ -380,6 +386,7 @@ Keep track of the number of seks you are able to free from enslavement during th
           EncounterFigureDef(
             name: 'Wrathbone',
             letter: 'B',
+            standeeCount: 4,
             health: 16,
             traits: [
               '''[React] At the end of the Rover phase:
@@ -400,6 +407,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
           EncounterFigureDef(
             name: 'Sek',
             letter: 'C',
+            standeeCount: 8,
             health: 12,
             defense: 1,
             traits: [
@@ -420,6 +428,7 @@ This unit is immediately defeated and removed from the map.''',
           EncounterFigureDef(
             name: 'Zisafi Taskmaster',
             letter: 'D',
+            standeeCount: 8,
             health: 11,
             traits: [
               'When this unit suffers [DMG] from any source, if its enslaved sek is active, divide that [DMG] by 2.',
@@ -646,6 +655,7 @@ You will have to slay both Kelo and Saras to win this encounter. Once you slay S
           EncounterFigureDef(
             name: 'Bulwauros',
             letter: 'A',
+            standeeCount: 6,
             health: 6,
             defense: 3,
             traits: [
@@ -672,6 +682,7 @@ You will have to slay both Kelo and Saras to win this encounter. Once you slay S
           EncounterFigureDef(
             name: 'Skara',
             letter: 'B',
+            standeeCount: 8,
             health: 7,
             defense: 1,
             affinities: {
@@ -683,6 +694,7 @@ You will have to slay both Kelo and Saras to win this encounter. Once you slay S
           EncounterFigureDef(
             name: 'Gruv',
             letter: 'C',
+            standeeCount: 2,
             health: 18,
             defenseFormula: '3*(1-T%2)',
             traits: [
@@ -698,6 +710,7 @@ You will have to slay both Kelo and Saras to win this encounter. Once you slay S
               name: 'Saras',
               letter: 'D',
               type: AdversaryType.miniboss,
+              standeeCount: 1,
               healthFormula: '10*R',
               defenseFormula: 'X',
               xDefinition: 'count_adversary(Skara)',
@@ -729,6 +742,7 @@ Saras gains +2 [DMG] to all of their attacks.'''),
               name: 'Kelo',
               letter: 'D',
               type: AdversaryType.miniboss,
+              standeeCount: 1,
               healthFormula: '8*R',
               defense: 2,
               affinities: {
@@ -900,6 +914,7 @@ This means adversaries will spawn once for 2 Rovers, twice for 3 Rovers, and thr
         EncounterFigureDef(
           name: 'Skara',
           letter: 'A',
+          standeeCount: 8,
           health: 7,
           defense: 1,
           affinities: {
@@ -911,6 +926,7 @@ This means adversaries will spawn once for 2 Rovers, twice for 3 Rovers, and thr
         EncounterFigureDef(
           name: 'Sek',
           letter: 'B',
+          standeeCount: 8,
           health: 12,
           defense: 1,
           traits: [
@@ -931,6 +947,7 @@ This means adversaries will spawn once for 2 Rovers, twice for 3 Rovers, and thr
         EncounterFigureDef(
           name: 'Zisafi',
           letter: 'C',
+          standeeCount: 8,
           health: 11,
           affinities: {
             Ether.crux: -1,
@@ -951,6 +968,7 @@ This means adversaries will spawn once for 2 Rovers, twice for 3 Rovers, and thr
             name: 'Marii',
             letter: 'D',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             healthFormula: '18*R',
             defenseFormula: 'R-X',
             xDefinition: 'count_token(Hoard)',
@@ -1176,6 +1194,7 @@ Read Svaraka's abilities carefully. The mighty crystal dragon is terribly strong
           EncounterFigureDef(
             name: 'Bulwauros',
             letter: 'A',
+            standeeCount: 6,
             health: 6,
             defense: 3,
             traits: [
@@ -1202,6 +1221,7 @@ Read Svaraka's abilities carefully. The mighty crystal dragon is terribly strong
           EncounterFigureDef(
             name: 'Wrathbone',
             letter: 'B',
+            standeeCount: 4,
             health: 16,
             traits: [
               '''[React] At the end of the Rover phase:
@@ -1217,6 +1237,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
           EncounterFigureDef(
             name: 'Gruv',
             letter: 'C',
+            standeeCount: 2,
             health: 18,
             defenseFormula: '3*(1-T%2)',
             traits: [
@@ -1231,6 +1252,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
           EncounterFigureDef(
             name: 'Sek',
             letter: 'A',
+            standeeCount: 8,
             health: 12,
             defense: 1,
             affinities: {
@@ -1242,6 +1264,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
           EncounterFigureDef(
             name: 'Zisafi',
             letter: 'B',
+            standeeCount: 8,
             health: 11,
             affinities: {
               Ether.crux: -1,
@@ -1253,6 +1276,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
             name: 'Femii',
             letter: 'C',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             healthFormula: '12*R',
             defenseFormula: 'R',
             traits: [
@@ -1271,6 +1295,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
           EncounterFigureDef(
             name: 'Skara',
             letter: 'A',
+            standeeCount: 8,
             health: 7,
             defense: 1,
             affinities: {
@@ -1283,6 +1308,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
               name: 'Svaraka',
               letter: 'B',
               type: AdversaryType.boss,
+              standeeCount: 1,
               healthFormula: '25*R',
               large: true,
               immuneToForcedMovement: true,

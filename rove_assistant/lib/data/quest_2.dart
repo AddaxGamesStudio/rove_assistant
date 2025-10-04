@@ -135,6 +135,7 @@ extension Quest2 on EncounterDef {
           EncounterFigureDef(
             name: 'Kifa',
             letter: 'A',
+            standeeCount: 6,
             flies: true,
             health: 5,
             affinities: const {
@@ -179,6 +180,7 @@ extension Quest2 on EncounterDef {
           EncounterFigureDef(
               name: 'Zinix',
               letter: 'B',
+              standeeCount: 6,
               entersObjectSpaces: true,
               health: 5,
               defense: 1,
@@ -223,6 +225,7 @@ extension Quest2 on EncounterDef {
               alias: 'Gruv',
               letter: 'C',
               type: AdversaryType.miniboss,
+              standeeCount: 2,
               healthFormula: '8*R',
               defenseFormula: '3*(1-T%2)',
               traits: const [
@@ -523,6 +526,7 @@ extension Quest2 on EncounterDef {
           EncounterFigureDef(
               name: 'Onisski',
               letter: 'A',
+              standeeCount: 4,
               health: 6,
               ignoresDifficultTerrain: true,
               affinities: const {
@@ -583,6 +587,7 @@ extension Quest2 on EncounterDef {
           EncounterFigureDef(
             name: 'Zinix',
             letter: 'B',
+            standeeCount: 6,
             entersObjectSpaces: true,
             health: 5,
             defense: 1,
@@ -623,6 +628,7 @@ extension Quest2 on EncounterDef {
           EncounterFigureDef(
               name: 'Wrathbone',
               letter: 'C',
+              standeeCount: 4,
               health: 12,
               traits: const [
                 '''[React] At the end of the Rover phase: 
@@ -1070,6 +1076,7 @@ All enemies within [Range] 1 suffer [DMG]1.'''
           EncounterFigureDef(
               name: 'Wrathbone',
               letter: 'A',
+              standeeCount: 4,
               health: 12,
               traits: const [
                 '''[React] At the end of the Rover phase: 
@@ -1141,6 +1148,7 @@ All enemies within [Range] 1 suffer [DMG]1.'''
           EncounterFigureDef(
             name: 'Sek',
             letter: 'B',
+            standeeCount: 8,
             health: 10,
             defense: 1,
             affinities: const {
@@ -1187,6 +1195,7 @@ All enemies within [Range] 1 suffer [DMG]1.'''
             name: 'Zisafi Principal',
             letter: 'C',
             type: AdversaryType.miniboss,
+            standeeCount: 8,
             healthFormula: '7*R',
             affinities: const {
               Ether.crux: -1,
@@ -1583,6 +1592,7 @@ Once each round, one Rover may perform the following ability:
           EncounterFigureDef(
             name: 'Onisski',
             letter: 'A',
+            standeeCount: 4,
             health: 6,
             ignoresDifficultTerrain: true,
             affinities: const {
@@ -1641,6 +1651,7 @@ Once each round, one Rover may perform the following ability:
           EncounterFigureDef(
               name: 'Ashemak',
               letter: 'B',
+              standeeCount: 6,
               health: 5,
               immuneToForcedMovement: true,
               traits: [
@@ -1685,6 +1696,7 @@ All units within [Range] 1 suffer [DMG]2.'''
           EncounterFigureDef(
             name: 'Zisafi',
             letter: 'C',
+            standeeCount: 8,
             health: 9,
             affinities: const {
               Ether.crux: -1,
@@ -1720,6 +1732,7 @@ All units within [Range] 1 suffer [DMG]2.'''
           EncounterFigureDef(
             name: 'Gruv',
             letter: 'D',
+            standeeCount: 2,
             healthFormula: '15',
             defenseFormula: '2*(1-T%2)',
             traits: const ['During even rounds, this unit gains [DEF] 2.'],
@@ -1782,6 +1795,7 @@ All units within [Range] 1 suffer [DMG]2.'''
               name: 'Sek Principal',
               letter: 'E',
               type: AdversaryType.miniboss,
+              standeeCount: 1,
               alias: 'Kelo & Saras',
               healthFormula: '8*R',
               defenseFormula: '1+1*(1-T%2)',
@@ -1840,6 +1854,7 @@ All units within [Range] 1 suffer [DMG]2.'''
           EncounterFigureDef(
               name: 'Urn',
               letter: 'F',
+              standeeCount: 2,
               healthFormula: '2*R',
               defense: 2,
               affinities: const {
@@ -2062,6 +2077,7 @@ They have [DEF] R-X, where X equals the number of crystalline spears (hoard tile
             name: 'Marii',
             letter: 'A',
             type: AdversaryType.boss,
+            standeeCount: 1,
             healthFormula: '12*R',
             defenseFormula: 'R-X',
             xDefinition: 'count_token(Hoard)',
@@ -2117,6 +2133,7 @@ Move all crystalline spears (hoard tiles) from the Femii statistic block to the 
             name: 'Femii',
             letter: 'B',
             type: AdversaryType.boss,
+            standeeCount: 1,
             healthFormula: '10*R',
             defenseFormula: 'R-X',
             xDefinition: 'count_token(Hoard)',
@@ -2169,6 +2186,7 @@ Move all crystalline spears (hoard tiles) from the Marii statistic block to the 
           EncounterFigureDef(
             name: 'Zinix',
             letter: 'A',
+            standeeCount: 6,
             entersObjectSpaces: true,
             health: 5,
             defense: 1,
@@ -2209,6 +2227,7 @@ Move all crystalline spears (hoard tiles) from the Marii statistic block to the 
           EncounterFigureDef(
             name: 'Zisafi',
             letter: 'B',
+            standeeCount: 8,
             health: 9,
             affinities: const {
               Ether.crux: -1,
@@ -2244,6 +2263,7 @@ Move all crystalline spears (hoard tiles) from the Marii statistic block to the 
           EncounterFigureDef(
             name: 'Ashemak',
             letter: 'A',
+            standeeCount: 6,
             health: 5,
             immuneToForcedMovement: true,
             traits: [
@@ -2286,6 +2306,7 @@ All units within [Range] 1 suffer [DMG]2.'''
           EncounterFigureDef(
             name: 'Sek',
             letter: 'B',
+            standeeCount: 8,
             health: 10,
             defense: 1,
             affinities: const {
@@ -2332,6 +2353,7 @@ All units within [Range] 1 suffer [DMG]2.'''
             name: 'Femii Sovereign',
             letter: 'C',
             type: AdversaryType.boss,
+            standeeCount: 1,
             healthFormula: '10*R',
             defenseFormula: 'R-X',
             xDefinition: 'count_token(Hoard)',
@@ -2357,6 +2379,7 @@ All units within [Range] 1 suffer [DMG]2.'''
             name: 'Marii Advocate',
             letter: 'C',
             type: AdversaryType.boss,
+            standeeCount: 1,
             healthFormula: '12*R',
             defenseFormula: 'R-X',
             xDefinition: 'count_token(Hoard)',
