@@ -139,6 +139,7 @@ extension Quest1 on EncounterDef {
           EncounterFigureDef(
             name: 'Briarwog',
             letter: 'A',
+            standeeCount: 6,
             health: 6,
             affinities: const {
               Ether.fire: -1,
@@ -188,6 +189,7 @@ extension Quest1 on EncounterDef {
           EncounterFigureDef(
             name: 'Grovetender',
             letter: 'B',
+            standeeCount: 3,
             health: 10,
             defense: 1,
             traits: const [
@@ -239,6 +241,7 @@ extension Quest1 on EncounterDef {
               name: 'Zipahudi the Briarbull',
               letter: 'C',
               type: AdversaryType.miniboss,
+              standeeCount: 1,
               healthFormula: '10*R',
               traits: const [
                 '''[React] After this unit is attacked from within [Range] 1:
@@ -451,6 +454,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
           EncounterFigureDef(
             name: 'Briarwog',
             letter: 'A',
+            standeeCount: 6,
             health: 6,
             respawns: true,
             affinities: {
@@ -501,6 +505,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
           EncounterFigureDef(
               name: 'Nahoot',
               letter: 'B',
+              standeeCount: 7,
               health: 12,
               respawns: true,
               affinities: {
@@ -551,6 +556,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
           EncounterFigureDef(
               name: 'Terranape',
               letter: 'C',
+              standeeCount: 2,
               health: 15,
               respawns: true,
               affinities: {
@@ -847,6 +853,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
         EncounterFigureDef(
           name: 'Galeaper',
           letter: 'A',
+          standeeCount: 8,
           health: 5,
           flies: true,
           affinities: const {
@@ -889,6 +896,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
         EncounterFigureDef(
           name: 'Nahoot',
           letter: 'B',
+          standeeCount: 7,
           health: 12,
           affinities: {
             Ether.crux: -1,
@@ -938,6 +946,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
         EncounterFigureDef(
           name: 'Zaghan Nahadir',
           letter: 'C',
+          standeeCount: 4,
           type: AdversaryType.miniboss,
           healthFormula: '8*R',
           flies: true,
@@ -1299,6 +1308,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
           EncounterFigureDef(
             name: 'Galeaper',
             letter: 'A',
+            standeeCount: 8,
             health: 5,
             flies: true,
             affinities: const {
@@ -1341,6 +1351,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
           EncounterFigureDef(
             name: 'Dekaha',
             letter: 'B',
+            standeeCount: 6,
             health: 6,
             immuneToForcedMovement: true,
             affinities: const {
@@ -1379,6 +1390,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
           EncounterFigureDef(
               name: 'Terranape',
               letter: 'C',
+              standeeCount: 2,
               health: 15,
               affinities: {
                 Ether.wind: -1,
@@ -1442,6 +1454,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
           EncounterFigureDef(
               name: 'Hokmala',
               letter: 'D',
+              standeeCount: 3,
               type: AdversaryType.miniboss,
               healthFormula: '10*R',
               defense: 1,
@@ -1510,6 +1523,7 @@ Spawn R-1 galeapers in empty spaces within [Range] 1 of it.'''
           EncounterFigureDef(
             name: 'Nektari Swarm',
             letter: 'E',
+            standeeCount: 8,
             health: 1,
             flies: true,
             affinities: const {
@@ -1854,6 +1868,7 @@ Rovers can not take the [Morph] dice from ether nodes that have a Corrupted Nekt
           EncounterFigureDef(
             name: 'Dekaha',
             letter: 'A',
+            standeeCount: 6,
             health: 6,
             immuneToForcedMovement: true,
             affinities: const {
@@ -1892,6 +1907,7 @@ Rovers can not take the [Morph] dice from ether nodes that have a Corrupted Nekt
           EncounterFigureDef(
               name: 'Nahoot',
               letter: 'B',
+              standeeCount: 7,
               health: 12,
               affinities: {
                 Ether.crux: -1,
@@ -1942,6 +1958,7 @@ Rovers can not take the [Morph] dice from ether nodes that have a Corrupted Nekt
           EncounterFigureDef(
             name: 'Nahadir',
             letter: 'C',
+            standeeCount: 4,
             health: 12,
             flies: true,
             affinities: {
@@ -1999,6 +2016,7 @@ Rovers can not take the [Morph] dice from ether nodes that have a Corrupted Nekt
               name: 'Ahma',
               alias: 'Ahma Corrupter',
               letter: 'D',
+              standeeCount: 1,
               type: AdversaryType.boss,
               healthFormula: '15*R',
               large: true,
@@ -2097,6 +2115,7 @@ Remove all [Morph] dice from all [Morph] nodes and place them on the Ahma Wretch
               name: 'Ahma Wretched',
               letter: 'D',
               type: AdversaryType.boss,
+              standeeCount: 1,
               healthFormula: '15*R',
               large: true,
               possibleTokens: List.generate(5, (_) => Ether.morph.toJson()),
@@ -2186,6 +2205,7 @@ Remove all [Morph] dice from all [Morph] nodes and place them on the Ahma Wretch
           EncounterFigureDef(
             name: 'Corrupted Nektari Swarm',
             letter: 'E',
+            standeeCount: 8,
             health: 1,
             flies: true,
             affinities: const {

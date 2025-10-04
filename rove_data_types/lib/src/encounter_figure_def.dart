@@ -33,11 +33,13 @@ class EncounterFigureDef {
   static const String countAdversaryFunction = 'count_adversary';
   static const String countTokenFunction = 'count_token';
   static const String tokenPerRoverPrefix = 'Rx';
+  static const int undefinedStandeeCount = -1;
 
   final String name;
   final String? alias;
   final String? letter;
   final AdversaryType type;
+  final int standeeCount;
 
   /// Only needed if the figure starts injured like in 10.4 (Late).
   final int? startingHealth;
@@ -87,6 +89,7 @@ class EncounterFigureDef {
     this.alias,
     this.letter,
     this.type = AdversaryType.minion,
+    this.standeeCount = undefinedStandeeCount,
     this.startingHealth,
     this.health,
     this.healthFormula,
@@ -136,6 +139,9 @@ class EncounterFigureDef {
       type: json.containsKey('enemy_type')
           ? AdversaryType.fromJson(json['enemy_type'] as String)
           : AdversaryType.minion,
+      standeeCount: json.containsKey('standee_count')
+          ? json['standee_count'] as int
+          : undefinedStandeeCount,
       startingHealth: json['starting_health'] as int?,
       health: json['health'] as int?,
       healthFormula: json['health_formula'] as String?,
@@ -212,6 +218,7 @@ class EncounterFigureDef {
       if (alias case final value?) 'alias': value,
       if (letter case final value?) 'letter': value,
       if (type != AdversaryType.minion) 'enemy_type': type.toJson(),
+      if (standeeCount != undefinedStandeeCount) 'standee_count': standeeCount,
       if (startingHealth case final value?) 'starting_health': value,
       if (health case final value?) 'health': value,
       if (healthFormula case final value?) 'health_formula': value,

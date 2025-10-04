@@ -115,6 +115,7 @@ extension Quest6 on EncounterDef {
           EncounterFigureDef(
               name: 'Nektari Hive',
               alias: 'Corrupted Nektari Hive',
+              standeeCount: 8,
               healthFormula: '2*R',
               onSlain: [
                 codex(100),
@@ -131,6 +132,7 @@ extension Quest6 on EncounterDef {
           EncounterFigureDef(
             name: 'Briarwog',
             letter: 'A',
+            standeeCount: 6,
             health: 8,
             traits: [
               '''[React] After this unit is attacked from within [Range] 1:
@@ -147,6 +149,7 @@ The attacker suffers [DMG]1.''',
           EncounterFigureDef(
             name: 'Dekaha',
             letter: 'B',
+            standeeCount: 6,
             health: 8,
             immuneToForcedMovement: true,
             traits: [
@@ -162,6 +165,7 @@ The attacker suffers [DMG]1.''',
           EncounterFigureDef(
             letter: 'C',
             name: 'Terranape',
+            standeeCount: 2,
             health: 20,
             traits: [
               'At the start of this unit\'s turn, it recovers [RCV] R+1.',
@@ -178,6 +182,7 @@ The attacker suffers [DMG]1.''',
             name: 'Hokmala',
             letter: 'D',
             type: AdversaryType.miniboss,
+            standeeCount: 3,
             healthFormula: '14*R',
             defenseFormula: 'X',
             xDefinition: 'count_adversary(Dekaha)',
@@ -193,6 +198,8 @@ The attacker suffers [DMG]1.''',
           ),
           EncounterFigureDef(
             name: 'Corrupted Nektari Swarm',
+            letter: 'E',
+            standeeCount: 8,
             health: 1,
             flies: true,
             traits: [
@@ -405,6 +412,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
           EncounterFigureDef(
             name: 'Kifa',
             letter: 'A',
+            standeeCount: 6,
             health: 7,
             flies: true,
             affinities: {
@@ -417,6 +425,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
           EncounterFigureDef(
             name: 'Nahoot',
             letter: 'B',
+            standeeCount: 7,
             health: 15,
             traits: [
               'If a Rover slays this unit, that Rover [plus_wind_morph].',
@@ -433,6 +442,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
           EncounterFigureDef(
             name: 'Nahadir',
             letter: 'C',
+            standeeCount: 4,
             health: 15,
             flies: true,
             traits: [
@@ -448,6 +458,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
             name: 'Rakifa',
             letter: 'D',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             healthFormula: '12*R',
             affinities: {
               Ether.fire: -1,
@@ -460,6 +471,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
             name: 'Zeepurah',
             letter: 'E',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             faction: 'The Yanshif',
             healthFormula: '8+2*R',
             flies: true,
@@ -473,6 +485,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
           EncounterFigureDef(
             name: 'Corrupted Nektari Swarm',
             letter: 'F',
+            standeeCount: 8,
             health: 1,
             flies: true,
             traits: [
@@ -766,6 +779,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
           EncounterFigureDef(
             name: 'Broken Vessel',
             letter: 'A',
+            standeeCount: 6,
             health: 6,
             flies: true,
             respawns: true,
@@ -782,6 +796,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
           EncounterFigureDef(
             name: 'Nahoot',
             letter: 'B',
+            standeeCount: 7,
             health: 15,
             respawns: true,
             traits: [
@@ -799,6 +814,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
           EncounterFigureDef(
             name: 'Nahadir',
             letter: 'C',
+            standeeCount: 4,
             health: 15,
             flies: true,
             respawns: true,
@@ -814,6 +830,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
           EncounterFigureDef(
               name: 'Haunt',
               letter: 'D',
+              standeeCount: 1,
               healthFormula: '3*R',
               respawns: true,
               affinities: {
@@ -829,6 +846,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
           EncounterFigureDef(
             name: 'Zeepurah',
             letter: 'E',
+            standeeCount: 1,
             type: AdversaryType.miniboss,
             healthFormula: '8+2*R',
             flies: true,
@@ -1057,6 +1075,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
           EncounterFigureDef(
               name: 'Nektari Hive',
               alias: 'Corrupted Nektari Hive',
+              standeeCount: 8,
               healthFormula: '2*R',
               onSlain: [
                 codex(117),
@@ -1073,6 +1092,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
           EncounterFigureDef(
             name: 'Briarwog',
             letter: 'A',
+            standeeCount: 6,
             health: 8,
             traits: [
               '''[React] After this unit is attacked from within [Range] 1:
@@ -1089,6 +1109,7 @@ The attacker suffers [DMG]1.''',
           EncounterFigureDef(
             name: 'Dekaha',
             letter: 'B',
+            standeeCount: 6,
             health: 8,
             immuneToForcedMovement: true,
             affinities: {
@@ -1101,6 +1122,7 @@ The attacker suffers [DMG]1.''',
           EncounterFigureDef(
             name: 'Grovetender',
             letter: 'C',
+            standeeCount: 3,
             health: 12,
             defense: 1,
             traits: [
@@ -1121,6 +1143,7 @@ The attacker suffers [DMG]1.''',
             name: 'Zipahudi the Briarbull',
             letter: 'D',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             healthFormula: '15*R',
             traits: [
               'This unit treats corrupted pools and poison pools as normal spaces.',
@@ -1138,6 +1161,7 @@ That enemy suffers [DMG]2.''',
             name: 'Zeepurah',
             letter: 'E',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             faction: 'The Yanshif',
             healthFormula: '8+2*R',
             flies: true,
@@ -1151,6 +1175,7 @@ That enemy suffers [DMG]2.''',
           EncounterFigureDef(
             name: 'Corrupted Nektari Swarm',
             letter: 'F',
+            standeeCount: 8,
             health: 1,
             flies: true,
             traits: [
@@ -1418,6 +1443,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
             alias: 'Ahma Corrupter',
             letter: 'A',
             type: AdversaryType.boss,
+            standeeCount: 1,
             healthFormula: '40*R',
             large: true,
             traits: [
@@ -1442,6 +1468,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
             name: 'Zeepurah',
             letter: 'B',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             healthFormula: '8*R',
             flies: true,
             traits: [
@@ -1457,6 +1484,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
           EncounterFigureDef(
             name: 'Broken Vessel',
             letter: 'C',
+            standeeCount: 6,
             health: 6,
             flies: true,
             traits: [
@@ -1543,6 +1571,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
                 alias: 'Ahma Enraged',
                 letter: 'A',
                 type: AdversaryType.boss,
+                standeeCount: 1,
                 healthFormula: '35*R',
                 defenseFormula: 'X',
                 xDefinition: 'count_adversary(Nahoot)',
@@ -1562,6 +1591,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
               EncounterFigureDef(
                 name: 'Nahoot',
                 letter: 'B',
+                standeeCount: 7,
                 health: 15,
                 traits: [
                   'If a Rover slays this unit, that Rover [plus_wind_morph].'
@@ -1578,6 +1608,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
               EncounterFigureDef(
                 name: 'Nahadir',
                 letter: 'C',
+                standeeCount: 4,
                 health: 15,
                 flies: true,
                 traits: [
@@ -1709,6 +1740,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
                 alias: 'Ahma Desperate',
                 letter: 'A',
                 type: AdversaryType.boss,
+                standeeCount: 1,
                 healthFormula: '45*R',
                 large: true,
                 possibleTokens: [
@@ -1731,6 +1763,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
               EncounterFigureDef(
                 name: 'Briarwog',
                 letter: 'B',
+                standeeCount: 6,
                 health: 10,
                 traits: [
                   '[React] After this unit is attacked from within [Range] 1: The attacker suffers [DMG]1.',
@@ -1748,6 +1781,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
               EncounterFigureDef(
                 name: 'Dekaha',
                 letter: 'C',
+                standeeCount: 6,
                 health: 8,
                 immuneToForcedMovement: true,
                 affinities: {

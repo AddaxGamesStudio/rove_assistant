@@ -234,6 +234,7 @@ This is a good time to discuss effect resolution order (pg. 36). Some actions, e
           EncounterFigureDef(
             name: 'Galeling',
             letter: 'A',
+            standeeCount: 8,
             health: 5,
             affinities: const {
               Ether.fire: -1,
@@ -621,6 +622,7 @@ Mo and Makaal will help you in your fight against the galeapers, for the right p
           EncounterFigureDef(
             name: 'Galeling',
             letter: 'A',
+            standeeCount: 8,
             health: 5,
             affinities: const {
               Ether.fire: -1,
@@ -654,6 +656,7 @@ Mo and Makaal will help you in your fight against the galeapers, for the right p
           EncounterFigureDef(
               name: 'Dekaha',
               letter: 'B',
+              standeeCount: 6,
               health: 6,
               immuneToForcedMovement: true,
               affinities: const {
@@ -685,6 +688,7 @@ Mo and Makaal will help you in your fight against the galeapers, for the right p
           EncounterFigureDef(
               name: 'Nektari Swarm',
               letter: 'C',
+              standeeCount: 4,
               health: 1,
               flies: true,
               affinities: const {
@@ -990,6 +994,7 @@ For more information on leveling up, read page 63.'''),
           EncounterFigureDef(
               name: 'Galeaper',
               letter: 'A',
+              standeeCount: 8,
               health: 5,
               flies: true,
               affinities: const {
@@ -1031,6 +1036,7 @@ For more information on leveling up, read page 63.'''),
           EncounterFigureDef(
               name: 'Dekaha',
               letter: 'B',
+              standeeCount: 6,
               health: 6,
               immuneToForcedMovement: true,
               affinities: const {
@@ -1062,6 +1068,7 @@ For more information on leveling up, read page 63.'''),
           EncounterFigureDef(
               name: 'Galeaper Queen',
               letter: 'B',
+              standeeCount: 1,
               type: AdversaryType.boss,
               large: true,
               healthFormula: '10*R',
