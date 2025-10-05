@@ -102,6 +102,13 @@ class EncounterPrefsDialog extends StatelessWidget {
                         preference: AssistantPreferences.onLongPressUnitPref,
                         entries: [_nullEntry, ..._entries]),
                     Text(
+                      'Setup',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    CheckboxSetting(
+                        title: 'Randomize Standees',
+                        preference: AssistantPreferences.randomizeStandeesPref),
+                    Text(
                       'Prompts',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),

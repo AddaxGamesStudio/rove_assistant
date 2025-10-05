@@ -672,7 +672,7 @@ class EncounterExecutor {
             amount: action.amount, formula: action.amountFormula);
         final spawns = <Figure>[];
         for (int i = 0; i < amount; i++) {
-          if (resolver.canSpawnTarget(className)) {
+          if (resolver.canSpawnOfName(className)) {
             spawns.add(spawn(name: className));
           }
         }
@@ -848,7 +848,7 @@ class EncounterExecutor {
   }
 
   Figure spawn({required String name, Figure? carryStateFromFigure}) {
-    assert(resolver.canSpawnTarget(name));
+    assert(resolver.canSpawnOfName(name));
 
     final reusableFigure =
         resolver.figuresForTarget(name).firstWhereOrNull((f) => f.health == 0);
@@ -856,7 +856,7 @@ class EncounterExecutor {
     final toDef =
         resolver.adversaryDefinitions.firstWhere((e) => e.name == name);
     // Reuse a previous numeral if available
-    if (reusableFigure != null) {
+    if (reusableFigure != null && !Preferences.instance.randomizeStandees) {
       state.setAdversaryState(
           name: reusableFigure.name,
           numeral: reusableFigure.numeral,
@@ -967,7 +967,7 @@ class EncounterExecutor {
         message: body,
         onDraw: (draw) {
           final adversary = draw.adversaryName;
-          if (adversary != null && resolver.canSpawnTarget(adversary)) {
+          if (adversary != null && resolver.canSpawnOfName(adversary)) {
             spawn(name: adversary);
           }
           completer.complete();

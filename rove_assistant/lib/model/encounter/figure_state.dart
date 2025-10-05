@@ -150,7 +150,7 @@ class FigureState {
         removed: removed);
   }
 
-  hasOverrideNumber() {
+  bool get hasOverrideNumber {
     return overrideNumber != null;
   }
 

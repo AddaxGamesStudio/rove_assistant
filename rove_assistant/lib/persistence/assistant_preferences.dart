@@ -6,6 +6,8 @@ extension AssistantPreferences on Preferences {
   static const String onTapUnitPref = 'rove.controls.on_tap_unit';
   static const String onDoubleTapUnitPref = 'rove.controls.on_double_tap_unit';
   static const String onLongPressUnitPref = 'rove.controls.on_long_press_unit';
+  static const String randomizeStandeesPref =
+      'rove.controls.randomize_standees';
   static const String skipNarrativePref = 'rove.events.skip_narrative';
   static const String skipRulesPref = 'rove.events.skip_rules';
   static const String spoilerWarningShownPref =
@@ -20,6 +22,7 @@ extension AssistantPreferences on Preferences {
     onTapUnitPref: showDetailValue,
     onDoubleTapUnitPref: toggleReactionValue,
     onLongPressUnitPref: noneValue,
+    randomizeStandeesPref: 'false',
     skipNarrativePref: 'false',
     skipRulesPref: 'false',
     spoilerWarningShownPref: 'false',
@@ -34,6 +37,12 @@ extension AssistantPreferences on Preferences {
   bool get skipRules =>
       bool.tryParse(
           getString(skipRulesPref) ?? defaults[skipRulesPref] ?? 'false') ??
+      false;
+
+  bool get randomizeStandees =>
+      bool.tryParse(getString(randomizeStandeesPref) ??
+          defaults[randomizeStandeesPref] ??
+          'false') ??
       false;
 
   bool get spoilerWarningShown =>

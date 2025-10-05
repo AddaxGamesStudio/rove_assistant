@@ -345,6 +345,16 @@ class EncounterState {
     return adversariesState[_keyForFigure(name, numeral)]?.selectedTokens ?? [];
   }
 
+  bool hasStateForAdversaryWithOverriddenNumeral(
+      {required String name, int numeral = 0}) {
+    for (int i = 0; i <= FigureDef.standeeLimit; i++) {
+      if (adversariesState[_keyForFigure(name, i)]?.overrideNumber == numeral) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   FigureState adversaryState(
       {required String name,
       int numeral = 0,

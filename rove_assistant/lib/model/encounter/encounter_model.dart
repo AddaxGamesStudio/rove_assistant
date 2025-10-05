@@ -564,7 +564,7 @@ class EncounterModel extends ChangeNotifier {
   }
 
   bool isSpawnableWithName(String name) {
-    if (!_resolver.canSpawnTarget(name)) {
+    if (!_resolver.canSpawnOfName(name)) {
       return false;
     }
 

@@ -8,6 +8,8 @@ import 'package:rove_assistant/model/encounter/encounter_state.dart';
 import 'package:rove_assistant/model/encounter/figure.dart';
 import 'package:rove_assistant/model/encounter/figure_state.dart';
 import 'package:rove_assistant/model/players_model.dart';
+import 'package:rove_assistant/persistence/assistant_preferences.dart';
+import 'package:rove_assistant/persistence/preferences.dart';
 import 'package:rove_data_types/rove_data_types.dart';
 
 class EncounterResolver {
@@ -87,11 +89,23 @@ class EncounterResolver {
   }
 
   FigureState adversaryState(
-      {required EncounterFigureDef definition, required int index}) {
-    return state.adversaryState(
+      {required EncounterFigureDef definition,
+      required int index,
+      bool randomizeNumeral = false}) {
+    final adversaryState = state.adversaryState(
         name: definition.name,
         numeral: index,
         defaultState: _defaultStateForDefinition(definition));
+    if (!randomizeNumeral || adversaryState.hasOverrideNumber) {
+      return adversaryState;
+    }
+    final adversaryStateWithRandomNumeral = adversaryState
+        .withNumber(_randomNumeralForEncounterFigureDef(definition));
+    state.setAdversaryState(
+        name: definition.name,
+        numeral: index,
+        state: adversaryStateWithRandomNumeral);
+    return adversaryStateWithRandomNumeral;
   }
 
   Figure adversaryWithState(
@@ -129,9 +143,16 @@ class EncounterResolver {
     ].where((e) => isFigureMatchingValue(figure: e, value: target)).toList();
   }
 
-  bool canSpawnTarget(String target) {
-    return figuresForTarget(target).where((f) => f.health > 0).length <
-        FigureDef.standeeLimit;
+  bool canSpawnOfName(String name) {
+    final adversaryDefinition =
+        encounter.adversaries.firstWhereOrNull((e) => e.name == name);
+    final count = figuresForTarget(name).where((f) => f.health > 0).length;
+    if (adversaryDefinition != null &&
+        adversaryDefinition.standeeCount !=
+            EncounterFigureDef.undefinedStandeeCount) {
+      return count < adversaryDefinition.standeeCount;
+    }
+    return count < FigureDef.standeeLimit;
   }
 
   List<Figure> figuresForTarget(String target) {
@@ -237,6 +258,22 @@ class EncounterResolver {
       .where((s) => s.health > 0)
       .isEmpty;
 
+  int _randomNumeralForEncounterFigureDef(EncounterFigureDef definition) {
+    int standeeNumber = 0;
+    final maxRetries = FigureDef.standeeLimit;
+    int retries = 0;
+    do {
+      standeeNumber = Random().nextInt(definition.standeeCount) + 1;
+      retries++;
+      if (retries > maxRetries) {
+        throw Exception(
+            'Unable to find a free standee number for ${definition.name}');
+      }
+    } while (state.hasStateForAdversaryWithOverriddenNumeral(
+        name: definition.name, numeral: standeeNumber));
+    return standeeNumber;
+  }
+
   /// Use healthOnly to avoid infinite recursion.
   List<Figure> _figuresOfRole(
       {required FigureRole role,
@@ -246,10 +283,15 @@ class EncounterResolver {
     for (var encounterFigureDef in encounterList) {
       final name = encounterFigureDef.name;
       final placements = placementsForName(name);
+      final bool randomizeStandees = Preferences.instance.randomizeStandees &&
+          role == FigureRole.adversary &&
+          encounterFigureDef.standeeCount > 1;
       for (int i = 0; i < placements.length; i++) {
         final index = i + 1;
-        final figureState =
-            adversaryState(definition: encounterFigureDef, index: index);
+        final figureState = adversaryState(
+            definition: encounterFigureDef,
+            index: index,
+            randomizeNumeral: randomizeStandees);
         final respawnCondition = encounterFigureDef.respawnCondition;
         final roundsToRespawn = !healthOnly &&
                 encounterFigureDef.respawns &&
