@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:rove_assistant/theme/rove_palette.dart';
 import 'package:rove_assistant/theme/rove_theme.dart';
@@ -318,6 +319,15 @@ class _FigureGroup extends StatelessWidget {
       ...groupedItems.map((group) {
         return OrientationBuilder(builder: (context, orientation) {
           final viewPadding = MediaQueryData.fromView(View.of(context)).padding;
+          final sortedGroup = group.sortedBy<num>((_ListItem item) {
+            if (item is _AddListItem) {
+              return 999;
+            } else if (item is _FigureListItem) {
+              return item.figure.numberToDisplay;
+            } else {
+              return 999;
+            }
+          });
           return SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.only(
@@ -325,7 +335,8 @@ class _FigureGroup extends StatelessWidget {
                 left: max(viewPadding.left, EncounterSidePadding.padding.left),
                 right:
                     max(viewPadding.right, EncounterSidePadding.padding.right)),
-            child: Row(spacing: RoveTheme.horizontalSpacing, children: group),
+            child: Row(
+                spacing: RoveTheme.horizontalSpacing, children: sortedGroup),
           );
         });
       })
