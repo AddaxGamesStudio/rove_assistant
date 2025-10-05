@@ -24,7 +24,7 @@ extension Quest1 on EncounterDef {
         challenges: const [
           'Briarwogs gain +2 [HP].',
           'Zipahudi the Briarbull is immune to all forced movement.',
-          'Zipahudi the Briarbull gains +1 [DEF] while there is at least one briarwog on the map.'
+          'Zipahudi the Briarbull gains +1 [DEF] while there is at least one Briarwog on the map.'
         ],
         dialogs: [
           introductionFromText('quest_1_encounter_1_intro'),
@@ -140,7 +140,7 @@ extension Quest1 on EncounterDef {
             name: 'Briarwog',
             letter: 'A',
             standeeCount: 6,
-            health: 6,
+            healthFormula: '6+2*(C1)',
             affinities: const {
               Ether.fire: -1,
               Ether.earth: -1,
@@ -243,6 +243,8 @@ extension Quest1 on EncounterDef {
               type: AdversaryType.miniboss,
               standeeCount: 1,
               healthFormula: '10*R',
+              defenseFormula: '1*C3*ceil(X/(X+1))',
+              xDefinition: 'count_adversary(Briarwog)',
               traits: const [
                 '''[React] After this unit is attacked from within [Range] 1:
                 

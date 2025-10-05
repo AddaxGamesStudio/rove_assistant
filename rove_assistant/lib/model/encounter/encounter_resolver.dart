@@ -52,6 +52,9 @@ class EncounterResolver {
       rovePlayerCountVariable: PlayersModel.instance.players.length,
       roveRoundVariable: state.round,
       roveTokensVariable: selectedTokenCount,
+      roveChallenge1Variable: state.challenges[0] ? 1 : 0,
+      roveChallenge2Variable: state.challenges[1] ? 1 : 0,
+      roveChallenge3Variable: state.challenges[2] ? 1 : 0,
     };
     if (definition.xDefinition != null) {
       variables[roveXVariable] = _resolveXForDefinition(definition);
