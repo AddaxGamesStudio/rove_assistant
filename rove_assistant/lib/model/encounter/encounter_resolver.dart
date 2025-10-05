@@ -102,13 +102,15 @@ class EncounterResolver {
     if (!randomizeNumeral || adversaryState.hasOverrideNumber) {
       return adversaryState;
     }
-    final adversaryStateWithRandomNumeral = adversaryState
-        .withNumber(_randomNumeralForEncounterFigureDef(definition));
-    state.setAdversaryState(
-        name: definition.name,
-        numeral: index,
-        state: adversaryStateWithRandomNumeral);
-    return adversaryStateWithRandomNumeral;
+    final existingRandomNumeral = state.getAdversaryRandomStandeeMapping(
+        name: definition.name, index: index);
+    if (existingRandomNumeral != null) {
+      return adversaryState.withNumber(existingRandomNumeral);
+    }
+    final randomNumeral = _randomNumeralForEncounterFigureDef(definition);
+    state.setAdversaryRandomStandeeMapping(
+        name: definition.name, index: index, standeeNumber: randomNumeral);
+    return adversaryState.withNumber(randomNumeral);
   }
 
   Figure adversaryWithState(
@@ -263,16 +265,9 @@ class EncounterResolver {
 
   int _randomNumeralForEncounterFigureDef(EncounterFigureDef definition) {
     int standeeNumber = 0;
-    final maxRetries = FigureDef.standeeLimit;
-    int retries = 0;
     do {
       standeeNumber = Random().nextInt(definition.standeeCount) + 1;
-      retries++;
-      if (retries > maxRetries) {
-        throw Exception(
-            'Unable to find a free standee number for ${definition.name}');
-      }
-    } while (state.hasStateForAdversaryWithOverriddenNumeral(
+    } while (state.isStandeeNumberUsedForAdversary(
         name: definition.name, numeral: standeeNumber));
     return standeeNumber;
   }

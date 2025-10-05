@@ -36,6 +36,8 @@ class EncounterState {
   Map<String, int> summonsHealth = {};
   @JsonKey(name: 'adversaries_state', defaultValue: {})
   Map<String, FigureState> adversariesState = {};
+  @JsonKey(name: 'adversaries_random_standee_map', defaultValue: {})
+  Map<String, int> adversariesRandomStandeeMap = {};
   @JsonKey(name: 'allies_state', defaultValue: {})
   Map<String, FigureState> alliesState = {};
   @JsonKey(name: 'replacement_placement_group', defaultValue: null)
@@ -311,6 +313,16 @@ class EncounterState {
     return etherNames;
   }
 
+  setAdversaryRandomStandeeMapping(
+      {required String name, required int index, required int standeeNumber}) {
+    adversariesRandomStandeeMap[_keyForFigure(name, index)] = standeeNumber;
+  }
+
+  int? getAdversaryRandomStandeeMapping(
+      {required String name, required int index}) {
+    return adversariesRandomStandeeMap[_keyForFigure(name, index)];
+  }
+
   setAdversaryState(
       {required String name,
       required int numeral,
@@ -345,10 +357,15 @@ class EncounterState {
     return adversariesState[_keyForFigure(name, numeral)]?.selectedTokens ?? [];
   }
 
-  bool hasStateForAdversaryWithOverriddenNumeral(
+  bool isStandeeNumberUsedForAdversary(
       {required String name, int numeral = 0}) {
     for (int i = 0; i <= FigureDef.standeeLimit; i++) {
       if (adversariesState[_keyForFigure(name, i)]?.overrideNumber == numeral) {
+        return true;
+      }
+    }
+    for (int i = 0; i <= FigureDef.standeeLimit; i++) {
+      if (adversariesRandomStandeeMap[_keyForFigure(name, i)] == numeral) {
         return true;
       }
     }

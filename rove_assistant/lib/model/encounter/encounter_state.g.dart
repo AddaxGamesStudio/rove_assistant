@@ -43,6 +43,11 @@ EncounterState _$EncounterStateFromJson(Map<String, dynamic> json) {
                   MapEntry(k, FigureState.fromJson(e as Map<String, dynamic>)),
             ) ??
             {}
+    ..adversariesRandomStandeeMap =
+        (json['adversaries_random_standee_map'] as Map<String, dynamic>?)?.map(
+              (k, e) => MapEntry(k, (e as num).toInt()),
+            ) ??
+            {}
     ..alliesState = (json['allies_state'] as Map<String, dynamic>?)?.map(
           (k, e) =>
               MapEntry(k, FigureState.fromJson(e as Map<String, dynamic>)),
@@ -155,6 +160,7 @@ Map<String, dynamic> _$EncounterStateToJson(EncounterState instance) =>
       'summons_health': instance.summonsHealth,
       'adversaries_state':
           instance.adversariesState.map((k, e) => MapEntry(k, e.toJson())),
+      'adversaries_random_standee_map': instance.adversariesRandomStandeeMap,
       'allies_state':
           instance.alliesState.map((k, e) => MapEntry(k, e.toJson())),
       'replacement_placement_group': instance.replacementPlacementGroup,
