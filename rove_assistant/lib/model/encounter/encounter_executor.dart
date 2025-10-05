@@ -1054,7 +1054,12 @@ class EncounterExecutor {
       state.replacementPlacementGroup = group.name;
       state.setPlacements(placements: placements);
     } else {
-      state.addPlacements(placements: placements);
+      for (var p in placements) {
+        if (resolver.canSpawnOfName(p.name)) {
+          // Add placements individually so that the check above considers previous placements.
+          state.addPlacements(placements: [p]);
+        }
+      }
     }
     final adversaries = resolver.adversaries;
     final newAdversaries = adversaries
