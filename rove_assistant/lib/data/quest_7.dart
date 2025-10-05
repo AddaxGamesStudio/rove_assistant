@@ -135,6 +135,7 @@ extension Quest7 on EncounterDef {
           EncounterFigureDef(
             name: 'Stomaw',
             letter: 'A',
+            standeeCount: 8,
             health: 11,
             traits: [
               'When this unit attacks, if at least one of its allies are adjacent to the target, it gains +1 [DMG] to the attack.',
@@ -153,6 +154,7 @@ extension Quest7 on EncounterDef {
           EncounterFigureDef(
             name: 'Broken Vessel',
             letter: 'B',
+            standeeCount: 8,
             health: 7,
             flies: true,
             traits: [
@@ -172,6 +174,7 @@ extension Quest7 on EncounterDef {
           EncounterFigureDef(
             name: 'Fell Cradle',
             letter: 'C',
+            standeeCount: 3,
             health: 16,
             traits: [
               '''[React] When this unit is slain:
@@ -203,6 +206,7 @@ Spawn one Broken Vessel in the space this unit occupied.''',
             name: 'Azoth',
             letter: 'D',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             healthFormula: '7*R',
             defense: 2,
             large: true,
@@ -223,6 +227,7 @@ Spawn one Broken Vessel in the space this unit occupied.''',
           EncounterFigureDef(
             name: 'Haunt',
             letter: 'E',
+            standeeCount: 4,
             healthFormula: '4*R',
             affinities: {
               Ether.crux: 2,
@@ -566,6 +571,7 @@ When an adversary is slain, place it off to the side of the map. During the star
           EncounterFigureDef(
             name: 'Stomaw',
             letter: 'A',
+            standeeCount: 8,
             health: 11,
             respawns: true,
             traits: [
@@ -584,6 +590,7 @@ When an adversary is slain, place it off to the side of the map. During the star
           EncounterFigureDef(
             name: 'Broken Vessel',
             letter: 'B',
+            standeeCount: 8,
             health: 7,
             flies: true,
             respawns: true,
@@ -603,6 +610,7 @@ When an adversary is slain, place it off to the side of the map. During the star
           EncounterFigureDef(
             name: 'Fell Cradle',
             letter: 'C',
+            standeeCount: 3,
             health: 16,
             respawns: true,
             traits: [
@@ -632,6 +640,7 @@ Spawn one Broken Vessel in the space this unit occupied.''',
             name: 'Scour',
             letter: 'D',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             healthFormula: '12*R',
             defense: 1,
             large: true,
@@ -651,6 +660,7 @@ Spawn one Broken Vessel in the space this unit occupied.''',
             name: 'Querist',
             letter: 'E',
             faction: 'The Balatronists',
+            standeeCount: 6,
             health: 10,
             traits: [
               '''[React] After this unit suffers damage from any source and it is at 2 or less [HP]:
@@ -852,6 +862,7 @@ Immediately when a broken vessel of fell cradle are slain by a Star Hunter unit,
           EncounterFigureDef(
             name: 'Broken Vessel',
             letter: 'A',
+            standeeCount: 8,
             health: 7,
             flies: true,
             traits: [
@@ -871,6 +882,7 @@ Immediately when a broken vessel of fell cradle are slain by a Star Hunter unit,
           EncounterFigureDef(
             name: 'Fell Cradle',
             letter: 'B',
+            standeeCount: 3,
             health: 16,
             traits: [
               '''[React] When this unit is slain:
@@ -902,6 +914,7 @@ Spawn one Broken Vessel in the space this unit occupied.''',
             name: 'Harrow',
             letter: 'C',
             faction: 'Star Hunters',
+            standeeCount: 4,
             healthFormula: '16',
             possibleTokens: ['Wild', 'Wild', 'Wild', 'Wild'],
             traits: [
@@ -924,6 +937,7 @@ Spawn one Broken Vessel in the space this unit occupied.''',
             name: 'Wrathbone',
             letter: 'D',
             faction: 'Star Hunters',
+            standeeCount: 2,
             health: 18,
             traits: [
               '[React] At the end of the Rover phase: All enemies within [Range] 1-2 suffer [DMG]1. << Enemies within [Range] 1 suffer an additional [DMG]1.',
@@ -942,6 +956,7 @@ Spawn one Broken Vessel in the space this unit occupied.''',
             name: 'Dyad',
             letter: 'E',
             faction: 'Star Hunters',
+            standeeCount: 8,
             health: 15,
             affinities: {
               Ether.morph: -2,
@@ -1145,6 +1160,7 @@ The Borrowed Vessel performs:
           EncounterFigureDef(
             name: 'Harrow',
             letter: 'A',
+            standeeCount: 4,
             health: 16,
             affinities: {
               Ether.morph: 2,
@@ -1155,6 +1171,7 @@ The Borrowed Vessel performs:
             name: 'Borrowed Vessel',
             letter: 'B',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             healthFormula: '10*R',
             affinities: {
               Ether.earth: 1,
@@ -1166,6 +1183,7 @@ The Borrowed Vessel performs:
           EncounterFigureDef(
             name: 'Wrathbone',
             letter: 'C',
+            standeeCount: 2,
             health: 18,
             traits: [
               '[React] At the end of the Rover phase: All enemies within [Range] 1-2 suffer [DMG]1. << Enemies within [Range] 1 suffer an additional [DMG]1.',
@@ -1179,6 +1197,7 @@ The Borrowed Vessel performs:
           EncounterFigureDef(
             name: 'Dyad',
             letter: 'D',
+            standeeCount: 8,
             health: 15,
             affinities: {
               Ether.crux: 2,
@@ -1477,6 +1496,7 @@ There are six ether icons placed throughout the map. These icons represent possi
           EncounterFigureDef(
             name: 'Bazhar',
             type: AdversaryType.boss,
+            standeeCount: 1,
             healthFormula: '16*R',
             defenseFormula: 'X',
             xDefinition: 'count_adversary(Corrupted Form)',
@@ -1491,6 +1511,7 @@ There are six ether icons placed throughout the map. These icons represent possi
           EncounterFigureDef(
             name: 'Endless Hunger',
             letter: 'B',
+            standeeCount: 8,
             healthFormula: '5*R',
             traits: [
               'When the Endles Hunger deals damage, Bahzar recovers [RCV] X, where X equals the damage dealt by the Endless Hunger.',
@@ -1505,6 +1526,7 @@ There are six ether icons placed throughout the map. These icons represent possi
           EncounterFigureDef(
             name: 'Corrupted Form',
             letter: 'C',
+            standeeCount: 8,
             healthFormula: '4*R',
             flies: true,
             traits: [
@@ -1518,6 +1540,7 @@ There are six ether icons placed throughout the map. These icons represent possi
           EncounterFigureDef(
             name: 'Broken Reflection',
             letter: 'D',
+            standeeCount: 3,
             healthFormula: '7*R',
             traits: [
               'Units that attack Bahzar suffer [DMG] X, where X equals the damage that unit dealt.',

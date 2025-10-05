@@ -158,6 +158,7 @@ D Enemies: Dekaha''',
           EncounterFigureDef(
             name: 'Stomaw',
             letter: 'A',
+            standeeCount: 8,
             health: 7,
             respawns: true,
             traits: [
@@ -176,6 +177,7 @@ D Enemies: Dekaha''',
           EncounterFigureDef(
             name: 'Broken Vessel',
             letter: 'B',
+            standeeCount: 8,
             flies: true,
             health: 5,
             traits: [
@@ -191,6 +193,7 @@ D Enemies: Dekaha''',
           EncounterFigureDef(
             name: 'Fell Cradle',
             letter: 'C',
+            standeeCount: 3,
             health: 14,
             traits: [
               '''[React] When this unit is slain:
@@ -217,6 +220,7 @@ Spawn one Broken Vessel in the space this unit occupied.'''
           EncounterFigureDef(
             name: 'Dekaha',
             letter: 'D',
+            standeeCount: 3,
             health: 7,
             immuneToForcedMovement: true,
             affinities: {
@@ -229,6 +233,7 @@ Spawn one Broken Vessel in the space this unit occupied.'''
           EncounterFigureDef(
             name: 'Ashemak',
             letter: 'D',
+            standeeCount: 3,
             health: 6,
             immuneToForcedMovement: true,
             traits: [
@@ -244,6 +249,7 @@ All units within [Range] 1 suffer [DMG]2.'''
           EncounterFigureDef(
             name: 'Haunt',
             letter: 'E',
+            standeeCount: 4,
             healthFormula: '3*R',
             affinities: {
               Ether.morph: -2,
@@ -403,6 +409,7 @@ All units within [Range] 1 suffer [DMG]2.'''
             name: 'Stomaw',
             health: 7,
             letter: 'A',
+            standeeCount: 8,
             traits: [
               'When this unit attacks, if at least one of its allies are adjacent to the target, it gains +1 [DMG] to the attack.'
             ],
@@ -416,6 +423,7 @@ All units within [Range] 1 suffer [DMG]2.'''
           EncounterFigureDef(
             name: 'Broken Vessel',
             letter: 'B',
+            standeeCount: 8,
             health: 5,
             flies: true,
             traits: [
@@ -434,6 +442,7 @@ All units within [Range] 1 suffer [DMG]2.'''
           EncounterFigureDef(
             name: 'Dyad',
             letter: 'C',
+            standeeCount: 8,
             health: 12,
             affinities: {
               Ether.water: 1,
@@ -445,6 +454,7 @@ All units within [Range] 1 suffer [DMG]2.'''
           EncounterFigureDef(
             name: 'Scour',
             letter: 'D',
+            standeeCount: 1,
             type: AdversaryType.miniboss,
             healthFormula: '12*R',
             defense: 1,
@@ -466,6 +476,7 @@ All units within [Range] 1 suffer [DMG]2.'''
           EncounterFigureDef(
             name: 'Urn',
             letter: 'E',
+            standeeCount: 1,
             healthFormula: '3*R',
             defense: 2,
             affinities: {
@@ -665,6 +676,7 @@ All units within [Range] 1 suffer [DMG]2.'''
           EncounterFigureDef(
             name: 'Dyad Hatchling',
             letter: 'A',
+            standeeCount: 8,
             health: 6,
             affinities: {
               Ether.morph: -2,
@@ -678,6 +690,7 @@ All units within [Range] 1 suffer [DMG]2.'''
             name: 'Azoth',
             letter: 'B',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             healthFormula: '5*R',
             defense: 2,
             large: true,
@@ -693,6 +706,7 @@ All units within [Range] 1 suffer [DMG]2.'''
             name: 'Crown',
             letter: 'C',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             alias: 'Crown',
             healthFormula: '12*R',
             traits: [
@@ -1048,6 +1062,7 @@ Place Rovers in [start] spaces and spawn adversaries according to Rover count as
           EncounterFigureDef(
             name: 'Broken Vessel',
             letter: 'A',
+            standeeCount: 8,
             health: 5,
             flies: true,
             affinities: {
@@ -1063,6 +1078,7 @@ Place Rovers in [start] spaces and spawn adversaries according to Rover count as
           EncounterFigureDef(
             name: 'Fell Cradle',
             letter: 'B',
+            standeeCount: 3,
             health: 14,
             affinities: {
               Ether.crux: -2,
@@ -1110,6 +1126,7 @@ Spawn one Broken Vessel in the space this unit occupied.'''
               EncounterFigureDef(
                 name: 'Dekaha',
                 letter: 'A',
+                standeeCount: 3,
                 health: 7,
                 immuneToForcedMovement: true,
                 affinities: {
@@ -1121,6 +1138,7 @@ Spawn one Broken Vessel in the space this unit occupied.'''
               ),
               EncounterFigureDef(
                   name: 'Ashemak',
+                  standeeCount: 3,
                   letter: 'B',
                   health: 6,
                   immuneToForcedMovement: true,
@@ -1136,6 +1154,7 @@ All units within [Range] 1 suffer [DMG]2.'''
               EncounterFigureDef(
                 name: 'Grovetender',
                 letter: 'C',
+                standeeCount: 3,
                 health: 12,
                 defense: 1,
                 affinities: {
@@ -1154,6 +1173,7 @@ All units within [Range] 1 suffer [DMG]2.'''
                 name: 'Hyperborea',
                 letter: 'D',
                 type: AdversaryType.miniboss,
+                standeeCount: 1,
                 healthFormula: '6*R',
                 defense: 2,
                 large: true,
@@ -1230,6 +1250,7 @@ All units within [Range] 1 suffer [DMG]2.'''
               EncounterFigureDef(
                 name: 'Kifa',
                 letter: 'A',
+                standeeCount: 3,
                 health: 6,
                 flies: true,
                 affinities: {
@@ -1242,6 +1263,7 @@ All units within [Range] 1 suffer [DMG]2.'''
               EncounterFigureDef(
                 name: 'Briarwog',
                 letter: 'B',
+                standeeCount: 3,
                 health: 8,
                 affinities: {
                   Ether.earth: -1,
@@ -1253,6 +1275,7 @@ All units within [Range] 1 suffer [DMG]2.'''
               EncounterFigureDef(
                 name: 'Dyad',
                 letter: 'C',
+                standeeCount: 8,
                 health: 12,
                 affinities: {
                   Ether.morph: -2,
@@ -1266,6 +1289,7 @@ All units within [Range] 1 suffer [DMG]2.'''
                 healthFormula: '10*R',
                 letter: 'D',
                 type: AdversaryType.miniboss,
+                standeeCount: 1,
                 affinities: {
                   Ether.fire: -1,
                   Ether.earth: 2,
@@ -1338,6 +1362,7 @@ All units within [Range] 1 suffer [DMG]2.'''
               EncounterFigureDef(
                 name: 'Stomaw',
                 letter: 'A',
+                standeeCount: 8,
                 health: 7,
                 affinities: {
                   Ether.fire: -1,
@@ -1352,6 +1377,7 @@ All units within [Range] 1 suffer [DMG]2.'''
               EncounterFigureDef(
                 name: 'Broken Vessel',
                 letter: 'A',
+                standeeCount: 8,
                 health: 5,
                 flies: true,
                 affinities: {
@@ -1368,6 +1394,7 @@ All units within [Range] 1 suffer [DMG]2.'''
                 name: 'Zaghan Nahoot',
                 letter: 'C',
                 type: AdversaryType.miniboss,
+                standeeCount: 1,
                 healthFormula: '10*R',
                 affinities: {
                   Ether.crux: -1,
@@ -1488,6 +1515,7 @@ All units within [Range] 1 suffer [DMG]2.'''
               EncounterFigureDef(
                 name: 'Querist',
                 letter: 'A',
+                standeeCount: 6,
                 health: 8,
                 affinities: {
                   Ether.morph: -2,
@@ -1513,6 +1541,7 @@ They flee. Remove this unit from the map.'''
               EncounterFigureDef(
                 name: 'Haunt',
                 letter: 'B',
+                standeeCount: 4,
                 healthFormula: '3*R',
                 affinities: {
                   Ether.morph: -2,
@@ -1892,6 +1921,7 @@ Remove that hoard tile and this unit from the map.'''
         EncounterFigureDef(
           name: 'Stomaw',
           letter: 'A',
+          standeeCount: 8,
           health: 7,
           respawns: true,
           traits: [
@@ -1901,6 +1931,7 @@ Remove that hoard tile and this unit from the map.'''
         EncounterFigureDef(
           name: 'Fell Cradle',
           letter: 'B',
+          standeeCount: 3,
           health: 14,
           affinities: {
             Ether.crux: -2,
@@ -1928,6 +1959,7 @@ Spawn one Broken Vessel in the space this unit occupied.'''
           name: 'Bazhar',
           letter: 'C',
           type: AdversaryType.boss,
+          standeeCount: 1,
           alias: 'Bazhar Caller',
           healthFormula: '12*R',
           large: true,
@@ -1964,6 +1996,7 @@ Spawn one stomaw adjacent to each Rover.''',
           name: 'Bazhar Charger',
           letter: 'C',
           type: AdversaryType.boss,
+          standeeCount: 1,
           healthFormula: '15*R',
           large: true,
           affinities: {
@@ -2004,6 +2037,7 @@ Return Bazhar to its starting location. If there are other units occupying Bazha
           name: 'Bazhar Absolute',
           letter: 'C',
           type: AdversaryType.boss,
+          standeeCount: 1,
           healthFormula: '18*R',
           large: true,
           immuneToForcedMovement: true,
@@ -2021,6 +2055,7 @@ Return Bazhar to its starting location. If there are other units occupying Bazha
         EncounterFigureDef(
           name: 'Broken Vessel',
           letter: 'D',
+          standeeCount: 8,
           health: 5,
           flies: true,
           affinities: {
