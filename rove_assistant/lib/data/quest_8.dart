@@ -141,6 +141,7 @@ extension Quest8 on EncounterDef {
           EncounterFigureDef(
             name: 'Galeaper',
             letter: 'A',
+            standeeCount: 5,
             health: 7,
             flies: true,
             affinities: {
@@ -153,6 +154,7 @@ extension Quest8 on EncounterDef {
           EncounterFigureDef(
               name: 'Streak',
               letter: 'B',
+              standeeCount: 7,
               health: 8,
               flies: true,
               affinities: {
@@ -166,6 +168,7 @@ extension Quest8 on EncounterDef {
           EncounterFigureDef(
             name: 'Stormcaller',
             letter: 'C',
+            standeeCount: 3,
             health: 14,
             flies: true,
             traits: [
@@ -184,6 +187,7 @@ extension Quest8 on EncounterDef {
             name: 'Squall',
             letter: 'D',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             healthFormula: '10*R',
             flies: true,
             affinities: {
@@ -198,6 +202,7 @@ extension Quest8 on EncounterDef {
             name: 'Breath of Uzem',
             letter: 'D',
             faction: 'The Uzem',
+            standeeCount: 1,
             health: 18,
             flies: true,
             affinities: {
@@ -326,6 +331,7 @@ extension Quest8 on EncounterDef {
           EncounterFigureDef(
             name: 'Onisski',
             letter: 'A',
+            standeeCount: 6,
             health: 10,
             traits: [
               'Ignores the movement penality of mushroom terrain.',
@@ -341,6 +347,7 @@ extension Quest8 on EncounterDef {
           EncounterFigureDef(
             name: 'Bulwauros',
             letter: 'B',
+            standeeCount: 3,
             health: 8,
             defense: 3,
             traits: [
@@ -367,6 +374,7 @@ extension Quest8 on EncounterDef {
           EncounterFigureDef(
             name: 'Harrow',
             letter: 'C',
+            standeeCount: 3,
             health: 16,
             affinities: {
               Ether.morph: 2,
@@ -380,6 +388,7 @@ extension Quest8 on EncounterDef {
             name: 'Tremorcaller',
             letter: 'D',
             type: AdversaryType.miniboss,
+            standeeCount: 3,
             healthFormula: '10*R',
             flies: true,
             traits: [
@@ -397,6 +406,7 @@ extension Quest8 on EncounterDef {
           EncounterFigureDef(
             name: 'Urn',
             letter: 'E',
+            standeeCount: 2,
             healthFormula: '4*R',
             defense: 3,
             affinities: {
@@ -555,6 +565,7 @@ extension Quest8 on EncounterDef {
           EncounterFigureDef(
             name: 'Briarwog',
             letter: 'A',
+            standeeCount: 3,
             health: 10,
             traits: [
               '''[React] After this unit is attacked from within [Range] 1:
@@ -571,6 +582,7 @@ The attacker suffers [DMG]1.''',
           EncounterFigureDef(
             name: 'Dekaha',
             letter: 'B',
+            standeeCount: 8,
             health: 9,
             immuneToForcedMovement: true,
             affinities: {
@@ -582,6 +594,7 @@ The attacker suffers [DMG]1.''',
           EncounterFigureDef(
             name: 'Harrow',
             letter: 'C',
+            standeeCount: 3,
             health: 16,
             affinities: {
               Ether.morph: 2,
@@ -592,6 +605,7 @@ The attacker suffers [DMG]1.''',
             name: 'Wavecaller',
             letter: 'D',
             type: AdversaryType.miniboss,
+            standeeCount: 3,
             healthFormula: '10*R',
             flies: true,
             traits: [
@@ -609,6 +623,7 @@ The attacker suffers [DMG]1.''',
           EncounterFigureDef(
             name: 'Tears of Uzem',
             letter: 'E',
+            standeeCount: 1,
             health: 18,
             affinities: {
               Ether.crux: 2,
@@ -783,6 +798,7 @@ If R Drained Ether nodes are turned into [Fire] nodes, the Rage of Uzem is unsea
           EncounterFigureDef(
             name: 'Ashemak',
             letter: 'A',
+            standeeCount: 4,
             health: 8,
             immuneToForcedMovement: true,
             traits: [
@@ -799,6 +815,7 @@ All units within [Range] 1 suffer [DMG]3.''',
           EncounterFigureDef(
             name: 'Wrathbone',
             letter: 'B',
+            standeeCount: 4,
             health: 18,
             traits: [
               '''[React] At the end of the Rover phase:
@@ -814,6 +831,7 @@ All enemies within [Range] 1-2 suffer [DMG]1. << Enemies within [Range] 1 suffer
           EncounterFigureDef(
             name: 'Harrow',
             letter: 'C',
+            standeeCount: 3,
             health: 16,
             affinities: {
               Ether.morph: 2,
@@ -824,6 +842,7 @@ All enemies within [Range] 1-2 suffer [DMG]1. << Enemies within [Range] 1 suffer
             name: 'Embercaller',
             letter: 'D',
             type: AdversaryType.miniboss,
+            standeeCount: 3,
             healthFormula: '10*R',
             flies: true,
             traits: [
@@ -844,6 +863,7 @@ That enemy suffers [DMG]2.''',
             name: 'Rage of Uzem',
             letter: 'E',
             faction: 'The Uzem',
+            standeeCount: 1,
             health: 18,
             flies: true,
             traits: [
@@ -1129,6 +1149,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
           EncounterFigureDef(
             name: 'Ashemak',
             letter: 'A',
+            standeeCount: 4,
             health: 8,
             immuneToForcedMovement: true,
             respawns: true,
@@ -1147,6 +1168,7 @@ All units within [Range] 1 suffer [DMG]3.''',
           EncounterFigureDef(
             name: 'Bulwauros',
             letter: 'B',
+            standeeCount: 3,
             health: 8,
             defense: 3,
             respawns: true,
@@ -1175,6 +1197,7 @@ All units within [Range] 1 suffer [DMG]3.''',
           EncounterFigureDef(
             name: 'Briarwog',
             letter: 'C',
+            standeeCount: 3,
             health: 10,
             respawns: true,
             respawnCondition: IsAliveCondition('Water Cluster'),
@@ -1193,6 +1216,7 @@ The attacker suffers [DMG]1.''',
           EncounterFigureDef(
             name: 'Galeaper',
             letter: 'D',
+            standeeCount: 5,
             health: 7,
             flies: true,
             respawns: true,
@@ -1208,6 +1232,7 @@ The attacker suffers [DMG]1.''',
             name: 'The King of Storms',
             letter: 'E',
             type: AdversaryType.boss,
+            standeeCount: 1,
             immuneToForcedMovement: true,
             immuneToTeleport: true,
             large: true,

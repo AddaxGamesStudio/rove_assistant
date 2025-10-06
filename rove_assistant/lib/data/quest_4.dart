@@ -138,6 +138,7 @@ You need to draw the ether from the crystal to dispel it. There is a [Wind] ethe
           EncounterFigureDef(
             name: 'Galeaper',
             letter: 'A',
+            standeeCount: 5,
             health: 6,
             flies: true,
             affinities: {
@@ -150,6 +151,7 @@ You need to draw the ether from the crystal to dispel it. There is a [Wind] ethe
           EncounterFigureDef(
             name: 'Streak',
             letter: 'B',
+            standeeCount: 7,
             health: 6,
             flies: true,
             affinities: {
@@ -164,6 +166,7 @@ You need to draw the ether from the crystal to dispel it. There is a [Wind] ethe
           EncounterFigureDef(
             name: 'Urn',
             letter: 'C',
+            standeeCount: 2,
             healthFormula: '3*R',
             defense: 2,
             affinities: {
@@ -184,6 +187,7 @@ You need to draw the ether from the crystal to dispel it. There is a [Wind] ethe
               name: 'Uzem\'s Anxiety',
               letter: 'D',
               type: AdversaryType.miniboss,
+              standeeCount: 1,
               healthFormula: '10*R',
               flies: true,
               affinities: {
@@ -377,6 +381,7 @@ Note: **Throw Dowsing Spear** is an ability, so it requires an ability activatio
           EncounterFigureDef(
             name: 'Onisski',
             letter: 'A',
+            standeeCount: 6,
             ignoresDifficultTerrain: true,
             health: 8,
             affinities: {
@@ -388,6 +393,7 @@ Note: **Throw Dowsing Spear** is an ability, so it requires an ability activatio
           EncounterFigureDef(
             name: 'Terranape',
             letter: 'B',
+            standeeCount: 2,
             health: 18,
             traits: ['At the start of this unit\'s turn, it recovers [RCV] R.'],
             affinities: {
@@ -401,6 +407,7 @@ Note: **Throw Dowsing Spear** is an ability, so it requires an ability activatio
           EncounterFigureDef(
             name: 'Haunt',
             letter: 'C',
+            standeeCount: 1,
             healthFormula: '3*R',
             affinities: {
               Ether.morph: -2,
@@ -417,6 +424,7 @@ Note: **Throw Dowsing Spear** is an ability, so it requires an ability activatio
             name: 'Uzem\'s Endurance',
             letter: 'D',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             healthFormula: '12*R',
             entersObjectSpaces: true,
             affinities: {
@@ -633,6 +641,7 @@ Place Rovers in [start] spaces and spawn adversaries according to Rover count as
           EncounterFigureDef(
             name: 'Dekaha',
             letter: 'A',
+            standeeCount: 8,
             health: 7,
             immuneToForcedMovement: true,
             affinities: {
@@ -645,6 +654,7 @@ Place Rovers in [start] spaces and spawn adversaries according to Rover count as
           EncounterFigureDef(
             name: 'Grovetender',
             letter: 'B',
+            standeeCount: 4,
             health: 12,
             defense: 1,
             traits: [
@@ -663,6 +673,7 @@ Place Rovers in [start] spaces and spawn adversaries according to Rover count as
               name: 'Uzem\'s Woe',
               letter: 'C',
               type: AdversaryType.miniboss,
+              standeeCount: 1,
               healthFormula: '12*R',
               flies: true,
               traits: [
@@ -901,6 +912,7 @@ Ether fields can still be placed into spaces that are affected by this special r
           EncounterFigureDef(
             name: 'Ashemak',
             letter: 'A',
+            standeeCount: 4,
             health: 6,
             immuneToForcedMovement: true,
             affinities: {
@@ -916,6 +928,7 @@ All units within [Range] 1 suffer [DMG]2.'''
           EncounterFigureDef(
             name: 'Wrathbone',
             letter: 'B',
+            standeeCount: 4,
             health: 14,
             affinities: {
               Ether.water: -2,
@@ -931,6 +944,7 @@ All enemies within [Range] 1 suffer [DMG]1.'''
               name: 'Uzem\'s Fervor',
               letter: 'C',
               type: AdversaryType.miniboss,
+              standeeCount: 1,
               healthFormula: '15*R',
               flies: true,
               traits: [
@@ -1127,6 +1141,7 @@ All forms of The King of Storms add +X [DMG] to each attack they perform, where 
             name: 'The King of Storms [icon_earth]',
             letter: 'A',
             type: AdversaryType.boss,
+            standeeCount: 1,
             healthFormula: '15*R',
             flies: true,
             large: true,
@@ -1151,6 +1166,7 @@ All forms of The King of Storms add +X [DMG] to each attack they perform, where 
             name: 'The King of Storms [icon_wind]',
             letter: 'A',
             type: AdversaryType.boss,
+            standeeCount: 1,
             healthFormula: '15*R',
             flies: true,
             large: true,
@@ -1175,6 +1191,7 @@ All forms of The King of Storms add +X [DMG] to each attack they perform, where 
             name: 'The King of Storms [icon_fire]',
             letter: 'A',
             type: AdversaryType.boss,
+            standeeCount: 1,
             healthFormula: '15*R',
             flies: true,
             large: true,
@@ -1199,6 +1216,7 @@ All forms of The King of Storms add +X [DMG] to each attack they perform, where 
             name: 'The King of Storms [icon_water]',
             letter: 'A',
             type: AdversaryType.boss,
+            standeeCount: 1,
             healthFormula: '15*R',
             flies: true,
             large: true,
