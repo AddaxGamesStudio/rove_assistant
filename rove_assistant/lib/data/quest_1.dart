@@ -716,14 +716,30 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
         codex(21, condition: RoundCondition(2)),
       ],
       onDidStartRound: [
-        placementGroup('Dark Conversion',
-            body:
-                'Spawn one Nahoot in the space at the bottom right corner marked with a [Morph] icon.',
-            condition: RoundCondition(3)),
-        placementGroup('Dark Conversion',
-            body:
-                'Spawn one Nahoot in the space at the bottom right corner marked with a [Morph] icon.',
-            condition: RoundCondition(6)),
+        placementGroup(
+          'Dark Conversion',
+          body:
+              'Spawn one Nahoot in the space at the bottom right corner marked with a [Morph] icon.',
+          conditions: [RoundCondition(2), ChallengeOnCondition(2)],
+        ),
+        placementGroup(
+          'Dark Conversion',
+          body:
+              'Spawn one Nahoot in the space at the bottom right corner marked with a [Morph] icon.',
+          conditions: [RoundCondition(3), ChallengeOffCondition(2)],
+        ),
+        placementGroup(
+          'Dark Conversion',
+          body:
+              'Spawn one Nahoot in the space at the bottom right corner marked with a [Morph] icon.',
+          conditions: [RoundCondition(4), ChallengeOnCondition(2)],
+        ),
+        placementGroup(
+          'Dark Conversion',
+          body:
+              'Spawn one Nahoot in the space at the bottom right corner marked with a [Morph] icon.',
+          conditions: [RoundCondition(6)],
+        ),
       ],
       startingMap: MapDef(
         id: '1.3',
