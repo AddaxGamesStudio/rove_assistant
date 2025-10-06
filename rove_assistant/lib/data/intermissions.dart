@@ -98,6 +98,7 @@ The adversaries within this encounter are native to the Zydero Reefs and ignore 
           EncounterFigureDef(
             name: 'Bulwauros',
             letter: 'A',
+            standeeCount: 4,
             health: 5,
             defense: 3,
             traits: [
@@ -124,6 +125,7 @@ The adversaries within this encounter are native to the Zydero Reefs and ignore 
           EncounterFigureDef(
             name: 'Dyad',
             letter: 'B',
+            standeeCount: 4,
             health: 12,
             traits: [
               'Ignores the effects of Ferrorsands.',
@@ -139,6 +141,7 @@ The adversaries within this encounter are native to the Zydero Reefs and ignore 
             name: 'Hydra',
             letter: 'C',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             healthFormula: '15*R',
             traits: [
               'When this unit suffers [DMG], if a Dyad is active, divide that [DMG] by 2, rounded up.',
@@ -158,6 +161,7 @@ The adversaries within this encounter are native to the Zydero Reefs and ignore 
           EncounterFigureDef(
               name: 'Urn',
               letter: 'D',
+              standeeCount: 8,
               healthFormula: '2*R',
               defenseFormula: '3',
               traits: [
@@ -498,6 +502,7 @@ Because this encounter takes place within your mind palace, any [P] items consum
           EncounterFigureDef(
             name: 'Ashemak',
             letter: 'A',
+            standeeCount: 4,
             health: 9,
             immuneToForcedMovement: true,
             traits: [
@@ -514,6 +519,7 @@ All units within [Range] 1 suffer [DMG]3.''',
           EncounterFigureDef(
             name: 'Wrathbone',
             letter: 'B',
+            standeeCount: 3,
             health: 16,
             traits: [
               '''[React] At the end of the Rover phase:
@@ -529,6 +535,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
           EncounterFigureDef(
             name: 'Nahoot',
             letter: 'C',
+            standeeCount: 4,
             health: 15,
             traits: [
               'If a Rover slays this unit, that Rover [plus_wind_morph].',
@@ -545,6 +552,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
           EncounterFigureDef(
             name: 'Briarwog',
             letter: 'A',
+            standeeCount: 4,
             health: 10,
             traits: [
               'Enemies within [Range] 1 of this unit suffer [DMG]1 after attacking it.',
@@ -559,6 +567,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
           EncounterFigureDef(
             name: 'Onisski',
             letter: 'B',
+            standeeCount: 4,
             health: 10,
             traits: [
               'Ignores the movement penality of mushroom terrain.',
@@ -574,6 +583,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
           EncounterFigureDef(
             name: 'Sek',
             letter: 'C',
+            standeeCount: 4,
             health: 12,
             defense: 1,
             affinities: {
@@ -585,6 +595,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
           EncounterFigureDef(
             name: 'Zinix',
             letter: 'A',
+            standeeCount: 4,
             health: 5,
             defense: 2,
             traits: [
@@ -600,6 +611,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
           EncounterFigureDef(
             name: 'Bulwauros',
             letter: 'B',
+            standeeCount: 4,
             health: 6,
             defense: 3,
             traits: [
@@ -626,6 +638,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
           EncounterFigureDef(
             name: 'Grovetender',
             letter: 'C',
+            standeeCount: 4,
             health: 14,
             defense: 1,
             traits: [
@@ -643,6 +656,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
           EncounterFigureDef(
             name: 'Streak',
             letter: 'A',
+            standeeCount: 6,
             health: 7,
             flies: true,
             affinities: {
@@ -654,6 +668,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
           EncounterFigureDef(
             name: 'Kifa',
             letter: 'B',
+            standeeCount: 6,
             health: 7,
             flies: true,
             affinities: {
@@ -666,6 +681,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
           EncounterFigureDef(
             name: 'Dekaha',
             letter: 'C',
+            standeeCount: 4,
             health: 9,
             immuneToForcedMovement: true,
             affinities: {
@@ -678,6 +694,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
           EncounterFigureDef(
             name: 'Terranape',
             letter: 'A',
+            standeeCount: 2,
             health: 20,
             traits: [
               'At the start of this unit\'s turn, it recovers [RCV] R.',
@@ -692,6 +709,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
           EncounterFigureDef(
             name: 'Gruv',
             letter: 'B',
+            standeeCount: 2,
             health: 18,
             defenseFormula: '2*(1-T%2)',
             traits: [
@@ -706,6 +724,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
           EncounterFigureDef(
             name: 'Dyad',
             letter: 'C',
+            standeeCount: 4,
             health: 14,
             affinities: {
               Ether.morph: -2,
@@ -956,6 +975,7 @@ You will have to shatter the Kaleido’s resilient multilayered shell four times
         EncounterFigureDef(
           name: 'Tentacle',
           letter: 'A',
+          standeeCount: 8,
           health: 8,
           flies: true,
           spawnable: true,
@@ -970,6 +990,7 @@ You will have to shatter the Kaleido’s resilient multilayered shell four times
           name: 'Kaleido',
           letter: 'B',
           type: AdversaryType.boss,
+          standeeCount: 1,
           large: true,
           healthFormula: '12*R',
           flies: true,
@@ -1090,6 +1111,7 @@ Place a [windscreen] on the Kaleido's statistic block. *[The app does this autom
           name: 'Urn',
           alias: 'Urnlette',
           letter: 'C',
+          standeeCount: 8,
           health: 4,
           affinities: {
             Ether.crux: 0,
@@ -1263,6 +1285,7 @@ Hra follows all the adversary logic rules found in the rule book. During their t
           EncounterFigureDef(
             name: 'Streak',
             letter: 'A',
+            standeeCount: 6,
             health: 8,
             flies: true,
             affinities: {
@@ -1277,6 +1300,8 @@ Hra follows all the adversary logic rules found in the rule book. During their t
           ),
           EncounterFigureDef(
             name: 'Briarwog',
+            letter: 'B ',
+            standeeCount: 4,
             health: 10,
             traits: [
               '''[React] After this unit is attacked from within [Range] 1:
@@ -1316,6 +1341,7 @@ All enemies within [Range] 1-2 suffer [DMG]1. << Enemies within [Range] 1 suffer
           EncounterFigureDef(
             name: 'Harrow',
             letter: 'D',
+            standeeCount: 2,
             health: 18,
             affinities: {
               Ether.morph: 2,
@@ -1328,6 +1354,8 @@ All enemies within [Range] 1-2 suffer [DMG]1. << Enemies within [Range] 1 suffer
           ),
           EncounterFigureDef(
             name: 'Courslayer',
+            letter: 'E',
+            standeeCount: 2,
             health: 15,
             affinities: {
               Ether.fire: -1,
@@ -1342,6 +1370,8 @@ All enemies within [Range] 1-2 suffer [DMG]1. << Enemies within [Range] 1 suffer
           ),
           EncounterFigureDef(
             name: 'Stormcaller',
+            letter: 'F',
+            standeeCount: 1,
             health: 15,
             flies: true,
             traits: [
