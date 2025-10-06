@@ -1193,7 +1193,7 @@ All units within [Range] 1 suffer [DMG]2.'''
                 letter: 'D',
                 type: AdversaryType.miniboss,
                 standeeCount: 1,
-                healthFormula: '6*R',
+                healthFormula: '6*R+(R*5)*C2',
                 defense: 2,
                 large: true,
                 immuneToForcedMovement: true,
@@ -1305,7 +1305,7 @@ All units within [Range] 1 suffer [DMG]2.'''
               ),
               EncounterFigureDef(
                 name: 'Rakifa',
-                healthFormula: '10*R',
+                healthFormula: '10*R+(R*5)*C2',
                 letter: 'D',
                 type: AdversaryType.miniboss,
                 standeeCount: 1,
@@ -2074,6 +2074,7 @@ Return Bazhar to its starting location. If there are other units occupying Bazha
           name: 'Broken Vessel',
           letter: 'D',
           standeeCount: 8,
+          spawnable: true,
           health: 5,
           flies: true,
           affinities: {
