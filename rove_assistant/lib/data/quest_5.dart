@@ -429,7 +429,7 @@ This unit is immediately defeated and removed from the map.''',
             name: 'Zisafi Taskmaster',
             letter: 'D',
             standeeCount: 8,
-            health: 11,
+            healthFormula: '11+4*C1',
             traits: [
               'When this unit suffers [DMG] from any source, if its enslaved sek is active, divide that [DMG] by 2.',
             ],
