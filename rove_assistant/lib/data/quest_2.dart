@@ -842,254 +842,259 @@ All enemies within [Range] 1 suffer [DMG]1.'''
       );
 
   static EncounterDef get encounter2dot3 => EncounterDef(
-        questId: '2',
-        number: '3',
-        title: 'Description of a Struggle',
-        setup: EncounterSetup(
-            box: '2/5',
-            map: '13',
-            adversary: '16',
-            tiles: ' 1x Treasure Chest, 4x Hoard'),
-        victoryDescription:
-            'Place R bomb satchels onto the Ashemak seed pod pile.',
-        lossDescription: 'Lose if Kelo & Saras are slain.',
-        terrain: [
-          EncounterTerrain('dangerous_fire',
-              title: 'Fire',
-              damage: 1,
-              body:
-                  'Non-flying units that enter fire suffer [DMG] 1. Wrathbone ignores this effect.'),
-          etherFire(),
-          EncounterTerrain('hoard',
-              title: 'Bomb Satchels',
-              body:
-                  'Hoard tiles [A] are bomb satchels. A Rover that enters a space with a hoard tile picks up that tile. To indicate this, place the hoard tile on your class board.Rovers may carry only one bomb satchel.'),
-          EncounterTerrain('ashemak_seed_pod_pile',
-              title: 'Ashemak Seed Pod Pile',
-              body:
-                  'The Ashemak seed pod pile is in space [B]. Rovers that end their turn adjacent to the ashemak seed pod pile may place a bomb satchel on it. To do this, move the hoard tile from your class board onto the seed pod pile.'),
-          EncounterTerrain('treasure',
-              title: 'Treasure Chest',
-              body:
-                  'The treasure chest [C] is locked and requires a key to open.'),
-        ],
-        roundLimit: 8,
-        baseLystReward: 15,
-        unlocksRoverLevel: 3,
-        campaignLink:
-            '''Encounter 2.4 - “**The Burrow**”, [campaign] **34**.''',
-        challenges: [
-          'Rovers that are carrying a bomb satchel reduce all of their movement actions by 1.',
-          'At the end of round 4, spawn R seks in [start] spaces closest to the Rovers.',
-          'The Zisafi Principal gains +1 [DMG] to all of their attacks.',
-        ],
-        dialogs: [introductionFromText('quest_2_encounter_3_intro')],
-        onLoad: [
-          dialog('Introduction'),
-          rules(
-              'Queens’ Defectors',
-              'Kelo & Saras are character allies to Rovers. They start on either the “Kelo” side or the “Saras'
-                  ' side. At the start of each round, flip Kelo & Saras over to their other side. *[The app does this automatically.]*'),
-          codexLink('It Must Catch Fire',
-              number: 35,
-              body:
-                  '''The first time a wrathbone is slain, read [title], [codex] 20.'''),
-          codexLink('Agreement is the Best Weapon',
-              number: 36,
-              body:
-                  '''If the Zisafi Principal is slain, read [title], [codex] 20.'''),
-          codexLink('Hot and Dreadful',
-              number: 38,
-              body:
-                  '''Immediately when R bomb satchels have been placed onto the ashemak seed pod pile, read [title], [codex] 21.'''),
-        ],
-        onMilestone: {
-          '_victory': [
-            codex(38),
-            victory(),
-          ]
+      questId: '2',
+      number: '3',
+      title: 'Description of a Struggle',
+      setup: EncounterSetup(
+          box: '2/5',
+          map: '13',
+          adversary: '16',
+          tiles: ' 1x Treasure Chest, 4x Hoard'),
+      victoryDescription:
+          'Place R bomb satchels onto the Ashemak seed pod pile.',
+      lossDescription: 'Lose if Kelo & Saras are slain.',
+      terrain: [
+        EncounterTerrain('dangerous_fire',
+            title: 'Fire',
+            damage: 1,
+            body:
+                'Non-flying units that enter fire suffer [DMG] 1. Wrathbone ignores this effect.'),
+        etherFire(),
+        EncounterTerrain('hoard',
+            title: 'Bomb Satchels',
+            body:
+                'Hoard tiles [A] are bomb satchels. A Rover that enters a space with a hoard tile picks up that tile. To indicate this, place the hoard tile on your class board.Rovers may carry only one bomb satchel.'),
+        EncounterTerrain('ashemak_seed_pod_pile',
+            title: 'Ashemak Seed Pod Pile',
+            body:
+                'The Ashemak seed pod pile is in space [B]. Rovers that end their turn adjacent to the ashemak seed pod pile may place a bomb satchel on it. To do this, move the hoard tile from your class board onto the seed pod pile.'),
+        EncounterTerrain('treasure',
+            title: 'Treasure Chest',
+            body:
+                'The treasure chest [C] is locked and requires a key to open.'),
+      ],
+      roundLimit: 8,
+      baseLystReward: 15,
+      unlocksRoverLevel: 3,
+      campaignLink: '''Encounter 2.4 - “**The Burrow**”, [campaign] **34**.''',
+      challenges: [
+        'Rovers that are carrying a bomb satchel reduce all of their movement actions by 1.',
+        'At the end of round 4, spawn R Seks in [start] spaces closest to the Rovers.',
+        'The Zisafi Principal gains +1 [DMG] to all of their attacks.',
+      ],
+      dialogs: [introductionFromText('quest_2_encounter_3_intro')],
+      onLoad: [
+        dialog('Introduction'),
+        rules(
+            'Queens’ Defectors',
+            'Kelo & Saras are character allies to Rovers. They start on either the “Kelo” side or the “Saras'
+                ' side. At the start of each round, flip Kelo & Saras over to their other side. *[The app does this automatically.]*'),
+        codexLink('It Must Catch Fire',
+            number: 35,
+            body:
+                '''The first time a wrathbone is slain, read [title], [codex] 20.'''),
+        codexLink('Agreement is the Best Weapon',
+            number: 36,
+            body:
+                '''If the Zisafi Principal is slain, read [title], [codex] 20.'''),
+        codexLink('Hot and Dreadful',
+            number: 38,
+            body:
+                '''Immediately when R bomb satchels have been placed onto the ashemak seed pod pile, read [title], [codex] 21.'''),
+      ],
+      onWillEndRound: [
+        placementGroup('Challenge 2',
+            title: 'Challenge 2',
+            body: 'Spawn R Seks in [start] spaces closest to the Rovers.',
+            condition: ChallengeOnCondition(2))
+      ],
+      onMilestone: {
+        '_victory': [
+          codex(38),
+          victory(),
+        ]
+      },
+      playerPossibleTokens: ['Hoard', 'Key'],
+      startingMap: MapDef(
+        id: '2.3',
+        columnCount: 13,
+        rowCount: 11,
+        backgroundRect: Rect.fromLTWH(110.0, 44.0, 1481.0, 1411.0),
+        terrain: {
+          (0, 7): TerrainType.object,
+          (0, 8): TerrainType.start,
+          (0, 9): TerrainType.start,
+          (1, 1): TerrainType.dangerous,
+          (1, 5): TerrainType.dangerous,
+          (1, 8): TerrainType.object,
+          (1, 9): TerrainType.start,
+          (1, 10): TerrainType.start,
+          (2, 9): TerrainType.start,
+          (3, 2): TerrainType.object,
+          (3, 9): TerrainType.object,
+          (3, 10): TerrainType.start,
+          (4, 4): TerrainType.object,
+          (4, 5): TerrainType.object,
+          (4, 9): TerrainType.object,
+          (5, 0): TerrainType.object,
+          (5, 1): TerrainType.object,
+          (6, 0): TerrainType.object,
+          (6, 2): TerrainType.object,
+          (6, 4): TerrainType.object,
+          (6, 5): TerrainType.object,
+          (7, 1): TerrainType.object,
+          (7, 2): TerrainType.object,
+          (7, 3): TerrainType.object,
+          (7, 8): TerrainType.object,
+          (9, 0): TerrainType.object,
+          (9, 1): TerrainType.object,
+          (9, 4): TerrainType.dangerous,
+          (10, 0): TerrainType.object,
+          (11, 6): TerrainType.object,
+          (11, 9): TerrainType.object,
+          (11, 10): TerrainType.object,
+          (12, 2): TerrainType.object,
+          (12, 5): TerrainType.object,
         },
-        playerPossibleTokens: ['Hoard', 'Key'],
-        startingMap: MapDef(
-          id: '2.3',
-          columnCount: 13,
-          rowCount: 11,
-          backgroundRect: Rect.fromLTWH(110.0, 44.0, 1481.0, 1411.0),
-          terrain: {
-            (0, 7): TerrainType.object,
-            (0, 8): TerrainType.start,
-            (0, 9): TerrainType.start,
-            (1, 1): TerrainType.dangerous,
-            (1, 5): TerrainType.dangerous,
-            (1, 8): TerrainType.object,
-            (1, 9): TerrainType.start,
-            (1, 10): TerrainType.start,
-            (2, 9): TerrainType.start,
-            (3, 2): TerrainType.object,
-            (3, 9): TerrainType.object,
-            (3, 10): TerrainType.start,
-            (4, 4): TerrainType.object,
-            (4, 5): TerrainType.object,
-            (4, 9): TerrainType.object,
-            (5, 0): TerrainType.object,
-            (5, 1): TerrainType.object,
-            (6, 0): TerrainType.object,
-            (6, 2): TerrainType.object,
-            (6, 4): TerrainType.object,
-            (6, 5): TerrainType.object,
-            (7, 1): TerrainType.object,
-            (7, 2): TerrainType.object,
-            (7, 3): TerrainType.object,
-            (7, 8): TerrainType.object,
-            (9, 0): TerrainType.object,
-            (9, 1): TerrainType.object,
-            (9, 4): TerrainType.dangerous,
-            (10, 0): TerrainType.object,
-            (11, 6): TerrainType.object,
-            (11, 9): TerrainType.object,
-            (11, 10): TerrainType.object,
-            (12, 2): TerrainType.object,
-            (12, 5): TerrainType.object,
-          },
+      ),
+      allies: [
+        AllyDef(
+            name: 'Kelo & Saras',
+            cardId: 'A-013',
+            defaultBehaviorIndex: AllyDef.userSelectsDefaultBehavior,
+            behaviors: [
+              EncounterFigureDef(
+                name: 'Kelo',
+                health: 8,
+                defense: 1,
+                affinities: const {
+                  Ether.fire: -1,
+                  Ether.crux: -1,
+                  Ether.earth: 1,
+                  Ether.morph: 1,
+                },
+                abilities: [
+                  AbilityDef(name: 'Ability', actions: [
+                    RoveAction(
+                        type: RoveActionType.dash,
+                        amount: 2,
+                        targetKind: TargetKind.self,
+                        exclusiveGroup: 1),
+                    RoveAction(
+                        type: RoveActionType.attack,
+                        amount: 1,
+                        range: (2, 2),
+                        push: 1,
+                        exclusiveGroup: 1),
+                    RoveAction(
+                        type: RoveActionType.jump,
+                        amount: 3,
+                        targetKind: TargetKind.self,
+                        exclusiveGroup: 2),
+                    RoveAction(
+                        type: RoveActionType.heal,
+                        amount: 1,
+                        range: (0, 2),
+                        targetKind: TargetKind.selfOrAlly,
+                        pull: 1,
+                        exclusiveGroup: 2),
+                  ]),
+                ],
+                onStartPhase: [
+                  EncounterAction(
+                      type: EncounterActionType.toggleBehavior,
+                      conditions: [PhaseCondition(RoundPhase.rover)]),
+                ],
+                onSlain: [fail()],
+              ),
+              EncounterFigureDef(
+                name: 'Saras',
+                health: 8,
+                affinities: const {
+                  Ether.water: -1,
+                  Ether.wind: -1,
+                  Ether.fire: 1,
+                  Ether.earth: 1,
+                },
+                abilities: [
+                  AbilityDef(name: 'Ability', actions: [
+                    RoveAction(
+                        type: RoveActionType.dash,
+                        amount: 4,
+                        targetKind: TargetKind.self,
+                        exclusiveGroup: 1),
+                    RoveAction(
+                        type: RoveActionType.attack,
+                        amount: 1,
+                        range: (1, 1),
+                        pierce: true,
+                        exclusiveGroup: 1),
+                    RoveAction(
+                        type: RoveActionType.dash,
+                        amount: 3,
+                        targetKind: TargetKind.self,
+                        exclusiveGroup: 2),
+                    RoveAction(
+                        type: RoveActionType.attack,
+                        amount: 2,
+                        range: (1, 2),
+                        aoe: AOEDef.x2Line(),
+                        targetCount: RoveAction.allTargets,
+                        exclusiveGroup: 2),
+                  ]),
+                ],
+                onStartPhase: [
+                  EncounterAction(
+                      type: EncounterActionType.toggleBehavior,
+                      conditions: [PhaseCondition(RoundPhase.rover)]),
+                ],
+                onSlain: [fail()],
+              ),
+            ]),
+      ],
+      overlays: [
+        EncounterFigureDef(
+          name: 'Ashemak Seed Pod Pile',
+          possibleTokens: ['RxHoard'],
+          traits: [
+            'Rovers that end their turn adjacent to the Ashemak seed pod pile may place a bomb satchel on it. To do this, move the hoard tile from your class board onto the seed pod pile.'
+          ],
+          onTokensChanged: [
+            milestone('_victory', condition: TokenCountCondition('R')),
+          ],
         ),
-        allies: [
-          AllyDef(
-              name: 'Kelo & Saras',
-              cardId: 'A-013',
-              defaultBehaviorIndex: AllyDef.userSelectsDefaultBehavior,
-              behaviors: [
-                EncounterFigureDef(
-                  name: 'Kelo',
-                  health: 8,
-                  defense: 1,
-                  affinities: const {
-                    Ether.fire: -1,
-                    Ether.crux: -1,
-                    Ether.earth: 1,
-                    Ether.morph: 1,
-                  },
-                  abilities: [
-                    AbilityDef(name: 'Ability', actions: [
-                      RoveAction(
-                          type: RoveActionType.dash,
-                          amount: 2,
-                          targetKind: TargetKind.self,
-                          exclusiveGroup: 1),
-                      RoveAction(
-                          type: RoveActionType.attack,
-                          amount: 1,
-                          range: (2, 2),
-                          push: 1,
-                          exclusiveGroup: 1),
-                      RoveAction(
-                          type: RoveActionType.jump,
-                          amount: 3,
-                          targetKind: TargetKind.self,
-                          exclusiveGroup: 2),
-                      RoveAction(
-                          type: RoveActionType.heal,
-                          amount: 1,
-                          range: (0, 2),
-                          targetKind: TargetKind.selfOrAlly,
-                          pull: 1,
-                          exclusiveGroup: 2),
-                    ]),
-                  ],
-                  onStartPhase: [
-                    EncounterAction(
-                        type: EncounterActionType.toggleBehavior,
-                        conditions: [PhaseCondition(RoundPhase.rover)]),
-                  ],
-                  onSlain: [fail()],
-                ),
-                EncounterFigureDef(
-                  name: 'Saras',
-                  health: 8,
-                  affinities: const {
-                    Ether.water: -1,
-                    Ether.wind: -1,
-                    Ether.fire: 1,
-                    Ether.earth: 1,
-                  },
-                  abilities: [
-                    AbilityDef(name: 'Ability', actions: [
-                      RoveAction(
-                          type: RoveActionType.dash,
-                          amount: 4,
-                          targetKind: TargetKind.self,
-                          exclusiveGroup: 1),
-                      RoveAction(
-                          type: RoveActionType.attack,
-                          amount: 1,
-                          range: (1, 1),
-                          pierce: true,
-                          exclusiveGroup: 1),
-                      RoveAction(
-                          type: RoveActionType.dash,
-                          amount: 3,
-                          targetKind: TargetKind.self,
-                          exclusiveGroup: 2),
-                      RoveAction(
-                          type: RoveActionType.attack,
-                          amount: 2,
-                          range: (1, 2),
-                          aoe: AOEDef.x2Line(),
-                          targetCount: RoveAction.allTargets,
-                          exclusiveGroup: 2),
-                    ]),
-                  ],
-                  onStartPhase: [
-                    EncounterAction(
-                        type: EncounterActionType.toggleBehavior,
-                        conditions: [PhaseCondition(RoundPhase.rover)]),
-                  ],
-                  onSlain: [fail()],
-                ),
-              ]),
-        ],
-        overlays: [
-          EncounterFigureDef(
-            name: 'Ashemak Seed Pod Pile',
-            possibleTokens: ['RxHoard'],
-            traits: [
-              'Rovers that end their turn adjacent to the Ashemak seed pod pile may place a bomb satchel on it. To do this, move the hoard tile from your class board onto the seed pod pile.'
-            ],
-            onTokensChanged: [
-              milestone('_victory', condition: TokenCountCondition('R')),
-            ],
-          ),
-          EncounterFigureDef(name: 'Treasure', traits: [
-            'The treasure chest [C] is locked and requires a key to open. At the end of the round, if the Rover with “Quartermaster’s key” is within [Range] 1 of the treasure chest [C], the Rover can loot this item.'
-          ]),
-          EncounterFigureDef(
-            name: 'Hoard',
-            alias: 'Bomb Satchel',
-            traits: [
-              'Hoard tiles [A] are bomb satchels. A Rover that enters a hex with a hoard tile picks up that tile. To indicate this, place the hoard tile on your class board. Rovers may carry only one bomb satchel.'
-            ],
-            onLoot: [
-              EncounterAction(type: EncounterActionType.addToken),
-            ],
-          )
-        ],
-        adversaries: [
-          EncounterFigureDef(
-              name: 'Wrathbone',
-              letter: 'A',
-              standeeCount: 4,
-              health: 12,
-              traits: const [
-                '''[React] At the end of the Rover phase: 
+        EncounterFigureDef(name: 'Treasure', traits: [
+          'The treasure chest [C] is locked and requires a key to open. At the end of the round, if the Rover with “Quartermaster’s key” is within [Range] 1 of the treasure chest [C], the Rover can loot this item.'
+        ]),
+        EncounterFigureDef(
+          name: 'Hoard',
+          alias: 'Bomb Satchel',
+          traits: [
+            'Hoard tiles [A] are bomb satchels. A Rover that enters a hex with a hoard tile picks up that tile. To indicate this, place the hoard tile on your class board. Rovers may carry only one bomb satchel.'
+          ],
+          onLoot: [
+            EncounterAction(type: EncounterActionType.addToken),
+          ],
+        )
+      ],
+      adversaries: [
+        EncounterFigureDef(
+            name: 'Wrathbone',
+            letter: 'A',
+            standeeCount: 4,
+            health: 12,
+            traits: const [
+              '''[React] At the end of the Rover phase: 
             
 All enemies within [Range] 1 suffer [DMG]1.'''
-              ],
-              affinities: const {
-                Ether.water: -1,
-                Ether.morph: -1,
-                Ether.earth: 1,
-                Ether.fire: 2,
-              },
-              /* abilities: [
+            ],
+            affinities: const {
+              Ether.water: -1,
+              Ether.morph: -1,
+              Ether.earth: 1,
+              Ether.fire: 2,
+            },
+            /* abilities: [
                 AbilityDef(name: 'Searing Bite', actions: [
                   RoveAction.move(3),
                   RoveAction.meleeAttack(2, field: EtherField.wildfire)
@@ -1130,33 +1135,34 @@ All enemies within [Range] 1 suffer [DMG]1.'''
                                   'If the target of the attack is within [Range] 1, that attack gains +1 [DMG].')))
                 ]),
               ],*/
-              reactions: [
-                EnemyReactionDef(
-                    trigger:
-                        ReactionTriggerDef(type: RoveEventType.endRoverPhase),
-                    actions: [
-                      RoveAction(
-                          type: RoveActionType.suffer,
-                          amount: 1,
-                          range: (1, 1),
-                          targetCount: RoveAction.allTargets)
-                    ])
-              ],
-              onSlain: [
-                codex(35),
-              ]),
-          EncounterFigureDef(
-            name: 'Sek',
-            letter: 'B',
-            standeeCount: 8,
-            health: 10,
-            defense: 1,
-            affinities: const {
-              Ether.crux: -1,
-              Ether.fire: 1,
-              Ether.morph: 1,
-            },
-            /* abilities: [
+            reactions: [
+              EnemyReactionDef(
+                  trigger:
+                      ReactionTriggerDef(type: RoveEventType.endRoverPhase),
+                  actions: [
+                    RoveAction(
+                        type: RoveActionType.suffer,
+                        amount: 1,
+                        range: (1, 1),
+                        targetCount: RoveAction.allTargets)
+                  ])
+            ],
+            onSlain: [
+              codex(35),
+            ]),
+        EncounterFigureDef(
+          name: 'Sek',
+          letter: 'B',
+          standeeCount: 8,
+          spawnable: true,
+          health: 10,
+          defense: 1,
+          affinities: const {
+            Ether.crux: -1,
+            Ether.fire: 1,
+            Ether.morph: 1,
+          },
+          /* abilities: [
               AbilityDef(
                 name: 'Dual Strike',
                 actions: [
@@ -1190,21 +1196,21 @@ All enemies within [Range] 1 suffer [DMG]1.'''
                 RoveAction.rangeAttack(3, endRange: 3, field: EtherField.miasma)
               ]),
             ],*/
-          ),
-          EncounterFigureDef(
-            name: 'Zisafi Principal',
-            letter: 'C',
-            type: AdversaryType.miniboss,
-            standeeCount: 8,
-            healthFormula: '7*R',
-            affinities: const {
-              Ether.crux: -1,
-              Ether.fire: 1,
-              Ether.morph: 2,
-            },
-            traits: [
-              'During even rounds, this unit gains +1 [DMG] to all of its attacks.'
-            ],
+        ),
+        EncounterFigureDef(
+          name: 'Zisafi Principal',
+          letter: 'C',
+          type: AdversaryType.miniboss,
+          standeeCount: 8,
+          healthFormula: '7*R',
+          affinities: const {
+            Ether.crux: -1,
+            Ether.fire: 1,
+            Ether.morph: 2,
+          },
+          traits: [
+            'During even rounds, this unit gains +1 [DMG] to all of its attacks.'
+          ],
 /*            abilities: [
               AbilityDef(
                 name: 'Surprise Attack',
@@ -1250,85 +1256,95 @@ All enemies within [Range] 1 suffer [DMG]1.'''
                     aoe: AOEDef.x3Line())
               ]),
             ],*/
-          ),
-        ],
-        placements: [
-          PlacementDef(name: 'Wrathbone', c: 1, r: 5),
-          PlacementDef(name: 'Wrathbone', c: 9, r: 4),
-          PlacementDef(name: 'Wrathbone', c: 1, r: 1, minPlayers: 3),
-          PlacementDef(name: 'Sek', c: 11, r: 8),
-          PlacementDef(name: 'Sek', c: 12, r: 1),
-          PlacementDef(name: 'Sek', c: 8, r: 0, minPlayers: 3),
-          PlacementDef(name: 'Zisafi Principal', c: 6, r: 1, onSlain: [
-            codex(36),
-            addToken('Key',
-                title: 'Reward',
-                body:
-                    '''Make a note that the Rover that slew the Zisafi Principal “has the Quartermaster's key”. If Kelo & Saras slew the Zisafi Principal, the Rover that is controlling Kelo & Saras has the Quartermaster’s key.'''),
-            codexLink('Better to Have',
-                number: 37,
-                body:
-                    '''At the end of the round, if the Rover with “Quartermaster’s key” is within [Range] 1 of the treasure chest [C], read [title], [codex] 21.'''),
-          ]),
-          PlacementDef(
-              name: 'Treasure',
-              type: PlacementType.object,
-              c: 7,
-              r: 1,
-              fixedTokens: ['C'],
-              unlockCondition: HasItemCondition('Metal Key'),
-              onWillEndRound: [
-                EncounterAction(
-                    type: EncounterActionType.unlockFromAdjacentAndLoot)
-              ],
-              onLoot: [
-                codex(37),
-                lyst('5*R', title: 'Better to Have'),
-                item('Vigor Juice',
-                    body:
-                        '''The Rover that unlocked treasure chest [C] gains one “Vigor Juice” item. They may equip this items. If they don’t have the required item slot(s) available, they may unequip items as needed.'''),
-                item('Slagblade',
-                    body:
-                        '''The Rover that unlocked treasure chest [C] gains one “Slagblade” item. They may equip this items. If they don’t have the required item slot(s) available, they may unequip items as needed.'''),
-              ]),
-          PlacementDef(
-            name: 'Hoard',
+        ),
+      ],
+      placements: [
+        PlacementDef(name: 'Wrathbone', c: 1, r: 5),
+        PlacementDef(name: 'Wrathbone', c: 9, r: 4),
+        PlacementDef(name: 'Wrathbone', c: 1, r: 1, minPlayers: 3),
+        PlacementDef(name: 'Sek', c: 11, r: 8),
+        PlacementDef(name: 'Sek', c: 12, r: 1),
+        PlacementDef(name: 'Sek', c: 8, r: 0, minPlayers: 3),
+        PlacementDef(name: 'Zisafi Principal', c: 6, r: 1, onSlain: [
+          codex(36),
+          addToken('Key',
+              title: 'Reward',
+              body:
+                  '''Make a note that the Rover that slew the Zisafi Principal “has the Quartermaster's key”. If Kelo & Saras slew the Zisafi Principal, the Rover that is controlling Kelo & Saras has the Quartermaster’s key.'''),
+          codexLink('Better to Have',
+              number: 37,
+              body:
+                  '''At the end of the round, if the Rover with “Quartermaster’s key” is within [Range] 1 of the treasure chest [C], read [title], [codex] 21.'''),
+        ]),
+        PlacementDef(
+            name: 'Treasure',
+            type: PlacementType.object,
+            c: 7,
+            r: 1,
+            fixedTokens: ['C'],
+            unlockCondition: HasItemCondition('Metal Key'),
+            onWillEndRound: [
+              EncounterAction(
+                  type: EncounterActionType.unlockFromAdjacentAndLoot)
+            ],
+            onLoot: [
+              codex(37),
+              lyst('5*R', title: 'Better to Have'),
+              item('Vigor Juice',
+                  body:
+                      '''The Rover that unlocked treasure chest [C] gains one “Vigor Juice” item. They may equip this items. If they don’t have the required item slot(s) available, they may unequip items as needed.'''),
+              item('Slagblade',
+                  body:
+                      '''The Rover that unlocked treasure chest [C] gains one “Slagblade” item. They may equip this items. If they don’t have the required item slot(s) available, they may unequip items as needed.'''),
+            ]),
+        PlacementDef(
+          name: 'Hoard',
+          type: PlacementType.object,
+          c: 12,
+          r: 9,
+          fixedTokens: ['A'],
+        ),
+        PlacementDef(
+          name: 'Hoard',
+          type: PlacementType.object,
+          c: 12,
+          r: 8,
+          fixedTokens: ['A'],
+        ),
+        PlacementDef(
+          name: 'Hoard',
+          type: PlacementType.object,
+          c: 12,
+          r: 7,
+          fixedTokens: ['A'],
+        ),
+        PlacementDef(
+          name: 'Hoard',
+          type: PlacementType.object,
+          c: 12,
+          r: 6,
+          fixedTokens: ['A'],
+        ),
+        PlacementDef(name: 'fire', type: PlacementType.ether, c: 7, r: 8),
+        PlacementDef(name: 'fire', type: PlacementType.ether, c: 3, r: 2),
+        PlacementDef(
+            name: 'Ashemak Seed Pod Pile',
             type: PlacementType.object,
             c: 12,
-            r: 9,
-            fixedTokens: ['A'],
-          ),
-          PlacementDef(
-            name: 'Hoard',
-            type: PlacementType.object,
-            c: 12,
-            r: 8,
-            fixedTokens: ['A'],
-          ),
-          PlacementDef(
-            name: 'Hoard',
-            type: PlacementType.object,
-            c: 12,
-            r: 7,
-            fixedTokens: ['A'],
-          ),
-          PlacementDef(
-            name: 'Hoard',
-            type: PlacementType.object,
-            c: 12,
-            r: 6,
-            fixedTokens: ['A'],
-          ),
-          PlacementDef(name: 'fire', type: PlacementType.ether, c: 7, r: 8),
-          PlacementDef(name: 'fire', type: PlacementType.ether, c: 3, r: 2),
-          PlacementDef(
-              name: 'Ashemak Seed Pod Pile',
-              type: PlacementType.object,
-              c: 12,
-              r: 2,
-              fixedTokens: ['B']),
-        ],
-      );
+            r: 2,
+            fixedTokens: ['B']),
+      ],
+      placementGroups: [
+        PlacementGroupDef(
+          name: 'Challenge 2',
+          placements: [
+            PlacementDef(name: 'Sek', c: 0, r: 0),
+            PlacementDef(name: 'Sek', c: 0, r: 0),
+            PlacementDef(name: 'Sek', c: 0, r: 0, minPlayers: 3),
+            PlacementDef(name: 'Sek', c: 0, r: 0, minPlayers: 4),
+          ],
+        )
+      ]);
 
   static EncounterDef get encounter2dot4 => EncounterDef(
         questId: '2',
