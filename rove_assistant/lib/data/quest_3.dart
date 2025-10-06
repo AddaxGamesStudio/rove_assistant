@@ -160,6 +160,7 @@ D Enemies: Dekaha''',
             letter: 'A',
             standeeCount: 8,
             health: 7,
+            spawnable: true,
             respawns: true,
             traits: [
               'When this unit attacks, if at least one of its allies are adjacent to the target, it gains +1 [DMG] to the attack.'
