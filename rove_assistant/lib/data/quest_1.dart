@@ -1327,6 +1327,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
             name: 'Galeaper',
             letter: 'A',
             standeeCount: 8,
+            spawnable: true,
             health: 5,
             flies: true,
             affinities: const {
@@ -1371,6 +1372,7 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
             letter: 'B',
             standeeCount: 6,
             health: 6,
+            defenseFormula: '2*C1',
             immuneToForcedMovement: true,
             affinities: const {
               Ether.fire: -2,
