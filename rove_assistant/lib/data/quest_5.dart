@@ -1113,7 +1113,7 @@ This means adversaries will spawn once for 2 Rovers, twice for 3 Rovers, and thr
         campaignLink:
             '''Chapter 4 - “**A Consequence**”, [campaign] **100**.''',
         challenges: [
-          'Ignore the gruv’s trait. It gains +3 [DEF].',
+          'Ignore the Gruv’s trait. It gains +3 [DEF].',
           'Femii has +R*4 [HP].',
           'The Svaraka’s abilities lose the On Advance mechanic. This means the Svaraka takes its turns normally, performing its abilities immediately.',
         ],
@@ -1296,7 +1296,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
             letter: 'C',
             standeeCount: 2,
             health: 18,
-            defenseFormula: '3*(1-T%2)',
+            defenseFormula: '(3*(1-T%2)*(1-C1))+(3*C1)',
             traits: [
               'During even rounds, this unit gains [Def] 3.',
             ],
@@ -1334,7 +1334,7 @@ All enemies within [Range] 1-2 suffer [DMG]1.''',
             letter: 'C',
             type: AdversaryType.miniboss,
             standeeCount: 1,
-            healthFormula: '12*R',
+            healthFormula: '12*R+(R*4*C2)',
             defenseFormula: 'R',
             traits: [
               'This unit treats all [miasma] as if they were adversary [aura].',
