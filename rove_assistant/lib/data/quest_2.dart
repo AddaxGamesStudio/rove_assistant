@@ -903,10 +903,12 @@ All enemies within [Range] 1 suffer [DMG]1.'''
                 '''Immediately when R bomb satchels have been placed onto the ashemak seed pod pile, read [title], [codex] 21.'''),
       ],
       onWillEndRound: [
-        placementGroup('Challenge 2',
-            title: 'Challenge 2',
-            body: 'Spawn R Seks in [start] spaces closest to the Rovers.',
-            condition: ChallengeOnCondition(2))
+        placementGroup(
+          'Challenge 2',
+          title: 'Challenge 2',
+          body: 'Spawn R Seks in [start] spaces closest to the Rovers.',
+          conditions: [RoundCondition(4), ChallengeOnCondition(2)],
+        )
       ],
       onMilestone: {
         '_victory': [
