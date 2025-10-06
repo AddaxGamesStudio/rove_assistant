@@ -39,6 +39,8 @@ class FigureState {
       _$FigureStateFromJson(json);
   Map<String, dynamic> toJson() => _$FigureStateToJson(this);
 
+  bool get slain => health <= 0 && roundSlain != null;
+
   factory FigureState.defaultFromFigure(Figure figure) {
     return FigureState(
       health: figure.health,
