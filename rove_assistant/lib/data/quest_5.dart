@@ -683,7 +683,7 @@ You will have to slay both Kelo and Saras to win this encounter. Once you slay S
             name: 'Skara',
             letter: 'B',
             standeeCount: 8,
-            health: 7,
+            healthFormula: '7+2*C2',
             defense: 1,
             affinities: {
               Ether.crux: -1,
