@@ -353,7 +353,7 @@ All units within [Range] 1 suffer [DMG]2.'''
         ],
         challenges: [
           'The Scour gains +R*6 [HP].',
-          'After the turn where the Scour suffers [DMG] from any source, spawn 1 broken vessel at [Range] 2 of it, closest to the nearest Rover.',
+          'After the turn where the Scour suffers [DMG] from any source, spawn 1 Broken Vessel at [Range] 2 of it, closest to the nearest Rover.',
           'The Scour gains +1 [DMG] when targeting an enemy with half or less [HP].',
         ],
         dialogs: [
@@ -425,6 +425,7 @@ All units within [Range] 1 suffer [DMG]2.'''
             name: 'Broken Vessel',
             letter: 'B',
             standeeCount: 8,
+            spawnable: true,
             health: 5,
             flies: true,
             traits: [
@@ -457,7 +458,7 @@ All units within [Range] 1 suffer [DMG]2.'''
             letter: 'D',
             standeeCount: 1,
             type: AdversaryType.miniboss,
-            healthFormula: '12*R',
+            healthFormula: '12*R+(R*6)*C1',
             defense: 1,
             large: true,
             traits: [
