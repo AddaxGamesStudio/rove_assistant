@@ -27,9 +27,9 @@ extension Quest3 on EncounterDef {
         campaignLink:
             'Encounter 3.2 - “**Midst of Black Seas**”, [campaign] **46**.',
         challenges: [
-          'When a stomaw is placed on the side of the map, roll an ether dice from the general pool. On a result of [Earth] or [Morph], set its standee vertical instead of sideways.',
-          'At the end of the Start Phase, the Monstrous Growth recovers [RCV] X, where X equals the number of stomaw on the map.',
-          'Rovers within [Range] 1-3 of the Monstrous Growth count as being adjacent to an adversary, for the purposes of the stomaw trait.',
+          'When a Stomaw is placed on the side of the map, roll an ether dice from the general pool. On a result of [Earth] or [Morph], set its standee vertical instead of sideways.',
+          'At the end of the Start Phase, the Monstrous Growth recovers [RCV] X, where X equals the number of Stomaw on the map.',
+          'Rovers within [Range] 1-3 of the Monstrous Growth count as being adjacent to an adversary, for the purposes of the Stomaw trait.',
         ],
         startingMap: MapDef(
           id: '3.1',
@@ -566,8 +566,8 @@ All units within [Range] 1 suffer [DMG]2.'''
         campaignLink:
             'Encounter 3.4 - “**Malign and Particular Suspension**”, [campaign] **50**.',
         challenges: [
-          'The azoth gains +1 [DEF].',
-          'When the azoth is slain, spawn R dyad hatchlings in spaces the azoth occupied.',
+          'The Azoth gains +1 [DEF].',
+          'When the Azoth is slain, spawn R Dyad Hatchlings in spaces the Azoth occupied.',
           'After any action where the crown suffers damage, it performs: Logic: Retreat. [Teleport] 3',
         ],
         dialogs: [
@@ -679,6 +679,7 @@ All units within [Range] 1 suffer [DMG]2.'''
             name: 'Dyad Hatchling',
             letter: 'A',
             standeeCount: 8,
+            spawnable: true,
             health: 6,
             affinities: {
               Ether.morph: -2,
@@ -694,7 +695,7 @@ All units within [Range] 1 suffer [DMG]2.'''
             type: AdversaryType.miniboss,
             standeeCount: 1,
             healthFormula: '5*R',
-            defense: 2,
+            defenseFormula: '2+1*C1',
             large: true,
             immuneToForcedMovement: true,
             immuneToTeleport: true,
@@ -703,6 +704,14 @@ All units within [Range] 1 suffer [DMG]2.'''
               Ether.crux: 1,
               Ether.morph: 1,
             },
+            onSlain: [
+              placementGroup(
+                'Challenge 2',
+                title: 'Challenge 2',
+                body: 'Spawn R Dyad Hatchlings in spaces the Azoth occupied.',
+                condition: ChallengeOnCondition(2),
+              )
+            ],
           ),
           EncounterFigureDef(
             name: 'Crown',
@@ -740,6 +749,14 @@ All units within [Range] 1 suffer [DMG]2.'''
           PlacementDef(name: 'crux', type: PlacementType.ether, c: 1, r: 3),
           PlacementDef(name: 'crux', type: PlacementType.ether, c: 5, r: 5),
           PlacementDef(name: 'crux', type: PlacementType.ether, c: 10, r: 3),
+        ],
+        placementGroups: [
+          PlacementGroupDef(name: 'Challenge 2', placements: [
+            PlacementDef(name: 'Dyad Hatchling', c: 0, r: 0),
+            PlacementDef(name: 'Dyad Hatchling', c: 0, r: 0),
+            PlacementDef(name: 'Dyad Hatchling', c: 0, r: 0, minPlayers: 3),
+            PlacementDef(name: 'Dyad Hatchling', c: 0, r: 0, minPlayers: 4),
+          ])
         ],
       );
 
