@@ -1371,7 +1371,7 @@ All enemies within [Range] 1 suffer [DMG]1.'''
         challenges: [
           'When performing the Hurry up! ability, the skara grub performs [Dash] 2 instead.',
           'Zisafis will always attack the skara grub if the grub is within range of their attacks.',
-          'The Sek Principle loses their trait and gains +1 [DEF].',
+          'The Sek Principal loses their trait and gains +1 [DEF].',
         ],
         trackerEvents: [
           EncounterTrackerEventDef(
@@ -1462,7 +1462,7 @@ Once each round, one Rover may perform the following ability:
           '_double_cross': [
             codex(41),
             rules('Double Cross',
-                '''Kelo & Saras have revealed their true allegiance to you; discard their ally card. They are now enemies to the Rovers and use the Sek Principle statistic block. Set their current [HP] to their new maximum [HP]. Kelo & Saras immediately perform their “Coordinated Assault” ability. You have 4 rounds to defeat them.'''),
+                '''Kelo & Saras have revealed their true allegiance to you; discard their ally card. They are now enemies to the Rovers and use the Sek Principal statistic block. Set their current [HP] to their new maximum [HP]. Kelo & Saras immediately perform their “Coordinated Assault” ability. You have 4 rounds to defeat them.'''),
             victoryCondition('Slay Kelo & Saras.'),
             EncounterAction(
                 type: EncounterActionType.setLossCondition,
