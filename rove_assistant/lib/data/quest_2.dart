@@ -1816,7 +1816,7 @@ All units within [Range] 1 suffer [DMG]2.'''
               standeeCount: 1,
               alias: 'Kelo & Saras',
               healthFormula: '8*R',
-              defenseFormula: '1+1*(1-T%2)',
+              defenseFormula: '1+(1*(1-T%2)*(1-C3))+(1*C3)',
               affinities: const {
                 Ether.crux: -1,
                 Ether.morph: 1,
