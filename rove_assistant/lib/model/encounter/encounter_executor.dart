@@ -840,6 +840,8 @@ class EncounterExecutor {
             state: state.stateFromFigure(figure).withHealth(0).withRemoved());
       case FigureRole.object:
       case FigureRole.adversary:
+        state.clearAdversaryRandomStandeeMapping(
+            name: figure.name, index: figure.numeral);
         state.setAdversaryState(
             name: figure.name,
             numeral: figure.numeral,
@@ -890,17 +892,26 @@ class EncounterExecutor {
 
   setFigureHealth({required Figure figure, required int health}) {
     var figureState = state.stateFromFigure(figure).withHealth(health);
-    if (health == 0) {
+    final slain = health == 0;
+    if (slain) {
       figureState = figureState.withRoundSlain(state.round);
     }
+    final name = figure.name;
+    final numeral = figure.numeral;
     switch (figure.role) {
       case FigureRole.ally:
-        state.setAllyState(name: figure.name, state: figureState);
+        state.setAllyState(name: name, state: figureState);
         break;
       case FigureRole.adversary:
+        if (slain && !resolver.canRespawn(figure: figure)) {
+          state.clearAdversaryRandomStandeeMapping(name: name, index: numeral);
+        }
+        state.setAdversaryState(
+            name: name, numeral: numeral, state: figureState);
+        break;
       case FigureRole.object:
         state.setAdversaryState(
-            name: figure.name, numeral: figure.numeral, state: figureState);
+            name: name, numeral: numeral, state: figureState);
         break;
     }
   }

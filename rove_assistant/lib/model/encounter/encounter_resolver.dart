@@ -99,7 +99,9 @@ class EncounterResolver {
         name: definition.name,
         numeral: index,
         defaultState: _defaultStateForDefinition(definition));
-    if (!randomizeNumeral || adversaryState.hasOverrideNumber) {
+    if (!randomizeNumeral ||
+        adversaryState.hasOverrideNumber ||
+        adversaryState.slain) {
       return adversaryState;
     }
     final existingRandomNumeral = state.getAdversaryRandomStandeeMapping(
@@ -146,6 +148,19 @@ class EncounterResolver {
       ..._adversariesHealthOnly(),
       ..._objectsHealthOnly(),
     ].where((e) => isFigureMatchingValue(figure: e, value: target)).toList();
+  }
+
+  bool canRespawn({required Figure figure}) {
+    final definition =
+        encounter.adversaries.firstWhereOrNull((e) => e.name == figure.name);
+    if (definition != null) {
+      final respawnCondition = definition.respawnCondition;
+      if (respawnCondition == null) {
+        return definition.respawns;
+      }
+      return matchesCondition(respawnCondition, target: figure);
+    }
+    return false;
   }
 
   bool canSpawnOfName(String name) {
@@ -264,12 +279,19 @@ class EncounterResolver {
       .isEmpty;
 
   int _randomNumeralForEncounterFigureDef(EncounterFigureDef definition) {
-    int standeeNumber = 0;
-    do {
-      standeeNumber = Random().nextInt(definition.standeeCount) + 1;
-    } while (state.isStandeeNumberUsedForAdversary(
-        name: definition.name, numeral: standeeNumber));
-    return standeeNumber;
+    final standeeCount = definition.standeeCount > 0
+        ? definition.standeeCount
+        : FigureDef.standeeLimit;
+    final candidates = List.generate(standeeCount, (i) => i + 1);
+    candidates.shuffle();
+    for (final numeral in candidates) {
+      if (!state.isStandeeNumberUsedForAdversary(
+          name: definition.name, numeral: numeral)) {
+        return numeral;
+      }
+    }
+    assert(false, 'All standee numbers are used for ${definition.name}');
+    return standeeCount + 1;
   }
 
   /// Use healthOnly to avoid infinite recursion.
