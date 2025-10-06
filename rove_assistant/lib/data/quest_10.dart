@@ -3033,6 +3033,7 @@ When an adversary with the **Infected** trait is slain, place it off to the side
         adversaries: [
           EncounterFigureDef(
             name: 'Cleaving Xulc',
+            standeeCount: 8,
             health: 8,
             traits: [
               'Ignores the effects of water and xulc terrain.',
@@ -3045,6 +3046,7 @@ When an adversary with the **Infected** trait is slain, place it off to the side
           ),
           EncounterFigureDef(
             name: 'Armored Xulc',
+            standeeCount: 8,
             health: 6,
             defense: 2,
             traits: [
@@ -3058,6 +3060,7 @@ When an adversary with the **Infected** trait is slain, place it off to the side
           ),
           EncounterFigureDef(
             name: 'Flying Xulc',
+            standeeCount: 8,
             health: 6,
             flies: true,
             traits: [
@@ -3071,6 +3074,7 @@ When an adversary with the **Infected** trait is slain, place it off to the side
           EncounterFigureDef(
             name: 'Faltering Ashemak',
             letter: 'A',
+            standeeCount: 5,
             health: 10,
             infected: true,
             spawnable: true,
@@ -3086,6 +3090,7 @@ When an adversary with the **Infected** trait is slain, place it off to the side
           EncounterFigureDef(
             name: 'Colony',
             letter: 'B',
+            standeeCount: 5,
             health: 6,
             infected: true,
             spawnable: true,
@@ -3106,6 +3111,7 @@ When an adversary with the **Infected** trait is slain, place it off to the side
           EncounterFigureDef(
             name: 'Regenerator',
             letter: 'C',
+            standeeCount: 6,
             health: 8,
             defense: 1,
             infected: true,
@@ -3366,6 +3372,7 @@ When an adversary with the **Infected** trait is slain, place it off to the side
         adversaries: [
           EncounterFigureDef(
             name: 'Cleaving Xulc',
+            standeeCount: 8,
             health: 8,
             traits: [
               'Ignores the effects of water and xulc terrain.',
@@ -3377,6 +3384,7 @@ When an adversary with the **Infected** trait is slain, place it off to the side
           ),
           EncounterFigureDef(
             name: 'Armored Xulc',
+            standeeCount: 8,
             health: 6,
             defense: 2,
             traits: [
@@ -3389,6 +3397,7 @@ When an adversary with the **Infected** trait is slain, place it off to the side
           ),
           EncounterFigureDef(
             name: 'Flying Xulc',
+            standeeCount: 8,
             health: 6,
             flies: true,
             traits: [
@@ -3401,6 +3410,7 @@ When an adversary with the **Infected** trait is slain, place it off to the side
           EncounterFigureDef(
             name: 'Faltering Ashemak',
             letter: 'A',
+            standeeCount: 5,
             health: 10,
             infected: true,
             spawnable: true,
@@ -3416,6 +3426,7 @@ When an adversary with the **Infected** trait is slain, place it off to the side
           EncounterFigureDef(
             name: 'Colony',
             letter: 'B',
+            standeeCount: 5,
             health: 6,
             infected: true,
             spawnable: true,
@@ -3436,6 +3447,7 @@ When an adversary with the **Infected** trait is slain, place it off to the side
           EncounterFigureDef(
             name: 'Regenerator',
             letter: 'C',
+            standeeCount: 6,
             health: 8,
             defense: 1,
             infected: true,
@@ -3453,6 +3465,7 @@ When an adversary with the **Infected** trait is slain, place it off to the side
           EncounterFigureDef(
             name: 'Fracturing Gruv',
             letter: 'D',
+            standeeCount: 1,
             health: 20,
             defenseFormula: '3*(1-T%2)',
             traits: [
@@ -3713,6 +3726,7 @@ All Rovers must make a choice. They must either reduce their maximum [HP] by 3, 
         adversaries: [
           EncounterFigureDef(
             name: 'Cleaving Xulc',
+            standeeCount: 8,
             health: 8,
             traits: [
               'Ignores the effects of water and xulc terrain.',
@@ -3725,6 +3739,7 @@ All Rovers must make a choice. They must either reduce their maximum [HP] by 3, 
           ),
           EncounterFigureDef(
             name: 'Armored Xulc',
+            standeeCount: 8,
             health: 6,
             defense: 2,
             traits: [
@@ -3738,6 +3753,7 @@ All Rovers must make a choice. They must either reduce their maximum [HP] by 3, 
           ),
           EncounterFigureDef(
             name: 'Flying Xulc',
+            standeeCount: 8,
             health: 6,
             flies: true,
             traits: [
@@ -3751,6 +3767,7 @@ All Rovers must make a choice. They must either reduce their maximum [HP] by 3, 
           EncounterFigureDef(
             name: 'Withering Dekaha',
             letter: 'A',
+            standeeCount: 4,
             health: 10,
             respawns: true,
             infected: true,
@@ -3763,6 +3780,7 @@ All Rovers must make a choice. They must either reduce their maximum [HP] by 3, 
           EncounterFigureDef(
             name: 'Colony',
             letter: 'B',
+            standeeCount: 5,
             health: 6,
             infected: true,
             respawns: true,
@@ -3783,6 +3801,7 @@ All Rovers must make a choice. They must either reduce their maximum [HP] by 3, 
           EncounterFigureDef(
               name: 'Hunter',
               letter: 'C',
+              standeeCount: 6,
               health: 10,
               infected: true,
               respawns: true,
@@ -3804,6 +3823,7 @@ All Rovers must make a choice. They must either reduce their maximum [HP] by 3, 
             name: 'Nahadir',
             alias: 'Tihfur Mystic',
             faction: 'The Urshif',
+            standeeCount: 3,
             health: 8,
             onSlain: [
               fail(),
@@ -4024,6 +4044,7 @@ All Rovers must make a choice. They must either reduce their maximum [HP] by 3, 
       adversaries: [
         EncounterFigureDef(
           name: 'Cleaving Xulc',
+          standeeCount: 8,
           health: 8,
           traits: [
             'Ignores the effects of water and xulc terrain.',
@@ -4036,6 +4057,7 @@ All Rovers must make a choice. They must either reduce their maximum [HP] by 3, 
         ),
         EncounterFigureDef(
           name: 'Armored Xulc',
+          standeeCount: 8,
           health: 6,
           defense: 2,
           traits: [
@@ -4049,6 +4071,7 @@ All Rovers must make a choice. They must either reduce their maximum [HP] by 3, 
         ),
         EncounterFigureDef(
           name: 'Flying Xulc',
+          standeeCount: 8,
           health: 6,
           flies: true,
           traits: [
@@ -4062,6 +4085,7 @@ All Rovers must make a choice. They must either reduce their maximum [HP] by 3, 
         EncounterFigureDef(
           name: 'Withering Dekaha',
           letter: 'A',
+          standeeCount: 4,
           health: 10,
           respawns: true,
           infected: true,
@@ -4074,6 +4098,7 @@ All Rovers must make a choice. They must either reduce their maximum [HP] by 3, 
         EncounterFigureDef(
           name: 'Colony',
           letter: 'B',
+          standeeCount: 5,
           health: 6,
           infected: true,
           respawns: true,
@@ -4094,6 +4119,7 @@ All Rovers must make a choice. They must either reduce their maximum [HP] by 3, 
         EncounterFigureDef(
           name: 'Hunter',
           letter: 'C',
+          standeeCount: 6,
           health: 10,
           infected: true,
           respawns: true,
@@ -4116,6 +4142,7 @@ All Rovers must make a choice. They must either reduce their maximum [HP] by 3, 
           name: 'Bursting Terranape',
           letter: 'D',
           type: AdversaryType.miniboss,
+          standeeCount: 1,
           health: 28,
           traits: [
             'When this unit is slain, spawn R Cleaving Xulc within [Range] 0-1 of where this unit was.',
@@ -4138,6 +4165,7 @@ All Rovers must make a choice. They must either reduce their maximum [HP] by 3, 
           name: 'Nahadir',
           alias: 'Tihfur Mystic',
           faction: 'The Urshif',
+          standeeCount: 3,
           health: 8,
           onSlain: [
             fail(),
@@ -4298,6 +4326,7 @@ Hra must be struck by the Fulgurite Fields rule three times, once at the [earth]
         adversaries: [
           EncounterFigureDef(
             name: 'Cleaving Xulc',
+            standeeCount: 8,
             health: 8,
             traits: [
               'Ignores the effects of water and xulc terrain.',
@@ -4310,6 +4339,7 @@ Hra must be struck by the Fulgurite Fields rule three times, once at the [earth]
           ),
           EncounterFigureDef(
             name: 'Armored Xulc',
+            standeeCount: 8,
             health: 6,
             defense: 2,
             traits: [
@@ -4323,6 +4353,7 @@ Hra must be struck by the Fulgurite Fields rule three times, once at the [earth]
           ),
           EncounterFigureDef(
             name: 'Flying Xulc',
+            standeeCount: 8,
             health: 6,
             flies: true,
             traits: [
@@ -4336,6 +4367,7 @@ Hra must be struck by the Fulgurite Fields rule three times, once at the [earth]
           EncounterFigureDef(
             name: 'Colony',
             letter: 'A',
+            standeeCount: 5,
             health: 6,
             infected: true,
             traits: [
@@ -4355,6 +4387,7 @@ Hra must be struck by the Fulgurite Fields rule three times, once at the [earth]
           EncounterFigureDef(
             name: 'Regenerator',
             letter: 'B',
+            standeeCount: 6,
             health: 8,
             defense: 1,
             infected: true,
@@ -4371,6 +4404,7 @@ Hra must be struck by the Fulgurite Fields rule three times, once at the [earth]
           EncounterFigureDef(
             name: 'Hunter',
             letter: 'C',
+            standeeCount: 6,
             health: 10,
             infected: true,
             traits: [
@@ -4548,6 +4582,7 @@ Hra must be struck by the Fulgurite Fields rule three times, once at the [earth]
         adversaries: [
           EncounterFigureDef(
             name: 'Cleaving Xulc',
+            standeeCount: 8,
             health: 8,
             traits: [
               'Ignores the effects of water and xulc terrain.',
@@ -4560,6 +4595,7 @@ Hra must be struck by the Fulgurite Fields rule three times, once at the [earth]
           ),
           EncounterFigureDef(
             name: 'Armored Xulc',
+            standeeCount: 8,
             health: 6,
             defense: 2,
             traits: [
@@ -4573,6 +4609,7 @@ Hra must be struck by the Fulgurite Fields rule three times, once at the [earth]
           ),
           EncounterFigureDef(
             name: 'Flying Xulc',
+            standeeCount: 8,
             health: 6,
             flies: true,
             traits: [
@@ -4585,6 +4622,7 @@ Hra must be struck by the Fulgurite Fields rule three times, once at the [earth]
           ),
           EncounterFigureDef(
             name: 'Colony',
+            standeeCount: 5,
             letter: 'A',
             health: 6,
             infected: true,
@@ -4605,6 +4643,7 @@ Hra must be struck by the Fulgurite Fields rule three times, once at the [earth]
           EncounterFigureDef(
             name: 'Regenerator',
             letter: 'B',
+            standeeCount: 6,
             health: 8,
             defense: 1,
             infected: true,
@@ -4621,6 +4660,7 @@ Hra must be struck by the Fulgurite Fields rule three times, once at the [earth]
           EncounterFigureDef(
             name: 'Hunter',
             letter: 'C',
+            standeeCount: 6,
             health: 10,
             infected: true,
             traits: [
@@ -4642,6 +4682,7 @@ Hra must be struck by the Fulgurite Fields rule three times, once at the [earth]
             name: 'Fading Crown',
             letter: 'D',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             health: 24,
             flies: true,
             traits: [
@@ -4808,6 +4849,7 @@ Remove Hra’s ally card from the game.'''),
         adversaries: [
           EncounterFigureDef(
             name: 'Cleaving Xulc',
+            standeeCount: 8,
             health: 8,
             traits: [
               'Ignores the effects of water and xulc terrain.',
@@ -4823,6 +4865,7 @@ Remove Hra’s ally card from the game.'''),
           ),
           EncounterFigureDef(
             name: 'Armored Xulc',
+            standeeCount: 8,
             health: 6,
             defense: 2,
             traits: [
@@ -4839,6 +4882,7 @@ Remove Hra’s ally card from the game.'''),
           ),
           EncounterFigureDef(
             name: 'Flying Xulc',
+            standeeCount: 8,
             health: 6,
             flies: true,
             traits: [
@@ -4856,6 +4900,7 @@ Remove Hra’s ally card from the game.'''),
             name: 'Hastadilling',
             letter: 'A',
             type: AdversaryType.boss,
+            standeeCount: 1,
             healthFormula: '20*R',
             large: true,
             traits: [
@@ -4878,6 +4923,7 @@ Remove Hra’s ally card from the game.'''),
             alias: 'Fracturing Gruv',
             letter: 'B',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             healthFormula: '8*R',
             defenseFormula: '3*(1-T%2)',
             traits: [
@@ -4899,6 +4945,7 @@ Remove Hra’s ally card from the game.'''),
             name: 'Bursting Terranape',
             letter: 'C',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             healthFormula: '10*R',
             traits: [
               'After the action where this unit is slain, spawn R cleaving Xulc within [Range] 0-1 of where this unit was.',
@@ -4920,6 +4967,7 @@ Remove Hra’s ally card from the game.'''),
             name: 'Fading Crown',
             letter: 'D',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             healthFormula: '8*R',
             flies: true,
             traits: [
@@ -5134,6 +5182,7 @@ You have won! The campaign is now over.'''),
         adversaries: [
           EncounterFigureDef(
             name: 'Cleaving Xulc',
+            standeeCount: 8,
             health: 8,
             traits: [
               'Ignores the effects of water and xulc terrain.',
@@ -5146,6 +5195,7 @@ You have won! The campaign is now over.'''),
           ),
           EncounterFigureDef(
             name: 'Armored Xulc',
+            standeeCount: 8,
             health: 6,
             defense: 2,
             traits: [
@@ -5159,6 +5209,7 @@ You have won! The campaign is now over.'''),
           ),
           EncounterFigureDef(
             name: 'Flying Xulc',
+            standeeCount: 8,
             health: 6,
             flies: true,
             traits: [
@@ -5177,6 +5228,7 @@ You have won! The campaign is now over.'''),
           EncounterFigureDef(
             name: 'Colony',
             letter: 'A',
+            standeeCount: 5,
             health: 6,
             infected: true,
             traits: [
@@ -5196,6 +5248,7 @@ You have won! The campaign is now over.'''),
           EncounterFigureDef(
             name: 'Regenerator',
             letter: 'B',
+            standeeCount: 6,
             health: 8,
             defense: 1,
             infected: true,
@@ -5212,6 +5265,7 @@ You have won! The campaign is now over.'''),
           EncounterFigureDef(
             name: 'Hunter',
             letter: 'C',
+            standeeCount: 6,
             health: 10,
             infected: true,
             traits: [
@@ -5233,6 +5287,7 @@ You have won! The campaign is now over.'''),
             name: 'Prime Xulc Brood Matron',
             letter: 'D',
             type: AdversaryType.boss,
+            standeeCount: 1,
             large: true,
             traits: [
               'Immune to all damage and cannot be moved or teleported for any reason.',
@@ -5247,6 +5302,7 @@ You have won! The campaign is now over.'''),
             name: 'Prime Xulc Dominator',
             letter: 'A',
             type: AdversaryType.boss,
+            standeeCount: 1,
             healthFormula: '40*R',
             large: true,
             traits: [
@@ -5293,6 +5349,7 @@ You have won! The campaign is now over.'''),
             name: 'Prime Xulc Deliverer',
             letter: 'A',
             type: AdversaryType.boss,
+            standeeCount: 1,
             healthFormula: '30*R',
             defense: 1,
             large: true,
