@@ -77,7 +77,7 @@ extension Quest3 on EncounterDef {
           rules('A Sea of Gnashing Teeth',
               '''*A seemingly endless horde of necrotic monstrosities are pouring out from the wastes.* There are six ether icons on the edges of the map. These icons represent possible spawn locations throughout the encounter.
 
-When a stomaw is slain, place it off to the side of the map on its side. During the start phase, for each stomaw that is both off to the side and flipped vertically, roll an ether dice from the general pool, then spawn that stomaw at the space with the ether icon corresponding to the result that was just rolled. Then, for each stomaw that is both off to the side and placed on its side, flip them vertically. *[The app does this automatically.]*'''),
+When a Stomaw is slain, place it off to the side of the map on its side. During the start phase, for each stomaw that is both off to the side and flipped vertically, roll an ether dice from the general pool, then spawn that stomaw at the space with the ether icon corresponding to the result that was just rolled. Then, for each stomaw that is both off to the side and placed on its side, flip them vertically. *[The app does this automatically.]*'''),
           rules('Adversaries',
               '''There are spaces marked Dekaha / Ashemak. The enemy that is spawned changes depending on the special rule block you are referencing.'''),
           rules(
@@ -1923,7 +1923,6 @@ Remove that hoard tile and this unit from the map.'''
           letter: 'A',
           standeeCount: 8,
           health: 7,
-          respawns: true,
           traits: [
             'When this unit attacks, if at least one of its allies are adjacent to the target, it gains +1 [DMG] to the attack.'
           ],
