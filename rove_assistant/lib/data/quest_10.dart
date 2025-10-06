@@ -131,6 +131,7 @@ Open the infected deck of skill cards. All Rovers must select and permanently ad
         adversaries: [
           EncounterFigureDef(
             name: 'Cleaving Xulc',
+            standeeCount: 8,
             health: 6,
             traits: [
               'Ignores the effects of water and xulc terrain.',
@@ -145,6 +146,7 @@ Open the infected deck of skill cards. All Rovers must select and permanently ad
           ),
           EncounterFigureDef(
             name: 'Armored Xulc',
+            standeeCount: 8,
             health: 5,
             defense: 2,
             traits: [
@@ -160,6 +162,7 @@ Open the infected deck of skill cards. All Rovers must select and permanently ad
           ),
           EncounterFigureDef(
             name: 'Flying Xulc',
+            standeeCount: 8,
             health: 5,
             flies: true,
             traits: [
@@ -176,6 +179,7 @@ Open the infected deck of skill cards. All Rovers must select and permanently ad
           EncounterFigureDef(
             name: 'Stomaw',
             letter: 'A',
+            standeeCount: 6,
             health: 12,
             traits: [
               'When this unit attacks, if at least one of its allies are adjacent to the target, it gains +1 [DMG] to the attack.',
@@ -195,6 +199,8 @@ Open the infected deck of skill cards. All Rovers must select and permanently ad
           ),
           EncounterFigureDef(
             name: 'Writhing Stomaw',
+            letter: 'A',
+            standeeCount: 6,
             health: 12,
             carryState: true,
             infected: true,
@@ -213,6 +219,8 @@ Open the infected deck of skill cards. All Rovers must select and permanently ad
           ),
           EncounterFigureDef(
             name: 'Broken Vessel',
+            standeeCount: 6,
+            letter: 'B',
             health: 8,
             flies: true,
             traits: [
@@ -230,6 +238,8 @@ Open the infected deck of skill cards. All Rovers must select and permanently ad
           ),
           EncounterFigureDef(
             name: 'Urn',
+            letter: 'C',
+            standeeCount: 1,
             healthFormula: '4*R',
             defense: 3,
             affinities: {
@@ -247,6 +257,8 @@ Open the infected deck of skill cards. All Rovers must select and permanently ad
           ),
           EncounterFigureDef(
             name: 'Stolen Urn',
+            letter: 'C',
+            standeeCount: 2,
             healthFormula: '4*R',
             defense: 3,
             carryState: true,
@@ -534,6 +546,7 @@ All Rovers must select and permanently add one infected skill card to their hand
         adversaries: [
           EncounterFigureDef(
             name: 'Cleaving Xulc',
+            standeeCount: 8,
             health: 6,
             traits: [
               'Ignores the effects of water and xulc terrain.',
@@ -545,6 +558,7 @@ All Rovers must select and permanently add one infected skill card to their hand
           ),
           EncounterFigureDef(
             name: 'Armored Xulc',
+            standeeCount: 8,
             health: 5,
             defense: 2,
             traits: [
@@ -557,6 +571,7 @@ All Rovers must select and permanently add one infected skill card to their hand
           ),
           EncounterFigureDef(
             name: 'Flying Xulc',
+            standeeCount: 8,
             health: 5,
             flies: true,
             traits: [
@@ -570,6 +585,7 @@ All Rovers must select and permanently add one infected skill card to their hand
           EncounterFigureDef(
             name: 'Writhing Stomaw',
             letter: 'A',
+            standeeCount: 6,
             health: 12,
             infected: true,
             affinities: {
@@ -581,7 +597,9 @@ All Rovers must select and permanently add one infected skill card to their hand
           ),
           EncounterFigureDef(
             name: 'Nidus',
+            letter: 'B',
             type: AdversaryType.miniboss,
+            standeeCount: 4,
             healthFormula: '30*R',
             affinities: {
               Ether.morph: -1,
@@ -866,6 +884,7 @@ All Rovers must select and permanently add one infected skill card to their hand
         adversaries: [
           EncounterFigureDef(
             name: 'Cleaving Xulc',
+            standeeCount: 8,
             health: 6,
             traits: [
               'Ignores the effects of water and xulc terrain.',
@@ -877,6 +896,7 @@ All Rovers must select and permanently add one infected skill card to their hand
           ),
           EncounterFigureDef(
             name: 'Armored Xulc',
+            standeeCount: 8,
             health: 5,
             defense: 2,
             traits: [
@@ -889,6 +909,7 @@ All Rovers must select and permanently add one infected skill card to their hand
           ),
           EncounterFigureDef(
             name: 'Flying Xulc',
+            standeeCount: 8,
             health: 5,
             flies: true,
             traits: [
@@ -902,6 +923,7 @@ All Rovers must select and permanently add one infected skill card to their hand
           EncounterFigureDef(
             name: 'Writhing Stomaw',
             letter: 'A',
+            standeeCount: 6,
             health: 12,
             infected: true,
             affinities: {
@@ -913,7 +935,9 @@ All Rovers must select and permanently add one infected skill card to their hand
           ),
           EncounterFigureDef(
             name: 'Nidus',
+            letter: 'B',
             type: AdversaryType.miniboss,
+            standeeCount: 4,
             healthFormula: '30*R',
             immuneToForcedMovement: true,
             immuneToTeleport: true,
@@ -1226,6 +1250,7 @@ Mo and Makaal’s shop is open again. Their shop is in the same state as it was 
         adversaries: [
           EncounterFigureDef(
             name: 'Cleaving Xulc',
+            standeeCount: 8,
             health: 6,
             traits: [
               'Ignores the effects of water and xulc terrain.',
@@ -1237,6 +1262,7 @@ Mo and Makaal’s shop is open again. Their shop is in the same state as it was 
           ),
           EncounterFigureDef(
             name: 'Armored Xulc',
+            standeeCount: 8,
             health: 5,
             defense: 2,
             traits: [
@@ -1249,6 +1275,7 @@ Mo and Makaal’s shop is open again. Their shop is in the same state as it was 
           ),
           EncounterFigureDef(
             name: 'Flying Xulc',
+            standeeCount: 8,
             health: 5,
             flies: true,
             traits: [
@@ -1260,20 +1287,9 @@ Mo and Makaal’s shop is open again. Their shop is in the same state as it was 
             spawnable: true,
           ),
           EncounterFigureDef(
-            name: 'Writhing Stomaw',
-            letter: 'A',
-            health: 12,
-            infected: true,
-            affinities: {
-              Ether.fire: -2,
-              Ether.crux: -1,
-              Ether.earth: 1,
-              Ether.morph: 2,
-            },
-          ),
-          EncounterFigureDef(
             name: 'Colony',
             letter: 'A',
+            standeeCount: 4,
             health: 6,
             infected: true,
             respawns: true,
@@ -1294,6 +1310,7 @@ Mo and Makaal’s shop is open again. Their shop is in the same state as it was 
           EncounterFigureDef(
             name: 'Bulwauros Husk',
             letter: 'B',
+            standeeCount: 3,
             health: 8,
             defense: 3,
             infected: true,
@@ -1322,6 +1339,7 @@ Mo and Makaal’s shop is open again. Their shop is in the same state as it was 
           EncounterFigureDef(
             name: 'Listless Dyad',
             letter: 'C',
+            standeeCount: 2,
             health: 9,
             infected: true,
             respawns: true,
@@ -1334,6 +1352,7 @@ Mo and Makaal’s shop is open again. Their shop is in the same state as it was 
           EncounterFigureDef(
               name: 'Stolen Urn',
               letter: 'D',
+              standeeCount: 2,
               healthFormula: '4*R',
               defense: 3,
               infected: true,
@@ -1622,6 +1641,7 @@ Mo and Makaal’s shop is open again. Their shop is in the same state as it was 
         adversaries: [
           EncounterFigureDef(
             name: 'Cleaving Xulc',
+            standeeCount: 8,
             health: 6,
             traits: [
               'Ignores the effects of water and xulc terrain.',
@@ -1633,6 +1653,7 @@ Mo and Makaal’s shop is open again. Their shop is in the same state as it was 
           ),
           EncounterFigureDef(
             name: 'Armored Xulc',
+            standeeCount: 8,
             health: 5,
             defense: 2,
             traits: [
@@ -1645,6 +1666,7 @@ Mo and Makaal’s shop is open again. Their shop is in the same state as it was 
           ),
           EncounterFigureDef(
             name: 'Flying Xulc',
+            standeeCount: 8,
             health: 5,
             flies: true,
             traits: [
@@ -1656,20 +1678,9 @@ Mo and Makaal’s shop is open again. Their shop is in the same state as it was 
             spawnable: true,
           ),
           EncounterFigureDef(
-            name: 'Writhing Stomaw',
-            letter: 'A',
-            health: 12,
-            infected: true,
-            affinities: {
-              Ether.fire: -2,
-              Ether.crux: -1,
-              Ether.earth: 1,
-              Ether.morph: 2,
-            },
-          ),
-          EncounterFigureDef(
             name: 'Colony',
             letter: 'A',
+            standeeCount: 4,
             health: 6,
             infected: true,
             respawns: true,
@@ -1689,6 +1700,7 @@ Mo and Makaal’s shop is open again. Their shop is in the same state as it was 
           ),
           EncounterFigureDef(
             name: 'Bulwauros Husk',
+            standeeCount: 3,
             letter: 'B',
             health: 8,
             defense: 3,
@@ -1718,6 +1730,7 @@ Mo and Makaal’s shop is open again. Their shop is in the same state as it was 
           EncounterFigureDef(
             name: 'Listless Dyad',
             letter: 'C',
+            standeeCount: 2,
             health: 9,
             infected: true,
             respawns: true,
@@ -1730,6 +1743,7 @@ Mo and Makaal’s shop is open again. Their shop is in the same state as it was 
           EncounterFigureDef(
               name: 'Stolen Urn',
               letter: 'D',
+              standeeCount: 2,
               healthFormula: '4*R',
               defense: 3,
               infected: true,
@@ -2000,6 +2014,7 @@ For the remainder of the campaign, Hra is a character ally to Rovers, and starts
           ),
           EncounterFigureDef(
             name: 'Cleaving Xulc',
+            standeeCount: 8,
             health: 6,
             traits: [
               'Ignores the effects of water and xulc terrain.',
@@ -2011,6 +2026,7 @@ For the remainder of the campaign, Hra is a character ally to Rovers, and starts
           ),
           EncounterFigureDef(
             name: 'Armored Xulc',
+            standeeCount: 8,
             health: 5,
             defense: 2,
             traits: [
@@ -2023,6 +2039,7 @@ For the remainder of the campaign, Hra is a character ally to Rovers, and starts
           ),
           EncounterFigureDef(
             name: 'Flying Xulc',
+            standeeCount: 8,
             health: 5,
             flies: true,
             traits: [
@@ -2036,6 +2053,7 @@ For the remainder of the campaign, Hra is a character ally to Rovers, and starts
           EncounterFigureDef(
             name: 'Colony',
             letter: 'A',
+            standeeCount: 4,
             health: 6,
             infected: true,
             traits: [
@@ -2055,6 +2073,7 @@ For the remainder of the campaign, Hra is a character ally to Rovers, and starts
           EncounterFigureDef(
             name: 'Faltering Ashemak',
             letter: 'B',
+            standeeCount: 3,
             health: 10,
             infected: true,
             traits: [
@@ -2069,6 +2088,7 @@ For the remainder of the campaign, Hra is a character ally to Rovers, and starts
           EncounterFigureDef(
             name: 'Withering Dekaha',
             letter: 'C',
+            standeeCount: 3,
             health: 10,
             infected: true,
             affinities: {
@@ -2080,6 +2100,7 @@ For the remainder of the campaign, Hra is a character ally to Rovers, and starts
           EncounterFigureDef(
             name: 'Listless Dyad',
             letter: 'D',
+            standeeCount: 2,
             health: 15,
             infected: true,
             affinities: {
@@ -2318,6 +2339,7 @@ For the remainder of the campaign, Hra is a character ally to Rovers, and starts
           ),
           EncounterFigureDef(
             name: 'Cleaving Xulc',
+            standeeCount: 8,
             health: 6,
             traits: [
               'Ignores the effects of water and xulc terrain.',
@@ -2329,6 +2351,7 @@ For the remainder of the campaign, Hra is a character ally to Rovers, and starts
           ),
           EncounterFigureDef(
             name: 'Armored Xulc',
+            standeeCount: 8,
             health: 5,
             defense: 2,
             traits: [
@@ -2341,6 +2364,7 @@ For the remainder of the campaign, Hra is a character ally to Rovers, and starts
           ),
           EncounterFigureDef(
             name: 'Flying Xulc',
+            standeeCount: 8,
             health: 5,
             flies: true,
             traits: [
@@ -2354,6 +2378,7 @@ For the remainder of the campaign, Hra is a character ally to Rovers, and starts
           EncounterFigureDef(
             name: 'Colony',
             letter: 'A',
+            standeeCount: 4,
             health: 6,
             infected: true,
             traits: [
@@ -2373,6 +2398,7 @@ For the remainder of the campaign, Hra is a character ally to Rovers, and starts
           EncounterFigureDef(
             name: 'Faltering Ashemak',
             letter: 'B',
+            standeeCount: 3,
             health: 10,
             infected: true,
             traits: [
@@ -2387,6 +2413,7 @@ For the remainder of the campaign, Hra is a character ally to Rovers, and starts
           EncounterFigureDef(
             name: 'Withering Dekaha',
             letter: 'C',
+            standeeCount: 3,
             health: 10,
             infected: true,
             affinities: {
@@ -2398,6 +2425,7 @@ For the remainder of the campaign, Hra is a character ally to Rovers, and starts
           EncounterFigureDef(
             name: 'Listless Dyad',
             letter: 'D',
+            standeeCount: 2,
             health: 15,
             infected: true,
             affinities: {
@@ -2573,6 +2601,7 @@ All Rovers must replace one of their class traits with one infected trait. Write
       adversaries: [
         EncounterFigureDef(
           name: 'Cleaving Xulc',
+          standeeCount: 8,
           health: 6,
           traits: [
             'Ignores the effects of water and xulc terrain.',
@@ -2584,6 +2613,7 @@ All Rovers must replace one of their class traits with one infected trait. Write
         ),
         EncounterFigureDef(
           name: 'Armored Xulc',
+          standeeCount: 8,
           health: 5,
           defense: 2,
           traits: [
@@ -2596,6 +2626,7 @@ All Rovers must replace one of their class traits with one infected trait. Write
         ),
         EncounterFigureDef(
           name: 'Flying Xulc',
+          standeeCount: 8,
           health: 5,
           flies: true,
           traits: [
@@ -2610,6 +2641,7 @@ All Rovers must replace one of their class traits with one infected trait. Write
           name: 'Undercarriage',
           letter: 'A',
           type: AdversaryType.boss,
+          standeeCount: 1,
           healthFormula: '15*R',
           traits: [
             '''[React] After an enemy within [Range] 1 attacks:
@@ -2631,6 +2663,7 @@ All Rovers must replace one of their class traits with one infected trait. Write
           name: 'Head',
           letter: 'B',
           type: AdversaryType.boss,
+          standeeCount: 1,
           healthFormula: '12*R',
           flies: true,
           traits: [
@@ -2651,6 +2684,7 @@ All Rovers must replace one of their class traits with one infected trait. Write
         EncounterFigureDef(
           name: 'Hastadilling',
           letter: 'C',
+          standeeCount: 1,
           type: AdversaryType.boss,
           healthFormula: '10*R',
           large: true,
@@ -2689,6 +2723,7 @@ Spawn the Head using a normal one hex base within [Range] 1 of the Hastadilling.
           name: 'Hastadilling Headless',
           letter: 'D',
           type: AdversaryType.boss,
+          standeeCount: 1,
           healthFormula: '10*R',
           large: true,
           traits: [
@@ -2720,6 +2755,7 @@ Spawn the Undercarriage using a normal one hex base within [Range] 1 of the Hast
           name: 'Hastadilling Core',
           letter: 'E',
           type: AdversaryType.boss,
+          standeeCount: 1,
           healthFormula: '20*R',
           large: true,
           traits: [
