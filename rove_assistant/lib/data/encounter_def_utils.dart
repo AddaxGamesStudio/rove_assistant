@@ -280,7 +280,8 @@ EncounterAction placementGroup(String name,
     String? body,
     int limit = 0,
     bool silent = false,
-    RoveCondition? condition}) {
+    RoveCondition? condition,
+    List<RoveCondition>? conditions}) {
   assert(key != null || limit == 0);
   return EncounterAction(
       key: key,
@@ -290,7 +291,7 @@ EncounterAction placementGroup(String name,
       body: body,
       limit: limit,
       silent: silent,
-      conditions: condition != null ? [condition] : []);
+      conditions: conditions ?? (condition != null ? [condition] : []));
 }
 
 EncounterAction resetRound(

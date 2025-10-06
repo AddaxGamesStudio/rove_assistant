@@ -4,6 +4,8 @@ import 'package:rove_data_types/src/encounter_def.dart';
 enum RoveConditionType {
   allAdversariesSlain,
   allAdversariesSlainExcept,
+  challengeOn,
+  challengeOff,
   damage,
   faction,
   milestone,
@@ -31,6 +33,10 @@ enum RoveConditionType {
         return AllAdversariesSlainCondition.fromString;
       case RoveConditionType.allAdversariesSlainExcept:
         return AllAdversariesSlainExceptCondition.fromString;
+      case RoveConditionType.challengeOff:
+        return ChallengeOffCondition.fromString;
+      case RoveConditionType.challengeOn:
+        return ChallengeOnCondition.fromString;
       case RoveConditionType.damage:
         return DamageCondition.fromString;
       case RoveConditionType.faction:
@@ -90,6 +96,54 @@ abstract class RoveCondition {
 
   static RoveCondition fromJson(String json) {
     return RoveCondition.parse(json);
+  }
+}
+
+class ChallengeOnCondition implements RoveCondition {
+  final int challenge;
+
+  ChallengeOnCondition(this.challenge)
+      : assert(challenge >= 1 && challenge <= 3);
+
+  @override
+  RoveConditionType get type => RoveConditionType.challengeOn;
+
+  static ChallengeOnCondition? fromString(String value) {
+    final match = RegExp(r'challenge_on=(.+)').firstMatch(value);
+    final challenge = int.tryParse(match?.group(1) ?? '');
+    if (match == null || challenge == null) {
+      return null;
+    }
+    return ChallengeOnCondition(challenge);
+  }
+
+  @override
+  String toString() {
+    return 'challenge_on=$challenge';
+  }
+}
+
+class ChallengeOffCondition implements RoveCondition {
+  final int challenge;
+
+  ChallengeOffCondition(this.challenge)
+      : assert(challenge >= 1 && challenge <= 3);
+
+  @override
+  RoveConditionType get type => RoveConditionType.challengeOff;
+
+  static ChallengeOffCondition? fromString(String value) {
+    final match = RegExp(r'challenge_off=(.+)').firstMatch(value);
+    final challenge = int.tryParse(match?.group(1) ?? '');
+    if (match == null || challenge == null) {
+      return null;
+    }
+    return ChallengeOffCondition(challenge);
+  }
+
+  @override
+  String toString() {
+    return 'challenge_off=$challenge';
   }
 }
 

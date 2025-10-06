@@ -118,6 +118,17 @@ class EncounterState {
     phase = phases.first;
   }
 
+  /// Checks if a specific challenge has been achieved.
+  ///
+  /// [number]: The 1-based index of the challenge to check.
+  /// Returns `true` if the challenge has been achieved, otherwise `false`.
+  bool hasChallenge(int number) {
+    if (number < 1 || number > challenges.length) {
+      return false;
+    }
+    return challenges[number - 1];
+  }
+
   int get achievedChallengesCount {
     return challenges.where((challenge) => challenge).length;
   }

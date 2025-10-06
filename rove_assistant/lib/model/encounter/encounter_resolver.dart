@@ -345,6 +345,12 @@ class EncounterResolver {
       case RoveConditionType.allAdversariesSlainExcept:
         final c = condition as AllAdversariesSlainExceptCondition;
         return isAllAdversariesSlain(minusNames: [c.target]);
+      case RoveConditionType.challengeOn:
+        final c = condition as ChallengeOnCondition;
+        return state.hasChallenge(c.challenge);
+      case RoveConditionType.challengeOff:
+        final c = condition as ChallengeOffCondition;
+        return !state.hasChallenge(c.challenge);
       case RoveConditionType.damage:
         return target != null
             ? (condition as DamageCondition)
