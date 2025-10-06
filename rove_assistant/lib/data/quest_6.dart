@@ -151,6 +151,7 @@ The attacker suffers [DMG]1.''',
             letter: 'B',
             standeeCount: 6,
             health: 8,
+            defenseFormula: '2*C2',
             immuneToForcedMovement: true,
             traits: [
               'Immune to enemy forced movement. (Can be moved or teleported by Hokmala.)',
