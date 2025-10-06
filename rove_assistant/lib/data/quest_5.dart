@@ -819,7 +819,7 @@ Saras gains +2 [DMG] to all of their attacks.'''),
         'Crystalline Spear'
       ],
       challenges: [
-        '**Her People Love her** triggers when Marii has suffered 12, 24, 36, and 48 damage. This does mean more sek and zisafi spawn at all Rover counts.',
+        '**Her People Love Her** triggers when Marii has suffered 12, 24, 36, and 48 damage. This does mean more Sek and Zisafi spawn at all Rover counts.',
         'Adversaries gain +1 [DEF] while within [Range] 0-1 of a [wildfire].',
         'Rovers trigger the effects of [wildfire] while within [Range] 0-1 of the tile and Rovers cannot replace [wildfire] with a different ether field.',
       ],
@@ -927,6 +927,7 @@ This means adversaries will spawn once for 2 Rovers, twice for 3 Rovers, and thr
           name: 'Sek',
           letter: 'B',
           standeeCount: 8,
+          spawnable: true,
           health: 12,
           defense: 1,
           traits: [
@@ -948,6 +949,7 @@ This means adversaries will spawn once for 2 Rovers, twice for 3 Rovers, and thr
           name: 'Zisafi',
           letter: 'C',
           standeeCount: 8,
+          spawnable: true,
           health: 11,
           affinities: {
             Ether.crux: -1,
@@ -988,21 +990,76 @@ This means adversaries will spawn once for 2 Rovers, twice for 3 Rovers, and thr
               Ether.morph: 1,
             },
             onDamage: [
-              placementGroup('Her People Love Her',
-                  key: 'spawns_1',
-                  title: 'Her People Love Her',
-                  limit: 1,
-                  condition: DamageCondition('X-18+1')),
-              placementGroup('Her People Love Her',
-                  key: 'spawns_2',
-                  title: 'Her People Love Her',
-                  limit: 1,
-                  condition: DamageCondition('X-36+1')),
-              placementGroup('Her People Love Her',
-                  key: 'spawns_3',
-                  title: 'Her People Love Her',
-                  limit: 1,
-                  condition: DamageCondition('X-54+1')),
+              placementGroup(
+                'Her People Love Her',
+                key: 'spawns_1',
+                title: 'Her People Love Her',
+                limit: 1,
+                conditions: [
+                  DamageCondition('X-18+1'),
+                  ChallengeOffCondition(1)
+                ],
+              ),
+              placementGroup(
+                'Her People Love Her',
+                key: 'spawns_2',
+                title: 'Her People Love Her',
+                limit: 1,
+                conditions: [
+                  DamageCondition('X-36+1'),
+                  ChallengeOffCondition(1)
+                ],
+              ),
+              placementGroup(
+                'Her People Love Her',
+                key: 'spawns_3',
+                title: 'Her People Love Her',
+                limit: 1,
+                conditions: [
+                  DamageCondition('X-54+1'),
+                  ChallengeOffCondition(1)
+                ],
+              ),
+              placementGroup(
+                'Her People Love Her',
+                key: 'challenge1_spawns_1',
+                title: 'Her People Love Her',
+                limit: 1,
+                conditions: [
+                  DamageCondition('X-12+1'),
+                  ChallengeOnCondition(1)
+                ],
+              ),
+              placementGroup(
+                'Her People Love Her',
+                key: 'challenge1_spawns_2',
+                title: 'Her People Love Her',
+                limit: 1,
+                conditions: [
+                  DamageCondition('X-24+1'),
+                  ChallengeOnCondition(1)
+                ],
+              ),
+              placementGroup(
+                'Her People Love Her',
+                key: 'challenge1_spawns_3',
+                title: 'Her People Love Her',
+                limit: 1,
+                conditions: [
+                  DamageCondition('X-36+1'),
+                  ChallengeOnCondition(1)
+                ],
+              ),
+              placementGroup(
+                'Her People Love Her',
+                key: 'challenge1_spawns_4',
+                title: 'Her People Love Her',
+                limit: 1,
+                conditions: [
+                  DamageCondition('X-48+1'),
+                  ChallengeOnCondition(1)
+                ],
+              ),
             ],
             onSlain: [
               codex(94),
