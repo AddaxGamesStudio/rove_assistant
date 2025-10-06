@@ -99,15 +99,16 @@ class EncounterResolver {
         name: definition.name,
         numeral: index,
         defaultState: _defaultStateForDefinition(definition));
-    if (!randomizeNumeral ||
-        adversaryState.hasOverrideNumber ||
-        adversaryState.slain) {
-      return adversaryState;
-    }
     final existingRandomNumeral = state.getAdversaryRandomStandeeMapping(
         name: definition.name, index: index);
+    if (adversaryState.hasOverrideNumber) {
+      return adversaryState;
+    }
     if (existingRandomNumeral != null) {
       return adversaryState.withNumber(existingRandomNumeral);
+    }
+    if (!randomizeNumeral || adversaryState.slain) {
+      return adversaryState;
     }
     final randomNumeral = _randomNumeralForEncounterFigureDef(definition);
     state.setAdversaryRandomStandeeMapping(
