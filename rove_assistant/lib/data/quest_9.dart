@@ -32,6 +32,8 @@ extension Quest9 on EncounterDef {
           dialog('Introduction'),
           rules('Ozendyn',
               '''Ozendeyn is a character ally to Rovers. For this encounter Ozendyn will only use the “Picket” side and will not flip.'''),
+          rules('Errata',
+              '''The 1st printing tuckbox for Quest 9 is missing the Battering Winds standee. Use a Stormcaller standee from Quest 4/8 instead.'''),
           codexLink('Wait, Where is Mo?',
               number: 160,
               body:
@@ -105,6 +107,7 @@ extension Quest9 on EncounterDef {
           EncounterFigureDef(
             name: 'Galeaper',
             letter: 'A',
+            standeeCount: 4,
             health: 8,
             flies: true,
             affinities: {
@@ -117,6 +120,7 @@ extension Quest9 on EncounterDef {
           EncounterFigureDef(
             name: 'Streak',
             letter: 'B',
+            standeeCount: 5,
             health: 8,
             flies: true,
             affinities: {
@@ -128,6 +132,7 @@ extension Quest9 on EncounterDef {
           EncounterFigureDef(
             name: 'Kifa',
             letter: 'C',
+            standeeCount: 6,
             health: 8,
             flies: true,
             affinities: {
@@ -141,6 +146,7 @@ extension Quest9 on EncounterDef {
             name: 'Battering Winds',
             letter: 'D',
             type: AdversaryType.miniboss,
+            standeeCount: 1,
             healthFormula: '8*R',
             flies: true,
             traits: [
@@ -250,6 +256,7 @@ extension Quest9 on EncounterDef {
             letter: 'A',
             type: AdversaryType.miniboss,
             healthFormula: '10*R',
+            standeeCount: 4,
             immuneToForcedMovement: true,
             traits: [
               'This unit gains [DEF] 2 against ranged attacks targeting it.',
@@ -265,6 +272,7 @@ extension Quest9 on EncounterDef {
           EncounterFigureDef(
             name: 'Ashemak',
             letter: 'B',
+            standeeCount: 4,
             health: 9,
             immuneToForcedMovement: true,
             traits: [
@@ -279,6 +287,7 @@ extension Quest9 on EncounterDef {
           EncounterFigureDef(
             name: 'Wrathbone',
             letter: 'C',
+            standeeCount: 3,
             health: 20,
             traits: [
               '[React] At the end of the Rover phase: All enemies within [Range] 1-2 suffer [DMG]1. << Enemies within [Range] 1 suffer an additional [DMG]1.',
@@ -292,6 +301,7 @@ extension Quest9 on EncounterDef {
           EncounterFigureDef(
             name: 'Dyad',
             letter: 'D',
+            standeeCount: 2,
             health: 16,
             affinities: {
               Ether.crux: 2,
@@ -362,6 +372,8 @@ extension Quest9 on EncounterDef {
               '''Slay the Warden, take the cage key from them, then move to within [Range] 1 of cage [A] to open it and free Mo.'''),
           rules('Sunder the Cage',
               '''Open the cage by force and flee with Mo. Cage [A] is a special object and has R*5 [HP] and [DEF] 4. Rovers treat the cage as an enemy and no faction treats it as an ally.'''),
+          rules('Errata',
+              '''The 1st printing tuckbox for Quest 9 is missing the Stormcaller standees. Take them from Quest 4/8 instead.'''),
           codexLink('Cage Master',
               number: 161,
               body: '''If the Warden is slain, read [title], [codex] 74.'''),
@@ -448,6 +460,7 @@ extension Quest9 on EncounterDef {
           EncounterFigureDef(
             name: 'Streak',
             letter: 'A',
+            standeeCount: 5,
             health: 8,
             flies: true,
             affinities: {
@@ -462,6 +475,7 @@ extension Quest9 on EncounterDef {
           EncounterFigureDef(
             name: 'Wrathbone',
             letter: 'B',
+            standeeCount: 3,
             health: 20,
             traits: [
               '''[React] At the end of the Rover phase:
@@ -480,6 +494,7 @@ All enemies within [Range] 1-2 suffer [DMG]1. << Enemies within [Range] 1 suffer
           EncounterFigureDef(
             name: 'Harrow',
             letter: 'C',
+            standeeCount: 4,
             health: 18,
             affinities: {
               Ether.morph: 2,
@@ -492,6 +507,7 @@ All enemies within [Range] 1-2 suffer [DMG]1. << Enemies within [Range] 1 suffer
           EncounterFigureDef(
             name: 'Stormcaller',
             letter: 'D',
+            standeeCount: 4,
             health: 15,
             flies: true,
             traits: [
@@ -512,6 +528,7 @@ All enemies within [Range] 1-2 suffer [DMG]1. << Enemies within [Range] 1 suffer
           EncounterFigureDef(
             name: 'Briarwog',
             letter: 'E',
+            standeeCount: 6,
             health: 10,
             traits: [
               '''[React] After this unit is attacked from within [Range] 1:
@@ -532,6 +549,7 @@ The attacker suffers [DMG]1.''',
             name: 'Warden',
             letter: 'F',
             type: AdversaryType.miniboss,
+            standeeCount: 4,
             health: 15,
             affinities: {
               Ether.wind: 2,
@@ -654,6 +672,7 @@ The attacker suffers [DMG]1.''',
           EncounterFigureDef(
             name: 'Briarwog',
             letter: 'A',
+            standeeCount: 6,
             health: 10,
             traits: [
               '''[React] After this unit is attacked from within [Range] 1:
@@ -673,6 +692,7 @@ The attacker suffers [DMG]1.''',
           EncounterFigureDef(
             name: 'Grovetender',
             letter: 'B',
+            standeeCount: 2,
             health: 12,
             defense: 2,
             traits: [
@@ -692,6 +712,7 @@ The attacker suffers [DMG]1.''',
           EncounterFigureDef(
             name: 'Courslayer',
             letter: 'C',
+            standeeCount: 4,
             health: 15,
             affinities: {
               Ether.earth: -1,
@@ -759,6 +780,8 @@ The attacker suffers [DMG]1.''',
           dialog('Introduction'),
           rules('Eclipse',
               '''Eclipse is the cruel and greedy leader of the Star Hunters, who rides upon his primal worg, Andiron. While within the ruins of Era, and the magics of the starling cores, Eclipse is practically invulnerable. You can’t win this fight. Flee to the exit spaces quickly.'''),
+          rules('Errata',
+              '''The 1st printing tuckbox for Quest 9 is missing the Stormcaller standees. Take them from Quest 4/8 instead.'''),
           codexLink('We Better Move Quickly',
               number: 165,
               body:
@@ -856,6 +879,7 @@ The attacker suffers [DMG]1.''',
           EncounterFigureDef(
             name: 'Harrow',
             letter: 'A',
+            standeeCount: 4,
             health: 18,
             affinities: {
               Ether.morph: 2,
@@ -865,6 +889,7 @@ The attacker suffers [DMG]1.''',
           EncounterFigureDef(
             name: 'Stormcaller',
             letter: 'B',
+            standeeCount: 4,
             health: 15,
             flies: true,
             traits: [
@@ -882,6 +907,7 @@ The attacker suffers [DMG]1.''',
           EncounterFigureDef(
             name: 'Courslayer',
             letter: 'C',
+            standeeCount: 4,
             health: 15,
             affinities: {
               Ether.earth: -1,
@@ -895,6 +921,7 @@ The attacker suffers [DMG]1.''',
             alias: 'Eclipse',
             letter: 'D ',
             type: AdversaryType.boss,
+            standeeCount: 1,
             healthFormula: '20*R',
             defenseFormula: '2',
             large: true,
@@ -1055,6 +1082,8 @@ Makaal whispers, “The cores are crafted into the memorial work. They have to b
               ]),
         ],
         onLoad: [
+          rules('Errata',
+              '''The 1st printing tuckbox for Quest 9 is missing the Stormcaller standees. Take them from Quest 4/8 instead.'''),
           dialog('Introduction'),
           dialog('Choose First Area'),
           codexLink('Collected An Echo of the Past',
@@ -1237,6 +1266,7 @@ Area Victory Condition: Slay the Heavy Hand.'''),
               EncounterFigureDef(
                 name: 'Kifa',
                 letter: 'A',
+                standeeCount: 6,
                 health: 8,
                 flies: true,
                 affinities: {
@@ -1249,6 +1279,7 @@ Area Victory Condition: Slay the Heavy Hand.'''),
               EncounterFigureDef(
                 name: 'Harrow',
                 letter: 'B',
+                standeeCount: 4,
                 health: 18,
                 affinities: {
                   Ether.morph: 2,
@@ -1258,6 +1289,7 @@ Area Victory Condition: Slay the Heavy Hand.'''),
               EncounterFigureDef(
                 name: 'Stormcaller',
                 letter: 'C',
+                standeeCount: 4,
                 health: 15,
                 flies: true,
                 traits: [
@@ -1367,6 +1399,7 @@ Area Victory Condition: Slay the Heavy Hand.'''),
               EncounterFigureDef(
                 name: 'Kifa',
                 letter: 'A',
+                standeeCount: 6,
                 health: 8,
                 flies: true,
                 affinities: {
@@ -1379,6 +1412,7 @@ Area Victory Condition: Slay the Heavy Hand.'''),
               EncounterFigureDef(
                 name: 'Harrow',
                 letter: 'B',
+                standeeCount: 4,
                 health: 18,
                 affinities: {
                   Ether.morph: 2,
@@ -1389,6 +1423,7 @@ Area Victory Condition: Slay the Heavy Hand.'''),
                 name: 'Stolen Breath',
                 letter: 'C',
                 type: AdversaryType.miniboss,
+                standeeCount: 4,
                 healthFormula: '8*R',
                 flies: true,
                 affinities: {
@@ -1488,6 +1523,7 @@ Area Victory Condition: Slay the Heavy Hand.'''),
               EncounterFigureDef(
                 name: 'Briarwog',
                 letter: 'A',
+                standeeCount: 6,
                 health: 10,
                 traits: [
                   '''[React] After this unit is attacked from within [Range] 1:
@@ -1504,6 +1540,7 @@ The attacker suffers [DMG]1.''',
               EncounterFigureDef(
                 name: 'Stormcaller',
                 letter: 'B',
+                standeeCount: 4,
                 health: 15,
                 flies: true,
                 traits: [
@@ -1521,6 +1558,7 @@ The attacker suffers [DMG]1.''',
               EncounterFigureDef(
                 name: 'Courslayer',
                 letter: 'C',
+                standeeCount: 4,
                 health: 15,
                 affinities: {
                   Ether.wind: 2,
@@ -1628,6 +1666,7 @@ The attacker suffers [DMG]1.''',
               EncounterFigureDef(
                 name: 'Briarwog',
                 letter: 'A',
+                standeeCount: 6,
                 health: 10,
                 traits: [
                   '''[React] After this unit is attacked from within [Range] 1:
@@ -1644,6 +1683,7 @@ The attacker suffers [DMG]1.''',
               EncounterFigureDef(
                 name: 'Stormcaller',
                 letter: 'B',
+                standeeCount: 4,
                 health: 15,
                 flies: true,
                 traits: [
@@ -1662,6 +1702,7 @@ The attacker suffers [DMG]1.''',
                 name: 'Piercing Gaze',
                 letter: 'C',
                 type: AdversaryType.miniboss,
+                standeeCount: 4,
                 healthFormula: '8*R',
                 affinities: {
                   Ether.water: 2,
@@ -1762,6 +1803,7 @@ The attacker suffers [DMG]1.''',
               EncounterFigureDef(
                 name: 'Wrathbone',
                 letter: 'A',
+                standeeCount: 3,
                 health: 20,
                 traits: [
                   '''[React] At the end of the Rover phase:
@@ -1777,6 +1819,7 @@ All enemies within [Range] 1-2 suffer [DMG]1. << Enemies within [Range] 1 suffer
               EncounterFigureDef(
                 name: 'Courslayer',
                 letter: 'B',
+                standeeCount: 4,
                 health: 15,
                 affinities: {
                   Ether.wind: 2,
@@ -1788,6 +1831,7 @@ All enemies within [Range] 1-2 suffer [DMG]1. << Enemies within [Range] 1 suffer
               EncounterFigureDef(
                 name: 'Harrow',
                 letter: 'C',
+                standeeCount: 4,
                 health: 18,
                 affinities: {
                   Ether.morph: 2,
@@ -1883,6 +1927,7 @@ All enemies within [Range] 1-2 suffer [DMG]1. << Enemies within [Range] 1 suffer
               EncounterFigureDef(
                 name: 'Wrathbone',
                 letter: 'A',
+                standeeCount: 3,
                 health: 20,
                 traits: [
                   '''[React] At the end of the Rover phase:
@@ -1898,6 +1943,7 @@ All enemies within [Range] 1-2 suffer [DMG]1. << Enemies within [Range] 1 suffer
               EncounterFigureDef(
                 name: 'Courslayer',
                 letter: 'B',
+                standeeCount: 4,
                 health: 15,
                 affinities: {
                   Ether.wind: 2,
@@ -1910,6 +1956,7 @@ All enemies within [Range] 1-2 suffer [DMG]1. << Enemies within [Range] 1 suffer
                 name: 'Heavy Hand',
                 letter: 'C',
                 type: AdversaryType.miniboss,
+                standeeCount: 4,
                 healthFormula: '10*R',
                 affinities: {
                   Ether.morph: 2,
@@ -2169,6 +2216,7 @@ Remove the party items “**Ethereal Catena**” and “**Ethereal Aegis**”. T
           name: 'Eclipse Mounted',
           letter: 'A',
           type: AdversaryType.boss,
+          standeeCount: 1,
           healthFormula: '25*R',
           defense: 2,
           large: true,
@@ -2209,6 +2257,7 @@ If Eclipse ends their turn within [Range] 1 of an active ether node, take the et
           name: 'Eclipse',
           letter: 'B',
           type: AdversaryType.boss,
+          standeeCount: 1,
           healthFormula: '20*R',
           defense: 1,
           unslayable: true,
@@ -2243,6 +2292,7 @@ If Eclipse ends their turn within [Range] 1 of an active ether node, take the et
           name: 'Andiron',
           letter: 'C',
           type: AdversaryType.boss,
+          standeeCount: 1,
           healthFormula: '20*R',
           defense: 1,
           large: true,
@@ -2267,6 +2317,7 @@ Logic: Wants to attack the Rover that damaged Eclipse.
           name: 'Eclipse Ether Ascended',
           letter: 'D',
           type: AdversaryType.boss,
+          standeeCount: 1,
           healthFormula: '35*R',
           defense: 2,
           large: true,
