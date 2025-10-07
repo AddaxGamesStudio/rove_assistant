@@ -1,12 +1,12 @@
 {
-    "name": "rove_assistant",
-    "short_name": "rove_assistant",
+    "name": "Rove Assistant",
+    "short_name": "Rove Assistant",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
-    "orientation": "portrait-primary",
+    "description": "Assistant app for Rove the board game.",
+    "orientation": "any",
     "prefer_related_applications": false,
     "icons": [
         {
