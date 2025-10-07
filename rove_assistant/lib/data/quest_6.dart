@@ -299,7 +299,7 @@ The attacker suffers [DMG]1.''',
             '''Encounter 6.3 - “**Like A Shattered Mirror**”, [campaign] **90**.''',
         challenges: [
           'Zeepurah will always attack Rovers if they are within range of her attacks.',
-          'Treat kifa as occupying a [windscreen]. This is a permanent effect.',
+          'Treat Kifa as occupying a [windscreen]. This is a permanent effect.',
           'At the end of each round, Rovers must flip one ether dice in either their personal or infusion pool to its [Morph] face.',
         ],
         dialogs: [
@@ -1446,6 +1446,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
             type: AdversaryType.boss,
             standeeCount: 1,
             healthFormula: '40*R',
+            defenseFormula: '1*C2',
             large: true,
             traits: [
               'At the begining of each even round, spawn R-1 Broken Vessels at [Range] 2 of this unit, closest to the nearest enemy.',
@@ -1574,7 +1575,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
                 type: AdversaryType.boss,
                 standeeCount: 1,
                 healthFormula: '35*R',
-                defenseFormula: 'X',
+                defenseFormula: 'X+1*C2',
                 xDefinition: 'count_adversary(Nahoot)',
                 large: true,
                 traits: [
@@ -1743,6 +1744,7 @@ Though Zeepurah is indeed your enemy, you can still target her with positive eff
                 type: AdversaryType.boss,
                 standeeCount: 1,
                 healthFormula: '45*R',
+                defenseFormula: '1*C2',
                 large: true,
                 possibleTokens: [
                   'RxHoard',
