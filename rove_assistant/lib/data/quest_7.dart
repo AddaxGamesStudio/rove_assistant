@@ -31,7 +31,7 @@ extension Quest7 on EncounterDef {
             title: 'Countdown to Doom',
             type: EncounterDialogDef.rulesType,
             body:
-                'All Rovers suffer [DMG]2 while all adversaries recover [RCV] 2. Units that are not within line-of-sight of the source of the dark ether [A] ignore this special rule.',
+                'All Rovers suffer [DMG] 2 while all adversaries recover [RCV] 2. Units that are not within line-of-sight of the source of the dark ether [A] ignore this special rule.',
           )
         ],
         onLoad: [
@@ -676,7 +676,7 @@ They flee. Remove this unit from the map.''',
               EnemyReactionDef(
                   trigger: ReactionTriggerDef(
                       type: RoveEventType.afterSuffer,
-                      condition: HealthCondition('2-X+1'),
+                      condition: HealthCondition('2+(C1*1)-X+1'),
                       targetKind: TargetKind.self),
                   actions: [
                     RoveAction.leave(),
