@@ -1039,7 +1039,7 @@ Spawn one Broken Vessel in the space this unit occupied.''',
             'Encounter 7.5 - “**Behind Every Masterpiece**”, [campaign] **114**.',
         challenges: [
           'The attack action granted to the Borrowed Vessel by Countdown to Doom gains +3 [Range], [pierce], and [Push] 3.',
-          'While there is at least one harrow on the map, Borrowed Vessel gains +2 [DEF].',
+          'While there is at least one Harrow on the map, Borrowed Vessel gains +2 [DEF].',
           'Harrows gain +2 movement points to all of their movement actions.',
         ],
         dialogs: [
@@ -1176,6 +1176,8 @@ The Borrowed Vessel performs:
             type: AdversaryType.miniboss,
             standeeCount: 1,
             healthFormula: '10*R',
+            defenseFormula: '2*ceil(X/(X+1))*C2',
+            xDefinition: 'count_adversary(Harrow)',
             affinities: {
               Ether.earth: 1,
               Ether.fire: 1,
