@@ -332,7 +332,7 @@ extension Quest8 on EncounterDef {
             name: 'Onisski',
             letter: 'A',
             standeeCount: 6,
-            health: 10,
+            healthFormula: '10+3*C3',
             traits: [
               'Ignores the movement penality of mushroom terrain.',
             ],
