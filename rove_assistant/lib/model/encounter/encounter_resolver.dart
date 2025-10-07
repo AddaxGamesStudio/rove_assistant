@@ -46,16 +46,19 @@ class EncounterResolver {
         selectedTokens: definition.startingTokens);
   }
 
-  Map<String, int> resolveVariablesForDefinition(
-      EncounterFigureDef definition, int selectedTokenCount) {
-    final variables = {
-      rovePlayerCountVariable: PlayersModel.instance.players.length,
+  Map<String, int> _encounterFormulaVariables() {
+    return {
+      rovePlayerCountVariable: playerCount,
       roveRoundVariable: state.round,
-      roveTokensVariable: selectedTokenCount,
       roveChallenge1Variable: state.challenges[0] ? 1 : 0,
       roveChallenge2Variable: state.challenges[1] ? 1 : 0,
       roveChallenge3Variable: state.challenges[2] ? 1 : 0,
     };
+  }
+
+  Map<String, int> resolveVariablesForDefinition(
+      EncounterFigureDef definition, int selectedTokenCount) {
+    final variables = _encounterFormulaVariables();
     if (definition.xDefinition != null) {
       variables[roveXVariable] = _resolveXForDefinition(definition);
     }
@@ -358,9 +361,8 @@ class EncounterResolver {
             : false;
       case RoveConditionType.health:
         return target != null
-            ? (condition as HealthCondition).matches(target.health, {
-                rovePlayerCountVariable: playerCount,
-              })
+            ? (condition as HealthCondition)
+                .matches(target.health, _encounterFormulaVariables())
             : false;
       case RoveConditionType.isAlive:
         final aliveTarget = (condition as IsAliveCondition).target;
@@ -407,9 +409,8 @@ class EncounterResolver {
   }
 
   _resolveFormula({int? amount = 0, String? formula}) {
-    return roveResolveValueOrFormula(amount == 0 ? null : amount, formula, {
-      rovePlayerCountVariable: playerCount,
-    });
+    return roveResolveValueOrFormula(
+        amount == 0 ? null : amount, formula, _encounterFormulaVariables());
   }
 
   String objectiveForModel(EncounterModel model) {
