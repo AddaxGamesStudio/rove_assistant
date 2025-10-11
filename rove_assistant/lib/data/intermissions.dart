@@ -126,7 +126,7 @@ The adversaries within this encounter are native to the Zydero Reefs and ignore 
             name: 'Dyad',
             letter: 'B',
             standeeCount: 4,
-            health: 12,
+            healthFormula: '12+4*C2',
             traits: [
               'Ignores the effects of Ferrorsands.',
             ],
