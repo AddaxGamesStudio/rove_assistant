@@ -600,7 +600,7 @@ All Rovers must select and permanently add one infected skill card to their hand
             letter: 'B',
             type: AdversaryType.miniboss,
             standeeCount: 4,
-            healthFormula: '30*R',
+            healthFormula: '30*R+5*R*C1',
             affinities: {
               Ether.morph: -1,
               Ether.wind: -1,
@@ -797,12 +797,22 @@ During the **Start Phase** of round 3, 6, and 9, Roll the Xulc dice R times and 
                   'Immediately when the Nidus is slain, read [title], [codex] 5.'),
         ],
         onDidStartRound: [
-          milestone('_round3', condition: RoundCondition(3)),
-          milestone('_round6', condition: RoundCondition(6)),
-          milestone('_round9', condition: RoundCondition(9)),
+          milestone('_round2_nidus_cluster',
+              conditions: [RoundCondition(2), ChallengeOnCondition(1)]),
+          milestone('_round3_nidus_cluster',
+              conditions: [RoundCondition(3), ChallengeOffCondition(1)]),
+          milestone('_round4_nidus_cluster',
+              conditions: [RoundCondition(4), ChallengeOnCondition(1)]),
+          milestone('_round6_nidus_cluster', condition: RoundCondition(6)),
+          milestone('_round8_nidus_cluster',
+              conditions: [RoundCondition(8), ChallengeOnCondition(1)]),
+          milestone('_round9_nidus_cluster',
+              conditions: [RoundCondition(9), ChallengeOffCondition(1)]),
+          milestone('_round10_nidus_cluster',
+              conditions: [RoundCondition(10), ChallengeOnCondition(1)]),
         ],
         onMilestone: {
-          '_round3': [
+          '_round3_nidus_cluster': [
             rollXulcDie(title: 'Nidus Cluster: First Roll'),
             rollXulcDie(title: 'Nidus Cluster: Second Roll'),
             rollXulcDie(
@@ -812,7 +822,7 @@ During the **Start Phase** of round 3, 6, and 9, Roll the Xulc dice R times and 
                 title: 'Nidus Cluster: Fourth Roll',
                 condition: MinPlayerCountCondition(4)),
           ],
-          '_round6': [
+          '_round6_nidus_cluster': [
             rollXulcDie(title: 'Nidus Cluster: First Roll'),
             rollXulcDie(title: 'Nidus Cluster: Second Roll'),
             rollXulcDie(
@@ -822,7 +832,47 @@ During the **Start Phase** of round 3, 6, and 9, Roll the Xulc dice R times and 
                 title: 'Nidus Cluster: Fourth Roll',
                 condition: MinPlayerCountCondition(4)),
           ],
-          '_round9': [
+          '_round9_nidus_cluster': [
+            rollXulcDie(title: 'Nidus Cluster: First Roll'),
+            rollXulcDie(title: 'Nidus Cluster: Second Roll'),
+            rollXulcDie(
+                title: 'Nidus Cluster: Third Roll',
+                condition: MinPlayerCountCondition(3)),
+            rollXulcDie(
+                title: 'Nidus Cluster: Fourth Roll',
+                condition: MinPlayerCountCondition(4)),
+          ],
+          '_round2_nidus_cluster': [
+            rollXulcDie(title: 'Nidus Cluster: First Roll'),
+            rollXulcDie(title: 'Nidus Cluster: Second Roll'),
+            rollXulcDie(
+                title: 'Nidus Cluster: Third Roll',
+                condition: MinPlayerCountCondition(3)),
+            rollXulcDie(
+                title: 'Nidus Cluster: Fourth Roll',
+                condition: MinPlayerCountCondition(4)),
+          ],
+          '_round4_nidus_cluster': [
+            rollXulcDie(title: 'Nidus Cluster: First Roll'),
+            rollXulcDie(title: 'Nidus Cluster: Second Roll'),
+            rollXulcDie(
+                title: 'Nidus Cluster: Third Roll',
+                condition: MinPlayerCountCondition(3)),
+            rollXulcDie(
+                title: 'Nidus Cluster: Fourth Roll',
+                condition: MinPlayerCountCondition(4)),
+          ],
+          '_round8_nidus_cluster': [
+            rollXulcDie(title: 'Nidus Cluster: First Roll'),
+            rollXulcDie(title: 'Nidus Cluster: Second Roll'),
+            rollXulcDie(
+                title: 'Nidus Cluster: Third Roll',
+                condition: MinPlayerCountCondition(3)),
+            rollXulcDie(
+                title: 'Nidus Cluster: Fourth Roll',
+                condition: MinPlayerCountCondition(4)),
+          ],
+          '_round10_nidus_cluster': [
             rollXulcDie(title: 'Nidus Cluster: First Roll'),
             rollXulcDie(title: 'Nidus Cluster: Second Roll'),
             rollXulcDie(
