@@ -680,7 +680,7 @@ The attacker suffers [DMG]1.''',
         campaignLink:
             'Encounter 8.5 - “**Nurse in Wavering Memories**”, [campaign] **126**.',
         challenges: [
-          'When a Rover attacks the Embercaller or a wrathbone, place a [Wildfire] in their space.',
+          'When a Rover attacks the Embercaller or a Wrathbone, place a [Wildfire] in their space.',
           'Rovers trigger the effects of [Wildfire] when within [Range] 0-1 of a [Wildfire] tile.',
           'While sealed, the Rage of Uzem suffers R+1 [DMG] at the end of each round.',
         ],
