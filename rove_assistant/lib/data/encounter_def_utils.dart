@@ -385,12 +385,13 @@ EncounterAction rollXulcDie({
   String? title,
   String? body,
   RoveCondition? condition,
+  List<RoveCondition>? conditions,
 }) {
   return EncounterAction(
       type: EncounterActionType.rollXulcDie,
       title: title,
       body: body,
-      conditions: condition != null ? [condition] : []);
+      conditions: conditions ?? (condition != null ? [condition] : []));
 }
 
 EncounterAction function(String name, {RoveCondition? condition}) {
