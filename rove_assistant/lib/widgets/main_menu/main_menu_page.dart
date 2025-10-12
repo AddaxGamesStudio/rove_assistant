@@ -112,14 +112,10 @@ class MainMenuPage extends StatelessWidget {
     List<Widget> buttons() {
       List<Widget> buttons = [];
       final CampaignModel controller = CampaignModel.instance;
-      if (controller.campaigns.isEmpty) {
-        buttons.add(newCampaignButton());
-      } else {
-        if (controller.hasCurrentCampaign) {
-          buttons.add(continueButton());
-        }
-        buttons.addAll([newCampaignButton(), loadButton()]);
+      if (controller.hasCurrentCampaign) {
+        buttons.add(continueButton());
       }
+      buttons.addAll([newCampaignButton(), loadButton()]);
       return buttons;
     }
 
