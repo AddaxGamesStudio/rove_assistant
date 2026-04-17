@@ -148,41 +148,49 @@ class EncounterRoverItems extends StatelessWidget {
         listenable: model,
         builder: (context, _) {
           final items = model.itemsForPlayer(player);
-          return ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemCount: items.length,
-              separatorBuilder: (context, index) => SizedBox(
-                    width: RoveTheme.verticalSpacing,
-                  ),
-              itemBuilder: (context, index) {
-                final itemState = items[index];
-                final item = itemState.item;
-                final consumed = itemState.consumed;
-                final exhausted = itemState.exhausted;
-                final isEquipped = itemState.equipped;
-                return RotatedBox(
-                  quarterTurns: exhausted ? 1 : 0,
-                  child: GestureDetector(
-                    onTap: () {
-                      if (consumed) {
-                        return;
-                      }
-                      showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return dialogForItem(context,
-                                player: player, itemState: itemState);
-                          });
-                    },
-                    child: ItemImage(
-                      item.name,
-                      disabled: !isEquipped,
-                      height: height,
-                      showBack: consumed,
-                    ),
-                  ),
-                );
-              });
+          final controller = ScrollController();
+          return Scrollbar(
+              thumbVisibility: true,
+              controller: controller,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 12.0),
+                child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    controller: controller,
+                    itemCount: items.length,
+                    separatorBuilder: (context, index) => SizedBox(
+                          width: RoveTheme.verticalSpacing,
+                        ),
+                    itemBuilder: (context, index) {
+                      final itemState = items[index];
+                      final item = itemState.item;
+                      final consumed = itemState.consumed;
+                      final exhausted = itemState.exhausted;
+                      final isEquipped = itemState.equipped;
+                      return RotatedBox(
+                        quarterTurns: exhausted ? 1 : 0,
+                        child: GestureDetector(
+                          onTap: () {
+                            if (consumed) {
+                              return;
+                            }
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return dialogForItem(context,
+                                      player: player, itemState: itemState);
+                                });
+                          },
+                          child: ItemImage(
+                            item.name,
+                            disabled: !isEquipped,
+                            height: height,
+                            showBack: consumed,
+                          ),
+                        ),
+                      );
+                    }),
+              ));
         });
   }
 }
