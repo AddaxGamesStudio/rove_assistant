@@ -5,18 +5,18 @@ import 'package:rove_assistant/theme/rove_theme.dart';
 import 'package:rove_assistant/widgets/common/rove_dialog.dart';
 import 'package:rove_assistant/widgets/rewards/rewards_dialog.dart';
 
-class RewardEtherPanel extends RewardPanel {
+class InfusionEtherRewardPanel extends RewardPanel {
   final EncounterModel controller;
   final List<String> etherNames;
 
-  const RewardEtherPanel(
+  const InfusionEtherRewardPanel(
       {super.key,
       required this.controller,
       required this.etherNames,
       required super.onContinue});
 
   @override
-  String get title => 'Personal Pool Ether Reward';
+  String get title => 'Infusion Ether Reward';
 
   @override
   Widget buildBody(BuildContext context) {
@@ -32,7 +32,7 @@ class RewardEtherPanel extends RewardPanel {
       Row(children: [const Spacer(), ...etherImages, const Spacer()]),
       RoveTheme.verticalSpacingBox,
       Text(
-          'Rovers start the next encounter with $etherText dice in their personal pool.'),
+          'Rovers start the next encounter with $etherText dice in their infusion pool.'),
     ]);
   }
 
@@ -43,7 +43,6 @@ class RewardEtherPanel extends RewardPanel {
         color: foregroundColor,
         title: 'Continue',
         onPressed: () {
-          controller.setEtherRewards(ethers: etherNames);
           onContinue();
         },
       )

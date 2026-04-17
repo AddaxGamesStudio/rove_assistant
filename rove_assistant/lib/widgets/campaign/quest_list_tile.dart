@@ -33,7 +33,7 @@ class QuestListTile extends StatelessWidget {
     required this.quest,
   });
 
-  final ExpansionTileController controller = ExpansionTileController();
+  final ExpansibleController controller = ExpansibleController();
 
   final QuestDef quest;
 

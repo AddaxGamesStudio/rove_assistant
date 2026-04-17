@@ -10,6 +10,7 @@ import 'package:rove_assistant/widgets/common/rove_icon.dart';
 import 'package:rove_assistant/widgets/encounter/encounter_panel.dart';
 import 'package:rove_assistant/widgets/rewards/reward_campaign_link_panel.dart';
 import 'package:rove_assistant/widgets/rewards/reward_ether_panel.dart';
+import 'package:rove_assistant/widgets/rewards/reward_infusion_ether_panel.dart';
 import 'package:rove_assistant/widgets/rewards/reward_item_panel.dart';
 import 'package:rove_assistant/widgets/rewards/reward_lyst_panel.dart';
 import 'package:rove_assistant/widgets/rewards/reward_level_up_panel.dart';
@@ -22,6 +23,7 @@ abstract class RewardsWrapper {
   String get titlePrefix;
   List<(String, int)> get lystRewards;
   List<String> get itemRewards;
+  List<String> get infusionEtherRewards;
   List<String> get etherRewards;
   int get unlocksShopLevel;
   String? get stashReward;
@@ -74,6 +76,10 @@ class _EncounterRewardsWrapper extends RewardsWrapper {
       encounterState.rewardedEtherNames(encounterDef: encounter);
 
   @override
+  List<String> get infusionEtherRewards =>
+      encounterState.rewardedInfusionEtherNames(encounterDef: encounter);
+
+  @override
   List<String> get itemRewards => encounter.itemRewards;
 
   @override
@@ -107,6 +113,9 @@ class _SkipTutorialRewardsWrapper extends RewardsWrapper {
 
   @override
   List<String> get etherRewards => [];
+
+  @override
+  List<String> get infusionEtherRewards => [];
 
   @override
   List<String> get itemRewards => [];
@@ -208,6 +217,14 @@ class _RewardsDialogState extends State<RewardsDialog> {
       pages.add(RewardItemPanel(
           model: widget.controller!,
           item: ItemsModel.instance.itemForName(itemName),
+          onContinue: onContinue));
+    }
+
+    final infusionEtherNames = widget.rewards.infusionEtherRewards;
+    if (infusionEtherNames.isNotEmpty) {
+      pages.add(InfusionEtherRewardPanel(
+          controller: widget.controller!,
+          etherNames: infusionEtherNames,
           onContinue: onContinue));
     }
 

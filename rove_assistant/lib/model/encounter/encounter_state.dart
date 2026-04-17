@@ -315,13 +315,15 @@ class EncounterState {
 
   List<String> rewardedEtherNames({required EncounterDef encounterDef}) {
     final etherNames = [...encounterDef.etherRewards.map((e) => e.label)];
-    if (achievedChallengesCount > 1) {
-      etherNames.add('Wild');
-    }
     if (achievedChallengesCount > 2) {
       etherNames.add('Wild');
     }
     return etherNames;
+  }
+
+  List<String> rewardedInfusionEtherNames(
+      {required EncounterDef encounterDef}) {
+    return achievedChallengesCount > 1 ? ['Wild'] : [];
   }
 
   setAdversaryRandomStandeeMapping(

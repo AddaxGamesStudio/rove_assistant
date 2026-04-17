@@ -586,9 +586,6 @@ extension EncounterStateConvenience on EncounterRecord {
   List<String> rewardedEtherNames({required EncounterDef encounterDef}) {
     final etherNames = [...encounterDef.etherRewards.map((e) => e.label)];
     final challengesCount = completedChallenges.length;
-    if (challengesCount > 1) {
-      etherNames.add('Wild');
-    }
     if (challengesCount > 2) {
       etherNames.add('Wild');
     }
