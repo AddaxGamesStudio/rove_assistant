@@ -33,7 +33,7 @@ void main() async {
 
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(
-        create: (context) => RoveAppInfo(name: 'Assistant', version: '1.0.11')),
+        create: (context) => RoveAppInfo(name: 'Assistant', version: '1.0.12')),
     ChangeNotifierProvider(create: (context) => CampaignModel.instance),
     ChangeNotifierProvider(create: (context) => ItemsModel.instance),
     ChangeNotifierProvider(create: (context) => PlayersModel.instance),
