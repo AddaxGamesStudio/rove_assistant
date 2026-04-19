@@ -291,7 +291,7 @@ This is a good time to discuss effect resolution order (pg. 36). Some actions, e
             adversary: '3',
             tiles:
                 '3x Bursting Bells, 4x Hoards, 1x Treasure Chest, 1x Nektari Hive'),
-        victoryDescription: 'Get to the exit hexes.',
+        victoryDescription: 'All Rovers must get to an exit space.',
         terrain: [
           EncounterTerrain('dangerous',
               title: 'Dangerous Terrain',
