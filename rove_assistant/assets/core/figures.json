@@ -274,6 +274,7 @@
             "role": "adversary",
             "name": "Hydra",
             "type": "miniboss",
+            "large": true,
             "codex_entries": [
                 175
             ],

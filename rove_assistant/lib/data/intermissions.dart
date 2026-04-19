@@ -143,6 +143,7 @@ The adversaries within this encounter are native to the Zydero Reefs and ignore 
             type: AdversaryType.miniboss,
             standeeCount: 1,
             healthFormula: '15*R',
+            large: true,
             traits: [
               'When this unit suffers [DMG], if a Dyad is active, divide that [DMG] by 2, rounded up.',
               'Ignores the effects of Ferrorsands.',
