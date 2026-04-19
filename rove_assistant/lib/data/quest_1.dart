@@ -1102,9 +1102,9 @@ When an adversary is slain, place it off to the side of the map on its side. Dur
             onLoot: [
               codex(20),
               lyst('5*R'),
-              item('Imbuing Potion',
+              item('Terranape Mallow',
                   body:
-                      'The Rover that collected the hoard tile gains one “Imbuing Potion” item. They may equip this item. If they don’t have the required item slot(s) available, they may unequip items as needed.'),
+                      'The Rover that collected the hoard tile gains one “Terranape Mallow” item. They may equip this item. If they don’t have the required item slot(s) available, they may unequip items as needed.'),
               item('Tihfur Claw',
                   body:
                       'The Rover that collected the hoard tile gains one “Tihfur Claw” item. They may equip this item. If they don’t have the required item slot(s) available, they may unequip items as needed.'),
