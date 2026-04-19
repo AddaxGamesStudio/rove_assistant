@@ -987,6 +987,7 @@ All enemies within [Range] 1 suffer [DMG]1.'''
         victoryDescription: 'Slay the King of Storms.',
         roundLimit: 10,
         terrain: [
+          dangerousFire(1),
           etherWind(),
           etherEarth(),
           etherWater(),
