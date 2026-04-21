@@ -2009,7 +2009,7 @@ All units within [Range] 1 suffer [DMG]2.'''
           dialog('Introduction'),
           rules('2 Phase Encounter',
               'This is a 2 phase encounter. Each phase has its own round limit.'),
-          rules('Crystalline Amor',
+          rules('Crystalline Armor',
               '''*Marii and Femii are well armored in resplendent crystalline armor and are nearly unassailable.*
 
 They have [DEF] R-X, where X equals the number of crystalline spears (hoard tiles) on their statistic block. Use crystalline spears to weaken their defense.'''),
